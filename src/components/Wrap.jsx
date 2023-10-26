@@ -35,7 +35,7 @@ export default function Wrap() {
             <Route path='dmunity-edit' element={<DmunityEdit />} />
             <Route path='dmap' element={<Dmap />} />
             <Route path='mypage' element={<MyPage />} />
-            <Route path='myPage-dit' element={<MyPageEdit />} />
+            <Route path='mypage-edit' element={<MyPageEdit />} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
             <Route path='signup-complete' element={<SignUpComplete />} />
