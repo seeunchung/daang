@@ -8,11 +8,11 @@ export default function Header() {
         <div className="container">
           <div className="left">
             <ul>
-              <li className='left-menu on'><Link to='dsta'>댕스타</Link></li>
+              <li className='left-menu on'><Link to='/dsta'>댕스타</Link></li>
               <li><i>|</i></li>
-              <li className='left-menu'><Link>댕뮤니티</Link></li>
+              <li className='left-menu'><Link to='/dmunity'>댕뮤니티</Link></li>
               <li><i>|</i></li>
-              <li className='left-menu'><Link>댕동여지도</Link></li>
+              <li className='left-menu'><Link to='/dmap'>댕동여지도</Link></li>
             </ul>
           </div>
           <div className="center">
@@ -23,15 +23,15 @@ export default function Header() {
           <div className="right">
             <ul>
               {/* 추후 로그인, 회원가입 글씨는 로그인 상태일때 닉네임, 로그아웃으로 보이게 하기 */}
-              <li className='right-menu'><Link>로그인</Link></li>
+              <li className='right-menu'><Link to='/login'>로그인</Link></li>
               <li><i>|</i></li>
-              <li className='right-menu'><Link>회원가입</Link></li>
+              <li className='right-menu'><Link to='/signup'>회원가입</Link></li>
               <li><i>|</i></li>
               <li className='right-menu'>
                 <Link >글쓰기</Link>
                 <ul className='tooltip'>
                   <li>
-                    <Link>
+                    <Link to='/dsta-write'>
                       <div className="img-box">
                         <img src="./img/Instagram.png" alt="" />
                       </div>
@@ -43,7 +43,7 @@ export default function Header() {
                     </Link>
                   </li>
                   <li>
-                    <Link>
+                    <Link to='/dmunity-write'>
                       <div className="img-box">
                         <img src="./img/dmunity.png" alt="" />
                       </div>
