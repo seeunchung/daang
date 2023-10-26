@@ -1,9 +1,9 @@
-#main {
+#main.dsta-wraite {
   width: 100%;
   height: 100%;
   padding-top: 90px;
 }
-#main .dstawrite_container {
+#main.dsta-wraite .dstawrite_container {
   position: relative;
   width: 1050px;
   height: 650px;
@@ -11,7 +11,7 @@
   margin: 0 auto;
   border-radius: 20px;
 }
-#main .dstawrite_container .spring_img {
+#main.dsta-wraite .dstawrite_container .spring_img {
   position: absolute;
   width: 47px;
   height: 340px;
@@ -19,13 +19,13 @@
   left: 444px;
   background-image: url(../img/spring.png);
 }
-#main .dstawrite_container .dstawrite_title {
+#main.dsta-wraite .dstawrite_container .dstawrite_title {
   font-size: 30px;
   color: #74500A;
   margin: 0 0 0 45px;
   padding: 16px 0;
 }
-#main .dstawrite_container .webname {
+#main.dsta-wraite .dstawrite_container .webname {
   font-size: 20px;
   font-weight: bold;
   color: #74500A;
@@ -33,14 +33,14 @@
   top: 608px;
   right: 45px;
 }
-#main .dstawrite_container .innerbox {
+#main.dsta-wraite .dstawrite_container .innerbox {
   width: 960px;
   height: 526px;
   margin: 0 45px;
   display: flex;
   justify-content: space-between;
 }
-#main .dstawrite_container .innerbox .leftbox {
+#main.dsta-wraite .dstawrite_container .innerbox .leftbox {
   width: 420px;
   height: 526px;
   background-color: #FFFBF5;
@@ -48,7 +48,7 @@
   border: solid 1px #F4E2CC;
   border-radius: 20px;
 }
-#main .dstawrite_container .innerbox .leftbox .thumbnail {
+#main.dsta-wraite .dstawrite_container .innerbox .leftbox .thumbnail {
   width: 360px;
   height: 466px;
   background-color: #ffffff;
@@ -59,10 +59,10 @@
   border-color: #F4E2CC;
   border-radius: 20px;
 }
-#main .dstawrite_container .innerbox .leftbox .thumbnail .thubnail_btn {
+#main.dsta-wraite .dstawrite_container .innerbox .leftbox .thumbnail .thubnail_btn {
   margin: 50px;
 }
-#main .dstawrite_container .innerbox .rightbox {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox {
   width: 532px;
   height: 526px;
   background-color: #FFFBF5;
@@ -70,7 +70,7 @@
   border: solid 1px #F4E2CC;
   border-radius: 20px;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox {
   width: 472px;
   height: 466px;
   margin: 30px;
@@ -78,7 +78,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox .textcontent {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .textcontent {
   width: 472px;
   height: 220px;
   padding: 16px;
@@ -87,7 +87,7 @@
   border: solid 1px #F4E2CC;
   border-radius: 20px;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox .tagcontent {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .tagcontent {
   width: 473px;
   height: 32px;
   font-size: 14px;
@@ -95,7 +95,7 @@
   border: solid 1px #F4E2CC;
   border-radius: 20px;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox .addphto {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .addphto {
   width: 113px;
   height: 113px;
   background-color: #ffffff;
@@ -103,14 +103,14 @@
   border: solid 1px #F4E2CC;
   border-radius: 20px;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box {
   width: 168px;
   height: 40px;
   align-self: flex-end;
   display: flex;
   justify-content: space-between;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .submit_btn {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .submit_btn {
   width: 80px;
   height: 40px;
   background-color: #74500A;
@@ -118,7 +118,7 @@
   border: none;
   border-radius: 50px;
 }
-#main .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .cancel_btn {
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .cancel_btn {
   width: 80px;
   height: 40px;
   background-color: #AB8B61;

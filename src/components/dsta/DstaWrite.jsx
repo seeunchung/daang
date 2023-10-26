@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function DstaWrite() {
   return (
-    <main id="main">
+    <main id="main" className='dsta-wraite'>
       <div className='dstawrite_container'>
         <h2 className='dstawrite_title'>✨댕스타 작성하기✨</h2>
         <span className='spring_img'></span>
