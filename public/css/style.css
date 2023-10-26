@@ -1,0 +1,9 @@
+@import url(../css/fonts.css);
+@import url(../css/reset.css);
+@import url(../css/header.css);
+@import url(../css/mainpage.css);
+@import url(../css/footer.css);
+#wrap {
+  width: 100%;
+  background: #fffbf5;
+}
