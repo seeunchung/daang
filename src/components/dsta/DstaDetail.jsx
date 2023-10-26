@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import App from './dsta';
 
 export default function DstaMainPage() {
@@ -13,3 +14,13 @@ export default function DstaMainPage() {
 };
 
 
+=======
+
+export default function DstaDetail() {
+  return (
+    <div>
+
+    </div>
+  );
+};
+>>>>>>> 1d28f4ada11067d4174a99ea1ad6547a860f66d4
