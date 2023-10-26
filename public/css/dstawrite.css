@@ -1,0 +1,128 @@
+#main.dsta-wraite {
+  width: 100%;
+  height: 100%;
+  padding-top: 90px;
+}
+#main.dsta-wraite .dstawrite_container {
+  position: relative;
+  width: 1050px;
+  height: 650px;
+  background-color: #EEE1D7;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .spring_img {
+  position: absolute;
+  width: 47px;
+  height: 340px;
+  top: 140px;
+  left: 444px;
+  background-image: url(../img/spring.png);
+}
+#main.dsta-wraite .dstawrite_container .dstawrite_title {
+  font-size: 30px;
+  color: #74500A;
+  margin: 0 0 0 45px;
+  padding: 16px 0;
+}
+#main.dsta-wraite .dstawrite_container .webname {
+  font-size: 20px;
+  font-weight: bold;
+  color: #74500A;
+  position: absolute;
+  top: 608px;
+  right: 45px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox {
+  width: 960px;
+  height: 526px;
+  margin: 0 45px;
+  display: flex;
+  justify-content: space-between;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .leftbox {
+  width: 420px;
+  height: 526px;
+  background-color: #FFFBF5;
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .leftbox .thumbnail {
+  width: 360px;
+  height: 466px;
+  background-color: #ffffff;
+  margin: 30px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .leftbox .thumbnail .thubnail_btn {
+  margin: 50px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox {
+  width: 532px;
+  height: 526px;
+  background-color: #FFFBF5;
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox {
+  width: 472px;
+  height: 466px;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .textcontent {
+  width: 472px;
+  height: 220px;
+  padding: 16px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .tagcontent {
+  width: 473px;
+  height: 32px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .addphto {
+  width: 113px;
+  height: 113px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box {
+  width: 168px;
+  height: 40px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .submit_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #74500A;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+}
+#main.dsta-wraite .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .cancel_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #AB8B61;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+}
