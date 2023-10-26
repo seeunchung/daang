@@ -21,7 +21,6 @@ import SignUpComplete from './signup/SignUpComplete'
 export default function Wrap() {
   return (
     <div id='wrap'>
-
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path='/' element={<Header />}>
