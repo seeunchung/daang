@@ -86,3 +86,7 @@
 #main.login #signin .container .content form ul li button span.signup-text {
   color: #74500A;
 }
+#main.login #signin .container .content form ul li ul {
+  display: flex;
+  justify-content: center;
+}
