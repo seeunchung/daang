@@ -39,10 +39,10 @@ export default function Footer() {
         </div>
         <div className="right">
           <ul>
-            <li><a href="#!"></a><img src="./img/footer_logo.png" alt="" /></li>
-            <li><a href="#!"></a><img src="./img/ico_fb.png" alt="" /></li>
-            <li><a href="#!"></a><img src="./img/ico_instagram.png" alt="" /></li>
-            <li><a href="#!"></a><img src="./img/ico_youtube.png" alt="" /></li>
+            <li><a href="#!"><img src="./img/footer_logo.png" alt="" /></a></li>
+            <li><a href="#!"><img src="./img/ico_fb.png" alt="" /></a></li>
+            <li><a href="#!"><img src="./img/ico_instagram.png" alt="" /></a></li>
+            <li><a href="#!"><img src="./img/ico_youtube.png" alt="" /></a></li>
           </ul>
         </div>
       </div>
