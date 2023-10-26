@@ -28,7 +28,7 @@ export default function Header() {
               <li className='right-menu'><Link to='/signup'>회원가입</Link></li>
               <li><i>|</i></li>
               <li className='right-menu'>
-                <Link >글쓰기</Link>
+                <Link >글쓰기1</Link>
                 <ul className='tooltip'>
                   <li>
                     <Link to='/dsta-write'>
