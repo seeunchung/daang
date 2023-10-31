@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
+import DstaMainModal from './DstaMainModal.jsx';
 
 export default function DstaMainPage() {
-
+  // swiper
   const swiperOptions = {
     loop: true,
     slidesPerView: 4,
     autoplay: {
       delay: 3000,
     }
+  };
+  // 모달
+  const [isModalOpen, setModalOpen] = useState(false);
 
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
   return (
@@ -21,12 +31,18 @@ export default function DstaMainPage() {
           <img src="./img/Calendar 7.png" alt="캘린더 아이콘" />
           <h2 className='dstamain_title'>Weekly DAaaNG-STA</h2>
         </div>
+
+        {/* 모달 */}
+        <button onClick={openModal}>모달 열기</button>
+        {isModalOpen && <DstaMainModal closeModal={closeModal} />}
+        {/* 모달 끝 */}
+
         <div className='dstamain_weeklybox'>
 
           {/* 스와이퍼 */}
           <div className="dstamain_swipercontainer">
             <Swiper
-              className='swiper'
+              className='dstamain_swiper'
               {...swiperOptions}
               pagination={{
                 el: 'dstamain_swiperpage',
@@ -40,7 +56,6 @@ export default function DstaMainPage() {
               }}
             >
               <SwiperSlide>
-                1
               </SwiperSlide>
               <SwiperSlide>
                 2
@@ -51,28 +66,16 @@ export default function DstaMainPage() {
               <SwiperSlide>
                 4
               </SwiperSlide>
-              <SwiperSlide>
-                5
-              </SwiperSlide>
-              <SwiperSlide>
-                6
-              </SwiperSlide>
-              <SwiperSlide>
-                7
-              </SwiperSlide>
-              <SwiperSlide>
-                8
-              </SwiperSlide>
 
             </Swiper>
             {/* 페이징 버튼 */}
-            {/* <button className="dstamain_swiperprev">
-              <img src="./img/main/arrow_gray.svg" alt="" />
+            <button className="dstamain_swiperprev">
+              <img src="./img/main/arrow_gray.svg" alt="<버튼" />
             </button>
             <button className="dtamain_swipernext">
-              <img src="./img/main/arrow_gray.svg" alt="" />
+              <img src="./img/main/arrow_gray.svg" alt=">버튼" />
             </button>
-            <div className="dtamain_swiperpage"></div> */}
+            <div className="dtamain_swiperpage"></div>
           </div>
           {/* 스와이퍼 끝 */}
 
