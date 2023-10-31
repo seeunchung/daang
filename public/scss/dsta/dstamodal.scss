@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 @charset "UTF-8";
+=======
+@charset 'UTF-8';
+>>>>>>> 2b9840596dc221ce893b6fa99055a4c4bded4a1e
 
 .modal-overlay {
   position: fixed;
@@ -15,6 +19,7 @@
 
 .close-button {
   position: absolute;
+<<<<<<< HEAD
   top: 100px;
   right: 100px;
   background-color: transparent;
@@ -24,6 +29,16 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 50px;
+=======
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+>>>>>>> 2b9840596dc221ce893b6fa99055a4c4bded4a1e
 }
 
 .modal {
@@ -42,8 +57,18 @@
     justify-content: center;
     align-items: center;
 
+<<<<<<< HEAD
     p {
       float: left;
     }
+=======
+    p1 {
+      float: left;
+    }
+
+    p2 {
+      float: right;
+    }
+>>>>>>> 2b9840596dc221ce893b6fa99055a4c4bded4a1e
   }
 }
