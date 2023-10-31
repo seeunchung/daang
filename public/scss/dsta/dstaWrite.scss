@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+
 #main.dsta_write {
   width: 100%;
   height: 100vh;
@@ -50,6 +52,9 @@
         /*왼쪽박스 스타일*/
         width: 420px;
         height: 526px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #FFFBF5;
         box-sizing: border-box;
         border: solid 1px #F4E2CC;
@@ -58,7 +63,6 @@
         .thumbnail {
           width: 360px;
           height: 466px;
-          margin: 30px;
           background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
           border: 1px solid #F4E2CC;
           border-radius: 20px;
@@ -72,7 +76,8 @@
             display: block;
             width: 360px;
             height: 466px;
-            padding: 250px 0 0 154.7px;
+            text-align: center;
+            line-height: 504px;
             font-size: 10px;
             color: #747171;
             cursor: pointer;
@@ -115,6 +120,9 @@
         /*오른쪽박스 스타일*/
         width: 532px;
         height: 526px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #FFFBF5;
         border: solid 1px #F4E2CC;
         border-radius: 20px;
@@ -122,7 +130,6 @@
         .input_contentsbox {
           width: 472px;
           height: 466px;
-          margin: 30px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -172,7 +179,8 @@
                 display: block;
                 width: 113px;
                 height: 113px;
-                padding: 72px 0 0 36.5px;
+                text-align: center;
+                line-height: 150px;
                 font-size: 10px;
                 color: #747171;
                 cursor: pointer;
