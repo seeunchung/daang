@@ -9,6 +9,7 @@ export default function DstaMainPage() {
   const swiperOptions = {
     loop: true,
     slidesPerView: 4,
+    slidesPerGroup: 3,
     autoplay: {
       delay: 3000,
     }
@@ -25,6 +26,7 @@ export default function DstaMainPage() {
   };
 
   return (
+
     <main id='main' className='dstamain'>
       <div className='dstamain_container'>
         <div className='dstamain_titlecontainer'>
@@ -55,18 +57,15 @@ export default function DstaMainPage() {
                 nextEl: '.dtamain_swipernext'
               }}
             >
-              <SwiperSlide>
-              </SwiperSlide>
-              <SwiperSlide>
-                2
-              </SwiperSlide>
-              <SwiperSlide>
-                3
-              </SwiperSlide>
-              <SwiperSlide>
-                4
-              </SwiperSlide>
+              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide> 4 </SwiperSlide>
 
+              <SwiperSlide>5 </SwiperSlide>
+              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide> 8 </SwiperSlide>
             </Swiper>
             {/* 페이징 버튼 */}
             <button className="dstamain_swiperprev">
@@ -155,8 +154,9 @@ export default function DstaMainPage() {
         <div className='dstamain_pagebox'>
           <span>- 1 2 3 4 5 6 7 8 9 -</span>
         </div>
+
       </div>
     </main>
   );
-};
 
+};
