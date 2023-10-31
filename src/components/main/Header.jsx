@@ -13,6 +13,8 @@ export default function Header() {
               <li className='left-menu'><Link to='/dmunity'>댕뮤니티</Link></li>
               <li><i>|</i></li>
               <li className='left-menu'><Link to='/dmap'>댕동여지도</Link></li>
+              <li><i>|</i></li>
+              <li className='left-menu'><Link to='/mypage'>마이페이지</Link></li>
             </ul>
           </div>
           <div className="center">
