@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -8,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 100; // Ensure the modal is above other content
 }
 
 .close-button {
@@ -31,11 +33,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.modal .modal-content {
-  background-color: white;
-  width: 500px;
-  height: 268px;
-  justify-content: center;
-  align-items: center;
+
+  .modal-content {
+    background-color: white;
+    width: 500px;
+    height: 268px;
+    justify-content: center;
+    align-items: center;
+
+    p1 {
+      float: left;
+    }
+
+    p2 {
+      float: right;
+    }
+  }
 }
