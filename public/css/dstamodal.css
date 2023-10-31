@@ -39,9 +39,3 @@
   justify-content: center;
   align-items: center;
 }
-.modal .modal-content p1 {
-  float: left;
-}
-.modal .modal-content p2 {
-  float: right;
-}
