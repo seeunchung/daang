@@ -16,8 +16,9 @@
       display: flex;
       align-items: center;
 
-      a {
+      h2 {
         margin: 8px;
+        font-family: 'NPSfontbold';
         font-size: 32px;
         font-weight: bold;
         color: #74500A;
@@ -55,88 +56,108 @@
     background-color: #F9EBDB;
     border-radius: 15px;
 
-    a {
-      color: #74500A;
+    .row1 {
+      height: 30px;
+      align-items: center;
       display: flex;
-      margin: 8px;
-      font-size: 20px;
-      font-family: 'Fredoka One'; //이거 안댐
-      font-weight: bold;
+
+      h2 {
+        margin-left: 8px;
+        color: #74500A;
+        font-size: 20px;
+        font-family: 'Fredoka One';
+        font-weight: bold;
+      }
     }
 
-    #post {
-      width: 960px;
-      height: 120px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      font-family: 'Noto Sans KR', sans-serif;
-      border-bottom: 1px solid #D6CABA;
+    .row2 {
 
-      .postLeft {
+      #post {
+        width: 960px;
+        height: 120px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        font-family: 'Noto Sans KR', sans-serif;
+        border-bottom: 1px solid #D6CABA;
 
-        .category {
-          width: 80px;
-          height: 80px;
-        }
-      }
+        .postLeft {
 
-      .postMiddle {
-        width: 740px;
-        height: 100px;
-        margin-left: 40px;
-
-        div {
-          margin-top: 10px;
+          .category {
+            width: 80px;
+            height: 80px;
+          }
         }
 
-        .info {
-          span {
-            margin-left: 3px;
+        .postMiddle {
+          width: 740px;
+          height: auto;
+          margin-left: 40px;
+
+          .title {
+            font-size: 16px;
+          }
+
+          .contents {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #888888;
+          }
+
+          .info {
+            margin-top: 12px;
+
+            span {
+              font-weight: bold;
+              margin-left: 3px;
+            }
+          }
+        }
+
+        .postRight {
+          color: #ccc;
+
+          .userid {
+            margin-top: 10px;
           }
         }
       }
-
-      .postRight {
-        color: #ccc;
-
-        .userid {
-          margin-top: 10px;
-        }
-      }
     }
 
-    .pageLink {
-      width: 300px;
-      height: 50px;
-      margin: auto;
-      margin-top: 32px;
-    }
+    .row3 {
 
-    .searchBox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 20px;
-
-      input {
-        width: 220px;
-        height: 30px;
-        border-radius: 10px;
-        border: none;
-        padding: 3px;
+      .pageLink {
+        width: 300px;
+        height: 50px;
+        margin: auto;
+        margin-top: 32px;
       }
 
-      span {
-        width: 50px;
-        height: 30px;
-        border-radius: 10px;
-        padding: 3px;
+      .searchBox {
         display: flex;
-        background-color: #74500A;
-        color: white;
         justify-content: center;
         align-items: center;
+        padding-bottom: 20px;
+
+        input {
+          width: 220px;
+          height: 30px;
+          border-radius: 10px;
+          border: none;
+          padding: 3px;
+        }
+
+        span {
+          width: 50px;
+          height: 30px;
+          border-radius: 10px;
+          padding: 3px;
+          display: flex;
+          background-color: #74500A;
+          color: white;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }
