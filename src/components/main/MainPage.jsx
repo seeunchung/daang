@@ -67,7 +67,7 @@ export default function MainPage() {
           <div className="sec1-swiper-pagination"></div>
         </div>
       </section>
-      <section id='section2'>
+      {/* <section id='section2'>
         <div className="sec2_container">
           <div className="title-box">
             <div className="title">
@@ -90,7 +90,7 @@ export default function MainPage() {
             <div className="best_dsta"></div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section id='section3'>
         <div className="title">
           <h2>
