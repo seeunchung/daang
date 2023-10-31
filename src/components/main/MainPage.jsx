@@ -40,13 +40,20 @@ export default function MainPage() {
               <img src="./img/main/main_sec1_slide_1.png" alt="" />
               <div className="slide1-title">
                 <h2>
-                  <span>귀여운 강아지의 일상을 공유하고,</span>
-                  <span>나의 강아지를 자랑해보세요~</span>
+                  <span>나의 강아지를 소개하고, 교류할 수 있는</span>
+                  <span><strong>DAaaNG-UNIV</strong>에 입학하세요!</span>
                 </h2>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <img src="./img/main/main_sec1_slide_2.png" alt="" />
+              <div className="slide2-title">
+                <h2>
+                  <span>귀여운 강아지의 일상을 공유하고,</span>
+                  <span>나의 강아지를 자랑해보세요~</span>
+                  <Link to='/dsta'>댕스타 바로가기</Link>
+                </h2>
+              </div>
 
             </SwiperSlide>
 
