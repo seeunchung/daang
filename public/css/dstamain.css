@@ -1,23 +1,22 @@
 @charset "UTF-8";
 #main.dstamain {
   padding-top: 90px;
+  padding-bottom: 90px;
   width: 100%;
   overflow: hidden;
+  height: auto;
 }
-
 #main.dstamain .dstamain_container {
   width: 1050px;
   height: 100vh;
   margin: 0 auto;
 }
-
 #main.dstamain .dstamain_container .dstamain_titlecontainer {
   position: relative;
   width: 1050px;
   height: 50px;
   margin: 20px;
 }
-
 #main.dstamain .dstamain_container .dstamain_titlecontainer img {
   margin-right: 10px;
   width: 40px;
@@ -26,7 +25,6 @@
   /* 아이콘을 인라인 블록 요소로 설정 */
   display: inline-block;
 }
-
 #main.dstamain .dstamain_container .dstamain_titlecontainer .dstamain_title {
   font-size: 30px;
   font-weight: bold;
@@ -36,77 +34,73 @@
   line-height: 40px;
   display: inline-block;
 }
-
 #main.dstamain .dstamain_container .dstamain_weeklybox {
   position: relative;
   width: 1050px;
-  height: 370px;
+  height: 360px;
   border-radius: 20px;
-  border: 1px solid #74500A;
-  background-color: #F9EBDB;
+  padding: 0 20px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer {
   width: 100%;
   height: 370px;
   position: relative;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer:hover > button {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer:hover > button {
   opacity: 1;
   transition: all 0.5s ease-in-out;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper {
   width: 100%;
-  margin-left: 7.5px;
-  margin-bottom: 20px;
+  height: 300px;
   border-radius: 15px;
-  border: 1px solid #74500A;
+  margin-top: 20px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper .swiper-slide {
-  width: 100%;
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper .swiper-slide {
   position: relative;
-  margin-left: 7.5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 15px;
   border: 1px solid #74500A;
+  margin-left: 10px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper .swiper-slide img {
-  width: 100px;
-  height: 370px;
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button {
   border: 0;
   background: none;
   z-index: 3;
   opacity: 0;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button img {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button img {
   width: 52px;
   height: 52px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button.dstamain_swiperprev {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button.dstamain_swiperprev {
   position: absolute;
-  top: 45%;
-  left: 80px;
+  top: 35%;
+  left: 10px;
   transform: rotate(180deg);
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button.dtamain_swipernext {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button.dtamain_swipernext {
   position: absolute;
-  top: 45%;
-  right: 80px;
+  top: 35%;
+  right: 10px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage {
   position: relative;
   z-index: 5;
   bottom: 25px;
   left: 50%;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage.dstamain_swiperbulletactive {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage.dstamain_swiperbulletactive {
   background: #F88A8A;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage.dstamain_swiperbullet {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage.dstamain_swiperbullet {
   margin-right: 5px;
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox {
   width: 255px;
   height: 400px;
@@ -119,13 +113,11 @@
   position: relative;
   /*부모 컨테이너*/
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox img {
   width: 100%;
   height: 315px;
   border-radius: 15px 15px 0 0;
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox .dstamain_phototextbox {
   position: absolute;
   bottom: 45px;
@@ -141,7 +133,6 @@
   /* 패딩을 요소의 크기에 포함 */
   box-sizing: border-box;
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox .dstamain_watchbox {
   position: absolute;
   width: 100%;
@@ -151,14 +142,12 @@
   bottom: 0;
   margin-left: 10px;
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox .dstamain_watchbox img {
   width: 14px;
   height: 14px;
   margin: 0 8px;
   display: inline-block;
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox .dstamain_profile {
   position: relative;
   bottom: 40px;
@@ -169,14 +158,12 @@
   text-overflow: ellipsis;
   box-sizing: border-box;
 }
-
 #main.dstamain .dstamain_container .dstamain_photobox .dstamain_profile img {
   width: 30px;
   height: 30px;
   margin: 0 8px;
   display: inline-block;
 }
-
 #main.dstamain .dstamain_container .dstamain_pagebox {
   text-align: center;
   font-size: 20px;
