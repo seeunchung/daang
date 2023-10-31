@@ -17,6 +17,7 @@ function getCategoryImage(category) {
       return '../img/dmunity/notification.png';
   }
 }
+
 const posts = [
   {
     dmunity_category: "",
@@ -138,7 +139,7 @@ const Post = ({ category, title, contents, view, likes, date, userid }) => {
   );
 };
 
-function DmunityMainPage() {
+export default function DmunityMainPage() {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e) => {
@@ -192,5 +193,3 @@ function DmunityMainPage() {
     </div>
   );
 }
-
-export default DmunityMainPage;
