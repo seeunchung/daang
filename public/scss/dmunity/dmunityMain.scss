@@ -1,7 +1,6 @@
 #dmunity {
   padding-top: 90px;
   padding-bottom: 40px;
-  background-color: #FFFBF5;
 
   .categoryContainer {
     width: 1050px;
@@ -43,7 +42,6 @@
           border-radius: 50%;
           border: none;
           background-color: #FFFBF5;
-          cursor: pointer;
         }
       }
     }
@@ -107,9 +105,12 @@
           .info {
             margin-top: 12px;
 
+            margin-top: 12px;
+
             span {
               font-weight: bold;
               margin-left: 3px;
+              font-weight: bold;
             }
           }
         }
