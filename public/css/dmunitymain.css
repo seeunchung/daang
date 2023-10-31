@@ -1,7 +1,6 @@
 #dmunity {
   padding-top: 90px;
   padding-bottom: 40px;
-  background-color: #FFFBF5;
 }
 #dmunity .categoryContainer {
   width: 1050px;
@@ -41,7 +40,6 @@
   border-radius: 50%;
   border: none;
   background-color: #FFFBF5;
-  cursor: pointer;
 }
 #dmunity #postsboard {
   width: 1050px;
@@ -90,10 +88,12 @@
 }
 #dmunity #postsboard .row2 #post .postMiddle .info {
   margin-top: 12px;
+  margin-top: 12px;
 }
 #dmunity #postsboard .row2 #post .postMiddle .info span {
   font-weight: bold;
   margin-left: 3px;
+  font-weight: bold;
 }
 #dmunity #postsboard .row2 #post .postRight {
   color: #ccc;
