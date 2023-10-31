@@ -1,19 +1,20 @@
-#main.dsta-wraite {
+#main.dsta_write {
   width: 100%;
   height: 100vh;
-  padding-top: 90px;
+  min-height: 800px;
+  padding: 120px 0 30px 0;
 
   .dstawrite_container {
     position: relative;
     width: 1050px;
     height: 650px;
     background-color: #EEE1D7;
-    margin: 30px auto;
+    margin: auto;
     border-radius: 20px;
 
     .spring_img {
       position: absolute;
-      width: 47px;
+      width: 48px;
       height: 340px;
       top: 140px;
       left: 444px;
@@ -22,6 +23,7 @@
 
     .dstawrite_title {
       font-size: 30px;
+      font-family: 'NPSfontBold';
       color: #74500A;
       margin: 0 0 0 45px;
       padding: 16px 0;
@@ -30,6 +32,7 @@
     .webname {
       font-size: 20px;
       font-weight: bold;
+      font-family: "Fredoka One";
       color: #74500A;
       position: absolute;
       top: 608px;
@@ -44,6 +47,7 @@
       justify-content: space-between;
 
       .leftbox {
+        /*왼쪽박스 스타일*/
         width: 420px;
         height: 526px;
         background-color: #FFFBF5;
@@ -54,26 +58,64 @@
         .thumbnail {
           width: 360px;
           height: 466px;
-          background-color: #ffffff;
           margin: 30px;
-
-          box-sizing: border-box;
-          border-style: solid;
-          border-width: 1px;
-          border-color: #F4E2CC;
+          background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
+          border: 1px solid #F4E2CC;
           border-radius: 20px;
 
-          .thubnail_btn {
-            margin: 50px;
+          .file_input {
+            display: none;
+          }
+
+          .custom_file_input {
+            /*썸네일 없을 때 보이는 스타일*/
+            display: block;
+            width: 360px;
+            height: 466px;
+            padding: 250px 0 0 154.7px;
+            font-size: 10px;
+            color: #747171;
+            cursor: pointer;
+          }
+
+          .thumbnail_img {
+            /*썸네일 이미지 미리보기*/
+            width: 360px;
+            height: 466px;
+            border-radius: 20px;
+          }
+
+          .thumbnail_icon {
+            /*썸네일 아이콘*/
+            position: relative;
+            top: -496px;
+            left: 8px;
+            width: 36px;
+            height: 36px;
+            background-image: url(../../img/Crown.png);
+            background-size: cover;
+          }
+
+          .change_file_input {
+            /*썸네일 있을 때 보이는 스타일, 썸네일 사진 변경 버튼*/
+            display: block;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            top: -36px;
+            left: 320px;
+            background: url(../../img/photh_select_btn.png) center no-repeat #CECBCB;
+            border-radius: 50px;
+            cursor: pointer;
           }
         }
       }
 
       .rightbox {
+        /*오른쪽박스 스타일*/
         width: 532px;
         height: 526px;
         background-color: #FFFBF5;
-        box-sizing: border-box;
         border: solid 1px #F4E2CC;
         border-radius: 20px;
 
@@ -90,6 +132,7 @@
             height: 220px;
             padding: 16px;
             font-size: 14px;
+            font-family: 'Noto Sans KR';
             box-sizing: border-box;
             border: solid 1px #F4E2CC;
             border-radius: 20px;
@@ -98,19 +141,78 @@
           .tagcontent {
             width: 473px;
             height: 32px;
+            padding: 16px;
             font-size: 14px;
+            font-family: 'Noto Sans KR';
             box-sizing: border-box;
             border: solid 1px #F4E2CC;
             border-radius: 20px;
           }
 
-          .addphto {
-            width: 113px;
+          .addphoto_box {
+            width: 472px;
             height: 113px;
-            background-color: #ffffff;
-            box-sizing: border-box;
-            border: solid 1px #F4E2CC;
-            border-radius: 20px;
+            display: flex;
+
+            .add_photo {
+              list-style: none;
+              width: 113px;
+              height: 113px;
+              margin-right: 6.67px;
+              background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
+              border: 1px solid #F4E2CC;
+              border-radius: 20px;
+
+              .file_input {
+                display: none;
+              }
+
+              .custom_file_input {
+                /*사진 추가 버튼 스타일*/
+                display: block;
+                width: 113px;
+                height: 113px;
+                padding: 72px 0 0 36.5px;
+                font-size: 10px;
+                color: #747171;
+                cursor: pointer;
+              }
+
+              .added_img {
+                /*추가된 이미지*/
+                width: 113px;
+                height: 113px;
+                border-radius: 20px;
+              }
+
+              .numbering {
+                /*이미지 순서 넘버링*/
+                position: relative;
+                top: -36px;
+                left: 86px;
+                width: 20px;
+                height: 14px;
+                font-size: 10px;
+                text-align: center;
+                line-height: 14px;
+                color: #ffffff;
+                background-color: rgb(32, 32, 32, 0.5)
+              }
+
+              .img_delete_btn {
+                /*추가된 이미지 삭제 버튼*/
+                position: relative;
+                top: -110px;
+                left: 6px;
+                width: 14px;
+                height: 14px;
+                background-image: url(../../img/photo_delete_btn.png);
+                background-color: transparent;
+                border-style: none;
+                cursor: pointer;
+              }
+
+            }
           }
 
           .btn_box {
@@ -124,6 +226,7 @@
               width: 80px;
               height: 40px;
               background-color: #74500A;
+              font-size: 16px;
               color: #ffffff;
               border: none;
               border-radius: 50px;
@@ -133,6 +236,7 @@
               width: 80px;
               height: 40px;
               background-color: #AB8B61;
+              font-size: 16px;
               color: #ffffff;
               border: none;
               border-radius: 50px;
