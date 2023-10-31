@@ -1,7 +1,6 @@
 #dmunity {
   padding-top: 90px;
   padding-bottom: 40px;
-  background-color: #FFFBF5;
 }
 #dmunity .categoryContainer {
   width: 1050px;
@@ -16,8 +15,9 @@
   display: flex;
   align-items: center;
 }
-#dmunity .categoryContainer .row1 a {
+#dmunity .categoryContainer .row1 h2 {
   margin: 8px;
+  font-family: "NPSfontbold";
   font-size: 32px;
   font-weight: bold;
   color: #74500A;
@@ -40,7 +40,6 @@
   border-radius: 50%;
   border: none;
   background-color: #FFFBF5;
-  cursor: pointer;
 }
 #dmunity #postsboard {
   width: 1050px;
@@ -49,15 +48,19 @@
   background-color: #F9EBDB;
   border-radius: 15px;
 }
-#dmunity #postsboard a {
-  color: #74500A;
+#dmunity #postsboard .row1 {
+  height: 30px;
+  align-items: center;
   display: flex;
-  margin: 8px;
+}
+#dmunity #postsboard .row1 h2 {
+  margin-left: 8px;
+  color: #74500A;
   font-size: 20px;
   font-family: "Fredoka One";
   font-weight: bold;
 }
-#dmunity #postsboard #post {
+#dmunity #postsboard .row2 #post {
   width: 960px;
   height: 120px;
   margin: auto;
@@ -66,47 +69,58 @@
   font-family: "Noto Sans KR", sans-serif;
   border-bottom: 1px solid #D6CABA;
 }
-#dmunity #postsboard #post .postLeft .category {
+#dmunity #postsboard .row2 #post .postLeft .category {
   width: 80px;
   height: 80px;
 }
-#dmunity #postsboard #post .postMiddle {
+#dmunity #postsboard .row2 #post .postMiddle {
   width: 740px;
-  height: 100px;
+  height: auto;
   margin-left: 40px;
 }
-#dmunity #postsboard #post .postMiddle div {
-  margin-top: 10px;
+#dmunity #postsboard .row2 #post .postMiddle .title {
+  font-size: 16px;
 }
-#dmunity #postsboard #post .postMiddle .info span {
+#dmunity #postsboard .row2 #post .postMiddle .contents {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #888888;
+}
+#dmunity #postsboard .row2 #post .postMiddle .info {
+  margin-top: 12px;
+  margin-top: 12px;
+}
+#dmunity #postsboard .row2 #post .postMiddle .info span {
+  font-weight: bold;
   margin-left: 3px;
+  font-weight: bold;
 }
-#dmunity #postsboard #post .postRight {
+#dmunity #postsboard .row2 #post .postRight {
   color: #ccc;
 }
-#dmunity #postsboard #post .postRight .userid {
+#dmunity #postsboard .row2 #post .postRight .userid {
   margin-top: 10px;
 }
-#dmunity #postsboard .pageLink {
+#dmunity #postsboard .row3 .pageLink {
   width: 300px;
   height: 50px;
   margin: auto;
   margin-top: 32px;
 }
-#dmunity #postsboard .searchBox {
+#dmunity #postsboard .row3 .searchBox {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
 }
-#dmunity #postsboard .searchBox input {
+#dmunity #postsboard .row3 .searchBox input {
   width: 220px;
   height: 30px;
   border-radius: 10px;
   border: none;
   padding: 3px;
 }
-#dmunity #postsboard .searchBox span {
+#dmunity #postsboard .row3 .searchBox span {
   width: 50px;
   height: 30px;
   border-radius: 10px;
