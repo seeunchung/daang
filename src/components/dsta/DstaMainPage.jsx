@@ -4,6 +4,8 @@ import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
 import DstaMainModal from './DstaMainModal.jsx';
 
+SwiperCore.use([Navigation, Pagination])
+
 export default function DstaMainPage() {
   // swiper
   const swiperOptions = {
