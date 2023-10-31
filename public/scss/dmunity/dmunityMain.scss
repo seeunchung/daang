@@ -1,7 +1,6 @@
 #dmunity {
   padding-top: 90px;
   padding-bottom: 40px;
-  background-color: #FFFBF5;
 
   .categoryContainer {
     width: 1050px;
@@ -16,8 +15,9 @@
       display: flex;
       align-items: center;
 
-      a {
+      h2 {
         margin: 8px;
+        font-family: 'NPSfontbold';
         font-size: 32px;
         font-weight: bold;
         color: #74500A;
@@ -42,7 +42,6 @@
           border-radius: 50%;
           border: none;
           background-color: #FFFBF5;
-          cursor: pointer;
         }
       }
     }
@@ -55,7 +54,7 @@
     background-color: #F9EBDB;
     border-radius: 15px;
 
-    a {
+    h2 {
       color: #74500A;
       display: flex;
       margin: 8px;
@@ -83,16 +82,27 @@
 
       .postMiddle {
         width: 740px;
-        height: 100px;
+        height: auto;
         margin-left: 40px;
 
-        div {
-          margin-top: 10px;
+        .title {
+          width: 100%;
+          font-size: 16px;
+        }
+
+        .contents {
+          width: 100%;
+          margin-top: 8px;
+          font-size: 14px;
+          color: #888888;
         }
 
         .info {
+          margin-top: 12px;
+
           span {
             margin-left: 3px;
+            font-weight: bold;
           }
         }
       }
