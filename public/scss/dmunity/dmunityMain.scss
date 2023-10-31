@@ -1,0 +1,141 @@
+#dmunity {
+  padding-bottom: 160px;
+  background-color: #FFFBF5;
+
+  .categoryContainer {
+    width: 1050px;
+    height: 200px;
+    background-color: #F9EBDB;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 15px;
+
+    .row1 {
+      height: 52px;
+      display: flex;
+      align-items: center;
+
+      a {
+        margin: 8px;
+        font-size: 32px;
+        font-weight: bold;
+        color: #74500A;
+      }
+    }
+
+    .row2 {
+      width: 700px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+          height: 108px;
+          width: 108px;
+          border-radius: 50%;
+          border: none;
+          background-color: #FFFBF5;
+        }
+      }
+    }
+  }
+
+  #postsboard {
+    width: 1050px;
+    margin: auto;
+    margin-top: 64px;
+    background-color: #F9EBDB;
+    border-radius: 15px;
+
+    a {
+      color: #74500A;
+      display: flex;
+      margin: 8px;
+      font-size: 20px;
+      font-family: 'Fredoka One'; //이거 안댐
+      font-weight: bold;
+    }
+
+    #post {
+      width: 960px;
+      height: 120px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      font-family: 'Noto Sans KR', sans-serif;
+      border-bottom: 1px solid #D6CABA;
+
+      .postLeft {
+
+        .category {
+          width: 80px;
+          height: 80px;
+        }
+      }
+
+      .postMiddle {
+        width: 740px;
+        height: 100px;
+        margin-left: 40px;
+
+        div {
+          margin-top: 10px;
+        }
+
+        .info {
+          span {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      .postRight {
+        color: #ccc;
+
+        .userid {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .pageLink {
+      width: 300px;
+      height: 50px;
+      margin: auto;
+      margin-top: 32px;
+    }
+
+    .searchBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 20px;
+
+      input {
+        width: 220px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        padding: 3px;
+      }
+
+      span {
+        width: 50px;
+        height: 30px;
+        border-radius: 10px;
+        padding: 3px;
+        display: flex;
+        background-color: #74500A;
+        color: white;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
