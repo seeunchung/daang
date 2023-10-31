@@ -45,7 +45,7 @@ export default function Header() {
                   <li>
                     <Link to='/dmunity-write'>
                       <div className="img-box">
-                        <img src="./img/dmunity.png" alt="" />
+                        <img src="./img/dmunity/dmunity.png" alt="" />
                       </div>
                       <div className="caption-box">
                         <h2>댕뮤니티 글쓰기</h2>
