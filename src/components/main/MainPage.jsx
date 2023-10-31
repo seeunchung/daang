@@ -69,7 +69,26 @@ export default function MainPage() {
       </section>
       <section id='section2'>
         <div className="sec2_container">
-          <h2>섹션2</h2>
+          <div className="title-box">
+            <div className="title">
+              <img src="./img/crown.png" alt="" />
+              <h2>BEST DAaaNG-STA</h2>
+              <img src="./img/crown.png" alt="" />
+            </div>
+            <div className="sort">
+              <ul>
+                <li><button type='button'><span>일간</span></button></li>
+                <li><i>|</i></li>
+                <li><button type='button'><span>주간</span></button></li>
+                <li><i>|</i></li>
+                <li><button type='button'><span>월간</span></button></li>
+              </ul>
+            </div>
+
+          </div>
+          <div className="content-box">
+            <div className="best_dsta"></div>
+          </div>
         </div>
       </section>
       <section id='section3'>

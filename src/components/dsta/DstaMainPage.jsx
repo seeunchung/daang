@@ -45,6 +45,24 @@ export default function DstaMainPage() {
               <SwiperSlide>
                 2
               </SwiperSlide>
+              <SwiperSlide>
+                3
+              </SwiperSlide>
+              <SwiperSlide>
+                4
+              </SwiperSlide>
+              <SwiperSlide>
+                5
+              </SwiperSlide>
+              <SwiperSlide>
+                6
+              </SwiperSlide>
+              <SwiperSlide>
+                7
+              </SwiperSlide>
+              <SwiperSlide>
+                8
+              </SwiperSlide>
 
             </Swiper>
             {/* 페이징 버튼 */}
