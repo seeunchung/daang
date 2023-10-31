@@ -1,7 +1,6 @@
 #dmunity {
   padding-top: 90px;
   padding-bottom: 40px;
-  background-color: #FFFBF5;
 }
 #dmunity .categoryContainer {
   width: 1050px;
@@ -16,8 +15,9 @@
   display: flex;
   align-items: center;
 }
-#dmunity .categoryContainer .row1 a {
+#dmunity .categoryContainer .row1 h2 {
   margin: 8px;
+  font-family: "NPSfontbold";
   font-size: 32px;
   font-weight: bold;
   color: #74500A;
@@ -40,7 +40,6 @@
   border-radius: 50%;
   border: none;
   background-color: #FFFBF5;
-  cursor: pointer;
 }
 #dmunity #postsboard {
   width: 1050px;
@@ -49,7 +48,7 @@
   background-color: #F9EBDB;
   border-radius: 15px;
 }
-#dmunity #postsboard a {
+#dmunity #postsboard h2 {
   color: #74500A;
   display: flex;
   margin: 8px;
@@ -72,14 +71,25 @@
 }
 #dmunity #postsboard #post .postMiddle {
   width: 740px;
-  height: 100px;
+  height: auto;
   margin-left: 40px;
 }
-#dmunity #postsboard #post .postMiddle div {
-  margin-top: 10px;
+#dmunity #postsboard #post .postMiddle .title {
+  width: 100%;
+  font-size: 16px;
+}
+#dmunity #postsboard #post .postMiddle .contents {
+  width: 100%;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #888888;
+}
+#dmunity #postsboard #post .postMiddle .info {
+  margin-top: 12px;
 }
 #dmunity #postsboard #post .postMiddle .info span {
   margin-left: 3px;
+  font-weight: bold;
 }
 #dmunity #postsboard #post .postRight {
   color: #ccc;
