@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination, EffectCoverflow, Mousewheel } from "swiper";
+import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
 
-SwiperCore.use([Navigation, Pagination, EffectCoverflow, Mousewheel])
+SwiperCore.use([Navigation, Pagination])
 
 
 export default function MainPage() {
