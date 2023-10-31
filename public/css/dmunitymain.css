@@ -1,0 +1,119 @@
+#dmunity {
+  padding-top: 90px;
+  padding-bottom: 40px;
+  background-color: #FFFBF5;
+}
+#dmunity .categoryContainer {
+  width: 1050px;
+  height: 200px;
+  background-color: #F9EBDB;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 15px;
+}
+#dmunity .categoryContainer .row1 {
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+#dmunity .categoryContainer .row1 a {
+  margin: 8px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #74500A;
+}
+#dmunity .categoryContainer .row2 {
+  width: 700px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#dmunity .categoryContainer .row2 span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#dmunity .categoryContainer .row2 span button {
+  height: 108px;
+  width: 108px;
+  border-radius: 50%;
+  border: none;
+  background-color: #FFFBF5;
+  cursor: pointer;
+}
+#dmunity #postsboard {
+  width: 1050px;
+  margin: auto;
+  margin-top: 64px;
+  background-color: #F9EBDB;
+  border-radius: 15px;
+}
+#dmunity #postsboard a {
+  color: #74500A;
+  display: flex;
+  margin: 8px;
+  font-size: 20px;
+  font-family: "Fredoka One";
+  font-weight: bold;
+}
+#dmunity #postsboard #post {
+  width: 960px;
+  height: 120px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
+  border-bottom: 1px solid #D6CABA;
+}
+#dmunity #postsboard #post .postLeft .category {
+  width: 80px;
+  height: 80px;
+}
+#dmunity #postsboard #post .postMiddle {
+  width: 740px;
+  height: 100px;
+  margin-left: 40px;
+}
+#dmunity #postsboard #post .postMiddle div {
+  margin-top: 10px;
+}
+#dmunity #postsboard #post .postMiddle .info span {
+  margin-left: 3px;
+}
+#dmunity #postsboard #post .postRight {
+  color: #ccc;
+}
+#dmunity #postsboard #post .postRight .userid {
+  margin-top: 10px;
+}
+#dmunity #postsboard .pageLink {
+  width: 300px;
+  height: 50px;
+  margin: auto;
+  margin-top: 32px;
+}
+#dmunity #postsboard .searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+#dmunity #postsboard .searchBox input {
+  width: 220px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 3px;
+}
+#dmunity #postsboard .searchBox span {
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  padding: 3px;
+  display: flex;
+  background-color: #74500A;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
