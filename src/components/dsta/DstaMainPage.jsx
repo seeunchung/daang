@@ -49,14 +49,15 @@ export default function DstaMainPage() {
               className='dstamain_swiper'
               {...swiperOptions}
               pagination={{
-                el: 'dstamain_swiperpage',
-                bulletClass: "dstamain_swiperbullet",
-                bulletActiveClass: "dstamain_swiperbulletactive",
+                el: '.dstamain_swiperpage',
+                bulletClass: 'dstamain_swiperbullet',
+                bulletActiveClass: 'dstamain_swiperbulletactive',
                 clickable: true,
               }}
+
               navigation={{
                 prevEl: '.dstamain_swiperprev',
-                nextEl: '.dtamain_swipernext'
+                nextEl: '.dstamain_swipernext'
               }}
             >
               <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
@@ -68,15 +69,21 @@ export default function DstaMainPage() {
               <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
               <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
               <SwiperSlide> 8 </SwiperSlide>
+
+              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
+              <SwiperSlide> 4 </SwiperSlide>
+
             </Swiper>
             {/* 페이징 버튼 */}
             <button className="dstamain_swiperprev">
               <img src="./img/main/arrow_gray.svg" alt="<버튼" />
             </button>
-            <button className="dtamain_swipernext">
+            <button className="dstamain_swipernext">
               <img src="./img/main/arrow_gray.svg" alt=">버튼" />
             </button>
-            <div className="dtamain_swiperpage"></div>
+            <div className="dstamain_swiperpage"></div>
           </div>
           {/* 스와이퍼 끝 */}
 
