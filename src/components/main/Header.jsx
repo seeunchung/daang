@@ -1,18 +1,21 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export default function Header() {
+
+  const location = useLocation();
+
   return (
     <>
       <header id='header'>
         <div className="container">
           <div className="left">
             <ul>
-              <li className='left-menu on'><Link to='/dsta'>댕스타</Link></li>
+              <li className={`left-menu ${location.pathname === '/dsta' ? 'on' : ''}`}><Link to='/dsta'>댕스타</Link></li>
               <li><i>|</i></li>
-              <li className='left-menu'><Link to='/dmunity'>댕뮤니티</Link></li>
+              <li className={`left-menu ${location.pathname === '/dmunity' ? 'on' : ''}`}><Link to='/dmunity'>댕뮤니티</Link></li>
               <li><i>|</i></li>
-              <li className='left-menu'><Link to='/dmap'>댕동여지도</Link></li>
+              <li className={`left-menu ${location.pathname === '/dmap' ? 'on' : ''}`}><Link to='/dmap'>댕동여지도</Link></li>
               <li><i>|</i></li>
               <li className='left-menu'><Link to='/mypage'>마이페이지</Link></li>
             </ul>
@@ -60,7 +63,7 @@ export default function Header() {
             </ul>
           </div>
         </div>
-      </header>
+      </header >
       <Outlet />
     </>
   );

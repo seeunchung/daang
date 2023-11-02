@@ -17,7 +17,7 @@ export default function Footer() {
           <span>
             <strong>Hoya</strong>
             <i>|</i>
-            <strong>Hoya</strong>
+            <strong>Brandon</strong>
             <i>|</i>
             <strong>Yeriel</strong>
             <i>|</i>
