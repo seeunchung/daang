@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 import { useMediaQuery } from 'react-responsive';
 import * as S from './Kakao.style';
-import leftAngle from './assets/angle-small-left.svg';
-import rightAngle from './assets/angle-small-right.svg';
-import { reSearch } from './assets/reSearch.png';
+import leftAngle from '../../assets/icon/angle-small-left.svg';
+import rightAngle from '../../assets/icon/angle-small-right.svg';
 import Modal from './Modal';
+
+// 코드가 길어지기에 '현재 사용자 위치 받아오기 관련' 코드 제외 (전체 코드에서 확인 가능)
 
 const { kakao } = window;
 
@@ -204,7 +205,7 @@ const Kakao = () => {
                     <S.PlaceName>{data.place_name}</S.PlaceName>
                     {/* 상세 정보로 연결되는 링크 */}
                     <S.DetailLink href={data.place_url} target='_blank'>
-                      <img src={rightAngle} alt='오른쪽 화살표'/>
+                      <img src={rightAngle} alt='오른쪽 화살표' />
                     </S.DetailLink>
                   </S.Overlay>
                 </CustomOverlayMap>
@@ -245,7 +246,22 @@ const Kakao = () => {
             </S.SideBarOpenBtn>
           </S.ListContainer>
         )}
-        
+        {/* 모바일 화면일 경우 검색 결과 모달로 표시 */}
+        {isMobile && (
+          <S.Modal>
+            <S.ModalBtn onClick={() => setIsModalOpen((prev) => !prev)} />
+            <Modal
+              search={search}
+              openMarkerId={openMarkerId}
+              setOpenMarkerId={setOpenMarkerId}
+              isModalOpen={isModalOpen}
+              moveLatLng={moveLatLng}
+              pagination={pagination}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            />
+          </S.Modal>
+        )}
       </S.MapContainer>
     </>
   );
