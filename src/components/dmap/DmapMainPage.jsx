@@ -50,6 +50,20 @@ const Kakao = () => {
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [lastCenter, setLastCenter] = useState(null);
 
+  //오류해결
+
+function YourComponent() {
+  useEffect(() => {
+    // KakaoAK 설정
+    const kakaoAPIKey = '754f3d9e59082cd135b5e3965f8ae1ea';
+    window.Kakao.init(kakaoAPIKey);
+
+    // 여기서부터 Kakao API를 사용할 수 있음
+  }, []);
+
+  }
+
+
   // 현재 사용자 위치 받아오기 (geolocation)
   useEffect(() => {
     if (navigator.geolocation) {
@@ -271,6 +285,7 @@ const Kakao = () => {
                     width: 35,
                     height: 35,
                   },
+                  
                 }}
                 onClick={() => {
                   if (data.id === openMarkerId) {
