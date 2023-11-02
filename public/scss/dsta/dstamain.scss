@@ -54,6 +54,7 @@
       // background-color: #F9EBDB;
       padding: 0 20px;
 
+      // swiper
       .dstamain_swipercontainer {
         width: 100%;
         height: 370px;
@@ -104,7 +105,7 @@
             transform: rotate(180deg);
           }
 
-          &.dtamain_swipernext {
+          &.dstamain_swipernext {
             position: absolute;
             top: 35%;
             right: 10px;
@@ -112,104 +113,117 @@
         }
 
         .dstamain_swiperpage {
-          position: relative;
-          z-index: 5;
+          position: absolute;
           bottom: 25px;
           left: 50%;
+          /* 동그라미 모양 반지름은 절반으로 설정 */
+          transform: translateX(-50%);
+          padding: 5px;
+          border-radius: 50px;
 
+          span {
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            /* 동그라미 모양 */
+            border-radius: 50%;
+            background: #AB8B61;
+            opacity: 0.4;
+            /* 각 동그라미 사이의 간격을 조절 */
+            margin: 0 5px;
+            /* 마우스 커서를 포인터로 변경해 클릭 가능한 것처럼 표시 */
+            cursor: pointer;
 
-          &.dstamain_swiperbulletactive {
-            background: #F88A8A;
-          }
-
-          &.dstamain_swiperbullet {
-            margin-right: 5px;
+            &.dstamain_swiperbulletactive {
+              /* 활성 페이지 색 변경 */
+              background: #74500A;
+            }
           }
         }
       }
     }
+  }
 
-    .dstamain_photobox {
-      width: 255px;
-      height: 400px;
-      margin-left: 7.5px;
-      margin-bottom: 20px;
-      border-radius: 15px;
-      border: 1px solid #74500A;
-      float: left;
-      overflow: hidden;
-      position: relative;
-      /*부모 컨테이너*/
+  .dstamain_photobox {
+    width: 255px;
+    height: 400px;
+    margin-left: 7.5px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: 1px solid #74500A;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    /*부모 컨테이너*/
+
+
+    img {
+      width: 100%;
+      height: 315px;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .dstamain_phototextbox {
+      position: absolute;
+      bottom: 45px;
+      /* 아래로 위치 */
+      width: 100%;
+      color: #000;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: left;
+      text-overflow: ellipsis;
+      padding-left: 10px;
+      margin: 0;
+      /* 패딩을 요소의 크기에 포함 */
+      box-sizing: border-box;
+    }
+
+    .dstamain_watchbox {
+      position: absolute;
+      width: 100%;
+      height: 35px;
+      font-size: 16px;
+      box-sizing: border-box;
+      bottom: 0;
+      margin-left: 10px;
 
 
       img {
-        width: 100%;
-        height: 315px;
-        border-radius: 15px 15px 0 0;
-      }
-
-      .dstamain_phototextbox {
-        position: absolute;
-        bottom: 45px;
-        /* 아래로 위치 */
-        width: 100%;
-        color: #000;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: left;
-        text-overflow: ellipsis;
-        padding-left: 10px;
-        margin: 0;
-        /* 패딩을 요소의 크기에 포함 */
-        box-sizing: border-box;
-      }
-
-      .dstamain_watchbox {
-        position: absolute;
-        width: 100%;
-        height: 35px;
-        font-size: 16px;
-        box-sizing: border-box;
-        bottom: 0;
-        margin-left: 10px;
-
-
-        img {
-          width: 14px;
-          height: 14px;
-          margin: 0 8px;
-          display: inline-block;
-        }
-      }
-
-      // 댕스타 프로필
-      .dstamain_profile {
-        position: relative;
-        bottom: 40px;
-        width: 100%;
-        color: #fff;
-        font-size: 16px;
-        font-weight: bold;
-        text-overflow: ellipsis;
-        box-sizing: border-box;
-
-        // 프로필 이미지
-        img {
-          width: 30px;
-          height: 30px;
-          margin: 0 8px;
-          display: inline-block;
-        }
+        width: 14px;
+        height: 14px;
+        margin: 0 8px;
+        display: inline-block;
       }
     }
 
-    // 페이징
-    .dstamain_pagebox {
-      text-align: center;
-      font-size: 20px;
+    // 댕스타 프로필
+    .dstamain_profile {
+      position: relative;
+      bottom: 40px;
+      width: 100%;
+      color: #fff;
+      font-size: 16px;
       font-weight: bold;
-      padding-bottom: 20px;
-      color: #74500A;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+
+      // 프로필 이미지
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0 8px;
+        display: inline-block;
+      }
     }
+  }
+
+  // 페이징
+  .dstamain_pagebox {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    color: #74500A;
   }
 }
