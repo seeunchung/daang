@@ -20,6 +20,7 @@ import SignUpComplete from './signup/SignUpComplete';
 import theme from './dmap/styles/Theme';
 import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from './dmap/styles/GlobalStyle';
 
 export default function Wrap() {
   return (

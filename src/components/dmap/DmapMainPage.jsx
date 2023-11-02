@@ -2,21 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 import { useMediaQuery } from 'react-responsive';
 import * as S from './Kakao.style';
-import leftAngle from './assets/angle-small-left.svg';
-import rightAngle from './assets/angle-small-right.svg';
-import { reSearch } from './assets/reSearch.png';
+import leftAngle from './assets/left.png';
+import rightAngle from './assets/right.png';
+import reSearch from './assets/reSearch.png';
 import Modal from './Modal';
 
 const { kakao } = window;
 
 const KEYWORD_LIST = [
   { id: 1, value: '애견동반카페', emoji: '☕️' },
-  { id: 2, value: '동물병원', emoji: '🧑‍⚕️' },
   { id: 3, value: '애견동반식당', emoji: '🍴' },
+  { id: 2, value: '동물병원', emoji: '🧑‍⚕️' }, 
   { id: 4, value: '공원', emoji: '🌳' },
 ];
 
 const Kakao = () => {
+    // 카카오 맵에 접근해 지도 상태 조작하는 상태 변수
+  const [map, setMap] = useState(null);
   // 기본 위치 상태
   const [state, setState] = useState({
     center: {
@@ -27,10 +29,9 @@ const Kakao = () => {
     isLoading: true,
   });
 
-  // 카카오 맵에 접근해 지도 상태 조작하는 상태 변수
-  const [map, setMap] = useState(null);
+
   // 검색에 사용될 키워드를 관리하는 상태 변수
-  const [keyword, setKeyword] = useState('애견카페');
+  const [keyword, setKeyword] = useState('애견동반카페');
   // 검색 결과를 담는 상태 변수
   const [search, setSearch] = useState([]);
   // 검색 결과의 페이지네이션 정보를 관리하는 상태 변수
@@ -46,6 +47,8 @@ const Kakao = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   // 미디어쿼리를 이용해 현재 화면이 모바일 크기인지 판단하는 변수
   const isMobile = useMediaQuery({ maxWidth: 768 });
+  const [isMouseOver, setIsMouseOver] = useState(false);
+  const [lastCenter, setLastCenter] = useState(null);
 
   // 현재 사용자 위치 받아오기 (geolocation)
   useEffect(() => {
@@ -78,12 +81,24 @@ const Kakao = () => {
     }
   }, []);
 
-  const searchPlaces = (page) => {
+  //검색된 장소 표시하기
+    const displayPlaces = (data) => {
+      const bounds = new kakao.maps.LatLngBounds();
+      
+      //검색된 장소 위치와 현재위치 기준으로 지도 범위 재설정
+    data.forEach((item) => bounds.extend(new kakao.maps.LatLng(item.y, item.x)));
+    bounds.extend(new kakao.maps.LatLng(state.center.lat, state.center.lng));
+    map.setBounds(bounds);
+    setSearch(data);
+  };
+
+//키워드로 주변 위치 검색
+  const searchPlaces = (center, page) => {
     // Places 서비스 객체 생성
     const ps = new kakao.maps.services.Places();
     // 검색 옵션 설정
     const options = {
-      location: new kakao.maps.LatLng(state.center.lat, state.center.lng),
+      location: new kakao.maps.LatLng(center.lat, center.lng),
       radius: 5000,
       sort: kakao.maps.services.SortBy.DISTANCE,
       page, // 현재 페이지 번호 추가
@@ -96,6 +111,14 @@ const Kakao = () => {
         if (status === kakao.maps.services.Status.OK) {
           console.log(data);
           displayPlaces(data); // 검색된 장소를 지도에 표시하는 함수 호출 추가
+
+          // 검색 결과만을 기준으로 지도 영역을 조정
+          const bounds = new kakao.maps.LatLngBounds();
+          data.forEach((item) => bounds.extend(new kakao.maps.LatLng(item.y, item.x)));
+
+          // 조정된 지도 영역을 설정하며 줌 레벨을 변경하지 않음
+          map.setBounds(bounds);
+
           setPagination(pagination); // 페이지네이션 정보 업데이트 추가
         } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
           setIsSidebarOpen(true); // 사이드바 열기 추가
@@ -108,13 +131,6 @@ const Kakao = () => {
     );
   };
 
-  const displayPlaces = (data) => {
-    const bounds = new kakao.maps.LatLngBounds();
-    data.forEach((item) => bounds.extend(new kakao.maps.LatLng(item.y, item.x)));
-    bounds.extend(new kakao.maps.LatLng(state.center.lat, state.center.lng));
-    map.setBounds(bounds);
-    setSearch(data);
-  };
 
   // 마커의 위치로 지도의 중심 좌표 이동하기
   const moveLatLng = (data) => {
@@ -122,26 +138,82 @@ const Kakao = () => {
     map.panTo(newLatLng);
   };
 
-  // 클릭한 마커로 중심 좌표 이동 및 검색 수행 함수
+  // 클릭한 마커로 중심좌쵸 이동 및 검색 수행 함수
   useEffect(() => {
     if (!map) return;
     setOpenMarkerId(null);
-    searchPlaces(currentPage);
-  }, [map, keyword, currentPage]);
+    if (lastCenter) {
+      // 이미 이동한 지도의 중심 좌표가 있으면 해당 위치를 기반으로 검색
+      searchPlaces(lastCenter, currentPage);
+    } else {
+      // 처음 페이지 로딩 시 현재 위치를 기반으로 검색
+      searchPlaces(state.center, currentPage);
+    }
+  }, [map, keyword, currentPage, lastCenter]);
 
-  // 마커 클릭 시 CustomOverlayMap를 열고 닫는 함수
+  //  마커 클릭 시 CustomOverlayMap를 열고 닫는 함수
   useEffect(() => {
     if (!map) return;
-    const clickListener = () => {
+    kakao.maps.event.addListener(map, 'click', () => {
       setOpenMarkerId(null);
-    };
-    kakao.maps.event.addListener(map, 'click', clickListener);
+    });
 
     return () => {
-      kakao.maps.event.removeListener(map, 'click', clickListener);
+      kakao.maps.event.removeListener(map, 'click', () => {
+        setOpenMarkerId(null);
+      });
     };
   }, [map]);
 
+    // 현재 위치로 돌아가기
+  const goBack = () => {
+    const newLatLng = new kakao.maps.LatLng(state.center.lat, state.center.lng);
+    map.panTo(newLatLng);
+  };
+
+  const handleMouseEnter = () => {
+    setIsMouseOver(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseOver(false);
+  };
+
+  // 현 지도에서 재검색하기
+  const handleReSearch = () => {
+    if (!map) return;
+
+    // 현재 지도의 중심 좌표를 검색할 위치로 설정
+    const centerLatLng = map.getCenter();
+    const newCenter = {
+      lat: centerLatLng.getLat(),
+      lng: centerLatLng.getLng(),
+    };
+
+    // 검색할 페이지를 1페이지로 초기화
+    setCurrentPage(1);
+
+    // 검색 실행
+    searchPlaces(newCenter, 1);
+
+    // lastCenter 업데이트
+    setLastCenter(newCenter);
+  };
+
+  // 재검색 후, 키워드를 선택할 때마다 검색하기
+  const handleKeywordSelect = (selectedKeyword) => {
+    setKeyword(selectedKeyword);
+
+    if (lastCenter) {
+      // 이미 이동한 지도의 중심 좌표가 있으면 해당 위치를 기반으로 검색
+      searchPlaces(lastCenter, 1);
+    } else {
+      // 처음 페이지 로딩 시 현재 위치를 기반으로 검색
+      searchPlaces(state.center, 1);
+    }
+  };
+
+  // const url = window.location.href; //현재 url가져오기, 배포 후에 사용
   // 카카오톡 공유 init 설정
   useEffect(() => {
     if (window.Kakao) {
@@ -160,7 +232,7 @@ const Kakao = () => {
         {/* 지도 컴포넌트 */}
         <Map
           center={state.center}
-          style={{ width: '100%', height: 'calc(100vh - 109px)', marginTop: '48px' }}
+          style={{ width: '100%', height: 'calc(100vh - 180px)'}}
           level={3}
           onCreate={setMap} // 지도가 생성될 때 setMap 함수를 호출해 지도 객체 업데이트 추가
         >
@@ -175,6 +247,18 @@ const Kakao = () => {
               },
             }}
           />
+          {/* 현재 내 위치로 돌아가는 버튼 */}
+          {isMouseOver && <S.GoBackTxt isModalOpen={isModalOpen}>접속위치</S.GoBackTxt>}
+          <S.GoBackButton
+            onClick={goBack}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            isModalOpen={isModalOpen}
+          ></S.GoBackButton>
+          {/* 현 지도에서 키워드 재검색 버튼 */}
+          <S.ReSearch onClick={handleReSearch} isModalOpen={isModalOpen}>
+            <S.ReSearchImg src={reSearch} alt='재검색' />현 지도에서 검색
+          </S.ReSearch>
           {/* 검색된 장소 마커 표시 */}
           {search.map((data) => (
             <React.Fragment key={data.id}>
