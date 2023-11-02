@@ -172,7 +172,7 @@
 }
 #main.mainPage #section2 .sec2_container .content-box .post-box .img-box > img {
   width: 100%;
-  height: 340px;
+  height: 315px;
 }
 #main.mainPage #section2 .sec2_container .content-box .post-box .img-box:hover > img {
   transform: scale(1.2);
@@ -183,7 +183,7 @@
   bottom: 10px;
   display: flex;
   height: 30px;
-  left: 15px;
+  left: 10px;
   position: absolute;
 }
 #main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile .profile-img-box {
