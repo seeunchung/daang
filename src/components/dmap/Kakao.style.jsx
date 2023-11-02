@@ -58,7 +58,7 @@ export const DetailLink = styled.a`
 
 export const SearchBtns = styled.div`
   position: absolute;
-  top: 10px;
+  top: 100px;
   right: 20px;
   z-index: 10;
   display: flex;
@@ -111,8 +111,8 @@ export const SideBarOpenBtn = styled.button`
   left: 400px;
   transform: translateY(-50%);
   background-color: ${({ theme }) => theme.colors.white};
-  width: 30px;
-  height: 80px;
+  width: 50px;
+  height: 100%;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: ${({ theme }) => `1px solid ${theme.colors.gray}`};

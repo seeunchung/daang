@@ -26,7 +26,7 @@ export default function Wrap() {
     <ThemeProvider theme={theme}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Helmet>
-          <title>댕동여지도</title>
+          <title>DAaaNG UNIV</title>
         </Helmet>
         <div id='wrap'>
           <Routes>

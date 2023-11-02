@@ -10,9 +10,10 @@ import Modal from './Modal';
 const { kakao } = window;
 
 const KEYWORD_LIST = [
-  { id: 1, value: '애견카페', emoji: '☕️' },
+  { id: 1, value: '애견동반카페', emoji: '☕️' },
   { id: 2, value: '동물병원', emoji: '🧑‍⚕️' },
-  { id: 3, value: '애견호텔', emoji: '🏨' },
+  { id: 3, value: '애견동반식당', emoji: '🍴' },
+  { id: 4, value: '공원', emoji: '🌳' },
 ];
 
 const Kakao = () => {
