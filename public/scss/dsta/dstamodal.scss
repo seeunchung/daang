@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 @charset "UTF-8";
-=======
-@charset 'UTF-8';
->>>>>>> 2b9840596dc221ce893b6fa99055a4c4bded4a1e
 
 .modal-overlay {
   position: fixed;
@@ -15,60 +11,120 @@
   justify-content: center;
   align-items: center;
   z-index: 100; // Ensure the modal is above other content
-}
 
-.close-button {
-  position: absolute;
-<<<<<<< HEAD
-  top: 100px;
-  right: 100px;
-  background-color: transparent;
-  color: rgba(255, 255, 255, 0.5);
-  border: none;
-  padding: 10px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 50px;
-=======
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
->>>>>>> 2b9840596dc221ce893b6fa99055a4c4bded4a1e
-}
+  .close-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
 
-.modal {
-  background-color: green;
-  width: 1050px;
-  max-width: 1050px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .modal {
 
-  .modal-content {
-    background-color: white;
-    width: 500px;
-    height: 268px;
+    width: 1050px;
+    max-width: 1050px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-<<<<<<< HEAD
-    p {
-      float: left;
-    }
-=======
-    p1 {
-      float: left;
+    .modal-content {
+      background-color: #F4E2CC;
+      width: 1050px;
+      height: 700px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 20px;
+
+
+      .photos {
+        flex: 1;
+        background-color: #FFFBF5;
+        border-radius: 20px;
+        height: 668px;
+        margin-left: 16px;
+        margin-right: 8px;
+
+      }
+
+      .words {
+        flex: 1;
+        background-color: #FFFBF5;
+        border-radius: 20px;
+        height: 668px;
+        margin-left: 8px;
+        margin-right: 16px;
+
+        .profile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #F4E2CC;
+        }
+
+        .profileName {
+          margin-right: auto;
+          /* 왼쪽 정렬 */
+        }
+
+        .profile img {
+          margin-right: 10px;
+          /* 이미지와 텍스트 사이에 간격 추가 */
+        }
+
+        .content {
+          border-bottom: 1px solid #F4E2CC;
+        }
+
+        .commentSection {
+          display: flex;
+          /* 플렉스 박스를 사용하여 이미지와 텍스트를 가로로 배치 */
+          align-items: center;
+          /* 수직 가운데 정렬 */
+          border-bottom: 1px solid #F4E2CC;
+        }
+
+        .commentSection img {
+          width: 50px;
+          /* 이미지의 너비를 조절하세요 */
+          height: auto;
+          /* 이미지의 높이를 자동으로 유지 (비율 유지) */
+          margin-right: 10px;
+          /* 이미지와 텍스트 사이의 간격 조절 */
+          margin-bottom: auto;
+        }
+
+        .commentDate,
+        .commentLikes,
+        .cocomment {
+          display: inline-block;
+          /* 요소들을 인라인 블록으로 설정하여 가로로 나란히 배치 */
+          margin-right: 12px;
+          /* 요소 사이의 간격을 조절 (원하는 값으로 변경 가능) */
+        }
+
+        .write-button {
+          float: right;
+        }
+
+
+
+      }
+
+
+
+
     }
 
-    p2 {
-      float: right;
-    }
->>>>>>> 2b9840596dc221ce893b6fa99055a4c4bded4a1e
+
   }
 }
