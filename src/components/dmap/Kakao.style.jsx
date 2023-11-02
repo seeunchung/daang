@@ -90,7 +90,7 @@ export const ListContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   left: 0;
-  top: 0;
+  top: 89px;
   z-index: 10;
   bottom: 0;
   width: 400px;
@@ -329,7 +329,7 @@ export const ReSearch = styled.button`
   position: fixed;
   color: white;
   font-size: 14px;
-  bottom: 80px;
+  bottom: 110px;
   transform: translateX(-50%);
   left: 50%;
   z-index: 10;
@@ -362,7 +362,7 @@ export const ReSearch = styled.button`
 export const ReSearchImg = styled.img`
   width: 25px;
   height: 25px;
-  margin: 7px 1px 0px -4px;
+  margin: 7px 1px 9px -4px;
 
   @media (max-width: 768px) {
     font-size: 13px;
