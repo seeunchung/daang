@@ -19,7 +19,7 @@
   height: 340px;
   top: 140px;
   left: 444px;
-  background-image: url(../img/spring.png);
+  background-image: url(../../dsta/img/dsta/spring.png);
 }
 #main.dsta_write .dstawrite_container .dstawrite_title {
   font-size: 30px;
@@ -48,6 +48,9 @@
   /*왼쪽박스 스타일*/
   width: 420px;
   height: 526px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FFFBF5;
   box-sizing: border-box;
   border: solid 1px #F4E2CC;
@@ -56,8 +59,7 @@
 #main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail {
   width: 360px;
   height: 466px;
-  margin: 30px;
-  background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
+  background: url(../../img/dsta/photo_add_btn.png) center no-repeat #ffffff;
   border: 1px solid #F4E2CC;
   border-radius: 20px;
 }
@@ -69,7 +71,8 @@
   display: block;
   width: 360px;
   height: 466px;
-  padding: 250px 0 0 154.7px;
+  text-align: center;
+  line-height: 504px;
   font-size: 10px;
   color: #747171;
   cursor: pointer;
@@ -87,7 +90,7 @@
   left: 8px;
   width: 36px;
   height: 36px;
-  background-image: url(../../img/Crown.png);
+  background-image: url(../../img/dsta/Crown.png);
   background-size: cover;
 }
 #main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail .change_file_input {
@@ -98,7 +101,7 @@
   position: relative;
   top: -36px;
   left: 320px;
-  background: url(../../img/photh_select_btn.png) center no-repeat #CECBCB;
+  background: url(../../img/dsta/photh_select_btn.png) center no-repeat #CECBCB;
   border-radius: 50px;
   cursor: pointer;
 }
@@ -106,6 +109,9 @@
   /*오른쪽박스 스타일*/
   width: 532px;
   height: 526px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FFFBF5;
   border: solid 1px #F4E2CC;
   border-radius: 20px;
@@ -113,7 +119,6 @@
 #main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox {
   width: 472px;
   height: 466px;
-  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -148,7 +153,7 @@
   width: 113px;
   height: 113px;
   margin-right: 6.67px;
-  background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
+  background: url(../../img/dsta/photo_add_btn.png) center no-repeat #ffffff;
   border: 1px solid #F4E2CC;
   border-radius: 20px;
 }
@@ -160,7 +165,8 @@
   display: block;
   width: 113px;
   height: 113px;
-  padding: 72px 0 0 36.5px;
+  text-align: center;
+  line-height: 150px;
   font-size: 10px;
   color: #747171;
   cursor: pointer;
@@ -188,13 +194,15 @@
   /*추가된 이미지 삭제 버튼*/
   position: relative;
   top: -110px;
-  left: 6px;
+  left: 80%;
   width: 14px;
   height: 14px;
-  background-image: url(../../img/photo_delete_btn.png);
   background-color: transparent;
   border-style: none;
   cursor: pointer;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .img_delete_btn img {
+  width: 100%;
 }
 #main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box {
   width: 168px;
