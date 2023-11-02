@@ -84,24 +84,38 @@
   left: 10px;
   transform: rotate(180deg);
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button.dtamain_swipernext {
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer > button.dstamain_swipernext {
   position: absolute;
   top: 35%;
   right: 10px;
 }
 #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage {
-  position: relative;
-  z-index: 5;
+  position: absolute;
   bottom: 25px;
   left: 50%;
+  /* 동그라미 모양 반지름은 절반으로 설정 */
+  transform: translateX(-50%);
+  padding: 5px;
+  border-radius: 50px;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage.dstamain_swiperbulletactive {
-  background: #F88A8A;
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage span {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  /* 동그라미 모양 */
+  border-radius: 50%;
+  background: #AB8B61;
+  opacity: 0.4;
+  /* 각 동그라미 사이의 간격을 조절 */
+  margin: 0 5px;
+  /* 마우스 커서를 포인터로 변경해 클릭 가능한 것처럼 표시 */
+  cursor: pointer;
 }
-#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage.dstamain_swiperbullet {
-  margin-right: 5px;
+#main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiperpage span.dstamain_swiperbulletactive {
+  /* 활성 페이지 색 변경 */
+  background: #74500A;
 }
-#main.dstamain .dstamain_container .dstamain_photobox {
+#main.dstamain .dstamain_photobox {
   width: 255px;
   height: 400px;
   margin-left: 7.5px;
@@ -113,12 +127,12 @@
   position: relative;
   /*부모 컨테이너*/
 }
-#main.dstamain .dstamain_container .dstamain_photobox img {
+#main.dstamain .dstamain_photobox img {
   width: 100%;
   height: 315px;
   border-radius: 15px 15px 0 0;
 }
-#main.dstamain .dstamain_container .dstamain_photobox .dstamain_phototextbox {
+#main.dstamain .dstamain_photobox .dstamain_phototextbox {
   position: absolute;
   bottom: 45px;
   /* 아래로 위치 */
@@ -133,7 +147,7 @@
   /* 패딩을 요소의 크기에 포함 */
   box-sizing: border-box;
 }
-#main.dstamain .dstamain_container .dstamain_photobox .dstamain_watchbox {
+#main.dstamain .dstamain_photobox .dstamain_watchbox {
   position: absolute;
   width: 100%;
   height: 35px;
@@ -142,13 +156,13 @@
   bottom: 0;
   margin-left: 10px;
 }
-#main.dstamain .dstamain_container .dstamain_photobox .dstamain_watchbox img {
+#main.dstamain .dstamain_photobox .dstamain_watchbox img {
   width: 14px;
   height: 14px;
   margin: 0 8px;
   display: inline-block;
 }
-#main.dstamain .dstamain_container .dstamain_photobox .dstamain_profile {
+#main.dstamain .dstamain_photobox .dstamain_profile {
   position: relative;
   bottom: 40px;
   width: 100%;
@@ -158,13 +172,13 @@
   text-overflow: ellipsis;
   box-sizing: border-box;
 }
-#main.dstamain .dstamain_container .dstamain_photobox .dstamain_profile img {
+#main.dstamain .dstamain_photobox .dstamain_profile img {
   width: 30px;
   height: 30px;
   margin: 0 8px;
   display: inline-block;
 }
-#main.dstamain .dstamain_container .dstamain_pagebox {
+#main.dstamain .dstamain_pagebox {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
