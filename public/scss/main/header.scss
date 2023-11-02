@@ -36,6 +36,11 @@
             }
           }
 
+          &.on>a {
+            color: #74500a;
+            font-weight: bold;
+          }
+
           i {
             font-size: 16px;
             margin: 0 8px;
