@@ -1,0 +1,41 @@
+@charset "UTF-8";
+#mypage.mypageedit {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+#mypage.mypageedit .mypageedit_container {
+  width: 1050px;
+  height: 100vh;
+  margin: 0 auto;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_titlecontainer {
+  position: relative;
+  width: 1050px;
+  height: 50px;
+  margin: 20px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_titlecontainer img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  /* 아이콘을 인라인 블록 요소로 설정 */
+  display: inline-block;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_titlecontainer .mypageedit_title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "fredoka one";
+  padding: 10px;
+  color: #74500A;
+  line-height: 40px;
+  display: inline-block;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard {
+  width: 600px;
+  height: 340px;
+  background-color: #FFF3E4;
+  border-radius: 40px;
+}
