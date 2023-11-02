@@ -5,9 +5,11 @@ import { useState } from 'react';
 export default function MyPageMainPage() {
   //메뉴 탭 색상 바뀌게
   const [activeButton, setActiveButton] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
 
   const handleButtonClick = (buttonIndex) => {
     setActiveButton(buttonIndex);
+    setActiveTab(buttonIndex);
   };
 
   const buttonTabs = ['작성한 글', '작성한 댓글', '좋아요한 글'];
@@ -43,6 +45,33 @@ export default function MyPageMainPage() {
     },
   ];
 
+  const dstaData = [
+    {
+      id: 1,
+      url: './img/강아지사진.png'
+    },
+    {
+      id: 1,
+      url: './img/강아지사진.png'
+    },
+    {
+      id: 1,
+      url: './img/강아지사진.png'
+    },
+    {
+      id: 1,
+      url: './img/강아지사진.png'
+    },
+    {
+      id: 1,
+      url: './img/강아지사진.png'
+    },
+    {
+      id: 1,
+      url: './img/강아지사진.png'
+    }
+  ]
+
   return (
     <main id='mypage' className='mypage_main'>
       <Link to='/mypage-edit'>회원정보 수정</Link>
@@ -65,37 +94,52 @@ export default function MyPageMainPage() {
           ))}
         </ul>
         <div className='myposts_container'>
-          <div className='total_box'>
-            <select className="post_filter" onChange={handleSelectChange} value={selectedOption}>
-              <option value="dmunity">댕뮤니티</option>
-              <option value="dsta">댕스타</option>
-            </select>
-            {selectedOption === "dmunity" && (
-              <div className='list_box'>
-                <table className='list_table'>
-                  <thead>
-                    <tr className='head_row'>
-                      <th>번호</th>
-                      <th>제목</th>
-                      <th>작성일</th>
-                      <th>조회수</th>
-                    </tr>
-                  </thead>
-                  <tbody className='body_row'>
-                    {dmunityPosts.map((post) => (
-                      <tr key={post.id} className='data_row'>
-                        <td>{post.id}</td>
-                        <td>{post.title}</td>
-                        <td>{post.date}</td>
-                        <td>{post.views}</td>
+          {activeTab === 0 && (
+            <div className='total_box'>
+              <select className="post_filter" onChange={handleSelectChange} value={selectedOption}>
+                <option value="dmunity">댕뮤니티</option>
+                <option value="dsta">댕스타</option>
+              </select>
+              {selectedOption === "dmunity" && (
+                <div className='list_box'>
+                  <table className='list_table'>
+                    <thead>
+                      <tr className='head_row'>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
                       </tr>
+                    </thead>
+                    <tbody className='body_row'>
+                      {dmunityPosts.map((post, index) => (
+                        <tr key={index} className='data_row'>
+                          <td>{index + 1}</td>
+                          <td>{post.title}</td>
+                          <td>{post.date}</td>
+                          <td>{post.views}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className='mypage_pagenation'>페이지네이션 자리.....</div>
+                </div>
+              )}
+              {selectedOption === 'dsta' && (
+                <div className='dsta_listbox'>
+                  <ul className='dsta_lists'>
+                    {dstaData.map((post, index) => (
+                      <li key={index}>
+                        <img className='dsta_list' src={post.url} />
+                      </li>
                     ))}
-                  </tbody>
-                </table>
-                <div>1/2/3/4/5/6/7/8/9/10</div>
-              </div>
-            )}
-          </div>
+                  </ul>
+                  <div className='mypage_pagenation'>페이지네이션 자리.....</div>
+                </div>
+              )}
+            </div>
+          )}
+
         </div>
       </section>
     </main>

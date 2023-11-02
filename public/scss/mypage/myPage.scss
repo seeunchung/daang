@@ -32,16 +32,16 @@
           color: #ffffff;
           font-family: 'Noto Sans KR';
           font-size: 16px;
-        }
+          font-weight: bold;
 
-        .active {
-          background-color: #F4E2CC;
-          color: #000000;
-          border-bottom-left-radius: 0;
-          border-bottom-right-radius: 0;
+          &.active {
+            background-color: #F4E2CC;
+            color: #000000;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
         }
       }
-
     }
 
     .myposts_container {
@@ -64,8 +64,31 @@
         .post_filter {
           width: 102px;
           height: 30px;
+          padding: 0 12px;
+          -webkit-appearance: none;
+          /* for chrome */
+          -moz-appearance: none;
+          /*for firefox*/
+          appearance: none;
+
+          &::-ms-expand {
+            display: none;
+            /*for IE10,11*/
+          }
+
+          background: url(../img/mypage/next_page.png) no-repeat 97% 60%;
+          background-color: #FFFBF5;
+          border: none;
+          border-radius: 10px;
+
+          font-family: 'Noto Sans KR';
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 30px;
+          color: #74500A;
         }
 
+        /*댕뮤니티 스타일*/
         .list_box {
           width: 900px;
           height: 482px;
@@ -96,7 +119,42 @@
                 line-height: 40px;
               }
             }
+          }
 
+          .mypage_pagenation {
+            padding: 8px;
+            align-self: center;
+          }
+        }
+
+        /*댕스타 스타일*/
+        .dsta_listbox {
+          width: 900px;
+          height: 482px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #FFFBF5;
+
+          .dsta_lists {
+            width: 832px;
+            height: 420px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .dsta_list {
+              width: 200px;
+              height: 200px;
+              border-radius: 10px;
+              margin: 4px;
+            }
+          }
+
+          .mypage_pagenation {
+            padding: 8px;
           }
         }
       }
