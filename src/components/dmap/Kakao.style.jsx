@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 
 export const MapContainer = styled.div`
   position: relative;
+  padding-top: 90px;
 `;
 
 export const Overlay = styled.div`
@@ -110,9 +111,9 @@ export const SideBarOpenBtn = styled.button`
   top: 50%;
   left: 400px;
   transform: translateY(-50%);
-  background-color: ${({ theme }) => theme.colors.white};
-  width: 50px;
-  height: 100%;
+  background-color: ${({ theme }) => theme.colors.primary};
+  width: 40px;
+  height: 90px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: ${({ theme }) => `1px solid ${theme.colors.gray}`};

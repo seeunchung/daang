@@ -4,15 +4,15 @@ import { useMediaQuery } from 'react-responsive';
 import * as S from './Kakao.style';
 import leftAngle from './assets/angle-small-left.svg';
 import rightAngle from './assets/angle-small-right.svg';
-import { reSearch } from './assets/reSearch.png';
+import reSearch from './assets/reSearch.png';
 import Modal from './Modal';
 
 const { kakao } = window;
 
 const KEYWORD_LIST = [
   { id: 1, value: '애견동반카페', emoji: '☕️' },
-  { id: 2, value: '동물병원', emoji: '🧑‍⚕️' },
   { id: 3, value: '애견동반식당', emoji: '🍴' },
+  { id: 2, value: '동물병원', emoji: '🧑‍⚕️' }, 
   { id: 4, value: '공원', emoji: '🌳' },
 ];
 
@@ -77,8 +77,8 @@ const Kakao = () => {
       }));
     }
   }, []);
-
-  const searchPlaces = (page) => {
+//키워드로 주변 위치 검색
+  const searchPlaces = (center, page) => {
     // Places 서비스 객체 생성
     const ps = new kakao.maps.services.Places();
     // 검색 옵션 설정
@@ -96,6 +96,8 @@ const Kakao = () => {
         if (status === kakao.maps.services.Status.OK) {
           console.log(data);
           displayPlaces(data); // 검색된 장소를 지도에 표시하는 함수 호출 추가
+
+
           setPagination(pagination); // 페이지네이션 정보 업데이트 추가
         } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
           setIsSidebarOpen(true); // 사이드바 열기 추가
@@ -142,6 +144,8 @@ const Kakao = () => {
     };
   }, [map]);
 
+
+
   // 카카오톡 공유 init 설정
   useEffect(() => {
     if (window.Kakao) {
@@ -160,7 +164,7 @@ const Kakao = () => {
         {/* 지도 컴포넌트 */}
         <Map
           center={state.center}
-          style={{ width: '100%', height: 'calc(100vh - 109px)', marginTop: '48px' }}
+          style={{ width: '100%', height: 'calc(100vh - 180px)'}}
           level={3}
           onCreate={setMap} // 지도가 생성될 때 setMap 함수를 호출해 지도 객체 업데이트 추가
         >
@@ -175,6 +179,8 @@ const Kakao = () => {
               },
             }}
           />
+         
+
           {/* 검색된 장소 마커 표시 */}
           {search.map((data) => (
             <React.Fragment key={data.id}>
