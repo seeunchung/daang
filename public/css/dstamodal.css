@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -11,6 +12,7 @@
   align-items: center;
   z-index: 100;
 }
+
 .modal-overlay .close-button {
   position: fixed;
   top: 10px;
@@ -23,6 +25,7 @@
   cursor: pointer;
   font-size: 20px;
 }
+
 .modal-overlay .modal {
   width: 1050px;
   max-width: 1050px;
@@ -32,6 +35,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .modal-overlay .modal .modal-content {
   background-color: #F4E2CC;
   width: 1050px;
@@ -42,6 +46,7 @@
   justify-content: space-between;
   border-radius: 20px;
 }
+
 .modal-overlay .modal .modal-content .photos {
   flex: 1;
   background-color: #FFFBF5;
@@ -50,6 +55,7 @@
   margin-left: 16px;
   margin-right: 8px;
 }
+
 .modal-overlay .modal .modal-content .words {
   flex: 1;
   background-color: #FFFBF5;
@@ -58,23 +64,28 @@
   margin-left: 8px;
   margin-right: 16px;
 }
+
 .modal-overlay .modal .modal-content .words .profile {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #F4E2CC;
 }
+
 .modal-overlay .modal .modal-content .words .profileName {
   margin-right: auto;
   /* 왼쪽 정렬 */
 }
+
 .modal-overlay .modal .modal-content .words .profile img {
   margin-right: 10px;
   /* 이미지와 텍스트 사이에 간격 추가 */
 }
+
 .modal-overlay .modal .modal-content .words .content {
   border-bottom: 1px solid #F4E2CC;
 }
+
 .modal-overlay .modal .modal-content .words .commentSection {
   display: flex;
   /* 플렉스 박스를 사용하여 이미지와 텍스트를 가로로 배치 */
@@ -82,6 +93,7 @@
   /* 수직 가운데 정렬 */
   border-bottom: 1px solid #F4E2CC;
 }
+
 .modal-overlay .modal .modal-content .words .commentSection img {
   width: 50px;
   /* 이미지의 너비를 조절하세요 */
@@ -91,6 +103,7 @@
   /* 이미지와 텍스트 사이의 간격 조절 */
   margin-bottom: auto;
 }
+
 .modal-overlay .modal .modal-content .words .commentDate,
 .modal-overlay .modal .modal-content .words .commentLikes,
 .modal-overlay .modal .modal-content .words .cocomment {
@@ -99,6 +112,7 @@
   margin-right: 12px;
   /* 요소 사이의 간격을 조절 (원하는 값으로 변경 가능) */
 }
+
 .modal-overlay .modal .modal-content .words .write-button {
   float: right;
 }
