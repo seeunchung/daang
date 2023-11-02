@@ -289,7 +289,7 @@ const Kakao = () => {
                     <S.PlaceName>{data.place_name}</S.PlaceName>
                     {/* 상세 정보로 연결되는 링크 */}
                     <S.DetailLink href={data.place_url} target='_blank'>
-                      <img src={rightAngle} alt='오른쪽 화살표'/>
+                      <img src={rightAngle} alt='오른쪽 화살표' />
                     </S.DetailLink>
                   </S.Overlay>
                 </CustomOverlayMap>
@@ -330,7 +330,7 @@ const Kakao = () => {
             </S.SideBarOpenBtn>
           </S.ListContainer>
         )}
-        
+
       </S.MapContainer>
     </>
   );

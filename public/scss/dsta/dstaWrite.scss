@@ -20,7 +20,7 @@
       height: 340px;
       top: 140px;
       left: 444px;
-      background-image: url(../img/spring.png);
+      background-image: url(../../dsta/img/dsta/spring.png);
     }
 
     .dstawrite_title {
@@ -63,7 +63,7 @@
         .thumbnail {
           width: 360px;
           height: 466px;
-          background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
+          background: url(../../img/dsta/photo_add_btn.png) center no-repeat #ffffff;
           border: 1px solid #F4E2CC;
           border-radius: 20px;
 
@@ -97,7 +97,7 @@
             left: 8px;
             width: 36px;
             height: 36px;
-            background-image: url(../../img/Crown.png);
+            background-image: url(../../img/dsta/Crown.png);
             background-size: cover;
           }
 
@@ -109,7 +109,7 @@
             position: relative;
             top: -36px;
             left: 320px;
-            background: url(../../img/photh_select_btn.png) center no-repeat #CECBCB;
+            background: url(../../img/dsta/photh_select_btn.png) center no-repeat #CECBCB;
             border-radius: 50px;
             cursor: pointer;
           }
@@ -166,7 +166,7 @@
               width: 113px;
               height: 113px;
               margin-right: 6.67px;
-              background: url(../../img/photo_add_btn.png) center no-repeat #ffffff;
+              background: url(../../img/dsta/photo_add_btn.png) center no-repeat #ffffff;
               border: 1px solid #F4E2CC;
               border-radius: 20px;
 
@@ -211,13 +211,16 @@
                 /*추가된 이미지 삭제 버튼*/
                 position: relative;
                 top: -110px;
-                left: 6px;
+                left: 80%;
                 width: 14px;
                 height: 14px;
-                background-image: url(../../img/photo_delete_btn.png);
                 background-color: transparent;
                 border-style: none;
                 cursor: pointer;
+
+                img {
+                  width: 100%;
+                }
               }
 
             }
