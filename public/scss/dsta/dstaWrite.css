@@ -1,0 +1,231 @@
+@charset "UTF-8";
+#main.dsta_write {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  padding: 120px 0 30px 0;
+}
+#main.dsta_write .dstawrite_container {
+  position: relative;
+  width: 1050px;
+  height: 650px;
+  background-color: #EEE1D7;
+  margin: auto;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .spring_img {
+  position: absolute;
+  width: 48px;
+  height: 340px;
+  top: 140px;
+  left: 444px;
+  background-image: url(../../dsta/img/dsta/spring.png);
+}
+#main.dsta_write .dstawrite_container .dstawrite_title {
+  font-size: 30px;
+  font-family: "NPSfontBold";
+  color: #74500A;
+  margin: 0 0 0 45px;
+  padding: 16px 0;
+}
+#main.dsta_write .dstawrite_container .webname {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Fredoka One";
+  color: #74500A;
+  position: absolute;
+  top: 608px;
+  right: 45px;
+}
+#main.dsta_write .dstawrite_container .innerbox {
+  width: 960px;
+  height: 526px;
+  margin: 0 45px;
+  display: flex;
+  justify-content: space-between;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox {
+  /*왼쪽박스 스타일*/
+  width: 420px;
+  height: 526px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFBF5;
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail {
+  width: 360px;
+  height: 466px;
+  background: url(../../img/dsta/photo_add_btn.png) center no-repeat #ffffff;
+  border: 1px solid #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail .file_input {
+  display: none;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail .custom_file_input {
+  /*썸네일 없을 때 보이는 스타일*/
+  display: block;
+  width: 360px;
+  height: 466px;
+  text-align: center;
+  line-height: 504px;
+  font-size: 10px;
+  color: #747171;
+  cursor: pointer;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail .thumbnail_img {
+  /*썸네일 이미지 미리보기*/
+  width: 360px;
+  height: 466px;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail .thumbnail_icon {
+  /*썸네일 아이콘*/
+  position: relative;
+  top: -496px;
+  left: 8px;
+  width: 36px;
+  height: 36px;
+  background-image: url(../../img/dsta/Crown.png);
+  background-size: cover;
+}
+#main.dsta_write .dstawrite_container .innerbox .leftbox .thumbnail .change_file_input {
+  /*썸네일 있을 때 보이는 스타일, 썸네일 사진 변경 버튼*/
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: -36px;
+  left: 320px;
+  background: url(../../img/dsta/photh_select_btn.png) center no-repeat #CECBCB;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox {
+  /*오른쪽박스 스타일*/
+  width: 532px;
+  height: 526px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFBF5;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox {
+  width: 472px;
+  height: 466px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .textcontent {
+  width: 472px;
+  height: 220px;
+  padding: 16px;
+  font-size: 14px;
+  font-family: "Noto Sans KR";
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .tagcontent {
+  width: 473px;
+  height: 32px;
+  padding: 16px;
+  font-size: 14px;
+  font-family: "Noto Sans KR";
+  box-sizing: border-box;
+  border: solid 1px #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box {
+  width: 472px;
+  height: 113px;
+  display: flex;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo {
+  list-style: none;
+  width: 113px;
+  height: 113px;
+  margin-right: 6.67px;
+  background: url(../../img/dsta/photo_add_btn.png) center no-repeat #ffffff;
+  border: 1px solid #F4E2CC;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .file_input {
+  display: none;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .custom_file_input {
+  /*사진 추가 버튼 스타일*/
+  display: block;
+  width: 113px;
+  height: 113px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 10px;
+  color: #747171;
+  cursor: pointer;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .added_img {
+  /*추가된 이미지*/
+  width: 113px;
+  height: 113px;
+  border-radius: 20px;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .numbering {
+  /*이미지 순서 넘버링*/
+  position: relative;
+  top: -36px;
+  left: 86px;
+  width: 20px;
+  height: 14px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 14px;
+  color: #ffffff;
+  background-color: rgba(32, 32, 32, 0.5);
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .img_delete_btn {
+  /*추가된 이미지 삭제 버튼*/
+  position: relative;
+  top: -110px;
+  left: 80%;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .addphoto_box .add_photo .img_delete_btn img {
+  width: 100%;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box {
+  width: 168px;
+  height: 40px;
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-between;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .submit_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #74500A;
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+}
+#main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .cancel_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #AB8B61;
+  font-size: 16px;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+}/*# sourceMappingURL=dstaWrite.css.map */

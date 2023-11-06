@@ -1,0 +1,108 @@
+#main.login {
+  width: 100%;
+  height: 100%;
+  padding: 120px;
+}
+#main.login #signin {
+  width: 100%;
+  padding: 40px 0 60px 0;
+}
+#main.login #signin .container {
+  width: 1050px;
+  margin: 0 auto;
+}
+#main.login #signin .container .title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#main.login #signin .container .title .img-box {
+  margin-bottom: 10px;
+}
+#main.login #signin .container .title .img-box img {
+  width: 62px;
+  height: 26px;
+}
+#main.login #signin .container .title h2 {
+  font-size: 30px;
+}
+#main.login #signin .container .content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#main.login #signin .container .content form {
+  padding-top: 50px;
+}
+#main.login #signin .container .content form .custom-login {
+  width: 100%;
+}
+#main.login #signin .container .content form .custom-login li {
+  width: 100%;
+}
+#main.login #signin .container .content form .custom-login li:nth-child(3) {
+  height: 54px;
+  text-align: right;
+  font-size: 12px;
+  padding-top: 5px;
+}
+#main.login #signin .container .content form .custom-login li:nth-child(4) {
+  margin-bottom: 10px;
+}
+#main.login #signin .container .content form .custom-login li input {
+  width: 350px;
+  height: 54px;
+  border: 1px solid #ddd;
+  padding: 0 15px;
+}
+#main.login #signin .container .content form .custom-login li a {
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+#main.login #signin .container .content form .custom-login li a:hover {
+  color: #764f00;
+}
+#main.login #signin .container .content form .custom-login li i {
+  color: #ccc;
+  margin: 0 5px;
+}
+#main.login #signin .container .content form .custom-login li button {
+  width: 100%;
+  height: 54px;
+  border: 0;
+  cursor: pointer;
+}
+#main.login #signin .container .content form .custom-login li button[type=submit] {
+  background: #AB8B61;
+}
+#main.login #signin .container .content form .custom-login li button[type=button] {
+  background: #fffbf5;
+  border: 1px solid #333;
+}
+#main.login #signin .container .content form .custom-login li button span {
+  font-weight: bold;
+  font-size: 15px;
+}
+#main.login #signin .container .content form .custom-login li button span.login-text {
+  color: #fff;
+}
+#main.login #signin .container .content form .custom-login li button span.signup-text {
+  color: #74500A;
+}
+#main.login #signin .container .content form .sns-login {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+#main.login #signin .container .content form .sns-login button {
+  width: 52px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 3px 4px 0px;
+}
+#main.login #signin .container .content form .sns-login button img {
+  width: 100%;
+  height: 52px;
+}/*# sourceMappingURL=signin.css.map */

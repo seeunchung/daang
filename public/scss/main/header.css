@@ -1,0 +1,130 @@
+#header {
+  width: 100%;
+  height: 90px;
+  background: #fffbf5;
+  position: fixed;
+  z-index: 3;
+  border-bottom: 1px solid #74500a;
+}
+#header .container {
+  width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#header .container .left ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#header .container .left ul li {
+  font-size: 18px;
+}
+#header .container .left ul li.left-menu a {
+  font-weight: 500;
+}
+#header .container .left ul li.left-menu a:hover {
+  color: #74500a;
+  transition: all 0.3s ease-in-out;
+}
+#header .container .left ul li.on > a {
+  color: #74500a;
+  font-weight: bold;
+}
+#header .container .left ul li i {
+  font-size: 16px;
+  margin: 0 8px;
+  color: #d9d9d9;
+}
+#header .container .center {
+  height: 85px;
+}
+#header .container .center a {
+  display: block;
+  width: 100%;
+  padding-top: 5px;
+}
+#header .container .right ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#header .container .right ul li {
+  font-size: 18px;
+  position: relative;
+}
+#header .container .right ul li.right-menu a {
+  font-weight: 500;
+}
+#header .container .right ul li.right-menu a:hover {
+  color: #74500a;
+  transition: all 0.3s ease-in-out;
+}
+#header .container .right ul li.right-menu:hover > .tooltip {
+  display: block;
+}
+#header .container .right ul li i {
+  font-size: 16px;
+  margin: 0 8px;
+  color: #d9d9d9;
+}
+#header .container .right ul li > ul.tooltip {
+  display: none;
+  position: absolute;
+  width: 240px;
+  height: 125px;
+  top: 35px;
+  left: -80px;
+  background: #fffbf5;
+  border: 1px solid #333;
+  z-index: 5;
+  padding-top: 5px;
+  flex-direction: column;
+}
+#header .container .right ul li > ul.tooltip::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0px;
+  width: 240px;
+  height: 20px;
+}
+#header .container .right ul li > ul.tooltip > li {
+  margin-bottom: 10px;
+  padding: 0 8px;
+}
+#header .container .right ul li > ul.tooltip > li > a {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 140%;
+  padding: 8px;
+}
+#header .container .right ul li > ul.tooltip > li > a:hover {
+  transition: all 0.3s ease-in-out;
+  background: #ccc8c4;
+}
+#header .container .right ul li > ul.tooltip > li > a::after {
+  content: "";
+  width: 1px;
+  height: 10px;
+}
+#header .container .right ul li > ul.tooltip > li > a .img-box {
+  margin-right: 12px;
+}
+#header .container .right ul li > ul.tooltip > li > a .img-box img {
+  width: 30px;
+  height: 30px;
+}
+#header .container .right ul li > ul.tooltip > li > a .caption-box h2 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+#header .container .right ul li > ul.tooltip > li > a .caption-box span {
+  font-size: 12px;
+  color: #828c94;
+}/*# sourceMappingURL=header.css.map */

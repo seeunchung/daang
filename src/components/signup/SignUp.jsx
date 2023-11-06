@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+
+
 export default function SignUp() {
 
 
@@ -9,21 +11,21 @@ export default function SignUp() {
         <div className="signupcontainer">
           <div className="main-title">
           <h2>견주</h2>
-
           </div>
-        </div>
-        <div className='sub-title'>
+          <div className='sub-title'>
           <span>[필수]</span>
         </div>
         <div className="content">
           <form name='form_sign_up'>
             <ul>
+              <div className="masterContainer">
               <li>
                <div className="left">
                     <div className="left-wrap">
                       <label htmlFor="inputId"><strong>아이디</strong></label>
                     </div>
                   </div>
+                  
                   <div className="right">
                     <div className="right-wrap">
                       <input type="text" maxLength='16' name='input_id' id='inputId' placeholder='아이디를 입력해주세요'
@@ -96,6 +98,7 @@ export default function SignUp() {
                     </div>
                   </div>
               </li>
+              </div>
               <div className='container'>
                 <div className="second-title">
                   <h2>강아지</h2>
@@ -104,6 +107,7 @@ export default function SignUp() {
               <div className='sub-title'>
                  <span>[선택]</span>
               </div>
+              <div className="dogContainer">
               <li>
                   <div className="left">
                     <div className="left-wrap">
@@ -152,9 +156,73 @@ export default function SignUp() {
                     </div>
                   </div>
               </li>
+              </div>
+              
+              <li>
+                <div className="termscontainer">
+                  <div className="third-title">
+                    <h2>이용약관동의</h2>
+                  </div>
+                    <li>
+                      <div className="left">
+                        <div className="left-wrap">
+                          <input type='checkbox' name='agree1' id='agreeCheck1'/>
+                          <label htmlFor='agreeCheck1'><strong>이용약관 동의</strong></label>
+                        </div>
+                      </div>
+                      <div className="right">
+                        <div className="right-wrap">
+                          <label htmlFor='viewTermsBtn1' id='viewTermsLabel1'>
+                            약관보기
+                            <span class="arrow">▶</span>
+                            </label> 
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="left">
+                        <div className="left-wrap">
+                          <input type='checkbox' name='agree2' id='agreeCheck2'/>
+                          <label htmlFor='agreeCheck2'><strong>개인정보 수집 및 이용동의</strong></label>
+                        </div>
+                      </div>
+                      <div className="right">
+                        <div className="right-wrap">
+                          <label htmlFor='viewTermsBtn2' id='viwTermsLabel2'>
+                            약관보기
+                            <span class="arrow">▶</span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                    <div className="left">
+                        <div className="left-wrap">
+                          <input type='checkbox' name='agree3' id='agreeCheck3'/>
+                          <label htmlFor='agreeCheck3'><strong>개인정보 수집 및 이용동의</strong></label>
+                        </div>
+                      </div>
+                      <div className="right">
+                        <div className="right-wrap">
+                        <label htmlFor='viewTermsBtn3' id='viwTermsLabel3'>
+                            약관보기
+                            <span class="arrow">▶</span>
+                          </label>
+                        </div>
+                      </div>
+                    </li>
+                </div>
+              </li>
+              <div>
+              <button type="button" className='complete' >입학하기</button>
+              </div>
             </ul>
           </form>
         </div>
+
+
+        </div>
+        
       </section>
     </main>
   );

@@ -1,0 +1,423 @@
+#main.mainPage {
+  width: 100%;
+  height: 100%;
+  padding-top: 90px;
+}
+#main.mainPage #section1 {
+  width: 100%;
+}
+#main.mainPage #section1 .sec1-swiper-container {
+  width: 100%;
+  height: 370px;
+  position: relative;
+}
+#main.mainPage #section1 .sec1-swiper-container:hover > button {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper {
+  width: 100%;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide {
+  width: 100%;
+  position: relative;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide img {
+  width: 100%;
+  height: 370px;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title {
+  position: absolute;
+  top: 35%;
+  left: 12%;
+  background: rgba(238, 224, 195, 0.6);
+  border-radius: 5px;
+  padding: 10px;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 {
+  font-size: 28px;
+  line-height: 150%;
+  color: #000;
+  font-family: "NPSfontBold";
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 span {
+  display: block;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 span strong {
+  font-family: "Fredoka One";
+  color: #F9EBDB;
+  font-size: 30px;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: "NPSfontBold";
+  padding-top: 10px;
+  background: url(../../img/main/arrow_right_black.png) no-repeat 50% 50%;
+  background-position: 75% 70%;
+}
+#main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 a:hover {
+  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+  background-position: 75% 70%;
+  color: #74500a;
+}
+#main.mainPage #section1 .sec1-swiper-container > button {
+  border: 0;
+  background: none;
+  z-index: 3;
+  opacity: 0;
+}
+#main.mainPage #section1 .sec1-swiper-container > button img {
+  width: 52px;
+  height: 52px;
+}
+#main.mainPage #section1 .sec1-swiper-container > button.sec1-swiper-prev-btn {
+  position: absolute;
+  top: 45%;
+  left: 80px;
+  transform: rotate(180deg);
+}
+#main.mainPage #section1 .sec1-swiper-container > button.sec1-swiper-next-btn {
+  position: absolute;
+  top: 45%;
+  right: 80px;
+}
+#main.mainPage #section1 .sec1-swiper-container .sec1-swiper-pagination {
+  position: relative;
+  z-index: 5;
+  bottom: 25px;
+  left: 50%;
+}
+#main.mainPage #section1 .sec1-swiper-container .sec1-swiper-pagination span {
+  width: 10px;
+  height: 10px;
+}
+#main.mainPage #section1 .sec1-swiper-container .sec1-swiper-pagination span.swiper-pagination-bullet-active {
+  background: #F88A8A;
+}
+#main.mainPage #section1 .sec1-swiper-container .sec1-swiper-pagination span.swiper-pagination-bullet {
+  margin-right: 5px;
+}
+#main.mainPage #section2 {
+  width: 100%;
+}
+#main.mainPage #section2 .sec2_container {
+  width: 1050px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+#main.mainPage #section2 .sec2_container .title-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#main.mainPage #section2 .sec2_container .title-box .title {
+  display: flex;
+  align-items: center;
+}
+#main.mainPage #section2 .sec2_container .title-box .title h2 {
+  font-size: 30px;
+  font-family: "Fredoka One";
+}
+#main.mainPage #section2 .sec2_container .title-box .title img {
+  width: 30px;
+  height: 30px;
+}
+#main.mainPage #section2 .sec2_container .title-box .sort {
+  display: flex;
+}
+#main.mainPage #section2 .sec2_container .title-box .sort ul {
+  display: flex;
+  align-items: center;
+}
+#main.mainPage #section2 .sec2_container .title-box .sort ul li button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+#main.mainPage #section2 .sec2_container .title-box .sort ul li button span {
+  font-size: 18px;
+  font-family: "NPSfontBold";
+}
+#main.mainPage #section2 .sec2_container .title-box .sort ul li i {
+  position: relative;
+  top: -3px;
+  margin: 0 8px;
+  font-size: 10px;
+  color: #d9d9d9;
+}
+#main.mainPage #section2 .sec2_container .content-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  padding-top: 30px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box {
+  flex: 1;
+  min-width: calc(25% - 20px);
+  cursor: pointer;
+  border: 1px solid #74500a;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  min-height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box > img {
+  width: 100%;
+  height: 315px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box:hover > img {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile {
+  align-items: baseline;
+  bottom: 10px;
+  display: flex;
+  height: 30px;
+  left: 10px;
+  position: absolute;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile .profile-img-box {
+  width: 30px;
+  height: 30px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile .profile-img-box img {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile .user-id {
+  margin-left: 8px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile .user-id span {
+  color: #fff;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .caption-title {
+  padding: 5px 0 10px 0;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .caption-title h2 {
+  font-size: 20px;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .cnt-box {
+  display: flex;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .cnt-box p {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  padding-left: 19px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .cnt-box p.view-cnt {
+  background: url(../../img/main/watch.png) no-repeat left 0 center;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .cnt-box p.like-cnt {
+  background: url(../../img/main/heart.png) no-repeat left 0 center;
+  margin-left: 15px;
+}
+#main.mainPage #section2 .sec2_container .content-box .post-box .caption-box .cnt-box p.comment-cnt {
+  background: url(../../img/main/coments.png) no-repeat left 0 center;
+  margin-left: 15px;
+}
+#main.mainPage #section3 {
+  width: 100%;
+}
+#main.mainPage #section3 .title {
+  width: 1050px;
+  margin: 0 auto;
+  padding: 50px 0 20px 0;
+}
+#main.mainPage #section3 .title h2 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "NPSfontBold";
+}
+#main.mainPage #section3 .content {
+  width: 100%;
+  background: #fae7cb;
+}
+#main.mainPage #section3 .content .sec3-swiper-container {
+  width: 100%;
+  height: 370px;
+  position: relative;
+}
+#main.mainPage #section3 .content .sec3-swiper-container:hover > button {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper {
+  width: 100%;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide {
+  width: 100%;
+  position: relative;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide img {
+  width: 100%;
+  height: 370px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title {
+  position: absolute;
+  top: 30%;
+  right: 12%;
+  background: rgba(238, 224, 195, 0.6);
+  border-radius: 5px;
+  padding: 10px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 {
+  font-size: 25px;
+  line-height: 150%;
+  color: #fff;
+  font-family: "NPSfontBold";
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 span {
+  display: block;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 span strong {
+  color: #f00;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: "NPSfontBold";
+  padding-top: 10px;
+  background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
+  background-position: 62% 80%;
+  color: #fff;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 a:hover {
+  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+  background-position: 62% 80%;
+  color: #74500a;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 a img {
+  width: 30px;
+  height: 100%;
+  margin-left: 4px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .img-box {
+  width: 100%;
+  height: 370px;
+  background: url(../../img/main/main_sec3_slide_2.png) no-repeat 50% 20%;
+  background-size: cover;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title {
+  position: absolute;
+  top: 30%;
+  right: 12%;
+  background: rgba(238, 224, 195, 0.6);
+  border-radius: 5px;
+  padding: 10px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 {
+  font-size: 25px;
+  line-height: 150%;
+  color: #fff;
+  font-family: "NPSfontBold";
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 span {
+  display: block;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 span strong {
+  color: #f00;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: "NPSfontBold";
+  padding-top: 10px;
+  background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
+  background-position: 68% 72%;
+  color: #fff;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 a:hover {
+  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+  background-position: 68% 72%;
+  color: #74500a;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 a img {
+  width: 30px;
+  height: 100%;
+  margin-left: 4px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container > button {
+  border: 0;
+  background: none;
+  z-index: 3;
+  opacity: 0;
+}
+#main.mainPage #section3 .content .sec3-swiper-container > button img {
+  width: 52px;
+  height: 52px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container > button.sec3-swiper-prev-btn {
+  position: absolute;
+  top: 45%;
+  left: 80px;
+  transform: rotate(180deg);
+}
+#main.mainPage #section3 .content .sec3-swiper-container > button.sec3-swiper-next-btn {
+  position: absolute;
+  top: 45%;
+  right: 80px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .sec3-swiper-pagination {
+  position: relative;
+  z-index: 5;
+  bottom: 25px;
+  left: 50%;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .sec3-swiper-pagination span {
+  width: 10px;
+  height: 10px;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .sec3-swiper-pagination span.swiper-pagination-bullet-active {
+  background: #F88A8A;
+}
+#main.mainPage #section3 .content .sec3-swiper-container .sec3-swiper-pagination span.swiper-pagination-bullet {
+  margin-right: 5px;
+}
+#main.mainPage #section3 .content .abandoned_dog_info {
+  width: 1050px;
+  margin: 0 auto;
+}
+#main.mainPage #section3 .content .abandoned_dog_info ul {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  padding-left: 20px;
+  border: 1px solid #fff;
+}
+#main.mainPage #section3 .content .abandoned_dog_info ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+#main.mainPage #section3 .content .abandoned_dog_info ul li img {
+  margin-right: 10px;
+}
+#main.mainPage #section3 .content .abandoned_dog_info ul li strong {
+  margin-left: 15px;
+}/*# sourceMappingURL=mainpage.css.map */
