@@ -7,44 +7,51 @@ import DstaMainPage from './dsta/DstaMainPage';
 import DstaWrite from './dsta/DstaWrite.jsx';
 import DstaDetail from './dsta/DstaDetail.jsx';
 import DstaEdit from './dsta/DstaEdit.jsx';
-import DmunityMainPage from './dmunity/DmunityMainPage'
-import DmunityDetail from './dmunity/DmunityDetail'
-import DmunityWrite from './dmunity/DmunityWrite'
-import DmunityEdit from './dmunity/DmunityEdit'
-import Dmap from './dmap/DmapMainPage'
-import MyPage from './mypage/MyPageMainPage'
-import MyPageEdit from './mypage/MyPageEdit'
-import Login from './signin/Login'
-import SignUp from './signup/SignUp'
-import SignUpComplete from './signup/SignUpComplete'
+import DmunityMainPage from './dmunity/DmunityMainPage';
+import DmunityDetail from './dmunity/DmunityDetail';
+import DmunityWrite from './dmunity/DmunityWrite';
+import DmunityEdit from './dmunity/DmunityEdit';
+import Dmap from './dmap/DmapMainPage';
+import MyPage from './mypage/MyPageMainPage';
+import MyPageEdit from './mypage/MyPageEdit';
+import Login from './signin/Login';
+import SignUp from './signup/SignUp';
+import SignUpComplete from './signup/SignUpComplete';
+import theme from './dmap/styles/Theme';
+import { Helmet } from 'react-helmet';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from './dmap/styles/GlobalStyle';
 
 export default function Wrap() {
   return (
-    <div id='wrap'>
+    <ThemeProvider theme={theme}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Routes>
-          <Route path='/' element={<Header />}>
-            <Route index element={<MainPage />} />
-            <Route path="dsta" element={<DstaMainPage />} />
-            <Route path='dsta-detail' element={<DstaDetail />} />
-            <Route path='dsta-write' element={<DstaWrite />} />
-            <Route path='dsta-edit' element={<DstaEdit />} />
-            <Route path='dmunity' element={<DmunityMainPage />} />
-            <Route path='dmunity-detail' element={<DmunityDetail />} />
-            <Route path='dmunity-write' element={<DmunityWrite />} />
-            <Route path='dmunity-edit' element={<DmunityEdit />} />
-            <Route path='dmap' element={<Dmap />} />
-            <Route path='mypage' element={<MyPage />} />
-            <Route path='myPage-dit' element={<MyPageEdit />} />
-            <Route path='login' element={<Login />} />
-            <Route path='signup' element={<SignUp />} />
-            <Route path='signup-complete' element={<SignUpComplete />} />
-          </Route>
-        </Routes>
+        <Helmet>
+          <title>DAaaNG UNIV</title>
+        </Helmet>
+        <div id='wrap'>
+          <Routes>
+            <Route path='/' element={<Header />}>
+              <Route index element={<MainPage />} />
+              <Route path="dsta" element={<DstaMainPage />} />
+              <Route path='dsta-detail' element={<DstaDetail />} />
+              <Route path='dsta-write' element={<DstaWrite />} />
+              <Route path='dsta-edit' element={<DstaEdit />} />
+              <Route path='dmunity' element={<DmunityMainPage />} />
+              <Route path='dmunity-detail' element={<DmunityDetail />} />
+              <Route path='dmunity-write' element={<DmunityWrite />} />
+              <Route path='dmunity-edit' element={<DmunityEdit />} />
+              <Route path='dmap' element={<Dmap />} />
+              <Route path='mypage' element={<MyPage />} />
+              <Route path='mypage-edit' element={<MyPageEdit />} />
+              <Route path='login' element={<Login />} />
+              <Route path='signup' element={<SignUp />} />
+              <Route path='signup-complete' element={<SignUpComplete />} />
+            </Route>
+          </Routes>
+        </div>
+        <Footer />
       </BrowserRouter>
-
-      <Footer />
-
-    </div>
+    </ThemeProvider>
   );
 }

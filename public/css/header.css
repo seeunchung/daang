@@ -29,6 +29,10 @@
   color: #74500a;
   transition: all 0.3s ease-in-out;
 }
+#header .container .left ul li.on > a {
+  color: #74500a;
+  font-weight: bold;
+}
 #header .container .left ul li i {
   font-size: 16px;
   margin: 0 8px;

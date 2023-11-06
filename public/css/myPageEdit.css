@@ -1,0 +1,201 @@
+@charset "UTF-8";
+#mypage.mypageedit {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+#mypage.mypageedit .mypageedit_container {
+  width: 1050px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_titlecontainer {
+  position: relative;
+  width: 1050px;
+  height: 50px;
+  margin: 20px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_titlecontainer img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  /* 아이콘을 인라인 블록 요소로 설정 */
+  display: inline-block;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_titlecontainer .mypageedit_title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "fredoka one";
+  padding: 10px;
+  color: #74500A;
+  line-height: 40px;
+  display: inline-block;
+}
+#mypage.mypageedit .mypageedit_container .page_prev {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 25%;
+  left: 100px;
+  z-index: 2;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+#mypage.mypageedit .mypageedit_container .page_next {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 25%;
+  right: 100px;
+  z-index: 2;
+  cursor: pointer;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard {
+  width: 600px;
+  height: 370px;
+  background-color: #FFF3E4;
+  border-radius: 40px;
+  margin: 0 auto;
+  position: relative;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .mypageedit_idcardhead {
+  width: 600px;
+  height: 80px;
+  background-color: #74500A;
+  border-radius: 40px 40px 0 0;
+  margin: 0 auto;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer {
+  width: 100%;
+  height: 80px;
+  /* 부모 요소 컨테이너 */
+  display: flex;
+  /* 수직 가운데 정렬 */
+  align-items: center;
+  /* 수평 가운데 정렬 */
+  justify-content: center;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  vertical-align: middle;
+  /* 아이콘을 인라인 블록 요소로 설정 */
+  display: inline-block;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer .mypageedit_headtitle {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "UhBeeSe_hyun";
+  padding: 10px;
+  color: #FFFBF5;
+  line-height: 40px;
+  display: inline-block;
+  letter-spacing: 30px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_stamp {
+  position: absolute;
+  width: 300px;
+  height: 290px;
+  margin: 0 150px;
+  z-index: 0;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer {
+  position: absolute;
+  width: 600px;
+  height: 290px;
+  z-index: 1;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_dog {
+  position: absolute;
+  width: 200px;
+  height: 230px;
+  margin: 20px;
+  right: 10px;
+  z-index: 2;
+  border-radius: 10px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_barcode {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  left: 35px;
+  bottom: 15px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_univ {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #74500A;
+  font-family: "UhBeeSe_hyun";
+  bottom: 15px;
+  right: 30px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info {
+  margin: 20px;
+  display: block;
+  width: 350px;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info div {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infotext {
+  width: 60px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "UhBeeSe_hyun";
+  display: inline-block;
+  margin-right: 10px;
+  align-items: center;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #FFF;
+  opacity: 0.7;
+  display: inline-block;
+  vertical-align: middle;
+  display: inline-flex;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox .info_textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "UhBeeSe_hyun";
+  color: gray;
+  padding-left: 10px;
+}
+#mypage.mypageedit .mypageedit_container .btn_box {
+  margin-top: 20px;
+  float: right;
+  margin-right: 250px;
+}
+#mypage.mypageedit .mypageedit_container .btn_box .add_btn {
+  width: 120px;
+  height: 35px;
+  margin-right: 10px;
+  border-radius: 30px;
+  border: none;
+  background-color: #74500A;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+#mypage.mypageedit .mypageedit_container .btn_box .del_btn {
+  width: 120px;
+  height: 35px;
+  border-radius: 30px;
+  border: none;
+  background-color: #AB8B61;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
