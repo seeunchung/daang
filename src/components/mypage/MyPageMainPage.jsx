@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Pagination from './MyPageMainPagination';
 
 export default function MyPageMainPage() {
 
@@ -36,12 +37,33 @@ export default function MyPageMainPage() {
 
   const buttonTabs = ['작성한 글', '작성한 댓글', '좋아요한 글'];
 
+  // 페이지네이션 관련 상태
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // 게시물 목록에서 현재 페이지의 게시물을 반환하는 함수
+  const getCurrentPagePosts = (postsPerPage, posts) => {
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+    return currentPosts.map((post, index) => ({
+      ...post,
+      number: indexOfFirstPost + index + 1,
+    }));
+  };
+
+  // 페이지 변경 처리 함수
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   //셀렉트 옵션에 따라 조건부 렌더링
   const [selectedOption, setSelectedOption] = useState('dmunity'); // 초기 옵션 설정
-
   const handleSelectChange = (e) => {
     setSelectedOption(e.target.value); // 선택한 옵션으로 상태 업데이트
+    setCurrentPage(1) //페이지네이션 상태 초기화
   }
+
+
 
   return (
     <main id='mypage' className='mypage_main'>
@@ -139,9 +161,9 @@ export default function MyPageMainPage() {
                       </tr>
                     </thead>
                     <tbody className='body_row'>
-                      {myDmunity.map((post, index) => (
-                        <tr key={post.postid} className='data_row'>
-                          <td>{index + 1}</td>
+                      {getCurrentPagePosts(10, myDmunity).map((post) => (
+                        <tr key={post.postid} className="data_row">
+                          <td>{post.number}</td>
                           <td>{post.title}</td>
                           <td>{post.date}</td>
                           <td>{post.view}</td>
@@ -149,19 +171,27 @@ export default function MyPageMainPage() {
                       ))}
                     </tbody>
                   </table>
-                  <div className='mypage_pagenation'>페이지네이션 자리.....</div>
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={Math.ceil(myDmunity.length / 10)}
+                    onPageChange={handlePageChange}>
+                  </Pagination>
                 </div>
               )}
               {selectedOption === 'dsta' && (
                 <div className='dsta_listbox'>
                   <ul className='dsta_lists'>
-                    {myDsta.map((post, index) => (
+                    {getCurrentPagePosts(8, myDsta).map((post) => (
                       <li key={post.postid}>
                         <img className='dsta_list' src={post.img} alt='thumbnail_img' />
                       </li>
                     ))}
                   </ul>
-                  <div className='mypage_pagenation'>페이지네이션 자리.....</div>
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={Math.ceil(myDsta.length / 8)}
+                    onPageChange={handlePageChange}>
+                  </Pagination>
                 </div>
               )}
             </div>

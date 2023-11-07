@@ -1,7 +1,8 @@
 @charset "UTF-8";
 #mypage.mypage_main {
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  min-height: 1330px;
   padding: 90px 0 30px 0;
 }
 #mypage.mypage_main ul,
@@ -41,7 +42,7 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  top: 176.8px;
+  top: 221px;
   left: 100px;
   z-index: 2;
   transform: rotate(180deg);
@@ -51,7 +52,7 @@
   position: absolute;
   width: 60px;
   height: 60px;
-  top: 176.8px;
+  top: 221px;
   right: 100px;
   z-index: 2;
   cursor: pointer;
@@ -237,6 +238,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /*페이지네이션 스타일 적용*/
 }
 #mypage.mypage_main .myposts .myposts_container .total_box .post_filter {
   width: 102px;
@@ -275,10 +277,12 @@
   width: 100%;
   border-collapse: collapse;
 }
+#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .head_row {
+  height: 36px;
+}
 #mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .head_row th {
-  height: 40px;
   text-align: center;
-  line-height: 40px;
+  line-height: 36px;
   background-color: #AB8B61;
   color: #ffffff;
 }
@@ -288,17 +292,14 @@
   text-align: center;
   line-height: 40px;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .mypage_pagenation {
-  padding: 8px;
-  align-self: center;
-}
 #mypage.mypage_main .myposts .myposts_container .total_box .dsta_listbox {
   /*댕스타 스타일*/
   width: 900px;
   height: 482px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #FFFBF5;
 }
@@ -316,6 +317,33 @@
   border-radius: 10px;
   margin: 4px;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .dsta_listbox .mypage_pagenation {
+#mypage.mypage_main .myposts .myposts_container .total_box .pagination {
+  display: inline-block;
   padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+#mypage.mypage_main .myposts .myposts_container .total_box .pagination .page_item {
+  display: inline-block;
+  margin: 0 2px;
+  font-size: 16px;
+  color: #F0D5B5;
+  cursor: default;
+}
+#mypage.mypage_main .myposts .myposts_container .total_box .pagination .page_item.active {
+  color: #74500A;
+}
+#mypage.mypage_main .myposts .myposts_container .total_box .pagination .pre_btn {
+  width: 16px;
+  height: 16px;
+  background: url(../img/mypage/Sort_Right.png) center transparent;
+  border: none;
+  transform: scaleX(-1);
+}
+#mypage.mypage_main .myposts .myposts_container .total_box .pagination .next_btn {
+  width: 16px;
+  height: 16px;
+  background: url(../img/mypage/Sort_Right.png) center transparent;
+  border: none;
 }
