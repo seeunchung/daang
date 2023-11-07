@@ -97,11 +97,13 @@ export const ListContainer = styled.div`
   overflow-y: auto;
   transition: 0.2s;
   border-right: ${({ theme }) => `1px solid ${theme.colors.gray}`};
-
+  user-select: none;
+  
   ${({ isClosed }) =>
     isClosed &&
     css`
       left: -400px;
+      
     `};
 `;
 
@@ -119,6 +121,7 @@ export const SideBarOpenBtn = styled.button`
   border: ${({ theme }) => `1px solid ${theme.colors.gray}`};
   border-left: 0;
   transition: 0.2s;
+  cursor: pointer;
 
   ${({ isClosed }) =>
     isClosed &&
@@ -132,6 +135,8 @@ export const ModalContainer = styled.div`
     height: ${({ isClosed }) => (isClosed ? '0px' : '300px')};
     overflow-y: auto;
     transition: 0.3s;
+  
+
   }
 `;
 
@@ -207,6 +212,7 @@ export const ShareBtn = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
 `;
 
 export const NoList = styled.p`
