@@ -1,31 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from "swiper";
-import 'swiper/swiper-bundle.css';
+import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
 
 SwiperCore.use([Navigation, Pagination]);
 
 export default function DstaMainModal({ closeModal }) {
 
-  useEffect(() => {
-    // 모달 열려있을 때 스크롤 막기
-    document.body.style.overflow = 'hidden';
-
-    // 컴포넌트가 언마운트 될 때 스크롤 허용
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, []);
-
   const swiperOptions = {
-    loop: true,
     slidesPerView: 1,
-    autoplay: {
-      delay: 3000,
-    }
   };
-
-  const swiperRef = useRef(null);
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
@@ -33,20 +17,38 @@ export default function DstaMainModal({ closeModal }) {
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-content">
 
-
-          <div className='photos'>
-            <Swiper {...swiperOptions}>
+          <div className="photos">
+            <Swiper
+              className='swiper'
+              {...swiperOptions}
+              pagination={{
+                el: '.sec1-swiper-pagination',
+                bulletClass: "swiper-pagination-bullet",
+                bulletActiveClass: "swiper-pagination-bullet-active",
+                clickable: true,
+              }}
+              navigation={{
+                prevEl: '.sec1-swiper-prev-btn',
+                nextEl: '.sec1-swiper-next-btn'
+              }}
+            >
+              <SwiperSlide>
+                <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
+              </SwiperSlide>
               <SwiperSlide>
                 <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
               </SwiperSlide>
             </Swiper>
-            <button className="dstamain_swiperprev">
-              <img src="./img/main/arrow_gray.svg" alt="<버튼" />
+            <button className="sec1-swiper-prev-btn">
+              <img src="./img/main/arrow_gray.svg" alt="" />
             </button>
-            <button className="dstamain_swipernext">
-              <img src="./img/main/arrow_gray.svg" alt=">버튼" />
+            <button className="sec1-swiper-next-btn">
+              <img src="./img/main/arrow_gray.svg" alt="" />
             </button>
-            <div className="dstamain_swiperpage"></div>
+            <div className="sec1-swiper-pagination"></div>
           </div>
 
 

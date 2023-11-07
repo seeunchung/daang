@@ -1,0 +1,218 @@
+{
+  "dstaSwiperData": [
+    {
+      "id": 1,
+      "imgSrc": "./img/dsta/kkumi.png"
+    },
+    {
+      "id": 2,
+      "imgSrc": "./img/dsta/kkumi.png"
+    },
+    {
+      "id": 3,
+      "imgSrc": "./img/dsta/kkumi2.png"
+    },
+    {
+      "id": 4,
+      "imgSrc": "./img/dsta/kkumi3.png"
+    },
+    {
+      "id": 5,
+      "imgSrc": "./img/dsta/kkumi.png"
+    },
+    {
+      "id": 6,
+      "imgSrc": "./img/dsta/kkumi2.png"
+    },
+    {
+      "id": 7,
+      "imgSrc": "./img/dsta/kkumi3.png"
+    },
+    {
+      "id": 8,
+      "imgSrc": "./img/dsta/kkumi.png"
+    }
+  ],
+  "dstaMainData": [
+    {
+      "id": 1,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "꿈이 왔어요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 2,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "산책 왔어요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 3,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 4,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 5,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 6,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 7,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 8,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 9,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 10,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 11,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 12,
+      "imgSrc": "./img/dsta/kkumi2.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 13,
+      "imgSrc": "./img/dsta/kkumi3.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 14,
+      "imgSrc": "./img/dsta/kkumi2.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 15,
+      "imgSrc": "./img/dsta/kkumi3.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이에요~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 16,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이입니다~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 17,
+      "imgSrc": "./img/dsta/kkumi.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이입니다~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    },
+    {
+      "id": 18,
+      "imgSrc": "./img/dsta/kkumi2.png",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "꿈이언니",
+      "title": "반가워요. 꿈이입니다~",
+      "viewCount": 123,
+      "likeCount": 456,
+      "commentCount": 789
+    }
+  ]
+}
