@@ -8,7 +8,7 @@ export default function SignUp() {
   return (
     <main id='signup' className="signup_main">
       <section id="signup_sec">
-        <div className="signupcontainer">
+        <div className="signup-container">
           <div className="main-title">
           <h2>견주</h2>
           </div>
