@@ -9,27 +9,30 @@
 #mypage.mypage_main li {
   list-style: none;
 }
-#mypage.mypage_main .card_section {
-  /*학생증 섹션*/
+#mypage.mypage_main .mypage_main_container {
   width: 1050px;
-  height: 550px;
   margin: 0 auto;
   position: relative;
 }
-#mypage.mypage_main .card_section .mypagemain_titlecontainer {
+#mypage.mypage_main .mypage_main_container .card_section {
+  /*학생증 섹션*/
+  width: 1050px;
+  height: 550px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypagemain_titlecontainer {
   position: relative;
   width: 1050px;
   height: 50px;
   margin: 20px;
 }
-#mypage.mypage_main .card_section .mypagemain_titlecontainer img {
+#mypage.mypage_main .mypage_main_container .card_section .mypagemain_titlecontainer img {
   width: 40px;
   height: 40px;
   vertical-align: middle;
   /* 아이콘을 인라인 블록 요소로 설정 */
   display: inline-block;
 }
-#mypage.mypage_main .card_section .mypagemain_titlecontainer .mypagemain_title {
+#mypage.mypage_main .mypage_main_container .card_section .mypagemain_titlecontainer .mypagemain_title {
   font-size: 30px;
   font-weight: bold;
   font-family: "fredoka one";
@@ -38,26 +41,26 @@
   line-height: 40px;
   display: inline-block;
 }
-#mypage.mypage_main .card_section .page_prev {
+#mypage.mypage_main .mypage_main_container .card_section .page_prev {
   position: absolute;
   width: 60px;
   height: 60px;
-  top: 221px;
+  top: 20%;
   left: 100px;
   z-index: 2;
-  transform: rotate(180deg);
+  transform: scaleX(-1);
   cursor: pointer;
 }
-#mypage.mypage_main .card_section .page_next {
+#mypage.mypage_main .mypage_main_container .card_section .page_next {
   position: absolute;
   width: 60px;
   height: 60px;
-  top: 221px;
+  top: 20%;
   right: 100px;
   z-index: 2;
   cursor: pointer;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard {
   width: 600px;
   height: 370px;
   background-color: #FFF3E4;
@@ -65,14 +68,14 @@
   margin: 0 auto;
   position: relative;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .mypageedit_idcardhead {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead {
   width: 600px;
   height: 80px;
   background-color: #74500A;
   border-radius: 40px 40px 0 0;
   margin: 0 auto;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer {
   width: 100%;
   height: 80px;
   /* 부모 요소 컨테이너 */
@@ -82,7 +85,7 @@
   /* 수평 가운데 정렬 */
   justify-content: center;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer img {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer img {
   width: 50px;
   height: 50px;
   margin-right: 20px;
@@ -90,7 +93,7 @@
   /* 아이콘을 인라인 블록 요소로 설정 */
   display: inline-block;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer .mypageedit_headtitle {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer .mypageedit_headtitle {
   font-size: 30px;
   font-weight: bold;
   font-family: "UhBeeSe_hyun";
@@ -100,20 +103,20 @@
   display: inline-block;
   letter-spacing: 30px;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_stamp {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_stamp {
   position: absolute;
   width: 300px;
   height: 290px;
   margin: 0 150px;
   z-index: 0;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer {
   position: absolute;
   width: 600px;
   height: 290px;
   z-index: 1;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_dog {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_dog {
   position: absolute;
   width: 200px;
   height: 230px;
@@ -122,14 +125,14 @@
   z-index: 2;
   border-radius: 10px;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_barcode {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_barcode {
   position: absolute;
   width: 300px;
   height: 50px;
   left: 35px;
   bottom: 15px;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_univ {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_univ {
   position: absolute;
   font-size: 16px;
   font-weight: bold;
@@ -138,16 +141,16 @@
   bottom: 15px;
   right: 30px;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info {
   margin: 20px;
   display: block;
   width: 350px;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info div {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info div {
   margin-bottom: 10px;
   display: inline-block;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infotext {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infotext {
   width: 60px;
   height: 30px;
   font-size: 16px;
@@ -157,7 +160,7 @@
   margin-right: 10px;
   align-items: center;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox {
   width: 250px;
   height: 30px;
   border-radius: 10px;
@@ -167,7 +170,7 @@
   vertical-align: middle;
   display: inline-flex;
 }
-#mypage.mypage_main .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox .info_textarea {
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox .info_textarea {
   width: 100%;
   height: 100%;
   line-height: 30px;
@@ -178,12 +181,12 @@
   color: gray;
   padding-left: 10px;
 }
-#mypage.mypage_main .card_section .btn_box {
+#mypage.mypage_main .mypage_main_container .card_section .btn_box {
   margin-top: 20px;
   float: right;
   margin-right: 250px;
 }
-#mypage.mypage_main .card_section .btn_box .edit_btn {
+#mypage.mypage_main .mypage_main_container .card_section .btn_box .edit_btn {
   width: 120px;
   height: 35px;
   border-radius: 30px;
@@ -193,18 +196,18 @@
   color: #fff;
   font-weight: bold;
 }
-#mypage.mypage_main .myposts {
+#mypage.mypage_main .mypage_main_container .myposts {
   /*내 글 모아보기 섹션*/
   margin: 0 auto;
   width: 950px;
   height: 637px;
 }
-#mypage.mypage_main .myposts .list_btn_box {
+#mypage.mypage_main .mypage_main_container .myposts .list_btn_box {
   width: 323px;
   display: flex;
   justify-content: space-between;
 }
-#mypage.mypage_main .myposts .list_btn_box .tabs .tab_btn {
+#mypage.mypage_main .mypage_main_container .myposts .list_btn_box .tabs .tab_btn {
   width: 105px;
   height: 47px;
   background-color: #74500A;
@@ -217,11 +220,11 @@
   font-size: 16px;
   font-weight: bold;
 }
-#mypage.mypage_main .myposts .list_btn_box .tabs .tab_btn.active {
+#mypage.mypage_main .mypage_main_container .myposts .list_btn_box .tabs .tab_btn.active {
   background-color: #F4E2CC;
   color: #000000;
 }
-#mypage.mypage_main .myposts .myposts_container {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container {
   width: 950px;
   height: 596px;
   display: flex;
@@ -231,7 +234,7 @@
   border-radius: 10px;
   border-top-left-radius: 0;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box {
   /*필터, 내 글 리스트들 박스*/
   width: 900px;
   height: 526px;
@@ -240,7 +243,7 @@
   justify-content: space-between;
   /*페이지네이션 스타일 적용*/
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .post_filter {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .post_filter {
   width: 102px;
   height: 30px;
   padding: 0 12px;
@@ -260,11 +263,11 @@
   line-height: 30px;
   color: #74500A;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .post_filter::-ms-expand {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .post_filter::-ms-expand {
   display: none;
   /*for IE10,11*/
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box {
   /*댕뮤니티 스타일*/
   width: 900px;
   height: 482px;
@@ -273,26 +276,26 @@
   justify-content: space-between;
   background-color: #FFFBF5;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table {
   width: 100%;
   border-collapse: collapse;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .head_row {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table .head_row {
   height: 36px;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .head_row th {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table .head_row th {
   text-align: center;
   line-height: 36px;
   background-color: #AB8B61;
   color: #ffffff;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .body_row td {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table .body_row td {
   border-bottom: 1px solid #F4E2CC;
   height: 40px;
   text-align: center;
   line-height: 40px;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .dsta_listbox {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .dsta_listbox {
   /*댕스타 스타일*/
   width: 900px;
   height: 482px;
@@ -303,7 +306,7 @@
   align-items: center;
   background-color: #FFFBF5;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .dsta_listbox .dsta_lists {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .dsta_listbox .dsta_lists {
   width: 832px;
   height: 420px;
   display: flex;
@@ -311,37 +314,37 @@
   justify-content: flex-start;
   align-items: flex-start;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .dsta_listbox .dsta_lists .dsta_list {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .dsta_listbox .dsta_lists .dsta_list {
   width: 200px;
   height: 200px;
   border-radius: 10px;
   margin: 4px;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .pagination {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination {
   display: inline-block;
   padding: 8px;
   display: flex;
   justify-content: center;
   align-self: center;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .pagination .page_item {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .page_item {
   display: inline-block;
   margin: 0 2px;
   font-size: 16px;
   color: #F0D5B5;
   cursor: default;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .pagination .page_item.active {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .page_item.active {
   color: #74500A;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .pagination .pre_btn {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .pre_btn {
   width: 16px;
   height: 16px;
   background: url(../img/mypage/Sort_Right.png) center transparent;
   border: none;
   transform: scaleX(-1);
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .pagination .next_btn {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .next_btn {
   width: 16px;
   height: 16px;
   background: url(../img/mypage/Sort_Right.png) center transparent;
