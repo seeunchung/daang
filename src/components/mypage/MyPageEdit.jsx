@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function MypageEdit() {
+
+  const { name, setName } = useState('');
+  const { major, setMajor } = useState('');
+  const { studentID, setStudentID } = useState('');
+  const { features, setFeatures } = useState('');
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleMajorChange = (e) => {
+    setMajor(e.target.value);
+  };
+
+  const handleStudentIDChange = (e) => {
+    setStudentID(e.target.value);
+  };
+
+  const handleFeaturesChange = (e) => {
+    setFeatures(e.target.value);
+  };
+
   return (
     <main id='mypage' className='mypageedit'>
       <div className='mypageedit_container'>
@@ -25,33 +47,49 @@ export default function MypageEdit() {
               <div>
                 <h2 className='idcard_infotext'>이름 :</h2>
                 <div className='idcard_infobox'>
-                  <textarea className='info_textarea'>
-                    강아지 이름을 작성해주세요.
-                  </textarea>
+                  <input
+                    type='text'
+                    className='info_input'
+                    value={name}
+                    onChange={handleNameChange}
+                    placeholder='강아지 이름을 작성해주세요.'
+                  />
                 </div>
               </div>
               <div>
                 <h2 className='idcard_infotext'>학과 :</h2>
                 <div className='idcard_infobox'>
-                  <textarea className='info_textarea'>
-                    강아지 종류를 작성해주세요.
-                  </textarea>
+                  <input
+                    type='text'
+                    className='info_input'
+                    value={major}
+                    onChange={handleMajorChange}
+                    placeholder='강아지 종류를 작성해주세요.'
+                  />
                 </div>
               </div>
               <div>
                 <h2 className='idcard_infotext'>학번 :</h2>
                 <div className='idcard_infobox'>
-                  <textarea className='info_textarea'>
-                    강아지 생년월일 ex.20231212
-                  </textarea>
+                  <input
+                    type='text'
+                    className='info_input'
+                    value={studentID}
+                    onChange={handleStudentIDChange}
+                    placeholder='강아지 생년월일 ex)20231212'
+                  />
                 </div>
               </div>
               <div>
                 <h2 className='idcard_infotext'>특징 :</h2>
                 <div className='idcard_infobox'>
-                  <textarea className='info_textarea'>
-                    강아지 특징을 작성해주세요.
-                  </textarea>
+                  <input
+                    type='text'
+                    className='info_input'
+                    value={features}
+                    onChange={handleFeaturesChange}
+                    placeholder='강아지 특징을 작성해주세요.'
+                  />
                 </div>
               </div>
             </div>
@@ -62,6 +100,12 @@ export default function MypageEdit() {
         <div className='btn_box'>
           <button className='add_btn' type='submit'>학생증 추가</button>
           <button className='del_btn' type='submit'>학생증 삭제</button>
+        </div>
+        <div className='infoedit_container'>
+          <div className='infoedit_boxtitle'>견주 정보 수정</div>
+          <div className='infoedit_box'>
+
+          </div>
         </div>
       </div>
     </main>
