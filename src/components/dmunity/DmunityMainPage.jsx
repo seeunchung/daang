@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-function getCategoryImage(category) {
+function getCategoryImage(category) {       //카테고리 별 아이콘 설정
   switch (category) {
     case '먹어요':
       return '../img/dmunity/eat.png';
@@ -18,168 +19,103 @@ function getCategoryImage(category) {
   }
 }
 
-const posts = [
-  {
-    dmunity_category: "",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "기타",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "놀아요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "어때요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "어때요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "놀아요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "어때요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "아파요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  },
-  {
-    dmunity_category: "먹어요",
-    dmunity_title: "예시 데이터",
-    dmunity_text: "예시 데이터",
-    dmunity_date: "2023-10-27",
-    dmunity_hit: 27,
-    dmunity_like: 10,
-    userid: "운영자"
-  }
-
-  //댕뮤니티DB
-];
-
-const Post = ({ category, title, contents, view, likes, date, userid }) => {
-  const categoryImage = getCategoryImage(category);
-
-  return (
-    <div id="post">
-      <div className='postLeft'>
-        <img className="category" src={categoryImage} alt={category} />
-      </div>
-      <div className='postMiddle'>
-        <Link to='/dmunity/DmunityDetail'>
-          <div className="title">{title}</div>
-          <div className="contents">{contents}</div>
-          <div className="info">
-            <span className="view"><img src='../img/watch.png' alt='view'></img> {view}</span>
-            <span className="likes"><img src='../img/heart.png' alt='likes'></img> {likes}</span>
-          </div>
-        </Link>
-      </div>
-      <div className='postRight'>
-        <div className="date">{date}</div>
-        <div className='userid'>{userid}</div>
-      </div>
-    </div>
-  );
-};
-
 export default function DmunityMainPage() {
 
-  const [inputValue, setInputValue] = useState('');
+  const [postList, setPostList] = useState([]);
+
+  useEffect(() => {
+    axios({
+      url: './data/dmunityMain.json',
+      method: 'GET'
+    })
+      // 성공
+      .then((res) => {
+        setPostList(res.data.dmunityMain)
+        console.log(res.data)
+      })
+      // 에러
+      .catch((err) => {
+        console.log(`AXIOS 실패!${err}`);
+      });
+  }, []);
+
+  const [inputValue, setInputValue] = useState(''); //입력 값 관리
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   }
 
+  function strCut(str) {
+    if (str.length > 45) {
+      return str.substr(0, 45) + '...'
+    }
+    return str
+  }
+
+  const [eatImg, setEatImg] = useState("../img/eat.png")
+
+
   return (
     <div id="dmunity">
       <div className='categoryContainer'>
         <div className='row1'>
-          <h2>커뮤니티 <img src='../img/dmunity/dmunity.png' alt='dmunity'></img></h2>
+          <img src='../img/dmunity/dmunity.png' alt='dmunity' /><h2> 커뮤니티</h2>
         </div>
         <div className='row2'>
-          <span><button type='buuton'><img src="./img/dmunity/eat.png" alt="" /></button><a href='#!'>먹어요</a></span>
-          <span><button type='buuton'><img src="./img/dmunity/sick.png" alt="" /></button><a href='#!'>아파요</a></span>
-          <span><button type='buuton'><img src="./img/dmunity/play.png" alt="" /></button><a href='#!'>놀아요</a></span>
-          <span><button type='buuton'><img src="./img/dmunity/how.png" alt="" /></button><a href='#!'>어때요</a></span>
-          <span><button type='buuton'><img src="./img/dmunity/etc.png" alt="" /></button><a href='#!'>기타</a></span>
+          <span><button type='buuton'><img src={'../img/dmunity/eat.png'} alt="" /></button><a href='#!'>먹어요</a></span>
+          <span><button type='buuton'><img src={'../img/dmunity/sick.png'} alt="" /></button><a href='#!'>아파요</a></span>
+          <span><button type='buuton'><img src={'../img/dmunity/play.png'} alt="" /></button><a href='#!'>놀아요</a></span>
+          <span><button type='buuton'><img src={'../img/dmunity/how.png'} alt="" /></button><a href='#!'>어때요</a></span>
+          <span><button type='buuton'><img src={'../img/dmunity/etc.png'} alt="" /></button><a href='#!'>기타</a></span>
         </div>
       </div>
       <div id='postsboard'>
         <div className='row1'>
-          <h2>posts <img src='../img/dmunity/posts.png' alt='posts'></img></h2>
+          <img src='../img/dmunity/posts.png' alt='posts' /><h2> posts</h2>
+          <div className='sorting'>최신순</div>
         </div>
         <div className='row2'>
-          {posts.map(post => (
-            <Post
-              category={post.dmunity_category}
-              title={post.dmunity_title}
-              contents={post.dmunity_text}
-              date={post.dmunity_date}
-              view={post.dmunity_hit}
-              likes={post.dmunity_like}
-              userid={post.userid}
-            />
-          ))}
+          {
+            postList && postList.map((postList, idx) => {
+              return (
+                <div id="post">
+                  <div className='postLeft'>
+                    <img className="category" src={getCategoryImage(postList.category)} alt={postList.category} />
+                  </div>
+                  <div className='postMiddle'>
+                    <Link to='/dmunity/DmunityDetail'>
+                      <div className="title">{strCut(postList.title)}</div>
+                      <div className="contents">{strCut(postList.contents)}</div>
+                      <div className="info">
+                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{postList.view}</p></span>
+                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{postList.likes}</p></span>
+                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{postList.comments}</p></span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='postRight'>
+                    <div className="date">{postList.date}</div>
+                    <div className='userid'>{postList.userid}</div>
+                  </div>
+                </div>
+              );
+            })
+          }
         </div>
         <div className='row3'>
-          <div className='pageLink'></div>
+          <nav className='pagination'>
+            <a href='#'>&laquo;</a>
+            <a href='#'>&lt;</a>
+            <a href='#'>1</a>
+            <a href='#'>2</a>
+            <a href='#'>3</a>
+            <a href='#'>4</a>
+            <a href='#'>5</a>
+            <a href='#'>6</a>
+            <a href='#'>7</a>
+            <a href='#'>&gt;</a>
+            <a href='#'>&raquo;</a>
+          </nav>
           <div className='searchBox'>
             <input
               type="text"
@@ -191,6 +127,6 @@ export default function DmunityMainPage() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

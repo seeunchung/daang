@@ -14,9 +14,9 @@
   height: 52px;
   display: flex;
   align-items: center;
+  padding-left: 12px;
 }
 #dmunity .categoryContainer .row1 h2 {
-  margin: 8px;
   font-family: "NPSfontbold";
   font-size: 32px;
   font-weight: bold;
@@ -40,27 +40,51 @@
   border-radius: 50%;
   border: none;
   background-color: #FFFBF5;
+  margin-bottom: 8px;
+}
+#dmunity .categoryContainer .row2 span a {
+  font-weight: bold;
 }
 #dmunity #postsboard {
   width: 1050px;
+  height: 1400px;
   margin: auto;
   margin-top: 64px;
   background-color: #F9EBDB;
   border-radius: 15px;
 }
 #dmunity #postsboard .row1 {
-  height: 30px;
-  align-items: center;
+  height: 52px;
   display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+#dmunity #postsboard .row1 img {
+  height: 32px;
+  width: 32px;
 }
 #dmunity #postsboard .row1 h2 {
-  margin-left: 8px;
   color: #74500A;
-  font-size: 20px;
+  font-size: 32px;
   font-family: "Fredoka One";
   font-weight: bold;
 }
-#dmunity #postsboard .row2 #post {
+#dmunity #postsboard .row1 .sorting {
+  height: 36px;
+  width: 96px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: 16px;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid #74500A;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: "Noto Sans KR";
+  color: #888888;
+}
+#dmunity .row2 #post {
   width: 960px;
   height: 120px;
   margin: auto;
@@ -69,58 +93,70 @@
   font-family: "Noto Sans KR", sans-serif;
   border-bottom: 1px solid #D6CABA;
 }
-#dmunity #postsboard .row2 #post .postLeft .category {
+#dmunity .row2 #post .postLeft .category {
   width: 80px;
   height: 80px;
 }
-#dmunity #postsboard .row2 #post .postMiddle {
+#dmunity .row2 #post .postMiddle {
   width: 740px;
   height: auto;
   margin-left: 40px;
 }
-#dmunity #postsboard .row2 #post .postMiddle .title {
+#dmunity .row2 #post .postMiddle .title {
+  height: 18px;
   font-size: 16px;
 }
-#dmunity #postsboard .row2 #post .postMiddle .contents {
+#dmunity .row2 #post .postMiddle .contents {
+  height: 16px;
   margin-top: 8px;
   font-size: 14px;
   color: #888888;
 }
-#dmunity #postsboard .row2 #post .postMiddle .info {
+#dmunity .row2 #post .postMiddle .info {
   margin-top: 12px;
   margin-top: 12px;
+  display: flex;
 }
-#dmunity #postsboard .row2 #post .postMiddle .info span {
+#dmunity .row2 #post .postMiddle .info span {
   font-weight: bold;
   margin-left: 3px;
   font-weight: bold;
+  display: flex;
 }
-#dmunity #postsboard .row2 #post .postRight {
-  color: #ccc;
+#dmunity .row2 #post .postRight {
+  color: #888888;
 }
-#dmunity #postsboard .row2 #post .postRight .userid {
+#dmunity .row2 #post .postRight .userid {
   margin-top: 10px;
 }
-#dmunity #postsboard .row3 .pageLink {
+#dmunity .row3 .pagination {
   width: 300px;
   height: 50px;
   margin: auto;
   margin-top: 32px;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  font-size: 32px;
+  font-family: "Fredoka One";
 }
-#dmunity #postsboard .row3 .searchBox {
+#dmunity .row3 .pagination a {
+  color: #74500A;
+}
+#dmunity .row3 .searchBox {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
 }
-#dmunity #postsboard .row3 .searchBox input {
+#dmunity .row3 .searchBox input {
   width: 220px;
   height: 30px;
   border-radius: 10px;
   border: none;
   padding: 3px;
 }
-#dmunity #postsboard .row3 .searchBox span {
+#dmunity .row3 .searchBox span {
   width: 50px;
   height: 30px;
   border-radius: 10px;
