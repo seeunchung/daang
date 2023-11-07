@@ -1,0 +1,79 @@
+{
+  "dmunity": [
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity1",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity2",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity3",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity4",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity5",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    }
+  ],
+  "dsta": [
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta1",
+      "img": "./img/강아지사진.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta2",
+      "img": "./img/강아지사진.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta3",
+      "img": "./img/강아지사진.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta4",
+      "img": "./img/강아지사진.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta5",
+      "img": "./img/강아지사진.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta6",
+      "img": "./img/강아지사진.png"
+    }
+  ],
+  "idcard": [
+    {
+      "name": "망고",
+      "breed": "포메",
+      "birth": "20221212",
+      "character": "너무 귀여움"
+    }
+  ]
+}

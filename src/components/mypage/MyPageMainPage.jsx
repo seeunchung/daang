@@ -1,8 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function MyPageMainPage() {
+
+  //받아올 데이터
+  const [idcardInfo, setIdcardInfo] = useState([]);
+  const [myDmunity, setMyDmunity] = useState([]);
+  const [myDsta, setMyDsta] = useState([]);
+
+  useEffect(() => {
+    axios({
+      url: './data/mypageMain.json',
+      method: 'GET'
+    })
+      .then((res) => {
+        setIdcardInfo(res.data.idcard);
+        setMyDmunity(res.data.dmunity);
+        setMyDsta(res.data.dsta);
+      })
+      .catch((err) => {
+        console.log(`AXIOS 실패! ${err}`);
+      });
+  }, []);
+
   //메뉴 탭 색상 바뀌게
   const [activeButton, setActiveButton] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
@@ -21,63 +43,68 @@ export default function MyPageMainPage() {
     setSelectedOption(e.target.value); // 선택한 옵션으로 상태 업데이트
   }
 
-
-
-  // 받아올 데이터(임시)
-  const dmunityPosts = [
-    {
-      id: 1,
-      title: '강아지 간식 추천 받아요~',
-      date: '23.10.11',
-      views: 3,
-    },
-    {
-      id: 1,
-      title: '강아지 간식 추천 받아요~',
-      date: '23.10.11',
-      views: 3,
-    },
-    {
-      id: 1,
-      title: '강아지 간식 추천 받아요~',
-      date: '23.10.11',
-      views: 3,
-    },
-  ];
-
-  const dstaData = [
-    {
-      id: 1,
-      url: './img/강아지사진.png'
-    },
-    {
-      id: 1,
-      url: './img/강아지사진.png'
-    },
-    {
-      id: 1,
-      url: './img/강아지사진.png'
-    },
-    {
-      id: 1,
-      url: './img/강아지사진.png'
-    },
-    {
-      id: 1,
-      url: './img/강아지사진.png'
-    },
-    {
-      id: 1,
-      url: './img/강아지사진.png'
-    }
-  ]
-
   return (
     <main id='mypage' className='mypage_main'>
-      <Link to='/mypage-edit'>회원정보 수정</Link>
       {/*학생증 섹션 */}
       <section className='card_section'>
-        <p>학생증</p>
+        <div className='mypagemain_titlecontainer'>
+          <img src="./img/mypage/mypage_dog.png" alt="강아지 아이콘" />
+          <h2 className='mypagemain_title'>My Page</h2>
+        </div>
+        <img className='page_prev' src='./img/mypage/idcard_page.png' alt='<버튼'></img>
+        <img className='page_next' src='./img/mypage/idcard_page.png' alt='>버튼'></img>
+        <div className='mypageedit_idcard'>
+          <div className='mypageedit_idcardhead'>
+            <div className='mypageedit_headcontainer'>
+              <img src="./img/mypage/idcard_dog.png" alt="강아지 메인 학생증 선택 아이콘" />
+              <h2 className='mypageedit_headtitle'>STUDENT</h2>
+            </div>
+          </div>
+          <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
+          <div className='idcard_bodycontainer'>
+            <img className='idcard_dog' src='./img/mypage/dog_img.png' alt='강아지 사진' />
+
+            <div className='idcard_info'>
+              <div>
+                <h2 className='idcard_infotext'>이름 :</h2>
+                <div className='idcard_infobox'>
+                  <div className='info_textarea'>
+                    {idcardInfo.length > 0 && idcardInfo[0].name}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2 className='idcard_infotext'>학과 :</h2>
+                <div className='idcard_infobox'>
+                  <div className='info_textarea'>
+                    {idcardInfo.length > 0 && idcardInfo[0].breed}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2 className='idcard_infotext'>학번 :</h2>
+                <div className='idcard_infobox'>
+                  <div className='info_textarea'>
+                    {idcardInfo.length > 0 && idcardInfo[0].birth}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2 className='idcard_infotext'>특징 :</h2>
+                <div className='idcard_infobox'>
+                  <div className='info_textarea'>
+                    {idcardInfo.length > 0 && idcardInfo[0].character}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='idcard_univ'>DAaaNG UNIV</div>
+            <img className='idcard_barcode' src='./img/mypage/barcode.png' alt='바코드 사진' />
+          </div>
+        </div>
+        <div className='btn_box'>
+          <Link to='/mypage-edit'> <button className='edit_btn' type='submit'>회원정보 수정</button> </Link>
+        </div>
       </section>
       {/*내 글 모아보기 */}
       <section className='myposts'>
@@ -112,12 +139,12 @@ export default function MyPageMainPage() {
                       </tr>
                     </thead>
                     <tbody className='body_row'>
-                      {dmunityPosts.map((post, index) => (
-                        <tr key={index} className='data_row'>
+                      {myDmunity.map((post, index) => (
+                        <tr key={post.postid} className='data_row'>
                           <td>{index + 1}</td>
                           <td>{post.title}</td>
                           <td>{post.date}</td>
-                          <td>{post.views}</td>
+                          <td>{post.view}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -128,9 +155,9 @@ export default function MyPageMainPage() {
               {selectedOption === 'dsta' && (
                 <div className='dsta_listbox'>
                   <ul className='dsta_lists'>
-                    {dstaData.map((post, index) => (
-                      <li key={index}>
-                        <img className='dsta_list' src={post.url} />
+                    {myDsta.map((post, index) => (
+                      <li key={post.postid}>
+                        <img className='dsta_list' src={post.img} alt='thumbnail_img' />
                       </li>
                     ))}
                   </ul>
