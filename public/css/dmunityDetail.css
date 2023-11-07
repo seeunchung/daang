@@ -1,0 +1,128 @@
+#DmunityDetail {
+  padding-top: 90PX;
+  padding-bottom: 40px;
+}
+#DmunityDetail #box {
+  width: 1050px;
+  margin: auto;
+  margin-top: 80px;
+  background-color: #F9EBDB;
+  border-radius: 15px;
+}
+#DmunityDetail #box .boxbox {
+  width: 960px;
+  margin: auto;
+  padding-top: 12px;
+  padding-bottom: 40px;
+}
+#DmunityDetail #box .boxbox .row1 {
+  display: flex;
+}
+#DmunityDetail #box .boxbox .row1 .logo {
+  font-family: "NPSfontbold";
+  font-size: 32px;
+  color: #74500A;
+}
+#DmunityDetail #box .boxbox .row2 {
+  margin-top: 32px;
+  height: 60px;
+  align-items: center;
+  border-bottom: 1px solid #74500A;
+  display: flex;
+}
+#DmunityDetail #box .boxbox .row2 img {
+  width: 48px;
+  height: 48px;
+}
+#DmunityDetail #box .boxbox .row2 .title {
+  width: 720px;
+  font-size: 20px;
+  margin-left: 20px;
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+}
+#DmunityDetail #box .boxbox .row3 {
+  display: flex;
+  margin-top: 4px;
+  align-items: self-end;
+}
+#DmunityDetail #box .boxbox .row3 .info {
+  display: flex;
+  margin-left: auto;
+}
+#DmunityDetail #box .boxbox .row3 .info span {
+  font-weight: bold;
+  margin-left: 3px;
+  font-weight: bold;
+  display: flex;
+}
+#DmunityDetail #box .boxbox .row4 {
+  width: 930px;
+  min-height: 240px;
+  margin: auto;
+  margin-top: 12px;
+  font-size: 14px;
+  font-family: "Noto Sans KR";
+}
+#DmunityDetail #box .boxbox .row5 {
+  display: flex;
+  padding: 8px;
+}
+#DmunityDetail #box .boxbox .row5 img {
+  width: 22px;
+  height: 18px;
+}
+#DmunityDetail #box .boxbox .row5 p {
+  margin-left: 4px;
+}
+#DmunityDetail #box .boxbox .row6 {
+  border-bottom: 1px solid #74500A;
+  border-top: 1px solid #74500A;
+}
+#DmunityDetail #box .boxbox .row7 {
+  display: flex;
+  margin-top: 16px;
+}
+#DmunityDetail #box .boxbox .row7 input {
+  width: 90%;
+  height: 60px;
+  padding: 8px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
+}
+#DmunityDetail #box .boxbox .row7 button {
+  width: 10%;
+  height: 60px;
+  background-color: white;
+  border: none;
+  color: #74500A;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#DmunityDetail #box .boxbox .row8 {
+  display: flex;
+}
+#DmunityDetail #box .boxbox .row8 button {
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #AB8B61;
+  color: white;
+  font-family: "Noto Sans KR";
+  font-weight: bold;
+}
+#DmunityDetail #box .boxbox .row8 .list {
+  margin-top: 40px;
+}
+#DmunityDetail #box .boxbox .row8 div {
+  margin-left: auto;
+  margin-top: 40px;
+}
+#DmunityDetail #box .boxbox .row8 div .delete {
+  margin-left: 4px;
+}
