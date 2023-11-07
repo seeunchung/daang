@@ -83,14 +83,14 @@ export default function MyPageMainPage() {
             </div>
             <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
             <div className='idcard_bodycontainer'>
-              <img className='idcard_dog' src='./img/mypage/dog_img.png' alt='강아지 사진' />
+              <img className='idcard_dog' src={idcardInfo.length > 0 && idcardInfo[0].dogimg} alt='강아지 사진' />
 
               <div className='idcard_info'>
                 <div>
                   <h2 className='idcard_infotext'>이름 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].name}
+                      {idcardInfo.length > 0 && idcardInfo[0].dogname}
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ export default function MyPageMainPage() {
                   <h2 className='idcard_infotext'>학과 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].breed}
+                      {idcardInfo.length > 0 && idcardInfo[0].major}
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function MyPageMainPage() {
                   <h2 className='idcard_infotext'>특징 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].character}
+                      {idcardInfo.length > 0 && idcardInfo[0].features}
                     </div>
                   </div>
                 </div>

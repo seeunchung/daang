@@ -236,6 +236,7 @@
           font-size: 16px;
           color: #fff;
           font-weight: bold;
+          cursor: pointer;
         }
       }
     }
@@ -265,6 +266,7 @@
             font-family: 'Noto Sans KR';
             font-size: 16px;
             font-weight: bold;
+            cursor: pointer;
 
             &.active {
               background-color: #F4E2CC;
@@ -318,6 +320,7 @@
             font-size: 16px;
             line-height: 30px;
             color: #74500A;
+            cursor: pointer;
           }
 
           .list_box {
@@ -350,6 +353,7 @@
                   height: 40px;
                   text-align: center;
                   line-height: 40px;
+                  cursor: pointer;
                 }
               }
             }
@@ -379,6 +383,7 @@
                 height: 200px;
                 border-radius: 10px;
                 margin: 4px;
+                cursor: pointer;
               }
             }
           }
@@ -396,7 +401,7 @@
               margin: 0 2px;
               font-size: 16px;
               color: #F0D5B5;
-              cursor: default;
+              cursor: pointer;
 
               &.active {
                 color: #74500A;
@@ -409,6 +414,7 @@
               background: url(../img/mypage/Sort_Right.png) center transparent;
               border: none;
               transform: scaleX(-1);
+              cursor: pointer;
             }
 
             .next_btn {
@@ -416,6 +422,7 @@
               height: 16px;
               background: url(../img/mypage/Sort_Right.png) center transparent;
               border: none;
+              cursor: pointer;
             }
           }
         }

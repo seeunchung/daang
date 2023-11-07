@@ -127,10 +127,11 @@
   ],
   "idcard": [
     {
-      "name": "망고",
-      "breed": "포메",
-      "birth": "20221212",
-      "character": "너무 귀여움"
+      "dogname": "꿈이",
+      "major": "포메라니안",
+      "birth": "20180703",
+      "features": "코에 점이 있다.",
+      "dogimg": "./img/dsta/kkumi.png"
     }
   ]
 }
