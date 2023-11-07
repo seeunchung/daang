@@ -1,0 +1,18 @@
+#signup.signup_main {
+  padding-top: 90px;
+  width: 100%;
+}
+#signup.signup_main #signup_sec {
+  width: 100%;
+}
+#signup.signup_main #signup_sec .signup-container {
+  width: 1050px;
+  margin: 0 auto;
+  background: url(../../img/signupbg-3.png) no-repeat 50% 50%;
+  width: 800px;
+  height: 2000px;
+}
+#signup.signup_main #signup_sec .signup-container .main-title {
+  padding-top: 300px;
+  padding-left: 30px;
+}
