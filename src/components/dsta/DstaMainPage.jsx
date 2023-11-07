@@ -144,7 +144,6 @@ export default function DstaMainPage() {
         {/* 댕스타 메인 데이터 */}
         <div className='dstamain_pagecontainer'>
           {currentItems.map((item, index) => (
-            // {dstaMain && dstaMain.map((item, index) => {
             // a태그 href에 맞는 데이터값 설정
             <a href="#!" key={item.id}>
               <div className='dstamain_photobox'>
