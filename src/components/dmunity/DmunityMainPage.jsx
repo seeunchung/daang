@@ -25,7 +25,7 @@ export default function DmunityMainPage() {
 
   useEffect(() => {
     axios({
-      url: './data/dmunityMain.json',
+      url: './data/dmunity.json',
       method: 'GET'
     })
       // 성공
@@ -83,7 +83,7 @@ export default function DmunityMainPage() {
                     <img className="category" src={getCategoryImage(postList.category)} alt={postList.category} />
                   </div>
                   <div className='postMiddle'>
-                    <Link to='/dmunity/DmunityDetail'>
+                    <Link to='/dmunity-detail'>
                       <div className="title">{strCut(postList.title)}</div>
                       <div className="contents">{strCut(postList.contents)}</div>
                       <div className="info">
