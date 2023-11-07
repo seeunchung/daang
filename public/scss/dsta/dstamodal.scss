@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; // Ensure the modal is above other content
+
+  .close-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .modal {
+
+    width: 1050px;
+    max-width: 1050px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+      background-color: #F4E2CC;
+      width: 1050px;
+      height: 700px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 20px;
+
+
+      .photos {
+        flex: 1;
+        background-color: #FFFBF5;
+        border-radius: 20px;
+        height: 668px;
+        margin-left: 16px;
+        margin-right: 8px;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      .words {
+        flex: 1;
+        background-color: #FFFBF5;
+        border-radius: 20px;
+        height: 668px;
+        margin-left: 8px;
+        margin-right: 16px;
+        position: relative;
+
+        .profile {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid #F4E2CC;
+          padding: 10px 16px 10px 16px;
+
+          img {
+            margin-right: 14px;
+            height: 32px;
+            width: 32px;
+          }
+
+          .profileName {
+            margin-right: auto;
+            /* 왼쪽 정렬 */
+          }
+
+          .settings img {
+            width: auto;
+            height: 4px;
+            margin: 0px 6px 0px 0px;
+          }
+        }
+
+        .content {
+          border-bottom: 1px solid #F4E2CC;
+          padding: 16px;
+
+          .contentWords {
+            padding: 0px;
+          }
+
+          .tags {
+            color: #74500A;
+            padding: 4px 0px 0px 0px;
+          }
+
+          .contentLikes {
+            padding: 4px 0px 0px 0px;
+
+            img {
+              height: 16px;
+              width: 16px;
+            }
+          }
+
+          .contentTime {
+            padding: 4px 0px 0px 0px;
+            font-size: 12px;
+          }
+        }
+
+        .commentSection {
+          display: flex;
+          padding: 14px 16px 14px 16px;
+
+          img {
+            height: 32px;
+            width: 32px;
+            margin-right: 14px;
+            margin-bottom: auto;
+          }
+
+          .commentProfile {
+            padding: 0px;
+          }
+
+          .comment {
+            padding: 4px 0px 0px 0px;
+          }
+
+          .commentDetails {
+            display: flex;
+            align-items: center;
+            padding: 4px 0px 0px 0px;
+            font-size: 12px;
+
+            .commentDate {
+              margin-right: 12px;
+            }
+
+            Img {
+              height: 12px;
+              width: 12px;
+              margin: 2px 4px 0px 0px;
+            }
+
+            .commentLikes {
+              margin-right: 12px;
+            }
+
+            .cocomment {
+              margin-right: 12px;
+            }
+          }
+
+
+
+        }
+
+        .commentWritingSection {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          padding: 16px;
+          border-top: 1px solid #F4E2CC;
+          bottom: 0px;
+          width: 501px;
+
+
+          .write-button {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}

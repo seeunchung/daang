@@ -2,8 +2,16 @@
 @import url(../css/reset.css);
 @import url(../css/header.css);
 @import url(../css/mainpage.css);
+@import url(../css/TermsOfUse.css);
 @import url(../css/footer.css);
-@import url(../css/dstawrite.css);
+@import url(../css/dstaWrite.css);
+@import url(../css/signin.css);
+@import url(../css/signup.css);
+@import url(../css/dstamain.css);
+@import url(../css/dstamodal.css);
+@import url(../css/dmunitymain.css);
+@import url(../css/myPage.css);
+@import url(../css/myPageEdit.css);
 #wrap {
   width: 100%;
   background: #fffbf5;
