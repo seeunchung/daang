@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 
 export const MapContainer = styled.div`
   position: relative;
+  padding-top: 90px;
 `;
 
 export const Overlay = styled.div`
@@ -89,18 +90,20 @@ export const ListContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   left: 0;
-  top: 0;
+  top: 89px;
   z-index: 10;
   bottom: 0;
   width: 400px;
   overflow-y: auto;
   transition: 0.2s;
   border-right: ${({ theme }) => `1px solid ${theme.colors.gray}`};
-
+  user-select: none;
+  
   ${({ isClosed }) =>
     isClosed &&
     css`
       left: -400px;
+      
     `};
 `;
 
@@ -110,14 +113,15 @@ export const SideBarOpenBtn = styled.button`
   top: 50%;
   left: 400px;
   transform: translateY(-50%);
-  background-color: ${({ theme }) => theme.colors.white};
-  width: 50px;
-  height: 100%;
+  background-color: ${({ theme }) => theme.colors.primary};
+  width: 40px;
+  height: 90px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: ${({ theme }) => `1px solid ${theme.colors.gray}`};
   border-left: 0;
   transition: 0.2s;
+  cursor: pointer;
 
   ${({ isClosed }) =>
     isClosed &&
@@ -131,6 +135,8 @@ export const ModalContainer = styled.div`
     height: ${({ isClosed }) => (isClosed ? '0px' : '300px')};
     overflow-y: auto;
     transition: 0.3s;
+  
+
   }
 `;
 
@@ -206,6 +212,7 @@ export const ShareBtn = styled.button`
   position: absolute;
   top: 20px;
   right: 20px;
+  cursor: pointer;
 `;
 
 export const NoList = styled.p`
@@ -328,7 +335,7 @@ export const ReSearch = styled.button`
   position: fixed;
   color: white;
   font-size: 14px;
-  bottom: 80px;
+  bottom: 110px;
   transform: translateX(-50%);
   left: 50%;
   z-index: 10;
@@ -361,7 +368,7 @@ export const ReSearch = styled.button`
 export const ReSearchImg = styled.img`
   width: 25px;
   height: 25px;
-  margin: 7px 1px 0px -4px;
+  margin: 7px 1px 9px -4px;
 
   @media (max-width: 768px) {
     font-size: 13px;

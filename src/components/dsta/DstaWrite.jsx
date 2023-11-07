@@ -91,7 +91,9 @@ export default function DstaWrite() {
                   return (
                     <li className='add_photo' key={index}>
                       <img className='added_img' src={file} alt="Uploaded" />
-                      <button className='img_delete_btn' onClick={() => removeImage(index)} />
+                      <button className='img_delete_btn' onClick={() => removeImage(index)}>
+                        <img src="./img/dsta/photo_delete_btn.png" alt="" />
+                      </button>
                       <div className='numbering'>{index + 1}/4</div>
                     </li>
                   )

@@ -1,43 +1,233 @@
+@charset "UTF-8";
 #mypage.mypage_main {
   width: 100%;
-  height: 100%;
-  padding: 120px 0 30px 0;
-}
-#mypage.mypage_main .card_section {
-  height: 100px;
+  height: 100vh;
+  min-height: 1330px;
+  padding: 90px 0 30px 0;
 }
 #mypage.mypage_main ul,
 #mypage.mypage_main li {
   list-style: none;
 }
-#mypage.mypage_main .myposts {
+#mypage.mypage_main .mypage_main_container {
+  width: 1050px;
   margin: 0 auto;
-  width: 969px;
+  position: relative;
+}
+#mypage.mypage_main .mypage_main_container .card_section {
+  /*학생증 섹션*/
+  width: 1050px;
+  height: 550px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypagemain_titlecontainer {
+  position: relative;
+  width: 1050px;
+  height: 50px;
+  margin: 20px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypagemain_titlecontainer img {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  /* 아이콘을 인라인 블록 요소로 설정 */
+  display: inline-block;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypagemain_titlecontainer .mypagemain_title {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "fredoka one";
+  padding: 10px;
+  color: #74500A;
+  line-height: 40px;
+  display: inline-block;
+}
+#mypage.mypage_main .mypage_main_container .card_section .page_prev {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  left: 100px;
+  z-index: 2;
+  transform: scaleX(-1);
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .card_section .page_next {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  right: 100px;
+  z-index: 2;
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard {
+  width: 600px;
+  height: 370px;
+  background-color: #FFF3E4;
+  border-radius: 40px;
+  margin: 0 auto;
+  position: relative;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead {
+  width: 600px;
+  height: 80px;
+  background-color: #74500A;
+  border-radius: 40px 40px 0 0;
+  margin: 0 auto;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer {
+  width: 100%;
+  height: 80px;
+  /* 부모 요소 컨테이너 */
+  display: flex;
+  /* 수직 가운데 정렬 */
+  align-items: center;
+  /* 수평 가운데 정렬 */
+  justify-content: center;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  vertical-align: middle;
+  /* 아이콘을 인라인 블록 요소로 설정 */
+  display: inline-block;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .mypageedit_idcardhead .mypageedit_headcontainer .mypageedit_headtitle {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "UhBeeSe_hyun";
+  padding: 10px;
+  color: #FFFBF5;
+  line-height: 40px;
+  display: inline-block;
+  letter-spacing: 30px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_stamp {
+  position: absolute;
+  width: 300px;
+  height: 290px;
+  margin: 0 150px;
+  z-index: 0;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer {
+  position: absolute;
+  width: 600px;
+  height: 290px;
+  z-index: 1;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_dog {
+  position: absolute;
+  width: 200px;
+  height: 230px;
+  margin: 20px;
+  right: 10px;
+  z-index: 2;
+  border-radius: 10px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_barcode {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  left: 35px;
+  bottom: 15px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_univ {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #74500A;
+  font-family: "UhBeeSe_hyun";
+  bottom: 15px;
+  right: 30px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info {
+  margin: 20px;
+  display: block;
+  width: 350px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info div {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infotext {
+  width: 60px;
+  height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "UhBeeSe_hyun";
+  display: inline-block;
+  margin-right: 10px;
+  align-items: center;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox {
+  width: 250px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #FFF;
+  opacity: 0.7;
+  display: inline-block;
+  vertical-align: middle;
+  display: inline-flex;
+}
+#mypage.mypage_main .mypage_main_container .card_section .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox .info_textarea {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "UhBeeSe_hyun";
+  color: gray;
+  padding-left: 10px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .btn_box {
+  margin-top: 20px;
+  float: right;
+  margin-right: 250px;
+}
+#mypage.mypage_main .mypage_main_container .card_section .btn_box .edit_btn {
+  width: 120px;
+  height: 35px;
+  border-radius: 30px;
+  border: none;
+  background-color: #74500A;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .myposts {
+  /*내 글 모아보기 섹션*/
+  margin: 0 auto;
+  width: 950px;
   height: 637px;
 }
-#mypage.mypage_main .myposts .list_btn_box {
+#mypage.mypage_main .mypage_main_container .myposts .list_btn_box {
   width: 323px;
   display: flex;
   justify-content: space-between;
 }
-#mypage.mypage_main .myposts .list_btn_box .tabs .tab_btn {
+#mypage.mypage_main .mypage_main_container .myposts .list_btn_box .tabs .tab_btn {
   width: 105px;
   height: 47px;
   background-color: #74500A;
   border: none;
   border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   color: #ffffff;
   font-family: "Noto Sans KR";
   font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
-#mypage.mypage_main .myposts .list_btn_box .tabs .active {
+#mypage.mypage_main .mypage_main_container .myposts .list_btn_box .tabs .tab_btn.active {
   background-color: #F4E2CC;
   color: #000000;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
-#mypage.mypage_main .myposts .myposts_container {
-  width: 970px;
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container {
+  width: 950px;
   height: 596px;
   display: flex;
   justify-content: center;
@@ -46,18 +236,42 @@
   border-radius: 10px;
   border-top-left-radius: 0;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box {
+  /*필터, 내 글 리스트들 박스*/
   width: 900px;
   height: 526px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /*페이지네이션 스타일 적용*/
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .post_filter {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .post_filter {
   width: 102px;
   height: 30px;
+  padding: 0 12px;
+  -webkit-appearance: none;
+  /* for chrome */
+  -moz-appearance: none;
+  /*for firefox*/
+  appearance: none;
+  /*필터화살표 이미지*/
+  background: url(../img/mypage/next_page.png) no-repeat 97% 60%;
+  background-color: #FFFBF5;
+  border: none;
+  border-radius: 10px;
+  font-family: "Noto Sans KR";
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  color: #74500A;
+  cursor: pointer;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .post_filter::-ms-expand {
+  display: none;
+  /*for IE10,11*/
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box {
+  /*댕뮤니티 스타일*/
   width: 900px;
   height: 482px;
   display: flex;
@@ -65,20 +279,81 @@
   justify-content: space-between;
   background-color: #FFFBF5;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table {
   width: 100%;
   border-collapse: collapse;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .head_row th {
-  height: 40px;
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table .head_row {
+  height: 36px;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table .head_row th {
   text-align: center;
-  line-height: 40px;
+  line-height: 36px;
   background-color: #AB8B61;
   color: #ffffff;
 }
-#mypage.mypage_main .myposts .myposts_container .total_box .list_box .list_table .body_row td {
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .list_box .list_table .body_row td {
   border-bottom: 1px solid #F4E2CC;
   height: 40px;
   text-align: center;
   line-height: 40px;
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .dsta_listbox {
+  /*댕스타 스타일*/
+  width: 900px;
+  height: 482px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFBF5;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .dsta_listbox .dsta_lists {
+  width: 832px;
+  height: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .dsta_listbox .dsta_lists .dsta_list {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 4px;
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination {
+  display: inline-block;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .page_item {
+  display: inline-block;
+  margin: 0 2px;
+  font-size: 16px;
+  color: #F0D5B5;
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .page_item.active {
+  color: #74500A;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .pre_btn {
+  width: 16px;
+  height: 16px;
+  background: url(../img/mypage/Sort_Right.png) center transparent;
+  border: none;
+  transform: scaleX(-1);
+  cursor: pointer;
+}
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .next_btn {
+  width: 16px;
+  height: 16px;
+  background: url(../img/mypage/Sort_Right.png) center transparent;
+  border: none;
+  cursor: pointer;
 }

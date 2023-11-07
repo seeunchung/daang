@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
@@ -7,6 +8,59 @@ import DstaMainModal from './DstaMainModal.jsx';
 SwiperCore.use([Navigation, Pagination])
 
 export default function DstaMainPage() {
+
+  //이미지 데이터를 저장할 상태
+  const [dstaMain, setdstaMain] = useState([]);
+  const [dstaSwiperData, setDstaSwiperData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
+
+  // 페이징 시작
+  const itemsPerPage = 16; // 한 페이지당 보여질 아이템 수
+
+  // 클릭한 페이지 번호를 받아 currentPage 상태를 업데이트
+  const handleClickPage = (page) => {
+    setCurrentPage(page);
+  };
+
+  // 현재 페이지에서 마지막 아이템의 인덱스
+  const indexOfLastItem = currentPage * itemsPerPage;
+  // 현재 페이지에서 첫 번째 아이템의 인덱스
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // 현재 페이지에 해당하는 아이템만 표시
+  const currentItems = dstaMain.slice(indexOfFirstItem, indexOfLastItem);
+
+  // 페이징 끝
+
+  useEffect(() => {
+    // 댕스타 전체 데이터
+    axios({
+      url: './data/dstaMain.json',
+      method: 'GET'
+    })
+
+      //성공
+      .then((res) => {
+        setdstaMain(res.data.dstaMainData)
+        console.log(res.data)
+      })
+      // 에러
+      .catch((err) => {
+        console.log(`AXIOS 실패!${err}`);
+      });
+
+    // swiper 조회수 순 이미지 데이터
+    axios({
+      url: './data/dstaMain.json', // 조회수가 많은 이미지를 반환하는 API 엔드포인트로 업데이트 필요
+      method: 'GET'
+    })
+      .then((res) => {
+        setDstaSwiperData(res.data.dstaSwiperData); // 이미지 데이터를 상태에 저장
+      })
+      .catch((err) => {
+        console.log(`AXIOS 실패! ${err}`);
+      });
+  }, []);
+
   // swiper
   const swiperOptions = {
     loop: true,
@@ -32,7 +86,7 @@ export default function DstaMainPage() {
     <main id='main' className='dstamain'>
       <div className='dstamain_container'>
         <div className='dstamain_titlecontainer'>
-          <img src="./img/Calendar 7.png" alt="캘린더 아이콘" />
+          <img src="./img/dsta/calendar.png" alt="캘린더 아이콘" />
           <h2 className='dstamain_title'>Weekly DAaaNG-STA</h2>
         </div>
 
@@ -60,20 +114,12 @@ export default function DstaMainPage() {
                 nextEl: '.dstamain_swipernext'
               }}
             >
-              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide> 4 </SwiperSlide>
-
-              <SwiperSlide>5 </SwiperSlide>
-              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide> 8 </SwiperSlide>
-
-              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide><img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide> <img src="./img/강아지사진.png" alt="강아지 게시글 사진" /></SwiperSlide>
-              <SwiperSlide> 4 </SwiperSlide>
+              {/* 조회수 많은 데이터 이미지 */}
+              {dstaMain && dstaSwiperData.map((item, index) => (
+                <SwiperSlide key={item.id}>
+                  <img src={item.imgSrc} alt="댕스타 조회수 사진" />
+                </SwiperSlide>
+              ))}
 
             </Swiper>
             {/* 페이징 버튼 */}
@@ -88,84 +134,63 @@ export default function DstaMainPage() {
           {/* 스와이퍼 끝 */}
 
         </div>
-        <div className='dstamain_titlecontainer'>
-          <img src="./img/Instagram.png" alt="댕스타 아이콘" />
+
+        {/* 댕스타 타이틀 */}
+        < div className='dstamain_titlecontainer'>
+          <img src="./img/dsta/instagram.png" alt="댕스타 아이콘" />
           <h2 className='dstamain_title'>DAaaNG-STA</h2>
         </div>
-        <div className='dstamain_photobox'>
-          <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
-          <div className='dstamain_profile'>
-            <img src="./img/footer_logo.png" alt="프로필 사진" />
-            <span>꿈이언니</span>
-          </div>
-          <div className='dstamain_phototextbox'>
-            <span>안녕하세요~ 꿈이 왔어요ㅎ</span>
-          </div>
-          <div className='dstamain_watchbox'>
-            <img src="./img/watch.png" alt="조회수 아이콘" />
-            <span>123</span>
-            <img src="./img/heart.png" alt="좋아요 아이콘" />
-            <span>456</span>
-            <img src="./img/coments.png" alt="댓글 아이콘" />
-            <span>789</span>
-          </div>
-        </div>
-        {/* 지울것들 */}
-        <div className='dstamain_photobox'>
-          <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
-          <div className='dstamain_profile'>
-            <img src="./img/footer_logo.png" alt="프로필 사진" />
-            <span>꿈이언니</span>
-          </div>
-          <div className='dstamain_phototextbox'>
-            <span>안녕하세요~ 꿈이 왔어요ㅎ</span>
-          </div>
-        </div>
-        <div className='dstamain_photobox'>
-          <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
-          <div className='dstamain_profile'>
-            <img src="./img/footer_logo.png" alt="프로필 사진" />
-            <span>꿈이언니</span>
-          </div>
-          <div className='dstamain_phototextbox'>
-            <span>안녕하세요~ 꿈이 왔어요ㅎ</span>
-          </div>
-        </div>
-        <div className='dstamain_photobox'>
-          <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
-          <div className='dstamain_profile'>
-            <img src="./img/footer_logo.png" alt="프로필 사진" />
-            <span>꿈이언니</span>
-          </div>
-          <div className='dstamain_phototextbox'>
-            <span>안녕하세요~ 꿈이 왔어요ㅎ</span>
-          </div>
-        </div>
-        <div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-        </div>
-        <div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-        </div>
-        <div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-          <div className='dstamain_photobox'></div>
-        </div>
-        {/* 여기까지 */}
-        <div className='dstamain_pagebox'>
-          <span>- 1 2 3 4 5 6 7 8 9 -</span>
-        </div>
 
+        {/* 댕스타 메인 데이터 */}
+        <div className='dstamain_pagecontainer'>
+          {currentItems.map((item, index) => (
+            // a태그 href에 맞는 데이터값 설정
+            <a href="#!" key={item.id}>
+              <div className='dstamain_photobox'>
+                <img src={item.imgSrc} alt="강아지 게시글 사진" />
+                <div className='dstamain_profile'>
+                  <img src={item.profileImgSrc} alt="프로필 사진" />
+                  <span>{item.userId}</span>
+                </div>
+                <div className='dstamain_phototextbox'>
+                  <span>{item.title}</span>
+                </div>
+                <div className='dstamain_watchbox'>
+                  <img src="./img/dsta/watch.png" alt="조회수 아이콘" />
+                  <span>{item.viewCount}</span>
+                  <img src="./img/dsta/heart.png" alt="좋아요 아이콘" />
+                  <span>{item.likeCount}</span>
+                  <img src="./img/dsta/coments.png" alt="댓글 아이콘" />
+                  <span>{item.commentCount}</span>
+                </div>
+              </div>
+            </a>
+          ))
+          }
+        </div>
+        {/* 댕스타 페이징 */}
+        <div className='dstamain_pagebox'>
+          {/* 이전페이지 버튼 */}
+          <button onClick={() => handleClickPage(currentPage - 1)} disabled={currentPage === 1}>
+            &lt;
+          </button>
+
+          {Array.from({ length: Math.ceil(dstaMain.length / itemsPerPage) }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handleClickPage(index + 1)}
+              style={{ color: currentPage === index + 1 ? '#AB8B61' : '#EEE1D7' }}
+            >
+              {index + 1}
+            </button>
+          ))}
+          {/* 다음페이지 버튼 */}
+          < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(dstaMain.length / itemsPerPage)}>
+            &gt;
+          </button>
+        </div>
       </div>
-    </main>
+    </main >
   );
 
 };
