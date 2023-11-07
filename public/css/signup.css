@@ -1,55 +1,53 @@
-
-
-label[for="inputId"]{
+@charset "UTF-8";
+label[for=inputId], label[for=agreeCheck1] {
   color: #74500A;
 }
-label[for="agreeCheck1"]{
-  color:#74500A;
-}
-label[for='agreeCheck1'] strong:after {
+label[for=agreeCheck1] strong:after {
   content: "(필수)";
-  color: #DEC79B; 
-  margin-left: 5px; 
+  color: #DEC79B;
+  margin-left: 5px;
 }
-label[for="agreeCheck2"]{
-  color:#74500A;
+label[for=agreeCheck2] {
+  color: #74500A;
 }
-label[for='agreeCheck2'] strong:after {
+label[for=agreeCheck2] strong:after {
   content: "(필수)";
-  color: #DEC79B; 
-  margin-left: 5px; 
+  color: #DEC79B;
+  margin-left: 5px;
 }
-label[for="agreeCheck3"]{
-  color:#74500A;
+label[for=agreeCheck3] {
+  color: #74500A;
 }
-label[for='agreeCheck3'] strong:after {
+label[for=agreeCheck3] strong:after {
   content: "(선택)";
-  color: #DEC79B; 
-  margin-left: 5px; 
+  color: #DEC79B;
+  margin-left: 5px;
 }
 
-
-input, textarea{
+input,
+textarea {
   border: none;
   background-color: #F9EBDB;
   border-radius: 10px;
 }
 
-.main-title h2{
+.main-title h2 {
   font-size: 50px;
   text-align: center;
   color: #74500A;
   padding-bottom: 10px;
   padding-top: 50px;
 }
-.second-title h2{
+
+.second-title h2 {
   font-size: 50px;
   text-align: center;
   color: #74500A;
   padding-bottom: 20px;
   padding-top: 40px;
 }
-.third-title h2{
+
+.third-title h2 {
   font-size: 50px;
   text-align: center;
   color: #74500A;
@@ -58,86 +56,71 @@ input, textarea{
 }
 
 #signup.signup_main {
-    padding-top: 90px;
-  }
-  
-  .nick-ok-btn {
-    background-color: #74500A;
-    color: white;
-    border-radius: 5px;
-  }
+  padding-top: 90px;
+}
 
-  
-  .id-ok-btn {
-    background-color: #74500A;
-    color: white;
-    border-radius: 5px;
-  }
+.nick-ok-btn,
+.id-ok-btn {
+  background-color: #74500A;
+  color: white;
+  border-radius: 5px;
+}
 
-  .sub-title span{
-    color: #DEC79B;
-  }
-  .sub-title{
-    text-align: center;
-    padding-bottom: 10px;
-  }
+.sub-title {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.sub-title span {
+  color: #DEC79B;
+}
 
-  .signupcontainer{
-    height: 1500px;
-    width: 100%;
-  }
+.signupcontainer {
+  height: 1500px;
+  width: 100%;
+}
 
-  
-  .arrow {
-    margin-left: 5px; 
-    font-size: 14px; /* 화살표 아이콘의 크기 설정 */
-  }
- label[for='viewTermsBtn1']{
-  display: inline-block; 
-    cursor: pointer;
-    color: #74500A;
- }
- label[for='viewTermsBtn2']{
-  display: inline-block; 
-    cursor: pointer;
-    color: #74500A;
- }
- label[for='viewTermsBtn3']{
-  display: inline-block; 
-    cursor: pointer;
-    color: #74500A;
- }
-  .complete{
-    font-size: 15px;
-    display: block; 
-    margin: 0 auto; 
-    padding: 10px 20px; 
-    background-color: #74500A;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .left {
-    display: inline-block;
-    padding-right: 20px;
+.arrow {
+  margin-left: 5px;
+  font-size: 14px;
+  /* 화살표 아이콘의 크기 설정 */
+}
 
-  }
-  .right {
-    display: inline-block;
-    padding-left: 20px;
-  } 
-.masterContainer{
+label[for=viewTermsBtn1], label[for=viewTermsBtn2], label[for=viewTermsBtn3] {
+  display: inline-block;
+  cursor: pointer;
+  color: #74500A;
+}
+
+.complete {
+  font-size: 15px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #74500A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.left {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.right {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.masterContainer,
+.dogContainer {
   width: 380px;
   margin: 0 auto;
 }
-.dogContainer{
-  width: 380px;
-  margin: 0 auto;
-}
-.termscontainer{
+
+.termscontainer {
   width: 380px;
   margin: 0 auto;
   padding-bottom: 40px;
 }
-
