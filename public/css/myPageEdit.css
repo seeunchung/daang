@@ -163,7 +163,7 @@
   vertical-align: middle;
   display: inline-flex;
 }
-#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox .info_textarea {
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_info .idcard_infobox .info_input {
   width: 100%;
   height: 100%;
   border: none;
@@ -177,6 +177,8 @@
   margin-top: 20px;
   float: right;
   margin-right: 250px;
+  display: flex;
+  justify-content: flex-start;
 }
 #mypage.mypageedit .mypageedit_container .btn_box .add_btn {
   width: 120px;
@@ -198,4 +200,33 @@
   font-size: 16px;
   color: #fff;
   font-weight: bold;
+}
+#mypage.mypageedit .mypageedit_container .infoedit_container {
+  width: 1050px;
+  height: 550px;
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#mypage.mypageedit .mypageedit_container .infoedit_container .infoedit_boxtitle {
+  width: 160px;
+  height: 55px;
+  background-color: #F4E2CC;
+  border-radius: 15px 15px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+  margin-left: -790px;
+}
+#mypage.mypageedit .mypageedit_container .infoedit_container .infoedit_box {
+  width: 950px;
+  height: 450px;
+  border-radius: 0 15px 15px 15px;
+  background-color: #F4E2CC;
+  margin-top: -10px;
 }
