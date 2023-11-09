@@ -12,6 +12,12 @@
 @import url(../css/dmunitymain.css);
 @import url(../css/myPage.css);
 @import url(../css/myPageEdit.css);
+<<<<<<< HEAD
+=======
+@import url(../css/dmunityDetail.css);
+@import url(../css/signupcomplete.css);
+
+>>>>>>> 71ef3ad3512bb1fcee37f5022c9ffe14f618bc1e
 #wrap {
   width: 100%;
   background: #fffbf5;
