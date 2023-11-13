@@ -55,9 +55,17 @@
   align-items: center;
   cursor: pointer;
 }
-.modal-overlay .modal .modal-content .photos img {
-  max-width: 100%;
-  height: auto;
+.modal-overlay .modal .modal-content .photos .swiper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.modal-overlay .modal .modal-content .photos .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
 }
@@ -90,6 +98,9 @@
   border: none;
   cursor: pointer;
 }
+.modal-overlay .modal .modal-content .photos .sec1-swiper-prev-btn img {
+  width: 100%;
+}
 .modal-overlay .modal .modal-content .photos .sec1-swiper-next-btn {
   position: absolute;
   width: 30px;
@@ -99,6 +110,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.modal-overlay .modal .modal-content .photos .sec1-swiper-next-btn img {
+  width: 100%;
 }
 .modal-overlay .modal .modal-content .photos .swiper-button-disabled {
   display: none;
@@ -155,6 +169,8 @@
 .modal-overlay .modal .modal-content .words .content .contentLikes img {
   height: 16px;
   width: 16px;
+  margin-right: 4px;
+  cursor: pointer;
 }
 .modal-overlay .modal .modal-content .words .content .contentTime {
   padding: 4px 0px 0px 0px;
@@ -190,6 +206,7 @@
   height: 12px;
   width: 12px;
   margin: 2px 4px 0px 0px;
+  cursor: pointer;
 }
 .modal-overlay .modal .modal-content .words .commentSection .commentDetails .commentLikes {
   margin-right: 12px;

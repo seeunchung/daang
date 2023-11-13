@@ -12,12 +12,25 @@ export default function DstaMainModal({ closeModal }) {
   const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
   const [comment, setComment] = useState('');
   const [isCommentEntered, setIsCommentEntered] = useState(false);
+  const [like, setLike] = useState(false);
+  const [commentLike, setCommentLike] = useState(false);
+
+
+  const handleLikeClick = () => {
+    setLike(!like); // Toggle the like state
+  };
+
+  const handleCommentLikeClick = () => {
+    setCommentLike(!commentLike); // Toggle the comment like state
+  };
 
   const handleOpenSettingsModal = () => {
     setSettingsModalOpen(true);
   };
 
-  const handleCloseSettingsModal = () => {
+  const handleCloseSettingsModal = (e) => {
+    e.stopPropagation();
+
     setSettingsModalOpen(false);
   };
 
@@ -69,13 +82,13 @@ export default function DstaMainModal({ closeModal }) {
               }}
             >
               <SwiperSlide>
-                <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
+                <img src="./img/dsta/kkumi.png" alt="강아지 게시글 사진" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
+                <img src="./img/dsta/kkumi2.png" alt="강아지 게시글 사진" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
+                <img src="./img/dsta/kkumi3.png" alt="강아지 게시글 사진" />
               </SwiperSlide>
             </Swiper>
             <button className="sec1-swiper-prev-btn">
@@ -100,9 +113,10 @@ export default function DstaMainModal({ closeModal }) {
             </div>
             <div className='content'>
               <div className='contentWords'>본문 내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
-              <a className='tags'>#점심먹고 #시간이 #안가네</a>
+              <a className='tags'>#꿈이야 #사진크기좀 #맞춰봐</a>
               <div className='contentLikes'>
-                <img src="./img/heart2.png" /> 좋아요 11개</div>
+                <img src={like ? "./img/heart3.png" : "./img/heart2.png"} onClick={handleLikeClick} alt="Heart Icon" />
+                좋아요 11개</div>
               <div className='contentTime'>O시간</div>
             </div>
             <div className='commentSection'>
@@ -111,7 +125,7 @@ export default function DstaMainModal({ closeModal }) {
                 <div className='comment'>댓글내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
                 <div className='commentDetails'>
                   <div className='commentDate'>OOOO.OO.OO</div>
-                  <img src="./img/heart2.png" />
+                  <img src={commentLike ? "./img/heart3.png" : "./img/heart2.png"} onClick={handleCommentLikeClick} alt="Heart Icon" />
                   <div className='commentLikes'>좋아요 3개</div>
                   <button className='cocomment'>답글 달기</button>
                 </div>
