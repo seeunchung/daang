@@ -33,7 +33,7 @@ export default function DstaMainModal({ closeModal }) {
               }}
             >
               <SwiperSlide>
-                <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
+                <img src="./img/dsta/강아지사진.png" alt="강아지 게시글 사진" />
               </SwiperSlide>
               <SwiperSlide>
                 <img src="./img/강아지사진.png" alt="강아지 게시글 사진" />
