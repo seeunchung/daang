@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
-import DstaMainModal from './DstaMainModal.jsx';
-
+import DstaMainModal from './DstaMainModal'
 SwiperCore.use([Navigation, Pagination])
 
 export default function DstaMainPage() {
@@ -91,8 +90,8 @@ export default function DstaMainPage() {
         </div>
 
         {/* 모달 */}
-        <button onClick={openModal}>모달 열기</button>
-        {isModalOpen && <DstaMainModal closeModal={closeModal} />}
+        {/* <button onClick={openModal}>모달 열기</button>
+        {isModalOpen && <DstaMainModal closeModal={closeModal} />} */}
         {/* 모달 끝 */}
 
         <div className='dstamain_weeklybox'>
@@ -147,7 +146,7 @@ export default function DstaMainPage() {
             // a태그 href에 맞는 데이터값 설정
             <a href="#!" key={item.id}>
               <div className='dstamain_photobox'>
-                <img src={item.imgSrc} alt="강아지 게시글 사진" />
+                <img src={item.imgSrc} onClick={openModal} alt="강아지 게시글 사진" />
                 <div className='dstamain_profile'>
                   <img src={item.profileImgSrc} alt="프로필 사진" />
                   <span>{item.userId}</span>
@@ -164,6 +163,7 @@ export default function DstaMainPage() {
                   <span>{item.commentCount}</span>
                 </div>
               </div>
+              {isModalOpen && <DstaMainModal closeModal={closeModal} />}
             </a>
           ))
           }
