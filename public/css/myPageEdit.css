@@ -126,9 +126,9 @@
   display: block;
   width: 30px;
   height: 30px;
-  position: relative;
+  position: absolute;
   top: 220px;
-  left: 300px;
+  left: 360px;
   background: url(../../img/dsta/photh_select_btn.png) center no-repeat;
   border-radius: 50px;
   cursor: pointer;
