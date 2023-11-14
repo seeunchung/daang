@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 export default function ConsentToReceiveMarketing() {
   return (
@@ -24,7 +24,8 @@ export default function ConsentToReceiveMarketing() {
               <p>회사는 별도의 동의를 받거나 법률에 특별할 규정이 있는 경우를 제외하면 제3자에게 회원님의 개인정보를 제공하지 않으며, 상기 안내해드린 개인정보 수집 동의 법위를 초과하여 회원의 개인정보를 활용하지 않습니다.</p>
                </div>
                </div>
-               <button className='ctrm_appli_button'>확인</button>
+              <button className='ctrm_appli_button'>
+              확인</button>
                </div>
                </main>
                 );

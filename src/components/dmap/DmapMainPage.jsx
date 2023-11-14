@@ -237,6 +237,12 @@ function YourComponent() {
       }
     }
   }, []);
+  const markerImages = {
+  '애견동반카페': 'https://i.ibb.co/wBWPv5P/cafe.png',
+  '애견동반식당': 'https://i.ibb.co/7Jv9yb0/rest.png',
+  '동물병원': 'https://i.ibb.co/510qrYb/hospital.png',
+  '공원': 'https://i.ibb.co/tP9dTQJ/park.png',
+};
 
   if (state.isLoading) return <div>Loading...</div>;
 
@@ -280,10 +286,10 @@ function YourComponent() {
                 key={data.id}
                 position={{ lat: data.y, lng: data.x }}
                 image={{
-                  src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
+                  src: markerImages[keyword],
                   size: {
-                    width: 35,
-                    height: 35,
+                    width: 45,
+                    height: 45,
                   },
                   
                 }}
