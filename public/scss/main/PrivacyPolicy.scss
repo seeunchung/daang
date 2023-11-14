@@ -72,8 +72,13 @@
   font-weight: 700;
   height: 54px;
   margin-bottom: 12px;
-  width: 420px
+  width: 420px;
+  cursor: pointer;
 
+  &:hover {
+    transition: all 0.1s ease-in-out;
+    background: #000000ca;
 }
 }
+  }
 }

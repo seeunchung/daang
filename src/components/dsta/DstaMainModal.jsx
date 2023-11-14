@@ -65,7 +65,8 @@ export default function DstaMainModal({ closeModal }) {
   };
 
   const swiperOptions = {
-    slidesPerView: 1
+    slidesPerView: 1,
+    lazyPreloadPrevNext: 2,
   };
 
   const adjustTextareaHeight = (element) => {
