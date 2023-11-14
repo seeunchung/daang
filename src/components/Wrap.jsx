@@ -1,5 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import theme from './dmap/styles/Theme';
+import { Helmet } from 'react-helmet';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from './dmap/styles/GlobalStyle';
 import Header from './main/Header';
 import MainPage from './main/MainPage';
 import Footer from './main/Footer';
@@ -16,12 +20,8 @@ import Dmap from './dmap/DmapMainPage';
 import MyPage from './mypage/MyPageMainPage';
 import MyPageEdit from './mypage/MyPageEdit';
 import Login from './signin/Login';
-import SignUp from './signup/SignUp';
+import MemberSignUp from './signup/MemberSignUp';
 import SignUpComplete from './signup/SignUpComplete';
-import theme from './dmap/styles/Theme';
-import { Helmet } from 'react-helmet';
-import { ThemeProvider } from 'styled-components';
-import GlobalStyle from './dmap/styles/GlobalStyle';
 
 export default function Wrap() {
   return (
@@ -47,7 +47,7 @@ export default function Wrap() {
               <Route path='mypage' element={<MyPage />} />
               <Route path='mypage-edit' element={<MyPageEdit />} />
               <Route path='login' element={<Login />} />
-              <Route path='signup' element={<SignUp />} />
+              <Route path='signup' element={<MemberSignUp />} />
               <Route path='signup-complete' element={<SignUpComplete />} />
             </Route>
           </Routes>

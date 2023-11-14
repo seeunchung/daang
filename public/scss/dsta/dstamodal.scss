@@ -45,8 +45,8 @@
       justify-content: space-between;
       border-radius: 20px;
 
-
       .photos {
+        position: relative;
         flex: 1;
         background-color: #FFFBF5;
         border-radius: 20px;
@@ -54,12 +54,81 @@
         margin-left: 16px;
         margin-right: 8px;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
 
-        img {
-          max-width: 100%;
-          height: auto;
-          display: block;
-          margin: 0 auto;
+        .swiper {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%; // Set a fixed height for the Swiper slide
+
+          img {
+            width: 100%;
+            height: 100%; // Ensure the image does not exceed the height of the slide
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+
+        .sec1-swiper-pagination {
+          position: absolute;
+          bottom: 20px;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          left: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+
+          .swiper-pagination-bullet {
+            width: 6px;
+            height: 6px;
+            margin-right: 4px;
+          }
+
+          .swiper-pagination-bullet-active {
+            background: #F4E2CC;
+          }
+        }
+
+
+        .sec1-swiper-prev-btn {
+          position: absolute;
+          width: 30px;
+          top: 50%;
+          left: 5px;
+          z-index: 1;
+          transform: rotate(180deg);
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .sec1-swiper-next-btn {
+          position: absolute;
+          width: 30px;
+          top: 50%;
+          right: 5px;
+          z-index: 1;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .swiper-button-disabled {
+          display: none;
         }
       }
 
@@ -95,6 +164,12 @@
             height: 4px;
             margin: 0px 6px 0px 0px;
           }
+
+          .settingsBtn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
         }
 
         .content {
@@ -116,6 +191,8 @@
             img {
               height: 16px;
               width: 16px;
+              margin-right: 4px;
+              cursor: pointer;
             }
           }
 
@@ -149,6 +226,7 @@
             align-items: center;
             padding: 4px 0px 0px 0px;
             font-size: 12px;
+            height: 16px;
 
             .commentDate {
               margin-right: 12px;
@@ -158,6 +236,7 @@
               height: 12px;
               width: 12px;
               margin: 2px 4px 0px 0px;
+              cursor: pointer;
             }
 
             .commentLikes {
@@ -165,7 +244,15 @@
             }
 
             .cocomment {
+              font-size: 12px;
+              font-weight: bold;
+              color: #74500A;
+              opacity: 0.9;
               margin-right: 12px;
+              height: 16px;
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
             }
           }
 
@@ -176,15 +263,46 @@
         .commentWritingSection {
           position: absolute;
           display: flex;
+          justify-content: space-between;
           align-items: center;
           padding: 16px;
           border-top: 1px solid #F4E2CC;
           bottom: 0px;
           width: 501px;
 
+          .writingComment {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            width: 432px;
+            resize: none;
+            max-height: 80px;
+            /* 5줄 이상이면 세로 스크롤 표시 */
+            overflow-y: auto;
+            font-size: 100%;
+          }
+
 
           .write-button {
-            margin-left: auto;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            font-size: 100%;
+            height: 18px;
+            font-weight: bold;
+            color: #74500A;
+            opacity: 1;
+          }
+
+          .write-button.disabled {
+            border: none;
+            background-color: transparent;
+            font-size: 100%;
+            height: 18px;
+            font-weight: bold;
+            color: #74500A;
+            opacity: 0.5;
+            cursor: default;
           }
         }
       }
