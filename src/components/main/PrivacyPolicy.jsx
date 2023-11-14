@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <main id="PrivacyPolicy" className="pp">
       <div className='pp_container'>
-          <div className='pp_title'>
+          <div className='pp_title'>``
             <h1>
               개인정보처리방침
             </h1>
