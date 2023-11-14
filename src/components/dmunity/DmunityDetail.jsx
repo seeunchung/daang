@@ -1,23 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function getCategoryImage(category) {       //카테고리 별 아이콘 설정
-  switch (category) {
-    case '먹어요':
-      return '../img/dmunity/eat.png';
-    case '아파요':
-      return '../img/dmunity/sick.png';
-    case '놀아요':
-      return '../img/dmunity/play.png';
-    case '어때요':
-      return '../img/dmunity/how.png';
-    case '기타':
-      return '../img/dmunity/etc.png';
-    default:
-      return '../img/dmunity/notification.png';
-  }
-}
-
 export default function DmunityDetail() {
   const [post, setPost] = useState([]);
 
@@ -46,13 +29,13 @@ export default function DmunityDetail() {
 
   return (
     <div id='DmunityDetail'>
-      < div id='box' >
-        <div className='boxbox'>
-          <div className='row1'>
-            <h2 className='logo'>댕뮤니티</h2>
-          </div>
+      < div id='container' >
+        <div className='title'>
+          <h2 className='logo'>댕뮤니티</h2>
+        </div>
+        <div className="content">
           <div className='row2'>
-            <img src={'../img/dmunity/eat.png'} />
+            <img src='./img/dmunity/eat.png' alt='' />
             <h2 className='title'>안녕하세요</h2>
           </div>
           <div className='row3'>
@@ -62,9 +45,16 @@ export default function DmunityDetail() {
               <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>32</p></span>
             </div>
           </div>
-          <div className='row4'>안녕하세요. DAaaNG UNIV.입니다. 댕뮤니티 글 작성 시 유의 사항에 대해 공지하겠습니다. 1. 글 작성 간 카테고리 준수해주세요. 글 내용에 맞지 않는 카테고리 선택 시 글이 옮겨지거나 삭제 될 수 있습니다. 2. 커뮤니티 성격과 맞지 않는 내용의 글 작성 시 글 삭제와 1회 경고 이후 정지 처분을 받을 수 있습니다.</div>
-          <div className='row5'><img src='../img/dmunity/heart_click.png' /><p>좋아요</p>
-            <p>댓글 15개</p></div>
+          <div className='row4'>
+            <div className="text-area">
+              <h2>
+                안녕하세요. DAaaNG UNIV.입니다. 댕뮤니티 글 작성 시 유의 사항에 대해 공지하겠습니다. 1. 글 작성 간 카테고리 준수해주세요. 글 내용에 맞지 않는 카테고리 선택 시 글이 옮겨지거나 삭제 될 수 있습니다. 2. 커뮤니티 성격과 맞지 않는 내용의 글 작성 시 글 삭제와 1회 경고 이후 정지 처분을 받을 수 있습니다.
+              </h2>
+            </div>
+          </div>
+          <div className='row5'><img src='./img/dmunity/heart_click.png' alt='' /><p>좋아요</p>
+            <p>댓글 15개</p>
+          </div>
           <div className='row6'>
 
           </div>
@@ -86,6 +76,6 @@ export default function DmunityDetail() {
           </div>
         </div>
       </div >
-    </div>
+    </div >
   );
 };
