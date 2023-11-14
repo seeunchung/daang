@@ -2,6 +2,12 @@
 @import url(../css/reset.css);
 @import url(../css/header.css);
 @import url(../css/mainpage.css);
+<<<<<<< HEAD
+@import url(../css/TermsOfUse.css);
+@import url(../css/ConsentToReceiveMarketing.css);
+@import url(../css/PrivacyPolicy.css);
+=======
+>>>>>>> 405b9dbece8449e01677c209a83d548cca36bd74
 @import url(../css/footer.css);
 @import url(../css/dstaWrite.css);
 @import url(../css/signin.css);
@@ -11,7 +17,10 @@
 @import url(../css/dmunitymain.css);
 @import url(../css/myPage.css);
 @import url(../css/myPageEdit.css);
+<<<<<<< HEAD
+=======
 @import url(../css/dstamomodal.css);
+>>>>>>> 405b9dbece8449e01677c209a83d548cca36bd74
 #wrap {
   width: 100%;
   background: #fffbf5;
