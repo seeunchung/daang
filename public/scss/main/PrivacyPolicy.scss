@@ -1,8 +1,8 @@
-#termsofuse.tou {
+#PrivacyPolicy.pp {
   width: 100%;
   padding-top: 100px;
   
-  .tou_container{ 
+  .pp_container{ 
     width: 1050px;
     margin: 0 auto;
     align-items: center;
@@ -13,7 +13,7 @@
     padding-top: 60px;
     
 
-  .tou_title{
+  .pp_title{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -27,7 +27,7 @@
 
 }
 
-.tou_content_box01 {
+.pp_content_box01 {
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   margin-bottom: 60px;
@@ -35,37 +35,35 @@
   padding: 30px 0
 }
 
-.tou_content_box02 {
+.pp_content_box02 {
   height: 460px;
   overflow: auto;
   padding-right: 14px;
   width: 700px
 }
 
-.tou_content_box02::-webkit-scrollbar {
+.pp_content_box02::-webkit-scrollbar {
   width: 6px
 }
 
-.tou_content_box02::-webkit-scrollbar-thumb {
+.pp_content_box02::-webkit-scrollbar-thumb {
   background-color: #a6a19e;
   border-radius: 2px
 }
 
-.tou_content_box02 p,li{
+.pp_content_box02 p{
   background-color: #efe7de;
   background-color: var(--default_color);
   font-size: 16px;
   font-weight: 400;
 }
-.tou_content_box02  h2{
-    
+.pp_content_box02 h2{
       font-size: 16px;
       font-weight: 500;
     }
- 
+  
 
-
-.tou_appli_button{
+.pp_appli_button{
   background-color: rgb(35, 25, 22);
   border: 1px solid #000;
   border-radius: 5px;

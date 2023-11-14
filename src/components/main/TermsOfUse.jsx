@@ -13,10 +13,10 @@ export default function TermsOfUse() {
             <div class="tou_content_box01">
               <div class="tou_content_box02">
                 
-            <h2><strong>[ 이용 약관 ]</strong></h2><p>&nbsp;</p>
+            <h2>[ 이용 약관 ]</h2><p>&nbsp;</p>
             <h2><strong>제1장 총칙</strong></h2><p>&nbsp;</p>
             <p><strong>제 1 조&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(목적)</strong></p>
-            <p>이 약관은 주식회사 윤발컴퍼니(이하 “회사”)가 운영하는 앱 및 웹 상에서의 사이버몰에서 제공하는 서비스와 이를 이용하는 회원의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+            <p>이 약관은 주식회사 DAaang UNIV(이하 “회사”)가 운영하는 앱 및 웹 상에서의 사이버몰에서 제공하는 서비스와 이를 이용하는 회원의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.</p>
             <p>&nbsp;</p>
             <p><strong>제 2 조&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(용어의 정의)</strong></p>
             <p>이 약관에서 사용하는 용어의 정의는 다음과 같습니다. 그리고 여기에서 정의되지 않은 이 약관상의 용어의 의미는 일반적인 거래관행에 따릅니다.</p>
