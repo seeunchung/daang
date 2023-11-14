@@ -114,8 +114,8 @@ export default function DstaMainModal({ closeModal }) {
             <div className='content'>
               <div className='contentWords'>본문 내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
               <a className='tags'>#꿈이야 #사진크기좀 #맞춰봐</a>
-              <div className='contentLikes'>
-                <img src={like ? "./img/heart3.png" : "./img/heart2.png"} onClick={handleLikeClick} alt="Heart Icon" />
+              <div className='contentLikes' onClick={handleLikeClick}>
+                <img src={like ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
                 좋아요 11개</div>
               <div className='contentTime'>O시간</div>
             </div>
@@ -125,8 +125,11 @@ export default function DstaMainModal({ closeModal }) {
                 <div className='comment'>댓글내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
                 <div className='commentDetails'>
                   <div className='commentDate'>OOOO.OO.OO</div>
-                  <img src={commentLike ? "./img/heart3.png" : "./img/heart2.png"} onClick={handleCommentLikeClick} alt="Heart Icon" />
-                  <div className='commentLikes'>좋아요 3개</div>
+
+                  <div className='commentLikes' onClick={handleCommentLikeClick} >
+                    <img src={commentLike ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
+                    좋아요 3개
+                  </div>
                   <button className='cocomment'>답글 달기</button>
                 </div>
               </div>

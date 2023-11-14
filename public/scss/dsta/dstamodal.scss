@@ -187,6 +187,7 @@
 
           .contentLikes {
             padding: 4px 0px 0px 0px;
+            cursor: pointer;
 
             img {
               height: 16px;
@@ -235,12 +236,13 @@
             Img {
               height: 12px;
               width: 12px;
-              margin: 2px 4px 0px 0px;
+              margin: 0px 4px 0px 0px;
               cursor: pointer;
             }
 
             .commentLikes {
               margin-right: 12px;
+              cursor: pointer;
             }
 
             .cocomment {

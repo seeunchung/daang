@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 export default function MypageEdit() {
 
   const [dogimg, setDogimg] = useState('');
@@ -15,6 +17,12 @@ export default function MypageEdit() {
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
   const [phone, setPhone] = useState('');
+  const navigate = useNavigate();
+
+  const handleCancel = () => {
+    // 취소 버튼 클릭 시 뒤로가기
+    navigate(-1);
+  };
 
   useEffect(() => {
 
@@ -194,6 +202,7 @@ export default function MypageEdit() {
                     value={userid}
                     onChange={handleUseridChange}
                     placeholder='kkumi'
+                    readOnly
                   />
                 </div>
               </div>
@@ -294,7 +303,7 @@ export default function MypageEdit() {
             <button className='unregister_btn' type='submit'>회원 탈퇴</button>
             <div>
               <button className='completion_btn' type='submit'>완료</button>
-              <button className='cancel_btn' type='reset'>취소</button>
+              <button className='cancel_btn' type='reset' onClick={handleCancel}>취소</button>
             </div>
           </div>
         </div>

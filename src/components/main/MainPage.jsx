@@ -39,7 +39,7 @@ export default function MainPage() {
   return (
     <main id='main' className='mainPage'>
       <section id='section1'>
-        <div className="sec1-swiper-container">
+       <div className="sec1-swiper-container">
           <Swiper
             className='swiper'
             {...swiperOptions}
@@ -72,9 +72,25 @@ export default function MainPage() {
                   <Link to='/dsta'>댕스타 바로가기</Link>
                 </h2>
               </div>
-
             </SwiperSlide>
-
+            <SwiperSlide>
+              <img src="./img/main/main_sec1_slide_3.png" alt="" />
+              <div className="slide-title">
+                <h2>
+                  <span>내 강아지에 대한 </span>
+                  <span>정보가 한눈에!</span>
+                </h2>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <img src="./img/main/main_sec1_slide_4.png" alt="" />
+              <div className="slide-title">
+                <h2>
+                  <span>설레는 마음으로 </span>
+                  <span>강아지와 함께할 공간을 찾아봐요!</span>
+                </h2>
+              </div>
+            </SwiperSlide>
           </Swiper>
           <button className="sec1-swiper-prev-btn">
             <img src="./img/main/arrow_gray.svg" alt="" />
@@ -184,7 +200,7 @@ export default function MainPage() {
               }}
             >
               <SwiperSlide>
-                <img src="./img/main/main_sec3_slide_1.png" alt="" />
+                <div className="img-box1"></div>
                 <div className="slide1-title">
                   <h2>
                     <span>지난해 유기견 <strong>약 79,976여 마리</strong></span>
@@ -195,18 +211,28 @@ export default function MainPage() {
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <div className="img-box"></div>
+                <div className="img-box2"></div>
                 <div className="slide2-title">
                   <h2>
-                    <span>이 아이가 <strong>배가 부르다는</strong> 느낌을 알까요?</span>
-                    <span>고통에 몸부림치는 <strong>아이들을 구해주세요</strong></span>
+                    <span><strong>평범한</strong> 강아지가 되고 싶었습니다.</span>
+                    <span>고통속에서 몸부림치는 <strong>아이들을 구해주세요</strong></span>
                     <a href='https://forust.kr/19' target='_black'>자세히보기</a>
                   </h2>
                 </div>
                 {/* <img src="./img/main/main_sec3_slide_2.png" alt="" /> */}
 
               </SwiperSlide>
+              <SwiperSlide>
+                <div className="img-box3"></div>
+                <div className="slide3-title">
+                  <h2>
+                    <span>사랑받고 싶은 아이들에게</span>
+                    <span><strong>가족</strong>이 되어주세요</span>
+                    <a href='https://forust.kr/19' target='_black'>자세히보기</a>
+                  </h2>
+                </div>
 
+              </SwiperSlide>
             </Swiper>
             <button className="sec3-swiper-prev-btn">
               <img src="./img/main/arrow_gray.svg" alt="" />
