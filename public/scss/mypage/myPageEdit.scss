@@ -143,6 +143,23 @@
           border-radius: 10px;
         }
 
+        //학생증사진 바꾸기 버튼
+        .file_input {
+          display: none;
+        }
+
+        .change_file_input {
+          display: block;
+          width: 30px;
+          height: 30px;
+          position: relative;
+          top: 220px;
+          left: 300px;
+          background: url(../../img/dsta/photh_select_btn.png) center no-repeat;
+          border-radius: 50px;
+          cursor: pointer;
+        }
+
         // 학생증 디자인(바코드)
         .idcard_barcode {
           position: absolute;
