@@ -246,6 +246,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 20px 0;
 }
 #mypage.mypageedit .mypageedit_container .infoedit_container .infoedit_box .infoedit_box2 p {
   position: absolute;
