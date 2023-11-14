@@ -153,11 +153,29 @@
           width: 30px;
           height: 30px;
           position: absolute;
-          top: 220px;
-          left: 360px;
+          top: 216px;
+          left: 536px;
+          z-index: 3;
           background: url(../../img/dsta/photh_select_btn.png) center no-repeat;
           border-radius: 50px;
           cursor: pointer;
+        }
+
+        .img_delete_btn {
+          /*추가된 이미지 삭제 버튼*/
+          position: absolute;
+          top: 24px;
+          left: 380px;
+          z-index: 3;
+          width: 14px;
+          height: 14px;
+          background-color: transparent;
+          border-style: none;
+          cursor: pointer;
+
+          img {
+            width: 100%;
+          }
         }
 
         // 학생증 디자인(바코드)
