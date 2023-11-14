@@ -1,8 +1,8 @@
+@charset 'UTF-8';
 @import url(../css/fonts.css);
 @import url(../css/reset.css);
 @import url(../css/header.css);
 @import url(../css/mainpage.css);
-@import url(../css/TermsOfUse.css);
 @import url(../css/footer.css);
 @import url(../css/dstaWrite.css);
 @import url(../css/signin.css);
@@ -12,9 +12,6 @@
 @import url(../css/dmunitymain.css);
 @import url(../css/myPage.css);
 @import url(../css/myPageEdit.css);
-@import url(../css/dstaMomodal.css);
-@import url(../css/dmunityDetail.css);
-@import url(../css/signupcomplete.css);
 @import url(../css/dstamomodal.css);
 
 #wrap {
