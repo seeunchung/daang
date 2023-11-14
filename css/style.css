@@ -15,4 +15,5 @@
 #wrap {
   width: 100%;
   background: #fffbf5;
+  white-space: pre-wrap;
 }
