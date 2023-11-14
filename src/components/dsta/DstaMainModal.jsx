@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-import DstaSettingsModal from './DstaSettingsModal';
+import DstaPostMenuModal from './DstaPostMenuModal';
+import axios from 'axios';
 
 
 SwiperCore.use([Navigation, Pagination]);
@@ -15,6 +16,23 @@ export default function DstaMainModal({ closeModal }) {
   const [like, setLike] = useState(false);
   const [commentLike, setCommentLike] = useState(false);
 
+  // useEffect(() => {
+  //   // 댕스타 전체 데이터
+  //   axios({
+  //     url: './data/dstaMain.json',
+  //     method: 'GET'
+  //   })
+
+  //     //성공
+  //     .then((res) => {
+  //       setdstaMain(res.data.dstaMainData)
+  //       console.log(res.data)
+  //     })
+  //     // 에러
+  //     .catch((err) => {
+  //       console.log(`AXIOS 실패!${err}`);
+  //     });
+  // }, []);
 
   const handleLikeClick = () => {
     setLike(!like); // Toggle the like state
@@ -151,7 +169,7 @@ export default function DstaMainModal({ closeModal }) {
       </div>
       {
         isSettingsModalOpen && (
-          <DstaSettingsModal closeModal={handleCloseSettingsModal} />
+          <DstaPostMenuModal closeModal={handleCloseSettingsModal} />
         )
       }
     </div>

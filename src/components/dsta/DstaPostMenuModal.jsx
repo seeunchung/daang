@@ -15,7 +15,7 @@ function DstaDeleteConfirmation({ onConfirm, onCancel }) {
   );
 }
 
-export default function DstaSettingsModal({ closeModal }) {
+export default function DstaPostMenModal({ closeModal }) {
   const [isDeleteConfirmationOpen, setDeleteConfirmationOpen] = useState(false);
 
   const handleDeleteClick = () => {
