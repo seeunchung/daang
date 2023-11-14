@@ -15,6 +15,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  user-select: none;
 }
 #signup.signup_main #signup-sec .signup-container .title {
   width: 100%;
@@ -22,20 +23,12 @@
 #signup.signup_main #signup-sec .signup-container .title .main-title {
   text-align: center;
 }
-#signup.signup_main #signup-sec .signup-container .title .sub-title {
-  text-align: center;
-  padding-bottom: 30px;
-}
-#signup.signup_main #signup-sec .signup-container .title .sub-title h2 {
-  font-size: 30px;
-  font-family: "UhBeeSe_hyun";
-  padding-bottom: 10px;
-}
-#signup.signup_main #signup-sec .signup-container .title .sub-title span i {
-  color: #ee6a7b;
+#signup.signup_main #signup-sec .signup-container .title .main-title img {
+  width: 300px;
 }
 #signup.signup_main #signup-sec .signup-container .content {
   width: 100%;
+  font-family: "UhBeeSe_hyun";
 }
 #signup.signup_main #signup-sec .signup-container .content form {
   width: 100%;
@@ -45,13 +38,34 @@
   padding-bottom: 30px;
   position: relative;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info .sub-title {
+  text-align: center;
+  padding-bottom: 30px;
+  font-family: "UhBeeSe_hyun";
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info .sub-title h2 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info .sub-title span {
+  font-size: 16px;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info .sub-title span i {
+  color: #ee6a7b;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li {
   width: 100%;
   padding: 10px 20px;
   display: flex;
   justify-content: center;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li:nth-child(6)::after {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li.hp-ok-box {
+  display: none;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li.hp-ok-box.on {
+  display: flex;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li:nth-child(6)::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -60,36 +74,36 @@
   height: 1px;
   background: #74500A;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .left {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .left {
   width: 139px;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .left .left-wrap {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .left .left-wrap {
   width: 100%;
   height: 46px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .left .left-wrap label {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .left .left-wrap label {
   font-size: 15px;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .left .left-wrap label strong {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .left .left-wrap label strong {
   font-weight: bold;
   color: #74500A;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .left .left-wrap label i {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .left .left-wrap label i {
   color: #ee6a7b;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right {
   width: 461px;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap {
   position: relative;
   width: 100%;
   padding: 0 130px 0 0;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap input[type=text],
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap [type=password] {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap input[type=text],
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap [type=password] {
   width: 100%;
   height: 46px;
   border: 1px solid #ddd;
@@ -99,22 +113,23 @@
   outline-offset: -1px;
   outline: 1px solid transparent;
   transition: all 0.3s;
+  font-family: "UhBeeSe_hyun";
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap input[type=text]:focus,
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap [type=password]:focus {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap input[type=text]:focus,
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap [type=password]:focus {
   outline: 1px solid #74500A;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap input[type=text]::placeholder,
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap [type=password]::placeholder {
-  color: #777;
-  font-size: 15px;
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap input[type=text]::placeholder,
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap [type=password]::placeholder {
+  color: #999;
+  font-size: 13px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   line-height: 1;
   /* 필요에 따라 조절 */
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap button {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap button {
   position: absolute;
   right: 0;
   top: 0;
@@ -126,9 +141,42 @@
   font-weight: 500;
   color: #fff;
   border-radius: 3px;
+  font-family: "UhBeeSe_hyun";
   cursor: pointer;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap input[type=checkbox] {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap button.hp-num-btn {
+  color: #fff;
+  background-color: rgba(116, 80, 10, 0.3);
+  border-color: rgba(116, 80, 10, 0.3);
+  cursor: default;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap button.hp-num-btn.on {
+  cursor: pointer;
+  color: #fff;
+  background: #74500a;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap button.hp-num2-btn {
+  display: none;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap button.hp-num2-btn.on {
+  display: block;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap .info-message {
+  display: block;
+  padding: 7px 0 0 0;
+  font-size: 12px;
+  line-height: 140%;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap p {
+  display: none;
+  padding: 7px 0 0 0;
+  font-size: 10px;
+  color: #f03f40;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap p.on {
+  display: block;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap input[type=checkbox] {
   appearance: none;
   margin: 0 12px 0 0;
   width: 24px;
@@ -137,7 +185,7 @@
   background-size: 24px 24px;
   border-radius: 50%;
 }
-#signup.signup_main #signup-sec .signup-container .content form ul.user-info .user-li .right .right-wrap input[type=checkbox]:checked {
+#signup.signup_main #signup-sec .signup-container .content form ul.user-info li .right .right-wrap input[type=checkbox]:checked {
   background: url(../../img/signup/chkbox_click.svg) no-repeat 50% 50%;
   background-size: 24px 24px;
 }
@@ -149,11 +197,14 @@
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .sub-title {
   text-align: center;
   padding: 30px 0;
+  font-family: "UhBeeSe_hyun";
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .sub-title h2 {
   font-size: 30px;
-  font-family: "UhBeeSe_hyun";
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .sub-title span {
+  font-size: 16px;
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .sub-title span i {
   color: #ee6a7b;
@@ -212,6 +263,7 @@
   outline-offset: -1px;
   outline: 1px solid transparent;
   transition: all 0.3s;
+  font-family: "UhBeeSe_hyun";
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap input[type=text]:focus,
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap [type=password]:focus {
@@ -220,7 +272,7 @@
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap input[type=text]::placeholder,
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap [type=password]::placeholder {
   color: #777;
-  font-size: 15px;
+  font-size: 13px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -240,6 +292,46 @@
   color: #fff;
   border-radius: 3px;
   cursor: pointer;
+  font-family: "UhBeeSe_hyun";
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap.birth .birth-box {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap.birth .birth-box ul {
+  width: 100%;
+  display: flex;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap.birth .birth-box ul li:nth-child(odd) {
+  width: 30%;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap.birth .birth-box ul li:nth-child(even) {
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap.birth .birth-box ul li:nth-child(even) i {
+  color: #aaa;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap.birth .birth-box ul li input {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  outline: 0;
+  text-indent: 20px;
+  font-size: 16px;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap p {
+  display: none;
+  padding: 7px 0 0 0;
+  font-size: 10px;
+  color: #f03f40;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap p.on {
+  display: block;
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.dog-info .dog-li .right .right-wrap input[type=checkbox] {
   appearance: none;
@@ -264,11 +356,14 @@
 #signup.signup_main #signup-sec .signup-container .content form ul.service .sub-title {
   text-align: center;
   padding: 30px 0;
+  font-family: "UhBeeSe_hyun";
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.service .sub-title h2 {
   font-size: 30px;
-  font-family: "UhBeeSe_hyun";
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+}
+#signup.signup_main #signup-sec .signup-container .content form ul.service .sub-title span {
+  font-size: 16px;
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.service .sub-title span i {
   color: #ee6a7b;
@@ -309,6 +404,7 @@
   border: 0;
   background-color: transparent;
   cursor: pointer;
+  font-family: "UhBeeSe_hyun";
 }
 #signup.signup_main #signup-sec .signup-container .content form ul.service li button span.viewTerms {
   display: inline;
@@ -345,4 +441,76 @@
   width: 78%;
   height: 2px;
   background: #74500A;
+}
+
+#confirmModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+#confirmModal .wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#confirmModal .wrap .container {
+  position: relative;
+  width: 400px;
+  height: 185px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#confirmModal .wrap .container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  height: 130px;
+}
+#confirmModal .wrap .container .content h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  text-indent: 3px;
+  padding: 5px;
+  font-weight: bold;
+  color: #333;
+  line-height: 150%;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+#confirmModal .wrap .container .button-box {
+  border-top: 1px solid #74500a;
+  width: 100%;
+  height: 55px;
+}
+#confirmModal .wrap .container .button-box button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+#confirmModal .wrap .container .button-box button span.confirm-modal-btn-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #74500a;
 }

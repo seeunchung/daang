@@ -8,7 +8,7 @@ export default function Login() {
         <div className="container">
           <div className="title">
             <div className="img-box">
-              <img src="./img/graduation_cap.png" alt="" />
+              <img src="./img/login/graduation_cap.png" alt="" />
             </div>
             <h2>로그인</h2>
           </div>
@@ -22,9 +22,9 @@ export default function Login() {
                 <li><Link to='/signup'><button type='button' className='signup-btn'><span className='signup-text'>회원가입</span></button></Link></li>
               </ul>
               <div className='sns-login'>
-                <button type='button'><img src="./img/naver_logo.png" alt="" /></button>
-                <button type='button'><img src="./img/kakao_logo.png" alt="" /></button>
-                <button type='button'><img src="./img/google_logo.png" alt="" /></button>
+                <button type='button'><img src="./img/login/naver_logo.png" alt="" /></button>
+                <button type='button'><img src="./img/login/kakao_logo.png" alt="" /></button>
+                <button type='button'><img src="./img/login/google_logo.png" alt="" /></button>
               </div>
             </form>
           </div>
