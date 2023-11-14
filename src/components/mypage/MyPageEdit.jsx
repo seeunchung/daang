@@ -127,7 +127,7 @@ export default function MypageEdit() {
           </div>
           <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
           <div className='idcard_bodycontainer'>
-            <img className='idcard_dog' src={dogimg} alt='강아지 사진' />
+          {!dogimg ? <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' /> : <img className='idcard_dog' src={dogimg ? String(dogimg) : ''} alt='강아지 사진' />}
             <div className='idcard_info'>
               <div>
                 <h2 className='idcard_infotext'>이름 :</h2>
