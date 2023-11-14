@@ -1,3 +1,4 @@
+
 #main.mainPage {
   width: 100%;
   height: 100%;
@@ -327,60 +328,57 @@
             width: 100%;
             position: relative;
 
-            img {
-              width: 100%;
-              height: 370px;
-            }
-
-            .slide1-title {
-              position: absolute;
-              top: 30%;
-              right: 12%;
-              background: rgba(238, 224, 195, 0.6);
-              border-radius: 5px;
-              padding: 10px;
-
-              h2 {
-                font-size: 25px;
-                line-height: 150%;
-                color: #fff;
-                font-family: 'NPSfontBold';
-
-                span {
-                  display: block;
-
-                  strong {
-                    color: #f00;
-                  }
-                }
-
-                a {
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 20px;
-                  font-family: 'NPSfontBold';
-                  padding-top: 10px;
-                  background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-                  background-position: 62% 80%;
+            .img-box1{
+                width: 100%;
+                height: 370px;
+                background: url(../../img/main/main_sec3_slide_1.jpeg) no-repeat 50% 50%;
+                background-size: cover;
+              }
+            
+              .slide1-title {
+                position: absolute;
+                top: 30%;
+                right: 12%;
+                background: rgba(238, 224, 195, 0.6);
+                border-radius: 5px;
+                padding: 10px;
+            
+                h2 {
+                  font-size: 25px;
+                  line-height: 150%;
                   color: #fff;
-
-                  &:hover {
-                    background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-                    background-position: 62% 80%;
-                    color: #74500a;
+                  font-family: 'NPSfontBold';
+            
+                  span {
+                    display: block;
+            
+                    strong {
+                      color: rgba(126,59,59);
+                    }
                   }
-
-                  img {
-                    width: 30px;
-                    height: 100%;
-                    margin-left: 4px;
+            
+                  a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 20px;
+                    font-family: 'NPSfontBold';
+                    padding-top: 10px;
+                    background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
+                    background-position: 68% 72%;
+                    color: #fff;
+            
+                    &:hover {
+                      background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+                      background-position: 68% 72%;
+                      color: #74500a;
+                    }
+            
                   }
                 }
               }
-            }
 
-            .img-box {
+            .img-box2 {
               width: 100%;
               height: 370px;
               background: url(../../img/main/main_sec3_slide_2.png) no-repeat 50% 20%;
@@ -405,7 +403,7 @@
                   display: block;
 
                   strong {
-                    color: #f00;
+                    color: rgba(126,59,59);
                   }
                 }
 
@@ -425,15 +423,60 @@
                     background-position: 68% 72%;
                     color: #74500a;
                   }
+                  
+                                }
+                                }
+                                }
+            .img-box3{
+              width: 100%;
+              height: 370px;
+              background: url(../../img/main/main_sec3_slide_3.jpeg) no-repeat 50% 20%;
+              background-size: cover;
+            }
 
-                  img {
-                    width: 30px;
-                    height: 100%;
-                    margin-left: 4px;
+            .slide3-title {
+              position: absolute;
+              top: 30%;
+              right: 12%;
+              background: rgba(238, 224, 195, 0.6);
+              border-radius: 5px;
+              padding: 10px;
+
+              h2 {
+                font-size: 25px;
+                line-height: 150%;
+                color: #fff;
+                font-family: 'NPSfontBold';
+
+                span {
+                  display: block;
+
+                  strong {
+                    color: rgb(126, 59, 59);
                   }
+                }
+
+                a {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 20px;
+                  font-family: 'NPSfontBold';
+                  padding-top: 10px;
+                  background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
+                  background-position: 80% 72%;
+                  color: #fff;
+
+                  &:hover {
+                    background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+                    background-position: 80% 72%;
+                    color: #74500a;
+                  }
+
                 }
               }
             }
+                
           }
         }
 
@@ -515,3 +558,4 @@
 
   }
 }
+

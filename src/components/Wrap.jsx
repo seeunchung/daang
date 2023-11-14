@@ -7,6 +7,7 @@ import GlobalStyle from './dmap/styles/GlobalStyle';
 import Header from './main/Header';
 import MainPage from './main/MainPage';
 import Footer from './main/Footer';
+import TermsOfUse from './main/TermsOfUse.jsx';
 import DstaMainPage from './dsta/DstaMainPage';
 import DstaWrite from './dsta/DstaWrite.jsx';
 import DstaDetail from './dsta/DstaDetail.jsx';
@@ -33,6 +34,7 @@ export default function Wrap() {
           <Routes>
             <Route path='/' element={<Header />}>
               <Route index element={<MainPage />} />
+              <Route path='TermsOfUse' element={<TermsOfUse />} />
               <Route path="dsta" element={<DstaMainPage />} />
               <Route path='dsta-detail' element={<DstaDetail />} />
               <Route path='dsta-write' element={<DstaWrite />} />
