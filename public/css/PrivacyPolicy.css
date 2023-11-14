@@ -1,8 +1,8 @@
-#termsofuse.tou {
+#PrivacyPolicy.pp {
   width: 100%;
   padding-top: 100px;
 }
-#termsofuse.tou .tou_container {
+#PrivacyPolicy.pp .pp_container {
   width: 1050px;
   margin: 0 auto;
   align-items: center;
@@ -12,48 +12,48 @@
   padding-bottom: 179px;
   padding-top: 60px;
 }
-#termsofuse.tou .tou_container .tou_title {
+#PrivacyPolicy.pp .pp_container .pp_title {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-#termsofuse.tou .tou_container .tou_title h1 {
+#PrivacyPolicy.pp .pp_container .pp_title h1 {
   font-size: 50px;
   font-weight: 500;
   line-height: 81.09px;
   text-align: center;
 }
-#termsofuse.tou .tou_container .tou_content_box01 {
+#PrivacyPolicy.pp .pp_container .pp_content_box01 {
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   margin-bottom: 60px;
   margin-top: 50px;
   padding: 30px 0;
 }
-#termsofuse.tou .tou_container .tou_content_box02 {
+#PrivacyPolicy.pp .pp_container .pp_content_box02 {
   height: 460px;
   overflow: auto;
   padding-right: 14px;
   width: 700px;
 }
-#termsofuse.tou .tou_container .tou_content_box02::-webkit-scrollbar {
+#PrivacyPolicy.pp .pp_container .pp_content_box02::-webkit-scrollbar {
   width: 6px;
 }
-#termsofuse.tou .tou_container .tou_content_box02::-webkit-scrollbar-thumb {
+#PrivacyPolicy.pp .pp_container .pp_content_box02::-webkit-scrollbar-thumb {
   background-color: #a6a19e;
   border-radius: 2px;
 }
-#termsofuse.tou .tou_container .tou_content_box02 p, #termsofuse.tou .tou_container li {
+#PrivacyPolicy.pp .pp_container .pp_content_box02 p {
   background-color: #efe7de;
   background-color: var(--default_color);
   font-size: 16px;
   font-weight: 400;
 }
-#termsofuse.tou .tou_container .tou_content_box02 h2 {
+#PrivacyPolicy.pp .pp_container .pp_content_box02 h2 {
   font-size: 16px;
   font-weight: 500;
 }
-#termsofuse.tou .tou_container .tou_appli_button {
+#PrivacyPolicy.pp .pp_container .pp_appli_button {
   background-color: rgb(35, 25, 22);
   border: 1px solid #000;
   border-radius: 5px;
