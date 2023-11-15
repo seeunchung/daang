@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Pagination from './MyPageMainPagination';
+import DummyBox from'./MyPageMainDummyBox';
 
 export default function MyPageMainPage() {
 
@@ -194,7 +195,7 @@ export default function MyPageMainPage() {
                 )}
               </div>
             )}
-
+            {(activeTab === 1 || 2) && <DummyBox activeTab={activeTab}></DummyBox>}
           </div>
         </section>
       </div>
