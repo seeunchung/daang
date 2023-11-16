@@ -18,10 +18,7 @@ export default function DstaMainModal({ closeModal }) {
   const [dstaModal, setDstaModal] = useState([]);
   const [commentLikes, setCommentLikes] = useState(Array(dstaModal.length).fill(false));
 
-  const swiperOptions = {
-    slidesPerView: 1,
-    lazyPreloadPrevNext: 2,
-  };
+
 
   useEffect(() => {
     // 댕스타 전체 데이터
