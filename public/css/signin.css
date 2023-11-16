@@ -25,6 +25,7 @@
 }
 #main.login #signin .container .title h2 {
   font-size: 30px;
+  font-family: "NPSfontBold";
 }
 #main.login #signin .container .content {
   width: 100%;
@@ -58,6 +59,7 @@
 #main.login #signin .container .content form .custom-login li a {
   color: #000;
   transition: all 0.2s ease-in-out;
+  font-family: "NPSfontBold";
 }
 #main.login #signin .container .content form .custom-login li a:hover {
   color: #764f00;
@@ -82,6 +84,7 @@
 #main.login #signin .container .content form .custom-login li button span {
   font-weight: bold;
   font-size: 15px;
+  font-family: "NPSfontBold";
 }
 #main.login #signin .container .content form .custom-login li button span.login-text {
   color: #fff;

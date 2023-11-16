@@ -11,182 +11,347 @@
   justify-content: center;
   align-items: center;
   z-index: 100; // Ensure the modal is above other content
+  cursor: default;
 
-  .close-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.5);
-    border: none;
-    padding: 10px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-  }
+  .axios {
 
-  .modal {
+    .close-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.5);
+      border: none;
+      padding: 10px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 20px;
+    }
 
-    width: 1050px;
-    max-width: 1050px;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .modal {
 
-    .modal-content {
-      background-color: #F4E2CC;
       width: 1050px;
+      max-width: 1050px;
       height: 700px;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      display: flex;
-      justify-content: space-between;
-      border-radius: 20px;
 
-
-      .photos {
-        flex: 1;
-        background-color: #FFFBF5;
+      .modal-content {
+        background-color: #F4E2CC;
+        width: 1050px;
+        height: 700px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
         border-radius: 20px;
-        height: 668px;
-        margin-left: 16px;
-        margin-right: 8px;
-        overflow: hidden;
 
-        img {
-          max-width: 100%;
-          height: auto;
-          display: block;
-          margin: 0 auto;
-        }
-      }
 
-      .words {
-        flex: 1;
-        background-color: #FFFBF5;
-        border-radius: 20px;
-        height: 668px;
-        margin-left: 8px;
-        margin-right: 16px;
-        position: relative;
-
-        .profile {
+        .photos {
+          position: relative;
+          flex: 1;
+          background-color: #FFFBF5;
+          border-radius: 20px;
+          height: 668px;
+          margin-left: 16px;
+          margin-right: 8px;
+          overflow: hidden;
           display: flex;
           align-items: center;
-          justify-content: space-between;
-          border-bottom: 1px solid #F4E2CC;
-          padding: 10px 16px 10px 16px;
+          cursor: pointer;
 
-          img {
-            margin-right: 14px;
-            height: 32px;
-            width: 32px;
+          .swiper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; // Set a fixed height for the Swiper slide
+
+            img {
+              width: 100%;
+              height: 100%; // Ensure the image does not exceed the height of the slide
+              object-fit: cover;
+              display: block;
+              margin: 0 auto;
+            }
           }
 
-          .profileName {
-            margin-right: auto;
-            /* 왼쪽 정렬 */
+          .sec1-swiper-pagination {
+            position: absolute;
+            bottom: 20px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            left: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .swiper-pagination-bullet {
+              width: 6px;
+              height: 6px;
+              margin-right: 4px;
+            }
+
+            .swiper-pagination-bullet-active {
+              background: #F4E2CC;
+            }
           }
 
-          .settings img {
-            width: auto;
-            height: 4px;
-            margin: 0px 6px 0px 0px;
+
+          .sec1-swiper-prev-btn {
+            position: absolute;
+            width: 30px;
+            top: 50%;
+            left: 5px;
+            z-index: 1;
+            transform: rotate(180deg);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .sec1-swiper-next-btn {
+            position: absolute;
+            width: 30px;
+            top: 50%;
+            right: 5px;
+            z-index: 1;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .swiper-button-disabled {
+            display: none;
           }
         }
 
-        .content {
-          border-bottom: 1px solid #F4E2CC;
-          padding: 16px;
+        .words {
+          flex: 1;
+          background-color: #FFFBF5;
+          border-radius: 20px;
+          height: 668px;
+          margin-left: 8px;
+          margin-right: 16px;
+          position: relative;
+          cursor: default;
 
-          .contentWords {
-            padding: 0px;
+          .profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #F4E2CC;
+            padding: 10px 16px 10px 16px;
+
+
+            .profileName {
+              margin-right: auto;
+              cursor: pointer;
+            }
+
+            img {
+              margin-right: 14px;
+              height: 32px;
+              width: 32px;
+              cursor: pointer;
+            }
+
+            .settings img {
+              width: auto;
+              height: 4px;
+              margin: 0px 6px 0px 0px;
+            }
+
+            .settingsBtn {
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+            }
           }
 
-          .tags {
-            color: #74500A;
-            padding: 4px 0px 0px 0px;
-          }
+          .content {
+            border-bottom: 1px solid #F4E2CC;
+            padding: 16px;
 
-          .contentLikes {
-            padding: 4px 0px 0px 0px;
+            .contentWords {
+              padding: 0px;
+            }
+
+            .tagsBox {
+              margin-top: 4px;
+
+              .tags {
+                color: #74500A;
+                cursor: pointer;
+              }
+            }
+
+            .contentLikesBox {
+              margin-top: 4px;
+
+              .contentLikes {
+                cursor: pointer;
+              }
+            }
 
             img {
               height: 16px;
               width: 16px;
+              margin-right: 4px;
+            }
+
+            .contentTime {
+              padding: 4px 0px 0px 0px;
+              font-size: 12px;
             }
           }
 
-          .contentTime {
-            padding: 4px 0px 0px 0px;
-            font-size: 12px;
+          .commentBox {
+            max-height: 464px;
+            overflow-y: auto;
+
+            /* 기존 스타일 유지 및 아래 속성 추가 */
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+            /* Firefox */
+
+            /* Webkit 브라우저용 스크롤바 숨김 */
+            &::-webkit-scrollbar {
+              width: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background-color: transparent;
+            }
+
+            &::-webkit-scrollbar-track {
+              background-color: transparent;
+            }
+
+            .commentSection {
+              display: flex;
+              padding: 10px 16px 10px 16px;
+              max-width: 500px;
+
+              img {
+                height: 32px;
+                width: 32px;
+                margin-right: 14px;
+                margin-bottom: auto;
+                cursor: pointer;
+              }
+
+              .commentProfileBox {
+                padding: 0px;
+              }
+
+              .commentProfile {
+                cursor: pointer;
+              }
+
+              .comment {
+                padding: 4px 0px 0px 0px;
+              }
+
+              .commentDetails {
+                display: flex;
+                align-items: center;
+                padding: 4px 0px 0px 0px;
+                font-size: 12px;
+                height: 16px;
+
+                .commentDate {
+                  margin-right: 12px;
+                }
+
+                Img {
+                  height: 12px;
+                  width: 12px;
+                  margin: 0px 4px 0px 0px;
+                  cursor: pointer;
+                }
+
+                .commentLikes {
+                  margin-right: 12px;
+                  cursor: pointer;
+                }
+
+                .cocomment {
+                  font-size: 12px;
+                  font-weight: bold;
+                  color: #74500A;
+                  opacity: 0.9;
+                  margin-right: 12px;
+                  height: 16px;
+                  background-color: transparent;
+                  border: none;
+                  cursor: pointer;
+                }
+              }
+
+
+
+            }
           }
-        }
 
-        .commentSection {
-          display: flex;
-          padding: 14px 16px 14px 16px;
-
-          img {
-            height: 32px;
-            width: 32px;
-            margin-right: 14px;
-            margin-bottom: auto;
-          }
-
-          .commentProfile {
-            padding: 0px;
-          }
-
-          .comment {
-            padding: 4px 0px 0px 0px;
-          }
-
-          .commentDetails {
+          .commentWritingSection {
+            position: absolute;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            padding: 4px 0px 0px 0px;
-            font-size: 12px;
+            padding: 16px;
+            border-top: 1px solid #F4E2CC;
+            bottom: 0px;
+            width: 501px;
+            background-color: #FFFBF5;
 
-            .commentDate {
-              margin-right: 12px;
+            .writingComment {
+              border: none;
+              background-color: transparent;
+              outline: none;
+              width: 432px;
+              resize: none;
+              max-height: 80px;
+              /* 5줄 이상이면 세로 스크롤 표시 */
+              overflow-y: auto;
+              font-size: 100%;
             }
 
-            Img {
-              height: 12px;
-              width: 12px;
-              margin: 2px 4px 0px 0px;
+
+            .write-button {
+              border: none;
+              cursor: pointer;
+              background-color: transparent;
+              font-size: 100%;
+              height: 18px;
+              font-weight: bold;
+              color: #74500A;
+              opacity: 1;
             }
 
-            .commentLikes {
-              margin-right: 12px;
-            }
-
-            .cocomment {
-              margin-right: 12px;
+            .write-button.disabled {
+              border: none;
+              background-color: transparent;
+              font-size: 100%;
+              height: 18px;
+              font-weight: bold;
+              color: #74500A;
+              opacity: 0.5;
+              cursor: default;
             }
           }
-
-
-
         }
 
-        .commentWritingSection {
-          position: absolute;
-          display: flex;
-          align-items: center;
-          padding: 16px;
-          border-top: 1px solid #F4E2CC;
-          bottom: 0px;
-          width: 501px;
-
-
-          .write-button {
-            margin-left: auto;
-          }
-        }
       }
     }
   }

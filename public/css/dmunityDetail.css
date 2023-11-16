@@ -1,0 +1,138 @@
+#DmunityDetail {
+  padding-top: 90PX;
+  padding-bottom: 40px;
+}
+#DmunityDetail #container {
+  width: 1050px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: #F9EBDB;
+  border-radius: 15px;
+}
+#DmunityDetail #container .title {
+  width: 100%;
+  display: flex;
+  padding: 30px 30px 30px 12px;
+}
+#DmunityDetail #container .title img {
+  widows: 30px;
+  height: 30px;
+}
+#DmunityDetail #container .title h2 {
+  font-family: "NPSfontbold";
+  font-size: 32px;
+  color: #74500A;
+  margin-left: 10px;
+}
+#DmunityDetail #container .content {
+  width: 100%;
+}
+#DmunityDetail #container .content .pots-title {
+  width: 100%;
+  padding-bottom: 10px;
+  align-items: center;
+  border-bottom: 1px solid #74500A;
+  display: flex;
+  position: relative;
+}
+#DmunityDetail #container .content .pots-title > img {
+  width: 48px;
+  height: 48px;
+  margin-left: 50px;
+}
+#DmunityDetail #container .content .pots-title h2 {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+#DmunityDetail #container .content .pots-title .profile-box {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
+#DmunityDetail #container .content .pots-title .profile-box img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+#DmunityDetail #container .content .pots-title .profile-box span {
+  font-weight: bold;
+}
+#DmunityDetail #container .content .info-box {
+  display: flex;
+  justify-content: end;
+  margin-top: 8px;
+}
+#DmunityDetail #container .content .info-box span {
+  font-weight: bold;
+  margin-left: 4px;
+}
+#DmunityDetail #container .content .text-area {
+  width: 930px;
+  min-height: 240px;
+  margin: auto;
+  margin-top: 12px;
+  font-size: 14px;
+  font-family: "Noto Sans KR";
+}
+#DmunityDetail #container .row5 {
+  display: flex;
+  padding: 8px;
+}
+#DmunityDetail #container .row5 img {
+  width: 22px;
+  height: 18px;
+}
+#DmunityDetail #container .row5 p {
+  margin-left: 4px;
+}
+#DmunityDetail #container .row6 {
+  border-bottom: 1px solid #74500A;
+  border-top: 1px solid #74500A;
+}
+#DmunityDetail #container .row7 {
+  display: flex;
+  margin-top: 16px;
+}
+#DmunityDetail #container .row7 input {
+  width: 90%;
+  height: 60px;
+  padding: 8px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
+}
+#DmunityDetail #container .row7 button {
+  width: 10%;
+  height: 60px;
+  background-color: white;
+  border: none;
+  color: #74500A;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#DmunityDetail #container .row8 {
+  display: flex;
+}
+#DmunityDetail #container .row8 button {
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #AB8B61;
+  color: white;
+  font-family: "Noto Sans KR";
+  font-weight: bold;
+}
+#DmunityDetail #container .row8 .list {
+  margin-top: 40px;
+}
+#DmunityDetail #container .row8 div {
+  margin-left: auto;
+  margin-top: 40px;
+}
+#DmunityDetail #container .row8 div .delete {
+  margin-left: 4px;
+}

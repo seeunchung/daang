@@ -25,7 +25,7 @@ export default function DmunityMainPage() {
 
   useEffect(() => {
     axios({
-      url: './data/dmunityMain.json',
+      url: './data/dmunity.json',
       method: 'GET'
     })
       // 성공
@@ -59,19 +59,19 @@ export default function DmunityMainPage() {
     <div id="dmunity">
       <div className='categoryContainer'>
         <div className='row1'>
-          <img src='../img/dmunity/dmunity.png' alt='dmunity' /><h2> 커뮤니티</h2>
+          <img src='./img/dmunity/dmunity.png' alt='dmunity' /><h2>community</h2>
         </div>
         <div className='row2'>
-          <span><button type='buuton'><img src={'../img/dmunity/eat.png'} alt="" /></button><a href='#!'>먹어요</a></span>
-          <span><button type='buuton'><img src={'../img/dmunity/sick.png'} alt="" /></button><a href='#!'>아파요</a></span>
-          <span><button type='buuton'><img src={'../img/dmunity/play.png'} alt="" /></button><a href='#!'>놀아요</a></span>
-          <span><button type='buuton'><img src={'../img/dmunity/how.png'} alt="" /></button><a href='#!'>어때요</a></span>
-          <span><button type='buuton'><img src={'../img/dmunity/etc.png'} alt="" /></button><a href='#!'>기타</a></span>
+          <span><button type='buuton'><img src='./img/dmunity/eat.png' alt="" /></button><a href='#!'>먹어요</a></span>
+          <span><button type='buuton'><img src='./img/dmunity/sick.png' alt="" /></button><a href='#!'>아파요</a></span>
+          <span><button type='buuton'><img src='./img/dmunity/play.png' alt="" /></button><a href='#!'>놀아요</a></span>
+          <span><button type='buuton'><img src='./img/dmunity/how.png' alt="" /></button><a href='#!'>어때요</a></span>
+          <span><button type='buuton'><img src='./img/dmunity/etc.png' alt="" /></button><a href='#!'>기타</a></span>
         </div>
       </div>
       <div id='postsboard'>
         <div className='row1'>
-          <img src='../img/dmunity/posts.png' alt='posts' /><h2> posts</h2>
+          <img src='../img/dmunity/posts.png' alt='posts' /><h2>posts</h2>
           <div className='sorting'>최신순</div>
         </div>
         <div className='row2'>
@@ -83,7 +83,7 @@ export default function DmunityMainPage() {
                     <img className="category" src={getCategoryImage(postList.category)} alt={postList.category} />
                   </div>
                   <div className='postMiddle'>
-                    <Link to='/dmunity/DmunityDetail'>
+                    <Link to='/dmunity-detail'>
                       <div className="title">{strCut(postList.title)}</div>
                       <div className="contents">{strCut(postList.contents)}</div>
                       <div className="info">
@@ -104,17 +104,17 @@ export default function DmunityMainPage() {
         </div>
         <div className='row3'>
           <nav className='pagination'>
-            <a href='#'>&laquo;</a>
-            <a href='#'>&lt;</a>
-            <a href='#'>1</a>
-            <a href='#'>2</a>
-            <a href='#'>3</a>
-            <a href='#'>4</a>
-            <a href='#'>5</a>
-            <a href='#'>6</a>
-            <a href='#'>7</a>
-            <a href='#'>&gt;</a>
-            <a href='#'>&raquo;</a>
+            <a href='#!'>&laquo;</a>
+            <a href='#!'>&lt;</a>
+            <a href='#!'>1</a>
+            <a href='#!'>2</a>
+            <a href='#!'>3</a>
+            <a href='#!'>4</a>
+            <a href='#!'>5</a>
+            <a href='#!'>6</a>
+            <a href='#!'>7</a>
+            <a href='#!'>&gt;</a>
+            <a href='#!'>&raquo;</a>
           </nav>
           <div className='searchBox'>
             <input

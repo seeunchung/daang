@@ -10,8 +10,9 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+  cursor: default;
 }
-.modal-overlay .close-button {
+.modal-overlay .axios .close-button {
   position: fixed;
   top: 10px;
   right: 10px;
@@ -23,7 +24,7 @@
   cursor: pointer;
   font-size: 20px;
 }
-.modal-overlay .modal {
+.modal-overlay .axios .modal {
   width: 1050px;
   max-width: 1050px;
   height: 700px;
@@ -32,7 +33,7 @@
   justify-content: center;
   align-items: center;
 }
-.modal-overlay .modal .modal-content {
+.modal-overlay .axios .modal .modal-content {
   background-color: #F4E2CC;
   width: 1050px;
   height: 700px;
@@ -42,7 +43,8 @@
   justify-content: space-between;
   border-radius: 20px;
 }
-.modal-overlay .modal .modal-content .photos {
+.modal-overlay .axios .modal .modal-content .photos {
+  position: relative;
   flex: 1;
   background-color: #FFFBF5;
   border-radius: 20px;
@@ -50,14 +52,73 @@
   margin-left: 16px;
   margin-right: 8px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .photos img {
-  max-width: 100%;
-  height: auto;
+.modal-overlay .axios .modal .modal-content .photos .swiper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.modal-overlay .axios .modal .modal-content .photos .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
 }
-.modal-overlay .modal .modal-content .words {
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-pagination .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+}
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-pagination .swiper-pagination-bullet-active {
+  background: #F4E2CC;
+}
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-prev-btn {
+  position: absolute;
+  width: 30px;
+  top: 50%;
+  left: 5px;
+  z-index: 1;
+  transform: rotate(180deg);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-prev-btn img {
+  width: 100%;
+}
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-next-btn {
+  position: absolute;
+  width: 30px;
+  top: 50%;
+  right: 5px;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.modal-overlay .axios .modal .modal-content .photos .sec1-swiper-next-btn img {
+  width: 100%;
+}
+.modal-overlay .axios .modal .modal-content .photos .swiper-button-disabled {
+  display: none;
+}
+.modal-overlay .axios .modal .modal-content .words {
   flex: 1;
   background-color: #FFFBF5;
   border-radius: 20px;
@@ -65,95 +126,173 @@
   margin-left: 8px;
   margin-right: 16px;
   position: relative;
+  cursor: default;
 }
-.modal-overlay .modal .modal-content .words .profile {
+.modal-overlay .axios .modal .modal-content .words .profile {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #F4E2CC;
   padding: 10px 16px 10px 16px;
 }
-.modal-overlay .modal .modal-content .words .profile img {
+.modal-overlay .axios .modal .modal-content .words .profile .profileName {
+  margin-right: auto;
+  cursor: pointer;
+}
+.modal-overlay .axios .modal .modal-content .words .profile img {
   margin-right: 14px;
   height: 32px;
   width: 32px;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .words .profile .profileName {
-  margin-right: auto;
-  /* 왼쪽 정렬 */
-}
-.modal-overlay .modal .modal-content .words .profile .settings img {
+.modal-overlay .axios .modal .modal-content .words .profile .settings img {
   width: auto;
   height: 4px;
   margin: 0px 6px 0px 0px;
 }
-.modal-overlay .modal .modal-content .words .content {
+.modal-overlay .axios .modal .modal-content .words .profile .settingsBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.modal-overlay .axios .modal .modal-content .words .content {
   border-bottom: 1px solid #F4E2CC;
   padding: 16px;
 }
-.modal-overlay .modal .modal-content .words .content .contentWords {
+.modal-overlay .axios .modal .modal-content .words .content .contentWords {
   padding: 0px;
 }
-.modal-overlay .modal .modal-content .words .content .tags {
+.modal-overlay .axios .modal .modal-content .words .content .tagsBox {
+  margin-top: 4px;
+}
+.modal-overlay .axios .modal .modal-content .words .content .tagsBox .tags {
   color: #74500A;
-  padding: 4px 0px 0px 0px;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .words .content .contentLikes {
-  padding: 4px 0px 0px 0px;
+.modal-overlay .axios .modal .modal-content .words .content .contentLikesBox {
+  margin-top: 4px;
 }
-.modal-overlay .modal .modal-content .words .content .contentLikes img {
+.modal-overlay .axios .modal .modal-content .words .content .contentLikesBox .contentLikes {
+  cursor: pointer;
+}
+.modal-overlay .axios .modal .modal-content .words .content img {
   height: 16px;
   width: 16px;
+  margin-right: 4px;
 }
-.modal-overlay .modal .modal-content .words .content .contentTime {
+.modal-overlay .axios .modal .modal-content .words .content .contentTime {
   padding: 4px 0px 0px 0px;
   font-size: 12px;
 }
-.modal-overlay .modal .modal-content .words .commentSection {
-  display: flex;
-  padding: 14px 16px 14px 16px;
+.modal-overlay .axios .modal .modal-content .words .commentBox {
+  max-height: 464px;
+  overflow-y: auto;
+  /* 기존 스타일 유지 및 아래 속성 추가 */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  /* Firefox */
+  /* Webkit 브라우저용 스크롤바 숨김 */
 }
-.modal-overlay .modal .modal-content .words .commentSection img {
+.modal-overlay .axios .modal .modal-content .words .commentBox::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-overlay .axios .modal .modal-content .words .commentBox::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.modal-overlay .axios .modal .modal-content .words .commentBox::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection {
+  display: flex;
+  padding: 10px 16px 10px 16px;
+  max-width: 500px;
+}
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection img {
   height: 32px;
   width: 32px;
   margin-right: 14px;
   margin-bottom: auto;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .words .commentSection .commentProfile {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentProfileBox {
   padding: 0px;
 }
-.modal-overlay .modal .modal-content .words .commentSection .comment {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentProfile {
+  cursor: pointer;
+}
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .comment {
   padding: 4px 0px 0px 0px;
 }
-.modal-overlay .modal .modal-content .words .commentSection .commentDetails {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentDetails {
   display: flex;
   align-items: center;
   padding: 4px 0px 0px 0px;
   font-size: 12px;
+  height: 16px;
 }
-.modal-overlay .modal .modal-content .words .commentSection .commentDetails .commentDate {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentDetails .commentDate {
   margin-right: 12px;
 }
-.modal-overlay .modal .modal-content .words .commentSection .commentDetails Img {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentDetails Img {
   height: 12px;
   width: 12px;
-  margin: 2px 4px 0px 0px;
+  margin: 0px 4px 0px 0px;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .words .commentSection .commentDetails .commentLikes {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentDetails .commentLikes {
   margin-right: 12px;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .words .commentSection .commentDetails .cocomment {
+.modal-overlay .axios .modal .modal-content .words .commentBox .commentSection .commentDetails .cocomment {
+  font-size: 12px;
+  font-weight: bold;
+  color: #74500A;
+  opacity: 0.9;
   margin-right: 12px;
+  height: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
-.modal-overlay .modal .modal-content .words .commentWritingSection {
+.modal-overlay .axios .modal .modal-content .words .commentWritingSection {
   position: absolute;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 16px;
   border-top: 1px solid #F4E2CC;
   bottom: 0px;
   width: 501px;
+  background-color: #FFFBF5;
 }
-.modal-overlay .modal .modal-content .words .commentWritingSection .write-button {
-  margin-left: auto;
+.modal-overlay .axios .modal .modal-content .words .commentWritingSection .writingComment {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  width: 432px;
+  resize: none;
+  max-height: 80px;
+  /* 5줄 이상이면 세로 스크롤 표시 */
+  overflow-y: auto;
+  font-size: 100%;
+}
+.modal-overlay .axios .modal .modal-content .words .commentWritingSection .write-button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 100%;
+  height: 18px;
+  font-weight: bold;
+  color: #74500A;
+  opacity: 1;
+}
+.modal-overlay .axios .modal .modal-content .words .commentWritingSection .write-button.disabled {
+  border: none;
+  background-color: transparent;
+  font-size: 100%;
+  height: 18px;
+  font-weight: bold;
+  color: #74500A;
+  opacity: 0.5;
+  cursor: default;
 }

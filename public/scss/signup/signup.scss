@@ -1,173 +1,614 @@
 #signup.signup_main {
   padding-top: 90px;
   width: 100%;
-  #signup_sec {
+
+  #signup-sec {
     width: 100%;
-    
+    padding: 30px 0 60px 0;
+
     .signup-container {
       width: 1050px;
       margin: 0 auto;
-  background: url(../../img/signupbg-3.png) no-repeat 50% 50%;
-    width: 800px;
-    height: 2000px;
-      .main-title {
-        padding-top: 300px;
-        padding-left: 30px;
+      background: url(../../img/signup/signup_bg.png) no-repeat 50% 50%;
+      background-size: contain;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      user-select: none;
+
+      .title {
+        width: 100%;
+
+        .main-title {
+          text-align: center;
+
+          img {
+            width: 300px;
+          }
+        }
       }
-      .sub-title {}
-      .content {}
+
+      .content {
+        width: 100%;
+        font-family: 'UhBeeSe_hyun';
+
+        form {
+          width: 100%;
+
+          ul.user-info {
+            width: 100%;
+            padding-bottom: 30px;
+            position: relative;
+
+            .sub-title {
+              text-align: center;
+              padding-bottom: 30px;
+              font-family: 'UhBeeSe_hyun';
+
+              h2 {
+                font-size: 30px;
+                padding-bottom: 20px;
+              }
+
+              span {
+                font-size: 16px;
+
+                i {
+                  color: #ee6a7b;
+                }
+              }
+            }
+
+            li {
+              width: 100%;
+              padding: 10px 20px;
+              display: flex;
+              justify-content: center;
+
+              &.hp-ok-box {
+                display: none;
+
+                &.on {
+                  display: flex;
+                }
+              }
+
+              &:nth-child(6) {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 100%;
+                  left: 11%;
+                  width: 78%;
+                  height: 1px;
+                  background: #74500A;
+                }
+              }
+
+
+              .left {
+                width: 139px;
+
+                .left-wrap {
+                  width: 100%;
+                  height: 46px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+
+                  label {
+                    font-size: 15px;
+
+                    strong {
+                      font-weight: bold;
+                      color: #74500A;
+                    }
+
+                    i {
+                      color: #ee6a7b;
+                    }
+                  }
+                }
+              }
+
+              .right {
+                width: 461px;
+
+                .right-wrap {
+                  position: relative;
+                  width: 100%;
+                  padding: 0 130px 0 0;
+
+                  input[type="text"],
+                  [type='password'] {
+                    width: 100%;
+                    height: 46px;
+                    border: 1px solid #ddd;
+                    background-color: #fff;
+                    border-radius: 3px;
+                    padding: 0 15px;
+                    outline-offset: -1px;
+                    outline: 1px solid transparent;
+                    transition: all 0.3s;
+                    font-family: 'UhBeeSe_hyun';
+
+                    &:focus {
+                      outline: 1px solid #74500A;
+                    }
+
+                    &::placeholder {
+                      color: #999;
+                      font-size: 13px;
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      line-height: 1;
+                      /* 필요에 따라 조절 */
+                    }
+                  }
+
+                  button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 120px;
+                    height: 46px;
+                    border: 0;
+                    background: #74500A;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #fff;
+                    border-radius: 3px;
+                    font-family: 'UhBeeSe_hyun';
+                    cursor: pointer;
+
+                    // 휴대폰 버튼
+                    &.hp-num-btn {
+                      color: #fff;
+                      background-color: rgba(116, 80, 10, .3);
+                      border-color: rgba(116, 80, 10, .3);
+                      cursor: default;
+
+                      &.on {
+                        cursor: pointer;
+                        color: #fff;
+                        background: #74500a;
+                      }
+                    }
+
+                    &.hp-num2-btn {
+                      display: none;
+
+                      &.on {
+                        display: block;
+                      }
+                    }
+                  }
+
+                  .info-message {
+                    display: block;
+                    padding: 7px 0 0 0;
+                    font-size: 12px;
+                    line-height: 140%;
+                  }
+
+                  // 에러메시지
+                  p {
+                    display: none;
+                    padding: 7px 0 0 0;
+                    font-size: 10px;
+                    color: #f03f40;
+
+                    &.on {
+                      display: block;
+                    }
+                  }
+
+                  input[type='checkbox'] {
+                    appearance: none;
+                    margin: 0 12px 0 0;
+                    width: 24px;
+                    height: 24px;
+                    background: url(../../img/signup/chkbox.svg) no-repeat 50% 50%;
+                    background-size: 24px 24px;
+                    border-radius: 50%;
+
+                    &:checked {
+                      background: url(../../img/signup/chkbox_click.svg) no-repeat 50% 50%;
+                      background-size: 24px 24px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ul.dog-info {
+            width: 100%;
+            padding-bottom: 30px;
+            position: relative;
+
+            .sub-title {
+              text-align: center;
+              padding: 30px 0;
+              font-family: 'UhBeeSe_hyun';
+
+              h2 {
+                font-size: 30px;
+                padding-bottom: 20px;
+              }
+
+              span {
+                font-size: 16px;
+
+                i {
+                  color: #ee6a7b;
+                }
+              }
+            }
+
+            .dog-li {
+              width: 100%;
+              padding: 10px 20px;
+              display: flex;
+              justify-content: center;
+
+              &:nth-child(4) {
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: 100%;
+                  left: 11%;
+                  width: 78%;
+                  height: 1px;
+                  background: #74500A;
+                }
+              }
+
+              .left {
+                width: 139px;
+
+                .left-wrap {
+                  width: 100%;
+                  height: 46px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: flex-start;
+
+                  label {
+                    font-size: 15px;
+
+                    strong {
+                      font-weight: bold;
+                      color: #74500A;
+
+                      i {
+                        color: #ee6a7b;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .right {
+                width: 461px;
+
+                .right-wrap {
+                  position: relative;
+                  width: 100%;
+                  padding: 0 130px 0 0;
+
+                  input[type="text"],
+                  [type='password'] {
+                    width: 100%;
+                    height: 46px;
+                    border: 1px solid #ddd;
+                    background-color: #fff;
+                    border-radius: 3px;
+                    padding: 0 15px;
+                    outline-offset: -1px;
+                    outline: 1px solid transparent;
+                    transition: all 0.3s;
+                    font-family: 'UhBeeSe_hyun';
+
+                    &:focus {
+                      outline: 1px solid #74500A;
+                    }
+
+                    &::placeholder {
+                      color: #777;
+                      font-size: 13px;
+                      position: absolute;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      line-height: 1;
+                      /* 필요에 따라 조절 */
+                    }
+                  }
+
+                  button {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 120px;
+                    height: 46px;
+                    border: 0;
+                    background: #74500A;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #fff;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    font-family: 'UhBeeSe_hyun';
+                  }
+
+                  &.birth {
+
+                    //생년월일
+                    .birth-box {
+                      width: 100%;
+                      height: 46px;
+                      border: 1px solid #ccc;
+                      border-radius: 3px;
+
+                      ul {
+                        width: 100%;
+                        display: flex;
+
+                        li {
+                          &:nth-child(odd) {
+                            width: 30%;
+                          }
+
+                          &:nth-child(even) {
+                            width: 5%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            i {
+                              color: #aaa;
+                            }
+                          }
+
+                          input {
+                            width: 100%;
+                            height: 44px;
+                            border: 0;
+                            outline: 0;
+                            text-indent: 20px;
+                            font-size: 16px;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  // 에러메시지
+                  p {
+                    display: none;
+                    padding: 7px 0 0 0;
+                    font-size: 10px;
+                    color: #f03f40;
+
+                    &.on {
+                      display: block;
+                    }
+                  }
+
+                  input[type='checkbox'] {
+                    appearance: none;
+                    margin: 0 12px 0 0;
+                    width: 24px;
+                    height: 24px;
+                    background: url(../../img/signup/chkbox.svg) no-repeat 50% 50%;
+                    background-size: 24px 24px;
+                    border-radius: 50%;
+
+                    &:checked {
+                      background: url(../../img/signup/chkbox_click.svg) no-repeat 50% 50%;
+                      background-size: 24px 24px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ul.service {
+            width: 100%;
+            padding-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .sub-title {
+              text-align: center;
+              padding: 30px 0;
+              font-family: 'UhBeeSe_hyun';
+
+              h2 {
+                font-size: 30px;
+                padding-bottom: 20px;
+              }
+
+              span {
+                font-size: 16px;
+
+                i {
+                  color: #ee6a7b;
+                }
+              }
+            }
+
+            li {
+              width: 50%;
+              padding: 10px 20px;
+              display: flex;
+              justify-content: center;
+              position: relative;
+
+              label {
+                font-size: 15px;
+                font-weight: bold;
+
+                &:nth-child(1) {
+                  width: 400px;
+                }
+
+                input[type="checkbox"] {
+                  appearance: none;
+                  margin: 0 12px 0 0;
+                  width: 24px;
+                  height: 24px;
+                  background: url(../../img/signup/chkbox.svg) no-repeat 50% 50%;
+                  background-size: 27px 27px;
+                  border-radius: 50%;
+
+                  &:checked {
+                    background: url(../../img/signup/chkbox_click.svg) no-repeat 50% 50%;
+                    background-size: 27px 27px;
+                  }
+                }
+              }
+
+              button {
+                position: absolute;
+                top: 10px;
+                right: 85px;
+                width: auto;
+                height: auto;
+                border: 0;
+                background-color: transparent;
+                cursor: pointer;
+                font-family: 'UhBeeSe_hyun';
+
+                span.viewTerms {
+                  display: inline;
+                  font-size: 14px;
+                  color: #74500a;
+                  font-weight: bold;
+                }
+
+                img {
+                  margin: -3px 0 0 3px;
+                  width: 15px;
+                  // background-color: #333;
+                }
+              }
+            }
+          }
+
+          .submit-btn {
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+
+            button {
+              width: 170px;
+              height: 50px;
+              background: #74500a;
+              color: #fff;
+              border: 1px solid #74500a;
+              border-radius: 10px;
+              font-size: 25px;
+              font-weight: 600;
+              font-family: 'UhBeeSe_hyun';
+              cursor: pointer;
+
+              &::after {
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 11%;
+                width: 78%;
+                height: 2px;
+                background: #74500A;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
+#confirmModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
 
+  .wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
 
-// label {
+    .container {
+      position: relative;
+      width: 400px;
+      height: 185px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
 
-//   &[for="inputId"],
-//   &[for="agreeCheck1"] {
-//     color: #74500A;
-//   }
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+        height: 130px;
 
-//   &[for='agreeCheck1'] strong:after {
-//     content: "(필수)";
-//     color: #DEC79B;
-//     margin-left: 5px;
-//   }
+        h2 {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 16px;
+          text-indent: 3px;
+          padding: 5px;
+          font-weight: bold;
+          color: #333;
+          line-height: 150%;
+          letter-spacing: -0.5px;
+          text-align: center;
+        }
+      }
 
-//   &[for="agreeCheck2"] {
-//     color: #74500A;
-//   }
+      .button-box {
+        border-top: 1px solid #74500a;
+        width: 100%;
+        height: 55px;
 
-//   &[for='agreeCheck2'] strong:after {
-//     content: "(필수)";
-//     color: #DEC79B;
-//     margin-left: 5px;
-//   }
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
 
-//   &[for="agreeCheck3"] {
-//     color: #74500A;
-//   }
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          background: none;
+          border: 0;
+          cursor: pointer;
 
-//   &[for='agreeCheck3'] strong:after {
-//     content: "(선택)";
-//     color: #DEC79B;
-//     margin-left: 5px;
-//   }
-// }
-
-// input,
-// textarea {
-//   border: none;
-//   background-color: #F9EBDB;
-//   border-radius: 10px;
-// }
-
-// .main-title h2 {
-//   font-size: 50px;
-//   text-align: center;
-//   color: #74500A;
-//   padding-bottom: 10px;
-//   padding-top: 50px;
-// }
-
-// .second-title h2 {
-//   font-size: 50px;
-//   text-align: center;
-//   color: #74500A;
-//   padding-bottom: 20px;
-//   padding-top: 40px;
-// }
-
-// .third-title h2 {
-//   font-size: 50px;
-//   text-align: center;
-//   color: #74500A;
-//   padding-top: 40px;
-//   padding-bottom: 20px;
-// }
-
-// #signup.signup_main {
-//   padding-top: 90px;
-// }
-
-// .nick-ok-btn,
-// .id-ok-btn {
-//   background-color: #74500A;
-//   color: white;
-//   border-radius: 5px;
-// }
-
-// .sub-title {
-//   span {
-//     color: #DEC79B;
-//   }
-
-//   text-align: center;
-//   padding-bottom: 10px;
-// }
-
-// .signupcontainer {
-//   height: 100%;
-//   width: 100%;
-//   background-image: url(../../img/signup_bg.png);
-//   background-size: cover;
-//   align-items: center;
-// }
-
-// .arrow {
-//   margin-left: 5px;
-//   font-size: 14px;
-
-//   /* 화살표 아이콘의 크기 설정 */
-// }
-
-// label {
-
-//   &[for='viewTermsBtn1'],
-//   &[for='viewTermsBtn2'],
-//   &[for='viewTermsBtn3'] {
-//     display: inline-block;
-//     cursor: pointer;
-//     color: #74500A;
-//   }
-// }
-
-// .complete {
-//   font-size: 15px;
-//   display: block;
-//   margin: 0 auto;
-//   padding: 10px 20px;
-//   background-color: #74500A;
-//   color: white;
-//   border: none;
-//   border-radius: 5px;
-//   cursor: pointer;
-// }
-
-// .left {
-//   display: inline-block;
-//   padding-right: 20px;
-// }
-
-// .right {
-//   display: inline-block;
-//   padding-left: 20px;
-// }
-
-// .masterContainer,
-// .dogContainer {
-//   width: 380px;
-//   margin: 0 auto;
-// }
-
-// .termscontainer {
-//   width: 380px;
-//   margin: 0 auto;
-//   padding-bottom: 40px;
-// }
-
-// #signup_main{
-//   width: auto;
-//   height: auto;
-// }
+          span.confirm-modal-btn-span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #74500a;
+          }
+        }
+      }
+    }
+  }
+}

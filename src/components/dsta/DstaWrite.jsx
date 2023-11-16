@@ -14,6 +14,20 @@ export default function DstaWrite() {
     };
   }
 
+ //텍스트 데이터
+  const [textData, setTextData] = useState('');
+  const handleTextData = (e) => {
+      const data = e.target.value;
+      setTextData(data);
+    }
+  
+ //해시태그 데이터
+  const [hashTag, setHashTag] = useState('');
+  const handleHashTag = (e) => {
+      const data = e.target.value;
+      setHashTag(data);
+    }
+
   //사진추가 업로드, 이미지 미리보기 기능
   const [addFiles, setAddFiles] = useState([]);
   const uploadAdd = useRef();
@@ -36,7 +50,7 @@ export default function DstaWrite() {
   //폼 제출
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("제출")
+    console.log(textData, hashTag, thumbnailFile, addFiles);
     //제출할때 필요한 코드 추후 작성
   }
 
@@ -84,8 +98,8 @@ export default function DstaWrite() {
 
           <div className='rightbox'>
             <div className='input_contentsbox'>
-              <textarea className='textcontent' placeholder='내용을 입력하세요.' />
-              <input className='tagcontent' type='text' placeholder='#해시태그입력' />
+              <textarea className='textcontent' placeholder='내용을 입력하세요.' onChange={handleTextData} />
+              <input className='tagcontent' type='text' placeholder='#해시태그입력' onChange={handleHashTag}/>
               <div className='addphoto_box'>
                 {addFiles.map((file, index) => {
                   return (

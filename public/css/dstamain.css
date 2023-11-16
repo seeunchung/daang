@@ -202,3 +202,7 @@
 .dstamain_pagebox button:disabled {
   color: #EEE1D7;
 }
+
+body.modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,137 @@
+{
+  "dmunity": [
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity1",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity2",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity3",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity4",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity5",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity6",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity7",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity8",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity9",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity10",
+      "title": "강아지 간식 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddmunity11",
+      "title": "강아지 산책코스 추천받아요",
+      "date": "2023-10-27",
+      "view": 27
+    }
+  ],
+  "dsta": [
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta1",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta2",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta3",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta4",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta5",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta6",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta7",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta8",
+      "img": "./img/mypage/kkumi.png"
+    },
+    {
+      "userid": "eodeod",
+      "postid": "eodeoddsta9",
+      "img": "./img/mypage/kkumi3.png"
+    }
+  ],
+  "idcard": [
+    {
+      "dogname": "꿈이",
+      "major": "포메라니안",
+      "birth": "20180703",
+      "features": "코에 점이 있다.",
+      "dogimg": null
+    }
+  ]
+}
