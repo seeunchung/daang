@@ -27,6 +27,7 @@
 
         h2 {
           font-size: 30px;
+          font-family: 'NPSfontBold';
         }
       }
 
@@ -65,6 +66,7 @@
               a {
                 color: #000;
                 transition: all 0.2s ease-in-out;
+                font-family: 'NPSfontBold';
 
                 &:hover {
                   color: #764f00;
@@ -94,6 +96,7 @@
                 span {
                   font-weight: bold;
                   font-size: 15px;
+                  font-family: 'NPSfontBold';
 
                   &.login-text {
                     color: #fff;

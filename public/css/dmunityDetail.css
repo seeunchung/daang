@@ -4,60 +4,70 @@
 }
 #DmunityDetail #container {
   width: 1050px;
-  margin: auto;
-  padding-top: 80px;
+  margin: 0 auto;
+  margin-top: 40px;
   background-color: #F9EBDB;
   border-radius: 15px;
 }
-#DmunityDetail #container .boxbox {
-  width: 960px;
-  margin: auto;
-  padding-top: 12px;
-  padding-bottom: 40px;
-}
-#DmunityDetail #container .boxbox .row1 {
+#DmunityDetail #container .title {
+  width: 100%;
   display: flex;
+  padding: 30px 30px 30px 12px;
 }
-#DmunityDetail #container .boxbox .row1 .logo {
+#DmunityDetail #container .title img {
+  widows: 30px;
+  height: 30px;
+}
+#DmunityDetail #container .title h2 {
   font-family: "NPSfontbold";
   font-size: 32px;
   color: #74500A;
+  margin-left: 10px;
 }
-#DmunityDetail #container .boxbox .row2 {
-  margin-top: 32px;
-  height: 60px;
+#DmunityDetail #container .content {
+  width: 100%;
+}
+#DmunityDetail #container .content .pots-title {
+  width: 100%;
+  padding-bottom: 10px;
   align-items: center;
   border-bottom: 1px solid #74500A;
   display: flex;
+  position: relative;
 }
-#DmunityDetail #container .boxbox .row2 img {
+#DmunityDetail #container .content .pots-title > img {
   width: 48px;
   height: 48px;
+  margin-left: 50px;
 }
-#DmunityDetail #container .boxbox .row2 .title {
-  width: 720px;
+#DmunityDetail #container .content .pots-title h2 {
   font-size: 20px;
   margin-left: 20px;
-  display: flex;
   font-weight: bold;
-  align-items: center;
 }
-#DmunityDetail #container .boxbox .row3 {
-  display: flex;
-  margin-top: 4px;
-  align-items: self-end;
+#DmunityDetail #container .content .pots-title .profile-box {
+  position: absolute;
+  top: 5px;
+  right: 20px;
 }
-#DmunityDetail #container .boxbox .row3 .info {
-  display: flex;
-  margin-left: auto;
+#DmunityDetail #container .content .pots-title .profile-box img {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
 }
-#DmunityDetail #container .boxbox .row3 .info span {
+#DmunityDetail #container .content .pots-title .profile-box span {
   font-weight: bold;
-  margin-left: 3px;
-  font-weight: bold;
-  display: flex;
 }
-#DmunityDetail #container .boxbox .row4 {
+#DmunityDetail #container .content .info-box {
+  display: flex;
+  justify-content: end;
+  margin-top: 8px;
+}
+#DmunityDetail #container .content .info-box span {
+  font-weight: bold;
+  margin-left: 4px;
+}
+#DmunityDetail #container .content .text-area {
   width: 930px;
   min-height: 240px;
   margin: auto;
@@ -65,26 +75,26 @@
   font-size: 14px;
   font-family: "Noto Sans KR";
 }
-#DmunityDetail #container .boxbox .row5 {
+#DmunityDetail #container .row5 {
   display: flex;
   padding: 8px;
 }
-#DmunityDetail #container .boxbox .row5 img {
+#DmunityDetail #container .row5 img {
   width: 22px;
   height: 18px;
 }
-#DmunityDetail #container .boxbox .row5 p {
+#DmunityDetail #container .row5 p {
   margin-left: 4px;
 }
-#DmunityDetail #container .boxbox .row6 {
+#DmunityDetail #container .row6 {
   border-bottom: 1px solid #74500A;
   border-top: 1px solid #74500A;
 }
-#DmunityDetail #container .boxbox .row7 {
+#DmunityDetail #container .row7 {
   display: flex;
   margin-top: 16px;
 }
-#DmunityDetail #container .boxbox .row7 input {
+#DmunityDetail #container .row7 input {
   width: 90%;
   height: 60px;
   padding: 8px;
@@ -92,7 +102,7 @@
   border-bottom-left-radius: 15px;
   border: none;
 }
-#DmunityDetail #container .boxbox .row7 button {
+#DmunityDetail #container .row7 button {
   width: 10%;
   height: 60px;
   background-color: white;
@@ -103,10 +113,10 @@
   font-weight: bold;
   cursor: pointer;
 }
-#DmunityDetail #container .boxbox .row8 {
+#DmunityDetail #container .row8 {
   display: flex;
 }
-#DmunityDetail #container .boxbox .row8 button {
+#DmunityDetail #container .row8 button {
   width: 80px;
   height: 30px;
   border-radius: 15px;
@@ -116,13 +126,13 @@
   font-family: "Noto Sans KR";
   font-weight: bold;
 }
-#DmunityDetail #container .boxbox .row8 .list {
+#DmunityDetail #container .row8 .list {
   margin-top: 40px;
 }
-#DmunityDetail #container .boxbox .row8 div {
+#DmunityDetail #container .row8 div {
   margin-left: auto;
   margin-top: 40px;
 }
-#DmunityDetail #container .boxbox .row8 div .delete {
+#DmunityDetail #container .row8 div .delete {
   margin-left: 4px;
 }

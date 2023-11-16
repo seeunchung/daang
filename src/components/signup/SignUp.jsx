@@ -95,7 +95,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
     }
     else {
       axios({
-        url: 'http://kiik52.dothome.co.kr/spiderman/member_select.php',
+        url: 'https://kiik52.com/spiderman/member_select.php',
         method: 'GET'
       })
         .then((res => {
@@ -184,6 +184,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
 
     setState({
       ...state,
+      pwDoubleCheck: value,
       isPwDoubleCheck: isPwDoubleCheck,
       pwDoubleCheckErrMsg: pwDoubleCheckErrMsg
     })
@@ -285,7 +286,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
     }
     else {
       axios({
-        url: 'https://kiik52.com/spiderman/member_select.php',
+        url: 'https://kiik52.com/daaang/member_select.php',
         method: 'GET'
       })
         .then((res) => {
@@ -484,27 +485,27 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
     const { value } = e.target;
     let dogName = value.replace(regExp1, '');
     let isDogName = false;
-    let DogNameErrMsg = '';
+    let dogNameErrMsg = '';
 
     if (dogName === '') {
       isDogName = false;
-      DogNameErrMsg = '강아지의 이름을 입력해 주세요'
+      dogNameErrMsg = '강아지의 이름을 입력해 주세요'
     }
 
     else if (regExp2.test(dogName) || regExp3.test(dogName)) {
       isDogName = false;
-      DogNameErrMsg = '한글(공백 제외)을 입력해 주세요';
+      dogNameErrMsg = '한글(공백 제외)을 입력해 주세요';
     }
     else {
       isDogName = true;
-      DogNameErrMsg = '';
+      dogNameErrMsg = '';
     }
 
     setState({
       ...state,
       dogName: dogName,
       isDogName: isDogName,
-      DogNameErrMsg: DogNameErrMsg
+      dogNameErrMsg: dogNameErrMsg
     })
   }
 
@@ -512,33 +513,33 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
   const onChangeDogYear = (e) => {
     const regExp1 = /[^\d]/g;
     const { value } = e.target;
-    const birthYear = value.replace(regExp1, '');
+    const dogBirthYear = value.replace(regExp1, '');
 
     setState({
       ...state,
-      birthYear: birthYear,
+      dogBirthYear: dogBirthYear,
     })
   }
   // 강아지 생월 이벤트
   const onChangeDogMonth = (e) => {
     const regExp1 = /[^\d]/g;
     const { value } = e.target;
-    const birthMonth = value.replace(regExp1, '');
+    const dogBirthMonth = value.replace(regExp1, '');
 
     setState({
       ...state,
-      birthMonth: birthMonth,
+      dogBirthMonth: dogBirthMonth,
     })
   }
   // 강아지 생일 이벤트
   const onChangeDogDate = (e) => {
     const regExp1 = /[^\d]/g;
     const { value } = e.target;
-    const birthDate = value.replace(regExp1, '');
+    const dogBirthDate = value.replace(regExp1, '');
 
     setState({
       ...state,
-      birthDate: birthDate,
+      dogBirthDate: dogBirthDate,
     })
   }
   useEffect(() => {
@@ -549,47 +550,47 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
     const regExp2 = /^(?:0?[1-9]|1[0-2])$/g;
     // 생월 01 ~ 09 또는 1 ~ 9 | 10 ~ 19 | 20~29| 30-31
     const regExp3 = /^(?:0?[1-9]|1[0-9]|2[0-9]|3[0-1])$/g;
-    let isBirth = false;
-    let birthErrMsg = '';
+    let isDogBirth = false;
+    let dogBirthErrMsg = '';
 
-    if (state.birthYear === '' && state.birthMonth === '' && state.birthDate === '') {
-      isBirth = false;
-      birthErrMsg = '';
+    if (state.dogBirthYear === '' && state.dogBirthMonth === '' && state.dogBirthDate === '') {
+      isDogBirth = false;
+      dogBirthErrMsg = '';
     }
     else {
-      if (Number(state.birthYear) > newYear) {
-        isBirth = false;
-        birthErrMsg = '생년월일이 미래로 입력 되었습니다.';
+      if (Number(state.dogBirthYear) > newYear) {
+        isDogBirth = false;
+        dogBirthErrMsg = '생년월일이 미래로 입력 되었습니다.';
       }
-      else if (Number(state.birthYear) < newYear - 100) {
-        isBirth = false;
-        birthErrMsg = '생년월일을 다시 확인해주세요.';
+      else if (Number(state.dogBirthYear) < newYear - 100) {
+        isDogBirth = false;
+        dogBirthErrMsg = '생년월일을 다시 확인해주세요.';
       }
       else {
-        if (regExp2.test(state.birthMonth) === false) {
+        if (regExp2.test(state.dogBirthMonth) === false) {
           // false로 하면 초기 errmsg가 생기는 오류로 인해 true로 설정
-          isBirth = true;
-          birthErrMsg = '태어난 월을 정확하게 입력해 주세요.'
+          isDogBirth = true;
+          dogBirthErrMsg = '태어난 월을 정확하게 입력해 주세요.'
         }
         else {
-          if (regExp3.test(state.birthDate) === false) {
-            isBirth = false;
-            birthErrMsg = '태어난 일을 정확하게 입력해 주세요.'
+          if (regExp3.test(state.dogBirthDate) === false) {
+            isDogBirth = false;
+            dogBirthErrMsg = '태어난 일을 정확하게 입력해 주세요.'
           }
           else {
-            isBirth = true;
-            birthErrMsg = ''
+            isDogBirth = true;
+            dogBirthErrMsg = ''
           }
         }
       }
     }
     setState({
       ...state,
-      isBirth: isBirth,
-      birthErrMsg: birthErrMsg
+      isDogBirth: isDogBirth,
+      dogBirthErrMsg: dogBirthErrMsg
     });
 
-  }, [state.birthYear, state.birthMonth, state.birthDate])
+  }, [state.dogBirthYear, state.dogBirthMonth, state.dogBirthDate])
 
 
   // 강아지 견종 이벤트
@@ -604,24 +605,61 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
 
     const { value } = e.target;
     let isDogBreed = false;
-    let DogBreedErrMsg = '';
-    let DogBreed = value.replace(regExp1, '');
+    let dogBreedErrMsg = '';
+    let dogBreed = value.replace(regExp1, '');
 
-    if (regExp2.test(DogBreed) || regExp3.test(DogBreed)) {
+    if (regExp2.test(dogBreed) || regExp3.test(dogBreed)) {
       isDogBreed = false;
-      DogBreedErrMsg = '한글(공백 제외)을 입력해 주세요';
+      dogBreedErrMsg = '한글(공백 제외)을 입력해 주세요';
     }
     else {
       isDogBreed = true;
-      DogBreedErrMsg = '';
+      dogBreedErrMsg = '';
     }
 
     setState({
       ...state,
-      DogBreed: DogBreed,
+      dogBreed: dogBreed,
       isDogBreed: isDogBreed,
-      DogBreedErrMsg: DogBreedErrMsg
+      dogBreedErrMsg: dogBreedErrMsg
 
+    })
+
+  }
+
+  // 강아지 한줄소개 이벤트
+  const onChangeDogInfo = (e) => {
+
+    // 특수문자
+    const regExp1 = /[`~!@#$%^&*()\-_=+\\|[\]{};:'",<.>/?]/g;
+    // 영어만
+    const regExp2 = /[A-Za-z]+/g;
+    // 공백
+    const regExp3 = /\s/g;
+
+    const { value } = e.target;
+    let dogInfo = value.replace(regExp1, '');
+    let isDogInfo = false;
+    let dogInfoErrMsg = '';
+
+    if (dogInfo === '') {
+      isDogInfo = false;
+      dogInfoErrMsg = '강아지의 소개를 입력해 주세요';
+    }
+    else if (regExp2.test(dogInfo) || regExp3.test(dogInfo)) {
+      isDogInfo = false;
+      dogInfoErrMsg = '한글(공백제외)을 입력해 주세요';
+    }
+    else {
+      isDogInfo = true;
+      dogInfoErrMsg = '';
+    }
+
+    setState({
+      ...state,
+      dogInfo: dogInfo,
+      isDogInfo: isDogInfo,
+      dogInfoErrMsg: dogInfoErrMsg
     })
 
   }
@@ -670,18 +708,21 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
     const regExp = /^(\d{3})(\d{3,4})(\d{4})$/g;
 
     const newFormData = new FormData();
+
     newFormData.append('id', state.id);
     newFormData.append('pw', state.pw);
     newFormData.append('irum', state.name);
     newFormData.append('email', state.email);
     newFormData.append('hp', state.hp.replace(regExp, '$1-$2-$3'));
-    newFormData.append('addr', `${state.address1} ${state.address2}`);
-    newFormData.append('birth', `${state.birthYear}-${state.birthMonth}-${state.birthDate}`);
+    newFormData.append('dog_Name', state.dogName);
+    newFormData.append('dog_Birth', `${state.dogBirthYear}-${state.dogBirthMonth}-${state.dogBirthDate}`);
+    newFormData.append('dog_Breed', state.dogBreed);
+    newFormData.append('dog_Info', state.dogInfo);
     newFormData.append('service', state.AgreetoTermsofUse);
-    newFormData.append('joinData', `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
+    newFormData.append('join_date', `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
 
     axios({
-      url: 'https://kiik52.com/spiderman/member_insert.php',
+      url: 'https://kiik52.com/daaang/member_insert.php',
       method: 'POST',
       data: newFormData
     })
@@ -914,7 +955,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                         onChange={onChangeDogName}
                         value={state.dogName}
                       />
-                      <p className={`err-msg${state.isDogName ? '' : ' on'}`}>{state.DogNameErrMsg}</p>
+                      <p className={`err-msg${state.isDogName ? '' : ' on'}`}>{state.dogNameErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -935,7 +976,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                             placeholder="YYYY"
                             maxLength={4}
                             onChange={onChangeDogYear}
-                            value={state.birthYear}
+                            value={state.dogBirthYear}
                           /></li>
                           <li><i>/</i></li>
                           <li><input
@@ -945,7 +986,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                             placeholder="MM"
                             maxLength={2}
                             onChange={onChangeDogMonth}
-                            value={state.birthMonth}
+                            value={state.dogBirthMonth}
                           /></li>
                           <li><i>/</i></li>
                           <li><input
@@ -955,11 +996,11 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                             placeholder="DD"
                             maxLength={2}
                             onChange={onChangeDogDate}
-                            value={state.birthDate}
+                            value={state.dogBirthDate}
                           /></li>
                         </ul>
                       </div>
-                      <p className={`err-msg${state.isBirth ? '' : ' on'}`}>{state.birthErrMsg}</p>
+                      <p className={`err-msg${state.isBirth ? '' : ' on'}`}>{state.dogBirthErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -979,7 +1020,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                         placeholder='견종을 입력해주세요'
                         onChange={onChangeDogBreed}
                       />
-                      <p className={`err-msg${state.isDogBreed ? '' : ' on'}`}>{state.DogBreedErrMsg}</p>
+                      <p className={`err-msg${state.isDogBreed ? '' : ' on'}`}>{state.dogBreedErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -997,8 +1038,9 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                         name='input_dog_info'
                         id='inputDogInfo'
                         placeholder='한줄소개를 작성해주세요 (최대 30자)'
-                      >
-                      </input>
+                        onChange={onChangeDogInfo}
+                      />
+                      <p className={`err-msg${state.isDogInfo ? '' : ' on'}`}>{state.dogInfoErrMsg}</p>
                     </div>
                   </div>
                 </li>
@@ -1074,17 +1116,17 @@ SignUp.propTypes = {
   강아지: PropTypes.shape({
     dogName: PropTypes.string.isRequired,
     isDogName: PropTypes.bool,
-    DogNameErrMsg: PropTypes.string,
+    dogNameErrMsg: PropTypes.string,
 
-    birthYear: PropTypes.string,
-    birthMonth: PropTypes.string,
-    birthDate: PropTypes.string,
-    isBirth: PropTypes.bool,
-    birthErrMsg: PropTypes.string,
+    dogBirthYear: PropTypes.string,
+    dogBirthMonth: PropTypes.string,
+    dogBirthDate: PropTypes.string,
+    isDogBirth: PropTypes.bool,
+    dogBirthErrMsg: PropTypes.string,
 
-    DogBreed: PropTypes.string,
+    dogBreed: PropTypes.string,
     isDogBreed: PropTypes.bool,
-    DogBreedErrMsg: PropTypes.string,
+    dogBreedErrMsg: PropTypes.string,
 
     DogInfo: PropTypes.string,
     isDogInfo: PropTypes.bool,
@@ -1137,21 +1179,20 @@ SignUp.defaultProps = {
   강아지: {
     dogName: '',
     isDogName: false,
-    DogNameErrMsg: '',
+    dogNameErrMsg: '',
 
-    birthYear: '',
-    birthMonth: '',
-    birthDate: '',
-    isBirth: false,
-    birthErrMsg: '',
+    dogBirthYear: '',
+    dogBirthMonth: '',
+    dogBirthDate: '',
+    isdogBirth: false,
+    dogBirthErrMsg: '',
 
-    DogBreed: '',
+    dogBreed: '',
     isDogBreed: false,
-    DogBreedErrMsg: '',
+    dogBreedErrMsg: '',
 
-    DogInfo: '',
+    dogInfo: '',
     isDogInfo: false,
-    DogInfoErrMsg: '',
+    dogInfoErrMsg: '',
   }
 }
-
