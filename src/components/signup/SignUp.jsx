@@ -4,7 +4,7 @@ import axios from 'axios'
 import PropTypes from 'prop-types';
 
 
-export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
+export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgreeToTermsOfUseModalOpenFn, isRequiredModalOpenFn, isSelectModalOpenFn }) {
 
   const [state, setState] = useState(견주, 강아지);
   const navigate = useNavigate();
@@ -471,6 +471,20 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
       });
     }
   }
+  const onClickAgree = (e)=>{
+    e.preventDefault();
+    isAgreeToTermsOfUseModalOpenFn();
+  }
+  const onClickAgree2 = (e)=>{
+    e.preventDefault();
+    isRequiredModalOpenFn();
+  }
+  const onClickAgree3 = (e)=>{
+    e.preventDefault();
+    isSelectModalOpenFn();
+  }
+
+
 
   // 강아지 회원가입 이벤트 구현
   // 강아지 이름 입력 이벤트
@@ -1052,15 +1066,15 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
                 </div>
                 <li>
                   <label htmlFor="chk1"><input type="checkbox" onChange={onChangeService} name='chk1' id='chk1' className='chk-btn' value='이용약관동의(필수)' />이용약관동의(필수)</label>
-                  <button type='button'><span className='viewTerms'>약관보기</span><img src="./img/signup/arrow-right.png" alt="" /></button>
+                  <button type='button' onClick={onClickAgree}><span className='viewTerms'>약관보기</span><img src="./img/signup/arrow-right.png" alt="" /></button>
                 </li>
                 <li>
                   <label htmlFor="chk2"><input type="checkbox" onChange={onChangeService} name='chk2' id='chk2' className='chk-btn' value='개인정보 수집∙이용 동의(필수)' />개인정보 수집∙이용 동의(필수)</label>
-                  <button type='button'><span className='viewTerms'>약관보기</span><img src="./img/signup/arrow-right.png" alt="" /></button>
+                  <button type='button' onClick={onClickAgree2}><span className='viewTerms'>약관보기</span><img src="./img/signup/arrow-right.png" alt="" /></button>
                 </li>
                 <li>
                   <label htmlFor="chk3"><input type="checkbox" onChange={onChangeService} name='chk3' id='chk3' className='chk-btn' value='마케팅 수신동의(선택)' />마케팅 수신동의(선택)</label>
-                  <button type='button'><span className='viewTerms'>약관보기</span><img src="./img/signup/arrow-right.png" alt="" /></button>
+                  <button type='button' onClick={onClickAgree3}><span className='viewTerms'>약관보기</span><img src="./img/signup/arrow-right.png" alt="" /></button>
                 </li>
               </ul>
               <div className="submit-btn">

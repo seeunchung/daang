@@ -1,4 +1,3 @@
-@charset 'UTF-8';
 @import url(../css/fonts.css);
 @import url(../css/reset.css);
 @import url(../css/header.css);
@@ -17,7 +16,6 @@
 @import url(../css/myPage.css);
 @import url(../css/myPageEdit.css);
 @import url(../css/DstaPostMenuModal.css);
-@import url(../css/signupcomplete.css);
 
 #wrap {
   width: 100%;
