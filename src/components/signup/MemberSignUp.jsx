@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SignUp from './SignUp'
 import ConfirmModal from './ConfirmModal'
+import Login from '../signin/Login';
 
 export default function MemberSignUp() {
 
@@ -30,6 +31,7 @@ export default function MemberSignUp() {
   return (
     <>
       <SignUp isConfirmModalOpenFn={isConfirmModalOpenFn} />
+      <Login isConfirmModalOpenFn={isConfirmModalOpenFn} />
       {
         isConfirmModal.isConfirmModal && <ConfirmModal msg={isConfirmModal.msg} isConfirmModalCloseFn={isConfirmModalCloseFn} />
       }
