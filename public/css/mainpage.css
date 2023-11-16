@@ -30,22 +30,22 @@
   position: absolute;
   top: 35%;
   left: 12%;
-  background: rgba(238, 224, 195, 0.6);
   border-radius: 5px;
   padding: 10px;
 }
 #main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 {
   font-size: 28px;
   line-height: 150%;
-  color: #000;
+  color: #fff;
   font-family: "NPSfontBold";
+  text-shadow: 0 2px 4px black;
 }
 #main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 span {
   display: block;
 }
 #main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 span strong {
-  font-family: "Fredoka One";
-  color: #F9EBDB;
+  font-family: "NPSfontBold";
+  color: #E8C091;
   font-size: 30px;
 }
 #main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 a {
@@ -55,13 +55,15 @@
   font-size: 20px;
   font-family: "NPSfontBold";
   padding-top: 10px;
-  background: url(../../img/main/arrow_right_black.png) no-repeat 50% 50%;
+  background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
   background-position: 75% 70%;
+  color: #fff;
+  text-shadow: 0 2px 4px black;
 }
 #main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 a:hover {
   background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
   background-position: 75% 70%;
-  color: #74500a;
+  color: #E8C091;
 }
 #main.mainPage #section1 .sec1-swiper-container > button {
   border: 0;
@@ -279,8 +281,7 @@
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title {
   position: absolute;
   top: 30%;
-  right: 12%;
-  background: rgba(238, 224, 195, 0.6);
+  right: 45%;
   border-radius: 5px;
   padding: 10px;
 }
@@ -289,12 +290,13 @@
   line-height: 150%;
   color: #fff;
   font-family: "NPSfontBold";
+  text-shadow: 0 2px 4px black;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 span {
   display: block;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 span strong {
-  color: rgb(126, 59, 59);
+  color: #E8C091;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 a {
   display: flex;
@@ -322,7 +324,6 @@
   position: absolute;
   top: 30%;
   right: 12%;
-  background: rgba(238, 224, 195, 0.6);
   border-radius: 5px;
   padding: 10px;
 }
@@ -331,12 +332,13 @@
   line-height: 150%;
   color: #fff;
   font-family: "NPSfontBold";
+  text-shadow: 0 2px 4px black;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 span {
   display: block;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 span strong {
-  color: rgb(126, 59, 59);
+  color: #E8C091;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 a {
   display: flex;
@@ -364,7 +366,6 @@
   position: absolute;
   top: 30%;
   right: 12%;
-  background: rgba(238, 224, 195, 0.6);
   border-radius: 5px;
   padding: 10px;
 }
@@ -373,12 +374,13 @@
   line-height: 150%;
   color: #fff;
   font-family: "NPSfontBold";
+  text-shadow: 0 2px 4px black;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide3-title h2 span {
   display: block;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide3-title h2 span strong {
-  color: rgb(126, 59, 59);
+  color: #E8C091;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide3-title h2 a {
   display: flex;

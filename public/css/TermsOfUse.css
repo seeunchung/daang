@@ -63,4 +63,9 @@
   height: 54px;
   margin-bottom: 12px;
   width: 420px;
+  cursor: pointer;
+}
+#termsofuse.tou .tou_container .tou_appli_button:hover {
+  transition: all 0.1s ease-in-out;
+  background: rgba(0, 0, 0, 0.7921568627);
 }

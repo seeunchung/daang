@@ -33,22 +33,22 @@
             position: absolute;
             top: 35%;
             left: 12%;
-            background: rgba(238, 224, 195, 0.6);
+            
             border-radius: 5px;
             padding: 10px;
 
             h2 {
               font-size: 28px;
               line-height: 150%;
-              color: #000;
+              color: #fff;
               font-family: 'NPSfontBold';
-
+              text-shadow: 0 2px 4px black;
               span {
                 display: block;
 
                 strong {
-                  font-family: 'Fredoka One';
-                  color: #F9EBDB;
+                  font-family: 'NPSfontBold';
+                  color: #E8C091;
                   font-size: 30px;
                 }
               }
@@ -60,13 +60,15 @@
                 font-size: 20px;
                 font-family: 'NPSfontBold';
                 padding-top: 10px;
-                background: url(../../img/main/arrow_right_black.png) no-repeat 50% 50%;
+                background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
                 background-position: 75% 70%;
+                color: #fff;
+                text-shadow: 0 2px 4px black;
 
                 &:hover {
                   background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
                   background-position: 75% 70%;
-                  color: #74500a;
+                  color: #E8C091;
                 }
 
               }
@@ -338,8 +340,8 @@
               .slide1-title {
                 position: absolute;
                 top: 30%;
-                right: 12%;
-                background: rgba(238, 224, 195, 0.6);
+                right: 45%;
+                
                 border-radius: 5px;
                 padding: 10px;
             
@@ -348,12 +350,12 @@
                   line-height: 150%;
                   color: #fff;
                   font-family: 'NPSfontBold';
-            
+                  text-shadow: 0 2px 4px black;
                   span {
                     display: block;
             
                     strong {
-                      color: rgba(126,59,59);
+                      color: #E8C091;
                     }
                   }
             
@@ -389,7 +391,7 @@
               position: absolute;
               top: 30%;
               right: 12%;
-              background: rgba(238, 224, 195, 0.6);
+              
               border-radius: 5px;
               padding: 10px;
 
@@ -398,12 +400,12 @@
                 line-height: 150%;
                 color: #fff;
                 font-family: 'NPSfontBold';
-
+                text-shadow: 0 2px 4px black;
                 span {
                   display: block;
 
                   strong {
-                    color: rgba(126,59,59);
+                    color: #E8C091;
                   }
                 }
 
@@ -438,7 +440,7 @@
               position: absolute;
               top: 30%;
               right: 12%;
-              background: rgba(238, 224, 195, 0.6);
+              
               border-radius: 5px;
               padding: 10px;
 
@@ -447,12 +449,12 @@
                 line-height: 150%;
                 color: #fff;
                 font-family: 'NPSfontBold';
-
+                text-shadow: 0 2px 4px black;
                 span {
                   display: block;
 
                   strong {
-                    color: rgb(126, 59, 59);
+                    color: #E8C091;
                   }
                 }
 

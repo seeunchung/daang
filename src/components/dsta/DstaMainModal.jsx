@@ -74,6 +74,10 @@ export default function DstaMainModal({ closeModal }) {
     }
   };
 
+  const swiperOptions = {
+    slidesPerView: 1,
+    lazyPreloadPrevNext: 2,
+  };
   const adjustTextareaHeight = (element) => {
     element.style.height = '18px'; // Reset the height to auto to recalculate it
     element.style.height = element.scrollHeight + 'px'; // Set the height to match the content
