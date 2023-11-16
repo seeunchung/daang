@@ -63,4 +63,9 @@
   height: 54px;
   margin-bottom: 12px;
   width: 420px;
+  cursor: pointer;
+}
+#PrivacyPolicy.pp .pp_container .pp_appli_button:hover {
+  transition: all 0.1s ease-in-out;
+  background: rgba(0, 0, 0, 0.7921568627);
 }

@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-
+  
 export default function ConsentToReceiveMarketing() {
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1); // -1은 뒤로가기를 의미합니다.
+  };
+
   return (
     <main id="ConsentToReceiveMarketing" className="ctrm">
       <div className='ctrm_container'>
@@ -24,9 +31,9 @@ export default function ConsentToReceiveMarketing() {
               <p>회사는 별도의 동의를 받거나 법률에 특별할 규정이 있는 경우를 제외하면 제3자에게 회원님의 개인정보를 제공하지 않으며, 상기 안내해드린 개인정보 수집 동의 법위를 초과하여 회원의 개인정보를 활용하지 않습니다.</p>
                </div>
                </div>
-              <button className='ctrm_appli_button'>
+              <button className='ctrm_appli_button' onClick={goBack} >
               확인</button>
                </div>
                </main>
-                );
-                };
+  );
+};
