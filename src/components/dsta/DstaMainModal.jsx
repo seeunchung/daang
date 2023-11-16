@@ -81,6 +81,10 @@ export default function DstaMainModal({ closeModal }) {
     // 여기에서 작성한 댓글을 서버에 저장하거나 다른 작업을 수행할 수 있습니다.
   };
 
+  const swiperOptions = {
+    slidesPerView: 1
+  };
+
   return (
     <div className="modal-overlay" onClick={closeModal}>
       {dstaModal && dstaModal.map((item, index) => (
