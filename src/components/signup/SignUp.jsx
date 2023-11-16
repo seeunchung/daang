@@ -95,7 +95,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn }) {
     }
     else {
       axios({
-        url: 'https://kiik52.com/spiderman/member_select.php',
+        url: 'https://kiik52.com/daaang/member_select.php',
         method: 'GET'
       })
         .then((res => {

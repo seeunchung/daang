@@ -1,0 +1,48 @@
+/* 모달 컨테이너 스타일 */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* 배경을 반투명하게 만듭니다. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모달 내용 스타일 */
+.popup-content {
+  background-color: #fff;
+  /* 모달 내용 배경색 */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* 그림자 효과 추가 */
+}
+
+/* 모달 닫기 버튼 스타일 */
+.close {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.confirm-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: black;
+  /* 원하는 배경색 설정 */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button:hover {
+  background-color: #0056b3;
+  /* 마우스 오버 시 배경색 변경 */
+}
