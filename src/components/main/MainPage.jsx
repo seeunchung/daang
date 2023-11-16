@@ -68,7 +68,7 @@ export default function MainPage() {
               <div className="slide-title">
                 <h2>
                   <span>귀여운 강아지의 <strong>일상</strong>을 공유하고,</span>
-                  <span>나의 강아지를 자랑해보세요~</span>
+                  <span>나의 강아지를 자랑해보세요!</span>
                   <Link to='/dsta'>댕스타 바로가기</Link>
                 </h2>
               </div>

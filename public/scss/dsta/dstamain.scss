@@ -181,7 +181,9 @@
         font-size: 20px;
         font-weight: bold;
         text-align: left;
+        overflow: hidden;
         text-overflow: ellipsis;
+        white-space: nowrap;
         padding-left: 20px;
         margin: 0;
         /* 패딩을 요소의 크기에 포함 */

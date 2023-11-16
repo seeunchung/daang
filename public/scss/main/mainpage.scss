@@ -66,7 +66,7 @@
                 text-shadow: 0 2px 4px black;
 
                 &:hover {
-                  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+                  background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
                   background-position: 75% 70%;
                   color: #E8C091;
                 }
@@ -104,7 +104,7 @@
 
       .sec1-swiper-pagination {
         position: relative;
-        z-index: 5;
+        z-index: 1;
         bottom: 25px;
         left: 50%;
 
@@ -229,6 +229,8 @@
                 height: 30px;
 
                 img {
+                  width: 30px;
+                
                   border: 2px solid #fff;
                   border-radius: 50%;
                 }
@@ -367,13 +369,13 @@
                     font-family: 'NPSfontBold';
                     padding-top: 10px;
                     background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-                    background-position: 68% 72%;
+                    background-position: 62% 68%;
                     color: #fff;
             
                     &:hover {
-                      background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-                      background-position: 68% 72%;
-                      color: #74500a;
+                      background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
+                      background-position: 62% 68%;
+                      color: #E8C091;
                     }
             
                   }
@@ -417,13 +419,13 @@
                   font-family: 'NPSfontBold';
                   padding-top: 10px;
                   background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-                  background-position: 68% 72%;
+                  background-position: 66% 78%;
                   color: #fff;
 
                   &:hover {
-                    background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-                    background-position: 68% 72%;
-                    color: #74500a;
+                    background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
+                    background-position: 66% 78%;
+                    color: #E8C091;
                   }
                   
                                 }
@@ -466,13 +468,13 @@
                   font-family: 'NPSfontBold';
                   padding-top: 10px;
                   background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-                  background-position: 80% 72%;
+                  background-position: 80% 78%;
                   color: #fff;
 
                   &:hover {
-                    background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-                    background-position: 80% 72%;
-                    color: #74500a;
+                    background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
+                    background-position: 80% 78%;
+                    color: #E8C091;
                   }
 
                 }
