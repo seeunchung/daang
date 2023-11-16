@@ -39,7 +39,7 @@ export default function MainPage() {
   return (
     <main id='main' className='mainPage'>
       <section id='section1'>
-       <div className="sec1-swiper-container">
+        <div className="sec1-swiper-container">
           <Swiper
             className='swiper'
             {...swiperOptions}

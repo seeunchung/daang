@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Pagination from './MyPageMainPagination';
+import DummyBox from'./MyPageMainDummyBox';
 
 export default function MyPageMainPage() {
 
@@ -83,7 +84,7 @@ export default function MyPageMainPage() {
             </div>
             <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
             <div className='idcard_bodycontainer'>
-            <img className='idcard_dog' src={idcardInfo.length > 0 && idcardInfo[0].dogimg ? String(idcardInfo[0].dogimg) : ''} alt='강아지 사진' />
+              {idcardInfo.length > 0 && !idcardInfo[0].dogimg ? <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' /> : <img className='idcard_dog' src={idcardInfo.length > 0 && idcardInfo[0].dogimg ? String(idcardInfo[0].dogimg) : ''} alt='강아지 사진' />}
               <div className='idcard_info'>
                 <div>
                   <h2 className='idcard_infotext'>이름 :</h2>
@@ -194,7 +195,7 @@ export default function MyPageMainPage() {
                 )}
               </div>
             )}
-
+            {(activeTab === 1 || 2) && <DummyBox activeTab={activeTab}></DummyBox>}
           </div>
         </section>
       </div>

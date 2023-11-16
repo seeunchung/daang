@@ -1,0 +1,76 @@
+{
+  "dstaModalData": [
+    {
+      "id": 1,
+      "imgSrcArray": [
+        "./img/dsta/kkumi.png",
+        "./img/dsta/kkumi2.png",
+        "./img/dsta/kkumi3.png"
+      ],
+      "writerProfileImgSrc": "./img/main/best-dsta-profile.png",
+      "writerUserId": "꿈이언니",
+      "contentText": "오늘도 꿈이랑 산책다녀왔어요~",
+      "contentTag": "#꿈이랑 #산책 #행복해",
+      "contentLikes": "10",
+      "contentTime": "2",
+      "comments": [
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "꿈이 귀여워~",
+          "commentDate": "2023.11.14",
+          "commentLikes": "3"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "붕어빵ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "commentDate": "2023.11.15",
+          "commentLikes": "5"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "1",
+          "commentDate": "2023.11.15",
+          "commentLikes": "1"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "22",
+          "commentDate": "2023.11.16",
+          "commentLikes": "22"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "333",
+          "commentDate": "2023.11.16",
+          "commentLikes": "333"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "4444",
+          "commentDate": "2023.11.16",
+          "commentLikes": "4444"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "55555",
+          "commentDate": "2023.11.16",
+          "commentLikes": "55555"
+        },
+        {
+          "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
+          "commentUserId": "Gavin",
+          "commentText": "666666",
+          "commentDate": "2023.11.16",
+          "commentLikes": "666666"
+        }
+      ]
+    }
+  ]
+}

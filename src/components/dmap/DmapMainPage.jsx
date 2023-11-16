@@ -12,12 +12,12 @@ const { kakao } = window;
 const KEYWORD_LIST = [
   { id: 1, value: '애견동반카페', emoji: '☕️' },
   { id: 3, value: '애견동반식당', emoji: '🍴' },
-  { id: 2, value: '동물병원', emoji: '🧑‍⚕️' }, 
+  { id: 2, value: '동물병원', emoji: '🧑‍⚕️' },
   { id: 4, value: '공원', emoji: '🌳' },
 ];
 
 const Kakao = () => {
-    // 카카오 맵에 접근해 지도 상태 조작하는 상태 변수
+  // 카카오 맵에 접근해 지도 상태 조작하는 상태 변수
   const [map, setMap] = useState(null);
   // 기본 위치 상태
   const [state, setState] = useState({
@@ -52,14 +52,14 @@ const Kakao = () => {
 
   //오류해결
 
-function YourComponent() {
-  useEffect(() => {
-    // KakaoAK 설정
-    const kakaoAPIKey = '754f3d9e59082cd135b5e3965f8ae1ea';
-    window.Kakao.init(kakaoAPIKey);
+  function YourComponent() {
+    useEffect(() => {
+      // KakaoAK 설정
+      const kakaoAPIKey = '754f3d9e59082cd135b5e3965f8ae1ea';
+      window.Kakao.init(kakaoAPIKey);
 
-    // 여기서부터 Kakao API를 사용할 수 있음
-  }, []);
+      // 여기서부터 Kakao API를 사용할 수 있음
+    }, []);
 
   }
 
@@ -96,17 +96,17 @@ function YourComponent() {
   }, []);
 
   //검색된 장소 표시하기
-    const displayPlaces = (data) => {
-      const bounds = new kakao.maps.LatLngBounds();
-      
-      //검색된 장소 위치와 현재위치 기준으로 지도 범위 재설정
+  const displayPlaces = (data) => {
+    const bounds = new kakao.maps.LatLngBounds();
+
+    //검색된 장소 위치와 현재위치 기준으로 지도 범위 재설정
     data.forEach((item) => bounds.extend(new kakao.maps.LatLng(item.y, item.x)));
     bounds.extend(new kakao.maps.LatLng(state.center.lat, state.center.lng));
     map.setBounds(bounds);
     setSearch(data);
   };
 
-//키워드로 주변 위치 검색
+  //키워드로 주변 위치 검색
   const searchPlaces = (center, page) => {
     // Places 서비스 객체 생성
     const ps = new kakao.maps.services.Places();
@@ -179,7 +179,7 @@ function YourComponent() {
     };
   }, [map]);
 
-    // 현재 위치로 돌아가기
+  // 현재 위치로 돌아가기
   const goBack = () => {
     const newLatLng = new kakao.maps.LatLng(state.center.lat, state.center.lng);
     map.panTo(newLatLng);
@@ -238,11 +238,11 @@ function YourComponent() {
     }
   }, []);
   const markerImages = {
-  '애견동반카페': 'https://i.ibb.co/wBWPv5P/cafe.png',
-  '애견동반식당': 'https://i.ibb.co/7Jv9yb0/rest.png',
-  '동물병원': 'https://i.ibb.co/510qrYb/hospital.png',
-  '공원': 'https://i.ibb.co/tP9dTQJ/park.png',
-};
+    '애견동반카페': './img/dmap/cafe.png',
+    '애견동반식당': './img/dmap/rest.png',
+    '동물병원': './img/dmap/hospital.png',
+    '공원': './img/dmap/park.png',
+  };
 
   if (state.isLoading) return <div>Loading...</div>;
 
@@ -252,7 +252,7 @@ function YourComponent() {
         {/* 지도 컴포넌트 */}
         <Map
           center={state.center}
-          style={{ width: '100%', height: 'calc(100vh - 180px)'}}
+          style={{ width: '100%', height: 'calc(100vh - 180px)' }}
           level={3}
           onCreate={setMap} // 지도가 생성될 때 setMap 함수를 호출해 지도 객체 업데이트 추가
         >
@@ -291,7 +291,7 @@ function YourComponent() {
                     width: 45,
                     height: 45,
                   },
-                  
+
                 }}
                 onClick={() => {
                   if (data.id === openMarkerId) {

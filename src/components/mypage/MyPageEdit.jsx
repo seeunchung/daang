@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,22 @@ export default function MypageEdit() {
   const [nickname, setNickname] = useState('');
   const [phone, setPhone] = useState('');
   const navigate = useNavigate();
+
+
+ //이미지 업로드 기능
+  const upload = useRef();
+  const imgUpload = () => {
+    const file = upload.current.files[0];
+    if (file) {
+      const fileUrl = URL.createObjectURL(file);
+      setDogimg(fileUrl)
+    };
+  }
+
+ //추가된 이미지 삭제 기능
+  const removeImage = () => {
+    setDogimg(null);
+    }
 
   const handleCancel = () => {
     // 취소 버튼 클릭 시 뒤로가기
@@ -52,10 +68,6 @@ export default function MypageEdit() {
         console.log(`AXIOS 실패!${err}`);
       });
   }, []);
-
-  const handleDogimgChange = (e) => {
-    setDogimg(e.target.value);
-  };
 
   const handleDognameChange = (e) => {
     setDogname(e.target.value);
@@ -127,7 +139,35 @@ export default function MypageEdit() {
           </div>
           <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
           <div className='idcard_bodycontainer'>
-            <img className='idcard_dog' src={dogimg} alt='강아지 사진' />
+          {!dogimg ? 
+          <>
+          <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' /> 
+          <input
+                    id='dog_input'
+                    className='file_input'
+                    type='file'
+                    ref={upload}
+                    onChange={imgUpload}
+                    accept='image/*'
+                  />
+          <label className='change_file_input' htmlFor="dog_input" />
+          </>: 
+          <>
+          <img className='idcard_dog' src={dogimg ? String(dogimg) : ''} alt='강아지 사진' />
+          <input
+                    id='dog_input'
+                    className='file_input'
+                    type='file'
+                    ref={upload}
+                    onChange={imgUpload}
+                    accept='image/*'
+                  />
+          <label className='change_file_input' htmlFor="dog_input" />
+          <button className='img_delete_btn' onClick={removeImage}>
+            <img src="./img/dsta/photo_delete_btn.png" alt="" />
+          </button>
+          </>
+          }
             <div className='idcard_info'>
               <div>
                 <h2 className='idcard_infotext'>이름 :</h2>

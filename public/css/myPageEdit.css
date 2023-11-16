@@ -119,6 +119,36 @@
   z-index: 2;
   border-radius: 10px;
 }
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .file_input {
+  display: none;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .change_file_input {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 216px;
+  left: 536px;
+  z-index: 3;
+  background: url(../../img/dsta/photh_select_btn.png) center no-repeat;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .img_delete_btn {
+  /*추가된 이미지 삭제 버튼*/
+  position: absolute;
+  top: 24px;
+  left: 380px;
+  z-index: 3;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+}
+#mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .img_delete_btn img {
+  width: 100%;
+}
 #mypage.mypageedit .mypageedit_container .mypageedit_idcard .idcard_bodycontainer .idcard_barcode {
   position: absolute;
   width: 300px;

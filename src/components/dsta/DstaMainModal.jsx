@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
@@ -15,31 +15,41 @@ export default function DstaMainModal({ closeModal }) {
   const [isCommentEntered, setIsCommentEntered] = useState(false);
   const [like, setLike] = useState(false);
   const [commentLike, setCommentLike] = useState(false);
+  const [dstaModal, setDstaModal] = useState([]);
+  const [commentLikes, setCommentLikes] = useState(Array(dstaModal.length).fill(false));
 
-  // useEffect(() => {
-  //   // 댕스타 전체 데이터
-  //   axios({
-  //     url: './data/dstaMain.json',
-  //     method: 'GET'
-  //   })
+  const swiperOptions = {
+    slidesPerView: 1,
+    lazyPreloadPrevNext: 2,
+  };
 
-  //     //성공
-  //     .then((res) => {
-  //       setdstaMain(res.data.dstaMainData)
-  //       console.log(res.data)
-  //     })
-  //     // 에러
-  //     .catch((err) => {
-  //       console.log(`AXIOS 실패!${err}`);
-  //     });
-  // }, []);
+  useEffect(() => {
+    // 댕스타 전체 데이터
+    axios({
+      url: './data/dstaModal.json',
+      method: 'GET'
+    })
+
+      //성공
+      .then((res) => {
+        setDstaModal(res.data.dstaModalData)
+        console.log(res.data)
+      })
+      // 에러
+      .catch((err) => {
+        console.log(`AXIOS 실패!${err}`);
+      });
+  }, []);
 
   const handleLikeClick = () => {
     setLike(!like); // Toggle the like state
   };
 
-  const handleCommentLikeClick = () => {
-    setCommentLike(!commentLike); // Toggle the comment like state
+  const handleCommentLikeClick = (commentIndex) => {
+    // 개별 댓글의 좋아요 상태를 토글
+    const newCommentLikes = [...commentLikes];
+    newCommentLikes[commentIndex] = !newCommentLikes[commentIndex];
+    setCommentLikes(newCommentLikes);
   };
 
   const handleOpenSettingsModal = () => {
@@ -68,7 +78,6 @@ export default function DstaMainModal({ closeModal }) {
     slidesPerView: 1,
     lazyPreloadPrevNext: 2,
   };
-
   const adjustTextareaHeight = (element) => {
     element.style.height = '18px'; // Reset the height to auto to recalculate it
     element.style.height = element.scrollHeight + 'px'; // Set the height to match the content
@@ -81,97 +90,103 @@ export default function DstaMainModal({ closeModal }) {
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
-      <button onClick={closeModal} className="close-button">X</button>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-content">
-
-          <div className="photos">
-            <Swiper
-              className='swiper'
-              {...swiperOptions}
-              pagination={{
-                el: '.sec1-swiper-pagination',
-                bulletClass: "swiper-pagination-bullet",
-                bulletActiveClass: "swiper-pagination-bullet-active",
-                clickable: true
-              }}
-              navigation={{
-                prevEl: '.sec1-swiper-prev-btn',
-                nextEl: '.sec1-swiper-next-btn'
-              }}
-            >
-              <SwiperSlide>
-                <img src="./img/dsta/kkumi.png" alt="강아지 게시글 사진" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="./img/dsta/kkumi2.png" alt="강아지 게시글 사진" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="./img/dsta/kkumi3.png" alt="강아지 게시글 사진" />
-              </SwiperSlide>
-            </Swiper>
-            <button className="sec1-swiper-prev-btn">
-              <img src="./img/main/arrow_gray.svg" alt="" />
-            </button>
-            <button className="sec1-swiper-next-btn">
-              <img src="./img/main/arrow_gray.svg" alt="" />
-            </button>
-            <div className="sec1-swiper-pagination"></div>
-          </div>
-
-
-          <div className='words'>
-            <div className='profile'>
-              <img src="./img/footer_logo.png" alt="프로필 사진" />
-              <div className='profileName'>본문프로필</div>
-              <div className='settings'>
-                <button className='settingsBtn' onClick={handleOpenSettingsModal}>
-                  <img src="./img/settings.png" />
+      {dstaModal && dstaModal.map((item, index) => (
+        <a className='axios' href="#!" key={item.id}>
+          <button onClick={closeModal} className="close-button">X</button>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-content">
+              <div className="photos">
+                <Swiper
+                  className='swiper'
+                  {...swiperOptions}
+                  pagination={{
+                    el: '.sec1-swiper-pagination',
+                    bulletClass: "swiper-pagination-bullet",
+                    bulletActiveClass: "swiper-pagination-bullet-active",
+                    clickable: true
+                  }}
+                  navigation={{
+                    prevEl: '.sec1-swiper-prev-btn',
+                    nextEl: '.sec1-swiper-next-btn'
+                  }}
+                >
+                  {item.imgSrcArray.map((imgSrc, index) => (
+                    <SwiperSlide key={index}>
+                      <img src={imgSrc} alt={`강아지 게시글 사진 ${index + 1}`} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <button className="sec1-swiper-prev-btn">
+                  <img src="./img/main/arrow_gray.svg" alt="" />
                 </button>
+                <button className="sec1-swiper-next-btn">
+                  <img src="./img/main/arrow_gray.svg" alt="" />
+                </button>
+                <div className="sec1-swiper-pagination"></div>
               </div>
-            </div>
-            <div className='content'>
-              <div className='contentWords'>본문 내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
-              <a className='tags'>#꿈이야 #사진크기좀 #맞춰봐</a>
-              <div className='contentLikes' onClick={handleLikeClick}>
-                <img src={like ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
-                좋아요 11개</div>
-              <div className='contentTime'>O시간</div>
-            </div>
-            <div className='commentSection'>
-              <img src="./img/footer_logo.png" alt="프로필 사진" />
-              <div className='commentProfile'>댓글프로필
-                <div className='comment'>댓글내용ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</div>
-                <div className='commentDetails'>
-                  <div className='commentDate'>OOOO.OO.OO</div>
-
-                  <div className='commentLikes' onClick={handleCommentLikeClick} >
-                    <img src={commentLike ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
-                    좋아요 3개
+              <div className='words'>
+                <div className='profile'>
+                  <img src={item.writerProfileImgSrc} alt="프로필 사진" />
+                  <div className='profileName'>{item.writerUserId}</div>
+                  <div className='settings'>
+                    <button className='settingsBtn' onClick={handleOpenSettingsModal}>
+                      <img src="./img/settings.png" />
+                    </button>
                   </div>
-                  <button className='cocomment'>답글 달기</button>
+                </div>
+                <div className='content'>
+                  <div className='contentWords'>{item.contentText}</div>
+                  <div className='tagsBox'><span className='tags'>{item.contentTag}</span></div>
+                  <div className='contentLikesBox'>
+                    <span className='contentLikes' onClick={handleLikeClick}>
+                      <img src={like ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
+                      좋아요 {item.contentLikes}개</span></div>
+                  <div className='contentTime'>{item.contentTime}시간 전</div>
+                </div>
+                <div className='commentBox'>
+                  {item.comments.map((comment, commentIndex) => (
+                    <div className='commentSection' key={commentIndex}>
+                      <img src={comment.commentProfileImgSrc} alt="프로필 사진" />
+                      <div className='commentProfileBox'>
+                        <span className='commentProfile'>{comment.commentUserId}
+                        </span>
+                        <div className='comment'>{comment.commentText}</div>
+                        <div className='commentDetails'>
+                          <div className='commentDate'>{comment.commentDate}</div>
+                          <div className='commentLikes' onClick={() => handleCommentLikeClick(commentIndex)}>
+                            {/* 각 댓글의 좋아요 상태를 개별적으로 처리 */}
+                            <img src={commentLikes[commentIndex] ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
+                            좋아요 {comment.commentLikes}개
+                          </div>
+                          <button className='cocomment'>답글 달기</button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className='commentWritingSection'>
+                  <textarea
+                    placeholder="댓글 달기..."
+                    className="writingComment"
+                    value={comment}
+                    onChange={handleCommentChange}
+                    style={{ height: '18px' }} // Set the initial height to auto
+                  ></textarea>
+                  <button className={`write-button ${!isCommentEntered ? 'disabled' : ''}`} onClick={handleWriteComment}>
+                    작성
+                  </button>
                 </div>
               </div>
-            </div>
-            <div className='commentWritingSection'>
-              <textarea
-                placeholder="댓글 달기..."
-                className="writingComment"
-                value={comment}
-                onChange={handleCommentChange}
-                style={{ height: '18px' }} // Set the initial height to auto
-              ></textarea>
-              <button className={`write-button ${!isCommentEntered ? 'disabled' : ''}`} onClick={handleWriteComment}>
-                작성
-              </button>
+
             </div>
           </div>
-        </div>
-      </div>
-      {
-        isSettingsModalOpen && (
-          <DstaPostMenuModal closeModal={handleCloseSettingsModal} />
-        )
+          {
+            isSettingsModalOpen && (
+              <DstaPostMenuModal closeModal={handleCloseSettingsModal} />
+            )
+          }
+        </a>
+      ))
       }
     </div>
   );

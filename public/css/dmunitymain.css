@@ -17,7 +17,8 @@
   padding-left: 12px;
 }
 #dmunity .categoryContainer .row1 h2 {
-  font-family: "NPSfontbold";
+  margin-left: 10px;
+  font-family: "Fredoka One";
   font-size: 32px;
   font-weight: bold;
   color: #74500A;
@@ -68,6 +69,7 @@
   font-size: 32px;
   font-family: "Fredoka One";
   font-weight: bold;
+  margin: 0 0 10px 10px;
 }
 #dmunity #postsboard .row1 .sorting {
   height: 36px;
@@ -114,14 +116,15 @@
 }
 #dmunity .row2 #post .postMiddle .info {
   margin-top: 12px;
-  margin-top: 12px;
   display: flex;
 }
 #dmunity .row2 #post .postMiddle .info span {
-  font-weight: bold;
   margin-left: 3px;
   font-weight: bold;
   display: flex;
+}
+#dmunity .row2 #post .postMiddle .info span:nth-child(2), #dmunity .row2 #post .postMiddle .info span:nth-child(3) {
+  margin-left: 8px;
 }
 #dmunity .row2 #post .postRight {
   color: #888888;
