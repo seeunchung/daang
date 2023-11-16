@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
 import DstaMainModal from './DstaMainModal'
+
 SwiperCore.use([Navigation, Pagination])
 
 export default function DstaMainPage() {
@@ -74,10 +75,12 @@ export default function DstaMainPage() {
 
   const openModal = () => {
     setModalOpen(true);
+    document.body.classList.add('modal-open');
   };
 
   const closeModal = () => {
     setModalOpen(false);
+    document.body.classList.remove('modal-open');
   };
 
   return (
@@ -164,9 +167,7 @@ export default function DstaMainPage() {
                 </div>
               </div>
               {isModalOpen && <DstaMainModal closeModal={closeModal} />}
-            </a>
-          ))
-          }
+            </a>))}
         </div>
         {/* 댕스타 페이징 */}
         <div className='dstamain_pagebox'>
