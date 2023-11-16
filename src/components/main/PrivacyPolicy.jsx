@@ -1,8 +1,17 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 export default function PrivacyPolicy() {
+
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1); // -1은 뒤로가기를 의미합니다.
+  };
+
   return (
+    
     <main id="PrivacyPolicy" className="pp">
       <div className='pp_container'>
           <div className='pp_title'>``
@@ -18,7 +27,7 @@ export default function PrivacyPolicy() {
 
                </div>
                </div>
-                <button className='pp_appli_button'>확인</button>
+                <button className='pp_appli_button' onClick={goBack}> 확인</button>
                 </div>
                
                </main>
