@@ -61,7 +61,7 @@
   text-shadow: 0 2px 4px black;
 }
 #main.mainPage #section1 .sec1-swiper-container .swiper .swiper-slide .slide-title h2 a:hover {
-  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
+  background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
   background-position: 75% 70%;
   color: #E8C091;
 }
@@ -88,7 +88,7 @@
 }
 #main.mainPage #section1 .sec1-swiper-container .sec1-swiper-pagination {
   position: relative;
-  z-index: 5;
+  z-index: 1;
   bottom: 25px;
   left: 50%;
 }
@@ -193,6 +193,7 @@
   height: 30px;
 }
 #main.mainPage #section2 .sec2_container .content-box .post-box .img-box .profile .profile-img-box img {
+  width: 30px;
   border: 2px solid #fff;
   border-radius: 50%;
 }
@@ -306,13 +307,13 @@
   font-family: "NPSfontBold";
   padding-top: 10px;
   background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-  background-position: 68% 72%;
+  background-position: 62% 68%;
   color: #fff;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide1-title h2 a:hover {
-  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-  background-position: 68% 72%;
-  color: #74500a;
+  background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
+  background-position: 62% 68%;
+  color: #E8C091;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .img-box2 {
   width: 100%;
@@ -348,13 +349,13 @@
   font-family: "NPSfontBold";
   padding-top: 10px;
   background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-  background-position: 68% 72%;
+  background-position: 66% 78%;
   color: #fff;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide2-title h2 a:hover {
-  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-  background-position: 68% 72%;
-  color: #74500a;
+  background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
+  background-position: 66% 78%;
+  color: #E8C091;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .img-box3 {
   width: 100%;
@@ -390,13 +391,13 @@
   font-family: "NPSfontBold";
   padding-top: 10px;
   background: url(../../img/main/arrow_right.png) no-repeat 50% 50%;
-  background-position: 80% 72%;
+  background-position: 80% 78%;
   color: #fff;
 }
 #main.mainPage #section3 .content .sec3-swiper-container .swiper .swiper-slide .slide3-title h2 a:hover {
-  background: url(../../img/main/arrow_right_hover.png) no-repeat 50% 50%;
-  background-position: 80% 72%;
-  color: #74500a;
+  background: url(../../img/main/arrow_right_new.png) no-repeat 50% 50%;
+  background-position: 80% 78%;
+  color: #E8C091;
 }
 #main.mainPage #section3 .content .sec3-swiper-container > button {
   border: 0;
