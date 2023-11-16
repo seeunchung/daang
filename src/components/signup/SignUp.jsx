@@ -1,9 +1,19 @@
 import React, {useState} from 'react';
+import TermsPopup from './terms';
 
 
+function SignUp() {
 
-export default function SignUp() {
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const termsContent = "<p>러ㅏㅁㄷ라ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ</p>";
 
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
 
   return (
     <main id='signup' className="signup_main">
@@ -204,7 +214,7 @@ export default function SignUp() {
                         </div>
                         <div className="right">
                           <div className="right-wrap">
-                          <label htmlFor='viewTermsBtn3' id='viwTermsLabel3'>
+                          <label htmlFor='viewTermsBtn3' id='viwTermsLabel3' onClick={openPopup}> 
                               약관보기
                               <span class="arrow">▶</span>
                             </label>
@@ -216,6 +226,9 @@ export default function SignUp() {
                 <div>
                 <button type="button" className='complete' >입학하기</button>
                 </div>
+                 {isPopupOpen && (
+        <TermsPopup content={termsContent} onClose={closePopup} />
+      )}
               </ul>
             </form>
           </div>
@@ -225,3 +238,4 @@ export default function SignUp() {
   );
 }
 
+export default SignUp;
