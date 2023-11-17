@@ -10,9 +10,10 @@
     border-radius: 15px;
 
     .title {
-      width: 100%;
+      width: 90%;
       display: flex;
-      padding: 30px 30px 30px 12px;
+      margin: 0 auto;
+      padding: 30px 0;
 
       img {
         widows: 30px;
@@ -31,17 +32,15 @@
       width: 100%;
 
       .pots-title {
-        width: 100%;
-        padding-bottom: 10px;
+        width: 90%;
+        margin: auto;
         align-items: center;
-        border-bottom: 1px solid #74500A;
         display: flex;
         position: relative;
 
-        >img {
+        img {
           width: 48px;
           height: 48px;
-          margin-left: 50px;
         }
 
         h2 {
@@ -51,10 +50,7 @@
         }
 
         .profile-box {
-          position: absolute;
-          top: 5px;
-          right: 20px;
-
+          margin-left: auto;
 
           img {
             width: 40px;
@@ -69,31 +65,53 @@
       }
 
       .info-box {
+        width: 90%;
         display: flex;
         justify-content: end;
-        margin-top: 8px;
+        margin: 0 auto;
+        padding: 4px 0;
+        border-bottom: 1px solid #F4E2CC;
 
         span {
+          display: flex;
           font-weight: bold;
-          margin-left: 4px;
+          margin-left: 8px;
         }
       }
 
       .text-area {
-        width: 930px;
+        width: 90%;
         min-height: 240px;
-        margin: auto;
-        margin-top: 12px;
+        margin: 16px auto;
+        padding: 0 8px;
         font-size: 14px;
         font-family: 'Noto Sans KR';
+
+        h2 {
+          margin: 20px 0;
+          font-weight: bold;
+        }
+
+        h3 {
+          margin: 20px 0;
+          font-weight: bold;
+          color: #74500A;
+        }
+
+        div {
+          margin: 20px 0;
+        }
       }
     }
 
-
-
-    .row5 {
+    .like_comment_count {
+      width: 90%;
+      border-bottom: 1px solid #F4E2CC;
+      border-top: 1px solid #F4E2CC;
       display: flex;
-      padding: 8px;
+      align-items: center;
+      margin: auto;
+      padding: 20px 8px;
 
       img {
         width: 22px;
@@ -101,18 +119,66 @@
       }
 
       p {
-        margin-left: 4px;
+        margin-left: 8px;
+        line-height: 18px;
       }
     }
 
-    .row6 {
-      border-bottom: 1px solid #74500A;
-      border-top: 1px solid #74500A;
+    .comment_box {
+      width: 90%;
+      margin: 20px auto;
+      padding: 0 8px;
+
+      .comment_list {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+
+        .profile_box {
+          width: 5%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 80%;
+          }
+
+          .userid {
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 4px;
+          }
+        }
+
+        .comment_text {
+          width: 95%;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          .comment_detail {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+            .date{
+              font-size: 12px;
+              color: #AB8B61;
+            }
+          }
+          .reply {
+            font-size: 12px;
+            color: #74500A;
+            cursor: pointer;
+          }
+        }
+      }
     }
 
-    .row7 {
+    .comment_form {
       display: flex;
-      margin-top: 16px;
+      width: 90%;
+      margin: 20px auto;
 
       input {
         width: 90%;
@@ -120,14 +186,14 @@
         padding: 8px;
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
-        border: none;
+        border: 1px solid #F4E2CC;
       }
 
       button {
         width: 10%;
         height: 60px;
         background-color: white;
-        border: none;
+        border: 1px solid #F4E2CC;
         color: #74500A;
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
@@ -136,27 +202,27 @@
       }
     }
 
-    .row8 {
+    .button_box {
+      width: 90%;
+      margin: 0 auto;
       display: flex;
 
       button {
         width: 80px;
         height: 30px;
+        margin-bottom: 20px;
         border-radius: 15px;
         border: none;
         background-color: #AB8B61;
         color: white;
         font-family: 'Noto Sans KR';
         font-weight: bold;
-      }
-
-      .list {
-        margin-top: 40px;
+        cursor: pointer;
       }
 
       div {
         margin-left: auto;
-        margin-top: 40px;
+        cursor: pointer;
 
         .delete {
           margin-left: 4px;
