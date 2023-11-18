@@ -10,9 +10,10 @@
   border-radius: 15px;
 }
 #DmunityDetail #container .title {
-  width: 100%;
+  width: 90%;
   display: flex;
-  padding: 30px 30px 30px 12px;
+  margin: 0 auto;
+  padding: 30px 0;
 }
 #DmunityDetail #container .title img {
   widows: 30px;
@@ -28,17 +29,15 @@
   width: 100%;
 }
 #DmunityDetail #container .content .pots-title {
-  width: 100%;
-  padding-bottom: 10px;
+  width: 90%;
+  margin: auto;
   align-items: center;
-  border-bottom: 1px solid #74500A;
   display: flex;
   position: relative;
 }
-#DmunityDetail #container .content .pots-title > img {
+#DmunityDetail #container .content .pots-title img {
   width: 48px;
   height: 48px;
-  margin-left: 50px;
 }
 #DmunityDetail #container .content .pots-title h2 {
   font-size: 20px;
@@ -46,9 +45,7 @@
   font-weight: bold;
 }
 #DmunityDetail #container .content .pots-title .profile-box {
-  position: absolute;
-  top: 5px;
-  right: 20px;
+  margin-left: auto;
 }
 #DmunityDetail #container .content .pots-title .profile-box img {
   width: 40px;
@@ -59,80 +56,146 @@
   font-weight: bold;
 }
 #DmunityDetail #container .content .info-box {
+  width: 90%;
   display: flex;
   justify-content: end;
-  margin-top: 8px;
+  margin: 0 auto;
+  padding: 4px 0;
+  border-bottom: 1px solid #F4E2CC;
 }
 #DmunityDetail #container .content .info-box span {
+  display: flex;
   font-weight: bold;
-  margin-left: 4px;
+  margin-left: 8px;
 }
 #DmunityDetail #container .content .text-area {
-  width: 930px;
+  width: 90%;
   min-height: 240px;
-  margin: auto;
-  margin-top: 12px;
+  margin: 16px auto;
+  padding: 0 8px;
   font-size: 14px;
   font-family: "Noto Sans KR";
 }
-#DmunityDetail #container .row5 {
-  display: flex;
-  padding: 8px;
+#DmunityDetail #container .content .text-area h2 {
+  margin: 20px 0;
+  font-weight: bold;
 }
-#DmunityDetail #container .row5 img {
+#DmunityDetail #container .content .text-area h3 {
+  margin: 20px 0;
+  font-weight: bold;
+  color: #74500A;
+}
+#DmunityDetail #container .content .text-area div {
+  margin: 20px 0;
+}
+#DmunityDetail #container .like_comment_count {
+  width: 90%;
+  border-bottom: 1px solid #F4E2CC;
+  border-top: 1px solid #F4E2CC;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 20px 8px;
+}
+#DmunityDetail #container .like_comment_count img {
   width: 22px;
   height: 18px;
 }
-#DmunityDetail #container .row5 p {
-  margin-left: 4px;
+#DmunityDetail #container .like_comment_count p {
+  margin-left: 8px;
+  line-height: 18px;
 }
-#DmunityDetail #container .row6 {
-  border-bottom: 1px solid #74500A;
-  border-top: 1px solid #74500A;
+#DmunityDetail #container .comment_box {
+  width: 90%;
+  margin: 20px auto;
+  padding: 0 8px;
 }
-#DmunityDetail #container .row7 {
+#DmunityDetail #container .comment_box .comment_list {
   display: flex;
-  margin-top: 16px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
-#DmunityDetail #container .row7 input {
+#DmunityDetail #container .comment_box .comment_list .profile_box {
+  width: 5%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#DmunityDetail #container .comment_box .comment_list .profile_box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 80%;
+}
+#DmunityDetail #container .comment_box .comment_list .profile_box .userid {
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 4px;
+}
+#DmunityDetail #container .comment_box .comment_list .comment_text {
+  width: 95%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+#DmunityDetail #container .comment_box .comment_list .comment_text .comment_detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+#DmunityDetail #container .comment_box .comment_list .comment_text .comment_detail .date {
+  font-size: 12px;
+  color: #AB8B61;
+}
+#DmunityDetail #container .comment_box .comment_list .comment_text .reply {
+  font-size: 12px;
+  color: #74500A;
+  cursor: pointer;
+}
+#DmunityDetail #container .comment_form {
+  display: flex;
+  width: 90%;
+  margin: 20px auto;
+}
+#DmunityDetail #container .comment_form input {
   width: 90%;
   height: 60px;
   padding: 8px;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
-  border: none;
+  border: 1px solid #F4E2CC;
 }
-#DmunityDetail #container .row7 button {
+#DmunityDetail #container .comment_form button {
   width: 10%;
   height: 60px;
   background-color: white;
-  border: none;
+  border: 1px solid #F4E2CC;
   color: #74500A;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   font-weight: bold;
   cursor: pointer;
 }
-#DmunityDetail #container .row8 {
+#DmunityDetail #container .button_box {
+  width: 90%;
+  margin: 0 auto;
   display: flex;
 }
-#DmunityDetail #container .row8 button {
+#DmunityDetail #container .button_box button {
   width: 80px;
   height: 30px;
+  margin-bottom: 20px;
   border-radius: 15px;
   border: none;
   background-color: #AB8B61;
   color: white;
   font-family: "Noto Sans KR";
   font-weight: bold;
+  cursor: pointer;
 }
-#DmunityDetail #container .row8 .list {
-  margin-top: 40px;
-}
-#DmunityDetail #container .row8 div {
+#DmunityDetail #container .button_box div {
   margin-left: auto;
-  margin-top: 40px;
+  cursor: pointer;
 }
-#DmunityDetail #container .row8 div .delete {
+#DmunityDetail #container .button_box div .delete {
   margin-left: 4px;
 }
