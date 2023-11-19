@@ -1,0 +1,132 @@
+@charset "UTF-8";
+#main.dmunitywrite_write {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  padding: 120px 0 30px 0;
+  /* ck에디터 툴바 적용이랑 reset.css파일 스타일 충돌나서 임시 작성*/
+}
+#main.dmunitywrite_write strong,
+#main.dmunitywrite_write b {
+  font-weight: bold;
+}
+#main.dmunitywrite_write i {
+  font-style: italic;
+}
+#main.dmunitywrite_write p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+#main.dmunitywrite_write h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+#main.dmunitywrite_write h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+#main.dmunitywrite_write h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  /*해결되면 지우기*/
+}
+#main.dmunitywrite_write .dmunitywrite_container {
+  width: 1050px;
+  min-height: 650px;
+  background-color: #EEE1D7;
+  margin: auto;
+  border-radius: 20px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_title {
+  /*작성하기 타이틀*/
+  font-size: 30px;
+  font-family: "NPSfontBold";
+  color: #74500A;
+  margin: 0 0 0 45px;
+  padding: 16px 0;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 960px;
+  height: 540px;
+  margin: 0 45px;
+  padding: 24px;
+  background-color: #FFFBF5;
+  border-radius: 20px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .searchBox {
+  /*카테고리 필터, 제목 입력창*/
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .searchBox .dmbox {
+  padding-left: 4px;
+  width: 10%;
+  height: 36px;
+  font-family: "Noto Sans KR";
+  font-size: 14px;
+  border: 1px solid #ccced1;
+  cursor: pointer;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .searchBox .tagcontent {
+  /*제목 입력창*/
+  padding-left: 8px;
+  width: 90%;
+  height: 36px;
+  font-size: 14px;
+  font-family: "Noto Sans KR";
+  border: 1px solid #ccced1;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .ck-editor__editable {
+  /*ckeditor 본문입력 영역*/
+  height: 340px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .button_box {
+  /*완료, 취소 버튼*/
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .button_box .submit_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #74500A;
+  font-size: 16px;
+  line-height: 40px;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#main.dmunitywrite_write .dmunitywrite_container .button_box .cancel_btn {
+  width: 80px;
+  height: 40px;
+  background-color: #AB8B61;
+  font-size: 16px;
+  line-height: 40px;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}

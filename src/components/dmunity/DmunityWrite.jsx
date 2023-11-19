@@ -6,81 +6,91 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Button from "./Button";
 
 export default function DmunityWrite() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(''); //제목 입력값 관리
+  const [editorData, setEditorData] = useState(''); // 에디터 입력값 관리
+  const [selectedCategory, setSelectedCategory] = useState(''); // 카테고리 입력값 관리
 
+
+  //제목 값 변경 시 작동
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   }
-  const SelectBox = () => {
-    return (
-      <select>
-        <option key="banana" value="banana">
-          카테고리
-        </option>
-        <option key="apple" value="apple">사과</option>
-        <option key="orange" value="orange">오렌지</option>
-      </select>
-    );
+
+  //에디터 내용 변경시 작동 
+  const handleEditorChange = (event, editor) => {
+    const data = editor.getData();
+    console.log(data);
+    setEditorData(data);
+  };
+  //카테고리 변경 시 작동
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
+  //폼 전송 기능
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('제목:', inputValue);
+    console.log('내용:', editorData);
+    console.log('카테고리:', selectedCategory);
+    // 데이터를 서버로 보내는 로직 추가
   };
 
 
-
-
-
-
+  const SelectBox = () => {
+    return (
+      <select className='dmbox' onChange={handleCategoryChange} value={selectedCategory}>
+        <option key="category" value="category">
+          카테고리
+        </option>
+        <option key="eat" value="eat">먹어요</option>
+        <option key="sick" value="sick">아파요</option>
+        <option key="play" value="play">놀아요</option>
+        <option key="how" value="how">어때요</option>
+        <option key="etc" value="etc">기타</option>
+      </select>
+    );
+  };
 
   return (
 
     <main id="main" className='dmunitywrite_write'>
       <div className='dmunitywrite_container'>
-        <h2 className='dmunitywrite_title'><img class="fit-picture"
-          src="/img/dmunity/Autograph.png"
-          alt="icon" ></img>댕뮤니티 작성하기</h2>
+        <h2 className='dmunitywrite_title'>✨댕뮤니티 작성하기✨</h2>
+        <form className='dmunitywrite_form' onSubmit={handleSubmit}>
+          <div className='searchBox'>
+            <SelectBox ></SelectBox>
+            <input
+              className='tagcontent'
+              type='text'
+              placeholder='제목을 입력하세요'
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="textarea">
+            <CKEditor
+              editor={ClassicEditor}
+              placeholder="Hello from CKEditor 5!"
+              onReady={editor => {
+                // You can store the "editor" and use when it is needed.
+                console.log('Editor is ready to use!', editor);
+              }}
+              onChange={handleEditorChange}
+              onBlur={(event, editor) => {
+                console.log('Blur.', editor);
+              }}
+              onFocus={(event, editor) => {
+                console.log('Focus.', editor);
+              }}
+            />
+          </div>
+          <div className='button_box'>
+            <button className='submit_btn' type='submit'>완료</button>
+            <Link to="/dmunity"><button className='cancel_btn'>취소</button></Link>
+          </div>
 
-        <SelectBox className='dmbox'></SelectBox>
-        <div className='searchBox'>
-          <input className='tagcontent' type='text' placeholder='제목을 입력하세요' />
-
-        </div>
-        <div className="App">
-          <CKEditor
-            editor={ClassicEditor}
-            placeholder="Hello from CKEditor 5!"
-            onReady={editor => {
-              // You can store the "editor" and use when it is needed.
-              console.log('Editor is ready to use!', editor);
-            }}
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              console.log({ event, editor, data });
-            }}
-            onBlur={(event, editor) => {
-              console.log('Blur.', editor);
-            }}
-            onFocus={(event, editor) => {
-              console.log('Focus.', editor);
-            }}
-          />
-        </div>
-
-        <div>
-          <Button title='등록' width='80px'
-            height="37px" background='#74500A'
-            textSize='10px' textColor='white' fontWeight='bold'
-
-          ></Button>
-        </div>
-        <div>
-          <Button title='취소' width='80px'
-            height="37px" background='#AB8B61'
-            textSize='10px' textColor='white' fontWeight='bold'
-
-          ></Button>
-        </div>
-
+        </form>
       </div>
-
-
     </main>
   );
 
