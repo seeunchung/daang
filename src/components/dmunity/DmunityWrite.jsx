@@ -6,22 +6,48 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import Button from "./Button";
 
 export default function DmunityWrite() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(''); //제목 입력값 관리
+  const [editorData, setEditorData] = useState(''); // 에디터 입력값 관리
+  const [selectedCategory, setSelectedCategory] = useState(''); // 카테고리 입력값 관리
 
+
+  //제목 값 변경 시 작동
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   }
+
+  //에디터 내용 변경시 작동 
+  const handleEditorChange = (event, editor) => {
+    const data = editor.getData();
+    console.log(data);
+    setEditorData(data);
+  };
+  //카테고리 변경 시 작동
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
+  //폼 전송 기능
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('제목:', inputValue);
+    console.log('내용:', editorData);
+    console.log('카테고리:', selectedCategory);
+    // 데이터를 서버로 보내는 로직 추가
+  };
+
+
   const SelectBox = () => {
     return (
-      <select>
-        <option key="banana" value="banana">
+      <select className='dmbox' onChange={handleCategoryChange} value={selectedCategory}>
+        <option key="category" value="category">
           카테고리
         </option>
-        <option key="apple" value="apple">먹어요</option>
-        <option key="orange" value="orange">아파요</option>
-        <option key="orange" value="orange">놀아요</option>
-        <option key="orange" value="orange">어때요</option>
-        <option key="orange" value="orange">기타</option>
+        <option key="eat" value="eat">먹어요</option>
+        <option key="sick" value="sick">아파요</option>
+        <option key="play" value="play">놀아요</option>
+        <option key="how" value="how">어때요</option>
+        <option key="etc" value="etc">기타</option>
       </select>
     );
   };
@@ -31,10 +57,15 @@ export default function DmunityWrite() {
     <main id="main" className='dmunitywrite_write'>
       <div className='dmunitywrite_container'>
         <h2 className='dmunitywrite_title'>✨댕뮤니티 작성하기✨</h2>
-        <form className='dmunitywrite_form'>
+        <form className='dmunitywrite_form' onSubmit={handleSubmit}>
           <div className='searchBox'>
-            <SelectBox className='dmbox'></SelectBox>
-            <input className='tagcontent' type='text' placeholder='제목을 입력하세요' />
+            <SelectBox ></SelectBox>
+            <input
+              className='tagcontent'
+              type='text'
+              placeholder='제목을 입력하세요'
+              onChange={handleInputChange}
+            />
           </div>
           <div className="textarea">
             <CKEditor
@@ -44,10 +75,7 @@ export default function DmunityWrite() {
                 // You can store the "editor" and use when it is needed.
                 console.log('Editor is ready to use!', editor);
               }}
-              onChange={(event, editor) => {
-                const data = editor.getData();
-                console.log({ event, editor, data });
-              }}
+              onChange={handleEditorChange}
               onBlur={(event, editor) => {
                 console.log('Blur.', editor);
               }}
@@ -57,26 +85,12 @@ export default function DmunityWrite() {
             />
           </div>
           <div className='button_box'>
-            <div>
-              <Button title='등록' width='80px'
-                height="40px" background='#74500A'
-                textSize='16px' textColor='white' 
-                radius='20px' border='none'
-              ></Button>
-            </div>
-            <div>
-              <Button title='취소' width='80px'
-                height="40px" background='#AB8B61'
-                textSize='16px' textColor='white'
-                radius='20px' border='none'
-              ></Button>
-            </div>
+            <button className='submit_btn' type='submit'>완료</button>
+            <Link to="/dmunity"><button className='cancel_btn'>취소</button></Link>
           </div>
 
         </form>
       </div>
-
-
     </main>
   );
 
