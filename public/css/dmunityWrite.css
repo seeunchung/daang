@@ -1,0 +1,58 @@
+@charset "UTF-8";
+#main.dmunitywrite_write {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  padding: 120px 0 30px 0;
+}
+#main.dmunitywrite_write .dmunitywrite_container {
+  width: 1050px;
+  min-height: 650px;
+  background-color: #EEE1D7;
+  margin: auto;
+  border-radius: 20px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_title {
+  font-size: 30px;
+  font-family: "NPSfontBold";
+  color: #74500A;
+  margin: 0 0 0 45px;
+  padding: 16px 0;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 960px;
+  height: 540px;
+  margin: 0 45px;
+  padding: 24px;
+  background-color: #FFFBF5;
+  border-radius: 20px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .searchBox {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .searchBox .dmbox {
+  width: 10%;
+  height: 32px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .searchBox .tagcontent {
+  width: 90%;
+  height: 32px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .textarea {
+  width: 100%;
+  min-height: 340px;
+}
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form .textarea .ck-editor__editable {
+  min-height: 340px; /* ckeditor 텍스트입력부분 높이조절 */
+}
+#main.dmunitywrite_write .dmunitywrite_container .button_box {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+}

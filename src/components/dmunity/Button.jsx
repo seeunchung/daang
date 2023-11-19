@@ -17,7 +17,6 @@ function Button(props) {
     fontWeight={props.fontWeight}
     border={props.border}
     radius={props.radius}
-
   >{props.title}</StyledButton>
 }
 
