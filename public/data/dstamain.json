@@ -42,7 +42,8 @@
       "title": "침대를 좋아하는 우리집 막내",
       "viewCount": 0,
       "likeCount": 0,
-      "commentCount": 0
+      "commentCount": 0,
+      "timerCount": "1초전"
     },
     {
       "id": 2,
@@ -52,7 +53,8 @@
       "title": "넷플릭스 뭐 볼까??",
       "viewCount": 2,
       "likeCount": 0,
-      "commentCount": 0
+      "commentCount": 0,
+      "timerCount": "30초전"
     },
     {
       "id": 3,
@@ -62,7 +64,8 @@
       "title": "벌써 가족이 된지 한 달이 넘어가네요",
       "viewCount": 10,
       "likeCount": 2,
-      "commentCount": 0
+      "commentCount": 0,
+      "timerCount": "1분전"
     },
     {
       "id": 4,
@@ -72,7 +75,8 @@
       "title": "ㅠㅠㅠㅠ너무 귀엽죠",
       "viewCount": 25,
       "likeCount": 10,
-      "commentCount": 2
+      "commentCount": 2,
+      "timerCount": "3분전"
     },
     {
       "id": 5,
@@ -82,7 +86,8 @@
       "title": "밖에 나왔더니, 집가기 싫다고 떼쓰는 중",
       "viewCount": 32,
       "likeCount": 12,
-      "commentCount": 3
+      "commentCount": 3,
+      "timerCount": "5분전"
     },
     {
       "id": 6,
@@ -92,7 +97,8 @@
       "title": "용모는 항상 단정하게...",
       "viewCount": 53,
       "likeCount": 21,
-      "commentCount": 6
+      "commentCount": 6,
+      "timerCount": "7분전"
     },
     {
       "id": 7,
@@ -102,7 +108,8 @@
       "title": "최애 인형이랑 쿨쿨 잘 자네요",
       "viewCount": 56,
       "likeCount": 23,
-      "commentCount": 5
+      "commentCount": 5,
+      "timerCount": "10분전"
     },
     {
       "id": 8,
@@ -112,7 +119,8 @@
       "title": "우리 집 막둥이들이랑 근처 공원 나왔어요 ",
       "viewCount": 62,
       "likeCount": 25,
-      "commentCount": 12
+      "commentCount": 12,
+      "timerCount": "10분전"
     },
     {
       "id": 9,
@@ -122,7 +130,8 @@
       "title": "보통 산책 나가실때 간식을 들고 나가시나요?",
       "viewCount": 89,
       "likeCount": 32,
-      "commentCount": 16
+      "commentCount": 16,
+      "timerCount": "15분전"
     },
     {
       "id": 10,
@@ -132,7 +141,8 @@
       "title": "슬슬 연말이 다가오네요~~ 크리스마스를 준비하고 있어요",
       "viewCount": 103,
       "likeCount": 47,
-      "commentCount": 21
+      "commentCount": 21,
+      "timerCount": "20분전"
     },
     {
       "id": 11,
@@ -142,7 +152,8 @@
       "title": "요즘 바람이 왜이렇게 많이 불죠?",
       "viewCount": 123,
       "likeCount": 53,
-      "commentCount": 38
+      "commentCount": 38,
+      "timerCount": "23분전"
     },
     {
       "id": 12,
@@ -152,7 +163,8 @@
       "title": "작년 크리스마스때 찍은 사진이예요",
       "viewCount": 172,
       "likeCount": 49,
-      "commentCount": 45
+      "commentCount": 45,
+      "timerCount": "28분전"
     },
     {
       "id": 13,
@@ -162,7 +174,8 @@
       "title": "엄마한테 혼나고 아빠한테 안겨서",
       "viewCount": 293,
       "likeCount":64,
-      "commentCount": 49
+      "commentCount": 49,
+      "timerCount": "30분전"
     },
     {
       "id": 14,
@@ -171,8 +184,9 @@
       "userId": "weareyoung",
       "title": "'댕스타 인플루언서'",
       "viewCount": 382,
-      "likeCount": 102,
-      "commentCount": 39
+      "likeCount": 99,
+      "commentCount": 39,
+      "timerCount": "1시간전"
     },
     {
       "id": 15,
@@ -182,7 +196,8 @@
       "title": "샤워시키니까 가만히 잘 앉아있네요",
       "viewCount": 492,
       "likeCount": 32,
-      "commentCount": 24
+      "commentCount": 24,
+      "timerCount": "1시간전"
     },
     {
       "id": 16,
@@ -192,7 +207,8 @@
       "title": "뭘 봐 라고 눈으로 얘기하는 중 ",
       "viewCount": 502,
       "likeCount": 34,
-      "commentCount": 28
+      "commentCount": 28,
+      "timerCount": "2시간전"
     },
     {
       "id": 17,
@@ -202,7 +218,8 @@
       "title": "그거 너꺼 아닌데",
       "viewCount": 592,
       "likeCount": 21,
-      "commentCount": 6
+      "commentCount": 6,
+      "timerCount": "2시간전"
     },
     {
       "id": 18,
@@ -212,7 +229,8 @@
       "title": "댕동여지도 후기: 근처 카페 같이",
       "viewCount": 603,
       "likeCount": 44,
-      "commentCount": 32
+      "commentCount": 32,
+      "timerCount": "4시간전"
     }
   ]
 }
