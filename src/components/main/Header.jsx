@@ -33,18 +33,21 @@ export default function Header() {
             <ul>
               {isLogin ? (
                 <>
-                  <li className='right-menu'><Link to='/mypage'>마이페이지</Link></li>
+                  <li className='right-menu mypage'><Link to='/mypage'>마이페이지</Link></li>
                   <li><i>|</i></li>
-                  <li className='right-menu' onClick={handleLogout}><Link to='/'>로그아웃</Link></li>
+                  <li className='right-menu logout' onClick={handleLogout}><Link to='/'>로그아웃</Link></li>
                 </>
               ) : (
-                <li className='right-menu'><Link to='/login'>로그인</Link></li>
+                <li className='right-menu login'><Link to='/login'>로그인</Link></li>
               )}
               <li><i>|</i></li>
-              <li className='right-menu'><Link to='/signup'>회원가입</Link></li>
+              <li className='right-menu signup'><Link to='/signup'>회원가입</Link></li>
               <li><i>|</i></li>
               <li className='right-menu'>
-                <Link >글쓰기</Link>
+                <button type='button' className='write-btn'>
+                  <Link >글쓰기</Link>
+                  <img src="./img/header/arrow_down.svg" alt="" />
+                </button>
                 <ul className='tooltip'>
                   <li>
                     <Link to='/dsta-write'>

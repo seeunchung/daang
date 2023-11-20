@@ -91,7 +91,6 @@ export default function MemberSignUp() {
         isAgreeToTermsOfUseModalOpenFn={isAgreeToTermsOfUseModalOpenFn}
         isRequiredModalOpenFn={isRequiredModalOpenFn}
         isSelectModalOpenFn={isSelectModalOpenFn} />
-      <Login isConfirmModalOpenFn={isConfirmModalOpenFn} />
       {
         isConfirmModal.isConfirmModal && <ConfirmModal msg={isConfirmModal.msg} isConfirmModalCloseFn={isConfirmModalCloseFn} />
 

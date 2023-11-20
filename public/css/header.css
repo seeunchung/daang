@@ -67,18 +67,45 @@
 #header .container .right ul li.right-menu:hover > .tooltip {
   display: block;
 }
+#header .container .right ul li.right-menu.login, #header .container .right ul li.right-menu.signup, #header .container .right ul li.right-menu.logout, #header .container .right ul li.right-menu.mypage {
+  font-size: 14px;
+}
 #header .container .right ul li i {
   font-size: 16px;
   margin: 0 8px;
   color: #d9d9d9;
+}
+#header .container .right ul li .write-btn {
+  display: flex;
+  border: none;
+  background: none;
+  font-size: 14px;
+  line-height: 18px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 16px;
+  color: #FFFFFF;
+  background-color: #74500a;
+}
+#header .container .right ul li .write-btn img {
+  width: 18px;
+  height: 18px;
+  transform: rotate(90deg);
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(106%) contrast(101%);
+}
+#header .container .right ul li .write-btn a {
+  margin-left: 4px;
+  color: #fff;
 }
 #header .container .right ul li > ul.tooltip {
   display: none;
   position: absolute;
   width: 240px;
   height: 125px;
-  top: 35px;
-  left: -80px;
+  top: 45px;
+  left: -65px;
   background: #fffbf5;
   border: 1px solid #333;
   z-index: 5;
@@ -89,7 +116,7 @@
   content: "";
   position: absolute;
   top: -15px;
-  left: 0px;
+  left: -1px;
   width: 240px;
   height: 20px;
 }
@@ -106,7 +133,8 @@
 }
 #header .container .right ul li > ul.tooltip > li > a:hover {
   transition: all 0.3s ease-in-out;
-  background: #ccc8c4;
+  background: #f3eee5;
+  border-radius: 5px;
 }
 #header .container .right ul li > ul.tooltip > li > a::after {
   content: "";
