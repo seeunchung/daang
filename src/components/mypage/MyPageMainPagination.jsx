@@ -22,7 +22,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         className='pre_btn'
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage <= 1} // 첫 페이지에서는 이전 버튼 비활성화
-      ></button>
+      >&lt;</button>
       {displayedPages.map((page) => (
         <li
           key={page}
@@ -36,7 +36,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
         className='next_btn'
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage >= totalPages} // 마지막 페이지에서는 다음 버튼 비활성화
-      ></button>
+      >&gt;</button>
     </ul>
   );
 }

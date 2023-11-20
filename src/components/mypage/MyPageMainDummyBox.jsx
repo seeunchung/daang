@@ -7,17 +7,17 @@ export default function DummyBox ({activeTab}){
   const myDmunityComment = [
     {
       "userid": "eodeod",
-      "postid": "eodeoddmunity1",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "postid": "eodeoddmunity2",
+      "title": "우리 애기 오늘 퇴원합니다!!",
+      "date": "2023-11-19",
+      "view": 89
     },
     {
       "userid": "eodeod",
-      "postid": "eodeoddmunity2",
+      "postid": "eodeoddmunity1",
       "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "date": "2023-11-18",
+      "view": 156
     },
   ];
 
@@ -25,7 +25,7 @@ export default function DummyBox ({activeTab}){
     {
       "userid": "eodeod",
       "postid": "eodeoddmunity1",
-      "title": "강아지 너무 귀여워요",
+      "title": "벌써 가족이 된지 한 달이 넘어가네요",
       "date": "2023-10-27",
       "view": 27
     },
@@ -35,7 +35,7 @@ export default function DummyBox ({activeTab}){
     {
       "userid": "eodeod",
       "postid": "eodeoddmunity1",
-      "title": "오늘 같이 산책하실분?",
+      "title": "강아지한테 고구마줘도 돼요?",
       "date": "2023-10-27",
       "view": 27
     },
@@ -45,7 +45,7 @@ export default function DummyBox ({activeTab}){
     {
     "userid": "eodeod",
     "postid": "eodeoddmunity1",
-    "title": "꾸미 왔어요~",
+    "title": "밖에 나왔더니, 집가기 싫다고 떼쓰는 중",
     "date": "2023-10-27",
     "view": 27
     },
