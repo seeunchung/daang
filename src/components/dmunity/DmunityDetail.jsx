@@ -62,7 +62,7 @@ export default function DmunityDetail() {
             <h2>글 작성 시 유의사항</h2>
             <div className="profile-box">
               <img src="./img/dmunity/프로필사진-작성자.png" alt="" />
-              <span>운영자</span>
+              <span>총장</span>
             </div>
           </div>
           <div className='info-box'>
