@@ -4,6 +4,7 @@ import ConfirmModal from './ConfirmModal'
 import AgreetoTermsofUseModalComponent from './AgreetoTermsofUseModalComponent'
 import RequirePersoanlInfomationModalComponent from './RequirePersoanlInfomationModalComponent'
 import SelectPersoanlInfomationModalComponent from './SelectPersoanlInfomationModalComponent'
+import Login from '../signin/Login';
 
 export default function MemberSignUp() {
 
@@ -86,13 +87,14 @@ export default function MemberSignUp() {
   }
   return (
     <>
-      <SignUp isConfirmModalOpenFn={isConfirmModalOpenFn} 
-      isAgreeToTermsOfUseModalOpenFn={isAgreeToTermsOfUseModalOpenFn}
-      isRequiredModalOpenFn={isRequiredModalOpenFn}
-      isSelectModalOpenFn={isSelectModalOpenFn} />
+      <SignUp isConfirmModalOpenFn={isConfirmModalOpenFn}
+        isAgreeToTermsOfUseModalOpenFn={isAgreeToTermsOfUseModalOpenFn}
+        isRequiredModalOpenFn={isRequiredModalOpenFn}
+        isSelectModalOpenFn={isSelectModalOpenFn} />
+      <Login isConfirmModalOpenFn={isConfirmModalOpenFn} />
       {
         isConfirmModal.isConfirmModal && <ConfirmModal msg={isConfirmModal.msg} isConfirmModalCloseFn={isConfirmModalCloseFn} />
-        
+
       }
       {isAgreeToTermsOfUseModal.isAgreeToTermsOfUseModal && <AgreetoTermsofUseModalComponent isAgreeToTermsOfUseModalCloseFn={isAgreeToTermsOfUseModalCloseFn} />}
       {isRequiredModal.isRequiredModal && <RequirePersoanlInfomationModalComponent isRequiredModalCloseFn={isRequiredModalCloseFn} />}

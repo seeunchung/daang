@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useUser } from '../signin/UserContent';
 
 export default function Header() {
-
   const location = useLocation();
+  const { isLogin, logout } = useUser();
+
+  const handleLogout = () => {
+    // 로그아웃 클릭 시
+    logout();
+  };
 
   return (
     <>
@@ -16,8 +22,6 @@ export default function Header() {
               <li className={`left-menu ${location.pathname === '/dmunity' ? 'on' : ''}`}><Link to='/dmunity'>댕뮤니티</Link></li>
               <li><i>|</i></li>
               <li className={`left-menu ${location.pathname === '/dmap' ? 'on' : ''}`}><Link to='/dmap'>댕동여지도</Link></li>
-              <li><i>|</i></li>
-              <li className='left-menu'><Link to='/mypage'>마이페이지</Link></li>
             </ul>
           </div>
           <div className="center">
@@ -27,8 +31,15 @@ export default function Header() {
           </div>
           <div className="right">
             <ul>
-              {/* 추후 로그인, 회원가입 글씨는 로그인 상태일때 닉네임, 로그아웃으로 보이게 하기 */}
-              <li className='right-menu'><Link to='/login'>로그인</Link></li>
+              {isLogin ? (
+                <>
+                  <li className='right-menu'><Link to='/mypage'>마이페이지</Link></li>
+                  <li><i>|</i></li>
+                  <li className='right-menu' onClick={handleLogout}><Link to='/'>로그아웃</Link></li>
+                </>
+              ) : (
+                <li className='right-menu'><Link to='/login'>로그인</Link></li>
+              )}
               <li><i>|</i></li>
               <li className='right-menu'><Link to='/signup'>회원가입</Link></li>
               <li><i>|</i></li>
@@ -44,7 +55,6 @@ export default function Header() {
                         <h2>댕스타 글쓰기</h2>
                         <span>자신의 반려견을 자랑해 보세요!</span>
                       </div>
-
                     </Link>
                   </li>
                   <li>
@@ -63,7 +73,7 @@ export default function Header() {
             </ul>
           </div>
         </div>
-      </header >
+      </header>
       <Outlet />
     </>
   );
