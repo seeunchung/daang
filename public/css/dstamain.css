@@ -68,6 +68,8 @@
   width: 253px;
   height: 300px;
   overflow: hidden;
+  position: absolute;
+  border-radius: 15px 15px 0 0;
 }
 #main.dstamain .dstamain_container .dstamain_weeklybox .dstamain_swipercontainer .dstamain_swiper .swiper-slide .weekly_photobox > img {
   width: 100%;
