@@ -327,14 +327,13 @@
 }
 #mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination {
   display: inline-block;
-  padding: 8px;
   display: flex;
   justify-content: center;
   align-self: center;
 }
 #mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .page_item {
   display: inline-block;
-  padding: 0 4px;
+  padding: 4px;
   font-size: 16px;
   color: #F0D5B5;
   cursor: pointer;
@@ -342,18 +341,17 @@
 #mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .page_item.active {
   color: #74500A;
 }
-#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .pre_btn {
-  width: 16px;
-  height: 16px;
-  background: url(../img/mypage/Sort_Right.png) center transparent;
-  border: none;
-  transform: scaleX(-1);
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination button {
+  width: 20px;
+  height: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #AB8B61;
   cursor: pointer;
+  background: none;
+  border: none;
 }
-#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination .next_btn {
-  width: 16px;
-  height: 16px;
-  background: url(../img/mypage/Sort_Right.png) center transparent;
-  border: none;
-  cursor: pointer;
+#mypage.mypage_main .mypage_main_container .myposts .myposts_container .total_box .pagination button:disabled {
+  color: #EEE1D7;
 }

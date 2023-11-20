@@ -1,128 +1,135 @@
 {
   "dmunity": [
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity1",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "다른 강아지만 보면 으르렁거리는데",
+      "view": 130,
+      "likes": 70,
+      "comments": 5,
+      "date": "2023-11-19",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity2",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "우리 꾸미 너무 귀엽지않나요",
+      "view": 156,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-18",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity3",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "꾸미 사랑해",
+      "view": 156,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-17",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity4",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "옷 사는데 좀 봐주세요",
+      "view": 156,
+      "likes": 5,
+      "comments": 3,
+      "date": "2023-11-17",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity5",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "애기랑 미국여행 가볼까 하는데",
+      "view": 10,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-17",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity6",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "우리 강쥐 자는 것 좀 보세요",
+      "view": 12,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-16",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity7",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "강아지 8kg 넘으면 과체중인가요?",
+      "view": 14,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-14",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity8",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "오늘도 잘먹는 우리 애기",
+      "view": 16,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-14",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity9",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "중성화수술 비용",
+      "view": 2,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-10",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity10",
-      "title": "강아지 간식 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "너무 귀여웡",
+      "view": 15,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-01",
+      "userid": "꾸미언니"
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddmunity11",
-      "title": "강아지 산책코스 추천받아요",
-      "date": "2023-10-27",
-      "view": 27
+      "category": "기타",
+      "title": "목욕을 너무 싫어하는데ㅠㅠ",
+      "view": 15,
+      "likes": 12,
+      "comments": 3,
+      "date": "2023-11-01",
+      "userid": "꾸미언니"
     }
   ],
   "dsta": [
     {
-      "userid": "eodeod",
-      "postid": "eodeoddsta1",
-      "img": "./img/mypage/kkumi.png"
+      "id": 1,
+      "imgSrc": "./img/dsta/dstaMainData1.jpg",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "복실하이",
+      "title": "침대를 좋아하는 우리집 막내",
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddsta2",
-      "img": "./img/mypage/kkumi.png"
+      "id": 2,
+      "imgSrc": "./img/dsta/dstaMainData2.jpg",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "선샤인",
+      "title": "넷플릭스 뭐 볼까??",
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0
     },
     {
-      "userid": "eodeod",
-      "postid": "eodeoddsta3",
-      "img": "./img/mypage/kkumi.png"
-    },
-    {
-      "userid": "eodeod",
-      "postid": "eodeoddsta4",
-      "img": "./img/mypage/kkumi.png"
-    },
-    {
-      "userid": "eodeod",
-      "postid": "eodeoddsta5",
-      "img": "./img/mypage/kkumi.png"
-    },
-    {
-      "userid": "eodeod",
-      "postid": "eodeoddsta6",
-      "img": "./img/mypage/kkumi.png"
-    },
-    {
-      "userid": "eodeod",
-      "postid": "eodeoddsta7",
-      "img": "./img/mypage/kkumi.png"
-    },
-    {
-      "userid": "eodeod",
-      "postid": "eodeoddsta8",
-      "img": "./img/mypage/kkumi.png"
-    },
-    {
-      "userid": "eodeod",
-      "postid": "eodeoddsta9",
-      "img": "./img/mypage/kkumi3.png"
+      "id": 3,
+      "imgSrc": "./img/dsta/dstaMainData3.jpg",
+      "profileImgSrc": "./img/dsta/best-dsta-profile.png",
+      "userId": "poter",
+      "title": "벌써 가족이 된지 한 달이 넘어가네요",
+      "viewCount": 10,
+      "likeCount": 2,
+      "commentCount": 0
     }
   ],
   "idcard": [

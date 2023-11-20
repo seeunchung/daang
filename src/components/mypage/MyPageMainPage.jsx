@@ -182,7 +182,7 @@ export default function MyPageMainPage() {
                     <ul className='dsta_lists'>
                       {getCurrentPagePosts(8, myDsta).map((post) => (
                         <li key={post.postid}>
-                          <img className='dsta_list' src={post.img} alt='thumbnail_img' />
+                          <img className='dsta_list' src={post.imgSrc} alt='thumbnail_img' />
                         </li>
                       ))}
                     </ul>
