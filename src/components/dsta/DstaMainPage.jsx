@@ -151,7 +151,9 @@ export default function DstaMainPage() {
             // a태그 href에 맞는 데이터값 설정
             <a href="#!" key={item.id}>
               <div className='dstamain_photobox'>
+              <div className='dstamain_imgbox'>
                 <img src={item.imgSrc} onClick={openModal} alt="강아지 게시글 사진" />
+                </div>
                 <div className='dstamain_profile'>
                   <img src={item.profileImgSrc} alt="프로필 사진" />
                   <span>{item.userId}</span>
@@ -160,12 +162,21 @@ export default function DstaMainPage() {
                   <span>{item.title}</span>
                 </div>
                 <div className='dstamain_watchbox'>
+                  <div className="cnt-box">
                   <img src="./img/dsta/watch.png" alt="조회수 아이콘" />
                   <span>{item.viewCount}</span>
                   <img src="./img/dsta/heart.png" alt="좋아요 아이콘" />
                   <span>{item.likeCount}</span>
                   <img src="./img/dsta/coments.png" alt="댓글 아이콘" />
                   <span>{item.commentCount}</span>
+                  </div>
+                  <div className="time-box">
+                  <img src="./img/dsta/timer.png" alt="시간 아이콘" />
+                  <span>{item.timerCount}</span>
+                  </div>
+
+
+                  
                 </div>
               </div>
               {isModalOpen && <DstaMainModal closeModal={closeModal} />}
