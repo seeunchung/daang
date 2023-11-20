@@ -54,6 +54,24 @@ export default function DmunityMainPage() {
 
   const [eatImg, setEatImg] = useState("../img/eat.png")
 
+  // 페이징 시작
+  const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
+  const itemsPerPage = 10; // 한 페이지당 보여질 아이템 수
+
+  // 클릭한 페이지 번호를 받아 currentPage 상태를 업데이트
+  const handleClickPage = (page) => {
+    setCurrentPage(page);
+  };
+
+  // 현재 페이지에서 마지막 아이템의 인덱스
+  const indexOfLastItem = currentPage * itemsPerPage;
+  // 현재 페이지에서 첫 번째 아이템의 인덱스
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  // 현재 페이지에 해당하는 아이템만 표시
+  const currentItems = postList.slice(indexOfFirstItem, indexOfLastItem);
+
+  // 페이징 끝
+
 
   return (
     <div id="dmunity">
@@ -76,7 +94,7 @@ export default function DmunityMainPage() {
         </div>
         <div className='row2'>
           {
-            postList && postList.map((postList, idx) => {
+            postList && currentItems.map((postList, idx) => {
               return (
                 <div id="post">
                   <div className='postLeft'>
@@ -103,19 +121,26 @@ export default function DmunityMainPage() {
           }
         </div>
         <div className='row3'>
-          <nav className='pagination'>
-            <a href='#!'>&laquo;</a>
-            <a href='#!'>&lt;</a>
-            <a href='#!'>1</a>
-            <a href='#!'>2</a>
-            <a href='#!'>3</a>
-            <a href='#!'>4</a>
-            <a href='#!'>5</a>
-            <a href='#!'>6</a>
-            <a href='#!'>7</a>
-            <a href='#!'>&gt;</a>
-            <a href='#!'>&raquo;</a>
-          </nav>
+          {/* 댕뮤니티 페이징 */}
+        <div className='dmunitymain_pagebox'>
+          {/* 이전페이지 버튼 */}
+          <button onClick={() => handleClickPage(currentPage - 1)} disabled={currentPage === 1}>
+            &lt;
+          </button>
+          {Array.from({ length: Math.ceil(postList.length / itemsPerPage) }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handleClickPage(index + 1)}
+              style={{ color: currentPage === index + 1 ? '#AB8B61' : '#EEE1D7' }}
+            >
+              {index + 1}
+            </button>
+          ))}
+          {/* 다음페이지 버튼 */}
+          < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(postList.length / itemsPerPage)}>
+            &gt;
+          </button>
+        </div>
           <div className='searchBox'>
             <input
               type="text"
