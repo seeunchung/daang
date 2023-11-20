@@ -24,6 +24,7 @@ import MyPageEdit from './mypage/MyPageEdit';
 import Login from './signin/Login';
 import MemberSignUp from './signup/MemberSignUp';
 import SignUpComplete from './signup/SignUpComplete';
+import { UserProvider } from './signin/UserContent.jsx';
 
 export default function Wrap() {
   return (
@@ -32,30 +33,32 @@ export default function Wrap() {
         <Helmet>
           <title>DAaaNG UNIV</title>
         </Helmet>
-        <div id='wrap'>
-          <Routes>
-            <Route path='/' element={<Header />}>
-              <Route index element={<MainPage />} />
-              <Route path='TermsOfUse' element={<TermsOfUse />} />
-              <Route path='ConsentToReceiveMarketing' element={<ConsentToReceiveMarketing />} />
-              <Route path='PrivacyPolicy' element={<PrivacyPolicy />} />
-              <Route path="dsta" element={<DstaMainPage />} />
-              <Route path='dsta-detail' element={<DstaDetail />} />
-              <Route path='dsta-write' element={<DstaWrite />} />
-              <Route path='dsta-edit' element={<DstaEdit />} />
-              <Route path='dmunity' element={<DmunityMainPage />} />
-              <Route path='dmunity-detail' element={<DmunityDetail />} />
-              <Route path='dmunity-write' element={<DmunityWrite />} />
-              <Route path='dmunity-edit' element={<DmunityEdit />} />
-              <Route path='dmap' element={<Dmap />} />
-              <Route path='mypage' element={<MyPage />} />
-              <Route path='mypage-edit' element={<MyPageEdit />} />
-              <Route path='login' element={<Login />} />
-              <Route path='signup' element={<MemberSignUp />} />
-              <Route path='signup-complete' element={<SignUpComplete />} />
-            </Route>
-          </Routes>
-        </div>
+        <UserProvider>
+          <div id='wrap'>
+            <Routes>
+              <Route path='/' element={<Header />}>
+                <Route index element={<MainPage />} />
+                <Route path='TermsOfUse' element={<TermsOfUse />} />
+                <Route path='ConsentToReceiveMarketing' element={<ConsentToReceiveMarketing />} />
+                <Route path='PrivacyPolicy' element={<PrivacyPolicy />} />
+                <Route path="dsta" element={<DstaMainPage />} />
+                <Route path='dsta-detail' element={<DstaDetail />} />
+                <Route path='dsta-write' element={<DstaWrite />} />
+                <Route path='dsta-edit' element={<DstaEdit />} />
+                <Route path='dmunity' element={<DmunityMainPage />} />
+                <Route path='dmunity-detail' element={<DmunityDetail />} />
+                <Route path='dmunity-write' element={<DmunityWrite />} />
+                <Route path='dmunity-edit' element={<DmunityEdit />} />
+                <Route path='dmap' element={<Dmap />} />
+                <Route path='mypage' element={<MyPage />} />
+                <Route path='mypage-edit' element={<MyPageEdit />} />
+                <Route path='login' element={<Login />} />
+                <Route path='signup' element={<MemberSignUp />} />
+                <Route path='signup-complete' element={<SignUpComplete />} />
+              </Route>
+            </Routes>
+          </div>
+        </UserProvider>
         <Footer />
       </BrowserRouter>
     </ThemeProvider>
