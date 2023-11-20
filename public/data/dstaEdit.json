@@ -1,13 +1,13 @@
 {
   "dstaDetail": {
     "id": 1,
-    "thumbnail": "./img/dsta/kkumi.png",
-    "userId": "꿈이언니",
-    "text": "꿈이 왔어요~",
+    "thumbnail": "./img/dsta/dstaMainData1.jpg",
+    "userId": "복실하이",
+    "text": "침대를 좋아하는 우리집 막내",
     "hashtag": "#댕스타 #일상",
     "photo": [
-      "./img/dsta/kkumi.png",
-      "./img/dsta/kkumi.png"
+      "./img/dsta/weeklydsta1.jpg",
+      "./img/dsta/weeklydsta2.jpg"
     ]
   }
 }
