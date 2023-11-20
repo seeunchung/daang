@@ -40,179 +40,179 @@
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "복실하이",
       "title": "침대를 좋아하는 우리집 막내",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "viewCount": 0,
+      "likeCount": 0,
+      "commentCount": 0
     },
     {
       "id": 2,
       "imgSrc": "./img/dsta/dstaMainData2.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "선샤인",
-      "title": "산책 왔어요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "넷플릭스 뭐 볼까??",
+      "viewCount": 2,
+      "likeCount": 0,
+      "commentCount": 0
     },
     {
       "id": 3,
       "imgSrc": "./img/dsta/dstaMainData3.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "poter",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "벌써 가족이 된지 한 달이 넘어가네요",
+      "viewCount": 10,
+      "likeCount": 2,
+      "commentCount": 0
     },
     {
       "id": 4,
       "imgSrc": "./img/dsta/dstaMainData4.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "말랑",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "ㅠㅠㅠㅠ너무 귀엽죠",
+      "viewCount": 25,
+      "likeCount": 10,
+      "commentCount": 2
     },
     {
       "id": 5,
       "imgSrc": "./img/dsta/dstaMainData5.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "흑구양",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "밖에 나왔더니, 집가기 싫다고 떼쓰는 중",
+      "viewCount": 32,
+      "likeCount": 12,
+      "commentCount": 3
     },
     {
       "id": 6,
       "imgSrc": "./img/dsta/dstaMainData6.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
-      "userId": "동구리장",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "userId": "동그래화이팅",
+      "title": "용모는 항상 단정하게...",
+      "viewCount": 53,
+      "likeCount": 21,
+      "commentCount": 6
     },
     {
       "id": 7,
       "imgSrc": "./img/dsta/dstaMainData7.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "gavin",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "최애 인형이랑 쿨쿨 잘 자네요",
+      "viewCount": 56,
+      "likeCount": 23,
+      "commentCount": 5
     },
     {
       "id": 8,
       "imgSrc": "./img/dsta/dstaMainData8.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "flower",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "우리 집 막둥이들이랑 근처 공원 나왔어요 ",
+      "viewCount": 62,
+      "likeCount": 25,
+      "commentCount": 12
     },
     {
       "id": 9,
       "imgSrc": "./img/dsta/dstaMainData9.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "iron우먼",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "보통 산책 나가실때 간식을 들고 나가시나요?",
+      "viewCount": 89,
+      "likeCount": 32,
+      "commentCount": 16
     },
     {
       "id": 10,
       "imgSrc": "./img/dsta/dstaMainData10.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "꿈이언니",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "슬슬 연말이 다가오네요~~ 크리스마스를 준비하고 있어요",
+      "viewCount": 103,
+      "likeCount": 47,
+      "commentCount": 21
     },
     {
       "id": 11,
       "imgSrc": "./img/dsta/dstaMainData11.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "스프링",
-      "title": "반가워요. 꿈이에요~",
+      "title": "요즘 바람이 왜이렇게 많이 불죠?",
       "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "likeCount": 53,
+      "commentCount": 38
     },
     {
       "id": 12,
       "imgSrc": "./img/dsta/dstaMainData12.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "후얼유",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "작년 크리스마스때 찍은 사진이예요",
+      "viewCount": 172,
+      "likeCount": 49,
+      "commentCount": 45
     },
     {
       "id": 13,
       "imgSrc": "./img/dsta/dstaMainData13.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "brandon",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "엄마한테 혼나고 아빠한테 안겨서",
+      "viewCount": 293,
+      "likeCount":64,
+      "commentCount": 49
     },
     {
       "id": 14,
       "imgSrc": "./img/dsta/dstaMainData14.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "weareyoung",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "'댕스타 인플루언서'",
+      "viewCount": 382,
+      "likeCount": 102,
+      "commentCount": 39
     },
     {
       "id": 15,
       "imgSrc": "./img/dsta/dstaMainData15.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "마끼야또",
-      "title": "반가워요. 꿈이에요~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "샤워시키니까 가만히 잘 앉아있네요",
+      "viewCount": 492,
+      "likeCount": 32,
+      "commentCount": 24
     },
     {
       "id": 16,
       "imgSrc": "./img/dsta/dstaMainData16.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "시루떡",
-      "title": "반가워요. 꿈이입니다~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "뭘 봐 라고 눈으로 얘기하는 중 ",
+      "viewCount": 502,
+      "likeCount": 34,
+      "commentCount": 28
     },
     {
       "id": 17,
       "imgSrc": "./img/dsta/dstaMainData17.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "동네한바퀴",
-      "title": "반가워요. 꿈이입니다~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "그거 너꺼 아닌데",
+      "viewCount": 592,
+      "likeCount": 21,
+      "commentCount": 6
     },
     {
       "id": 18,
       "imgSrc": "./img/dsta/dstaMainData18.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "수지야",
-      "title": "반가워요. 꿈이입니다~",
-      "viewCount": 123,
-      "likeCount": 456,
-      "commentCount": 789
+      "title": "댕동여지도 후기: 근처 카페 같이",
+      "viewCount": 603,
+      "likeCount": 44,
+      "commentCount": 32
     }
   ]
 }

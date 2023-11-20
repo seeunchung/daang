@@ -119,7 +119,9 @@ export default function DstaMainPage() {
               {/* 조회수 많은 데이터 이미지 */}
               {dstaMain && dstaSwiperData.map((item, index) => (
                 <SwiperSlide key={item.id}>
+                  <div className='weekly_photobox'>
                   <img src={item.imgSrc} alt="댕스타 조회수 사진" />
+                  </div>
                 </SwiperSlide>
               ))}
 
