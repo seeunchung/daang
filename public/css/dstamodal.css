@@ -53,7 +53,6 @@
   margin-right: 8px;
   overflow: hidden;
   display: flex;
-  align-items: center;
   cursor: pointer;
 }
 .modal-overlay .axios .modal .modal-content .photos .swiper {
