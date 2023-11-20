@@ -471,15 +471,15 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
       });
     }
   }
-  const onClickAgree = (e)=>{
+  const onClickAgree = (e) => {
     e.preventDefault();
     isAgreeToTermsOfUseModalOpenFn();
   }
-  const onClickAgree2 = (e)=>{
+  const onClickAgree2 = (e) => {
     e.preventDefault();
     isRequiredModalOpenFn();
   }
-  const onClickAgree3 = (e)=>{
+  const onClickAgree3 = (e) => {
     e.preventDefault();
     isSelectModalOpenFn();
   }
@@ -1083,7 +1083,6 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
             </form>
           </div>
         </div>
-
       </section>
     </main >
   );

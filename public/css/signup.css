@@ -538,7 +538,7 @@
 #select .wrap .container {
   margin: auto;
   width: 440px;
-  background: #18212b;
+  background: #fffbf5;
   border-radius: 12px;
 }
 #AgreeToTermsOfUse .wrap .container h1,
@@ -549,8 +549,8 @@
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.5px;
-  color: #fff;
-  border-bottom: 1px solid #ee6a7b;
+  color: #333;
+  border-bottom: 1px solid #F4E2CC;
 }
 #AgreeToTermsOfUse .wrap .container .content,
 #require .wrap .container .content,
@@ -559,10 +559,10 @@
   font-size: 14px;
   line-height: 19px;
   letter-spacing: -0.5px;
-  color: #eee;
+  color: #333;
   height: 460px;
   overflow-y: auto;
-  background-color: #18212b;
+  background-color: #fffbf5;
 }
 #AgreeToTermsOfUse .wrap .container .content::-webkit-scrollbar,
 #require .wrap .container .content::-webkit-scrollbar,
@@ -572,14 +572,14 @@
 #AgreeToTermsOfUse .wrap .container .content::-webkit-scrollbar-thumb,
 #require .wrap .container .content::-webkit-scrollbar-thumb,
 #select .wrap .container .content::-webkit-scrollbar-thumb {
-  background: #666;
+  background: #74500a;
   border-radius: 20px;
 }
 #AgreeToTermsOfUse .wrap .container .content::-webkit-scrollbar-track,
 #require .wrap .container .content::-webkit-scrollbar-track,
 #select .wrap .container .content::-webkit-scrollbar-track {
-  background: #18212b;
-  border-radius: 20px;
+  background: #fef7ec;
+  border-radius: 5px;
 }
 #AgreeToTermsOfUse .wrap .container .content .main-title,
 #require .wrap .container .content .main-title,
@@ -588,7 +588,7 @@
   padding: 16px 0 8px 0;
   font-size: 16px;
   line-height: 21px;
-  color: #fff;
+  color: #333;
   font-weight: 500;
 }
 #AgreeToTermsOfUse .wrap .container .content .main-title:first-child,
@@ -604,7 +604,7 @@
   justify-content: flex-end;
   padding: 28px;
   height: 56px;
-  border-top: 1px solid #ee6a7b;
+  border-top: 1px solid #F4E2CC;
 }
 #AgreeToTermsOfUse .wrap .container .button-box button,
 #require .wrap .container .button-box button,
@@ -616,14 +616,14 @@
   width: 100%;
   height: 56px;
   border-radius: 0px;
-  background-color: #18212b;
+  background-color: #fffbf5;
   border: 0px;
   cursor: pointer;
 }
 #AgreeToTermsOfUse .wrap .container .button-box button span,
 #require .wrap .container .button-box button span,
 #select .wrap .container .button-box button span {
-  color: #fff;
+  color: #333;
   font-weight: 700;
   font-size: 16px;
 }
