@@ -38,10 +38,12 @@ export default function Header() {
                   <li className='right-menu logout' onClick={handleLogout}><Link to='/'>로그아웃</Link></li>
                 </>
               ) : (
-                <li className='right-menu login'><Link to='/login'>로그인</Link></li>
+                <>
+                  <li className='right-menu login'><Link to='/login'>로그인</Link></li>
+                  <li><i>|</i></li>
+                  <li className='right-menu signup'><Link to='/signup'>회원가입</Link></li>
+                </>
               )}
-              <li><i>|</i></li>
-              <li className='right-menu signup'><Link to='/signup'>회원가입</Link></li>
               <li><i>|</i></li>
               <li className='right-menu'>
                 <button type='button' className='write-btn'>
