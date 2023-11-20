@@ -62,6 +62,9 @@
   margin: 0 0 0 45px;
   padding: 16px 0;
 }
+#main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_title img {
+  margin-right: 8px;
+}
 #main.dmunitywrite_write .dmunitywrite_container .dmunitywrite_form {
   display: flex;
   flex-direction: column;

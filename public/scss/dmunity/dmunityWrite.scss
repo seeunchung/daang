@@ -69,6 +69,10 @@
       color: #74500A;
       margin: 0 0 0 45px;
       padding: 16px 0;
+
+      img {
+        margin-right: 8px;
+      }
     }
 
     .dmunitywrite_form {
@@ -109,10 +113,10 @@
         }
       }
 
-        .ck-editor__editable {
-          /*ckeditor 본문입력 영역*/
-          height: 340px;
-        }
+      .ck-editor__editable {
+        /*ckeditor 본문입력 영역*/
+        height: 340px;
+      }
     }
 
     .button_box {
