@@ -36,7 +36,7 @@ export default function MyPageMainPage() {
     setActiveTab(buttonIndex);
   };
 
-  const buttonTabs = ['작성한 글', '작성한 댓글', '좋아요한 글'];
+  const buttonTabs = ['작성한 글', '작성한 댓글', '좋아요한 글', '견주 정보'];
 
   // 페이지네이션 관련 상태
   const [currentPage, setCurrentPage] = useState(1);
