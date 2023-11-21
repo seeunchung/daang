@@ -3,28 +3,28 @@
     {
       "id": 1,
       "imgSrcArray": [
-        "./img/dsta/weeklydsta1.jpg",
-        "./img/dsta/weeklydsta2.jpg",
-        "./img/dsta/weeklydsta3.jpg"
+        "./img/dsta/dstaMainData1.jpg",
+        "./img/dsta/dstamodal2.jpg",
+        "./img/dsta/dstamodal3.jpg"
       ],
       "writerProfileImgSrc": "./img/main/best-dsta-profile.png",
-      "writerUserId": "꿈이언니",
-      "contentText": "오늘도 꿈이랑 산책다녀왔어요~",
-      "contentTag": "#꿈이랑 #산책 #행복해",
+      "writerUserId": "복실하이",
+      "contentText": "침대를 좋아하는 우리집 막내예요",
+      "contentTag": "#복실이 #뽀송뽀송 #행복해",
       "contentLikes": "10",
       "contentTime": "2",
       "comments": [
         {
           "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
           "commentUserId": "Gavin",
-          "commentText": "꿈이 귀여워~",
+          "commentText": "복실이 귀여워~",
           "commentDate": "2023.11.14",
           "commentLikes": "3"
         },
         {
           "commentProfileImgSrc": "./img/main/best-dsta-profile.png",
           "commentUserId": "Gavin",
-          "commentText": "붕어빵ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ",
+          "commentText": "나른해보이네요 ㅎㅎ",
           "commentDate": "2023.11.15",
           "commentLikes": "5"
         }

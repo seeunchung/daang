@@ -19,7 +19,7 @@
 }
 #termsofuse.tou .tou_container .tou_title h1 {
   font-size: 50px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 81.09px;
   text-align: center;
 }
@@ -49,9 +49,9 @@
   font-size: 16px;
   font-weight: 400;
 }
-#termsofuse.tou .tou_container .tou_content_box02 h2 {
+#termsofuse.tou .tou_container .tou_content_box02 h2, #termsofuse.tou .tou_container strong {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 }
 #termsofuse.tou .tou_container .tou_appli_button {
   background-color: rgb(35, 25, 22);

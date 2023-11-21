@@ -19,7 +19,7 @@
 }
 #PrivacyPolicy.pp .pp_container .pp_title h1 {
   font-size: 50px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 81.09px;
   text-align: center;
 }
@@ -49,9 +49,9 @@
   font-size: 16px;
   font-weight: 400;
 }
-#PrivacyPolicy.pp .pp_container .pp_content_box02 h2 {
+#PrivacyPolicy.pp .pp_container .pp_content_box02 h2, #PrivacyPolicy.pp .pp_container strong {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
 }
 #PrivacyPolicy.pp .pp_container .pp_appli_button {
   background-color: rgb(35, 25, 22);
