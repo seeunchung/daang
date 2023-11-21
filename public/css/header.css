@@ -12,13 +12,16 @@
   height: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+}
+#header .container .left {
+  width: 100%;
 }
 #header .container .left ul {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: start;
 }
 #header .container .left ul li {
   font-size: 18px;
@@ -47,11 +50,15 @@
   width: 100%;
   padding-top: 5px;
 }
+#header .container .right {
+  width: 100%;
+}
 #header .container .right ul {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: end;
 }
 #header .container .right ul li {
   font-size: 18px;
@@ -97,6 +104,7 @@
 }
 #header .container .right ul li .write-btn a {
   margin-left: 4px;
+  font-family: "NPSfontBold";
   color: #fff;
 }
 #header .container .right ul li > ul.tooltip {

@@ -64,21 +64,21 @@ export default function MainPage() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="./img/main/main_sec1_slide_2.jpg" alt="" />
+              <img src="./img/main/main_sec1_slide_2.png" alt="" />
               <div className="slide-title">
                 <h2>
-                  <span>귀여운 강아지의 <strong>일상</strong>을 공유하고,</span>
-                  <span>나의 강아지를 자랑해보세요!</span>
+                  <span>귀여운 강아지의 일상을 공유하고,</span>
+                  <span>나의 강아지를 자랑해보세요~</span>
                   <Link to='/dsta'>댕스타 바로가기</Link>
                 </h2>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="./img/main/main_sec1_slide_3.jpg" alt="" />
+              <img src="./img/main/main_sec1_slide_3.png" alt="" />
               <div className="slide-title">
                 <h2>
                   <span>내 강아지에 대한 </span>
-                  <span><strong>정보</strong>가 한눈에!</span>
+                  <span>정보가 한눈에!</span>
                 </h2>
               </div>
             </SwiperSlide>
@@ -87,7 +87,7 @@ export default function MainPage() {
               <div className="slide-title">
                 <h2>
                   <span>설레는 마음으로 </span>
-                  <span>강아지와 <strong>함께할 공간</strong>을 찾아봐요!</span>
+                  <span>강아지와 함께할 공간을 찾아봐요!</span>
                 </h2>
               </div>
             </SwiperSlide>
@@ -121,6 +121,29 @@ export default function MainPage() {
 
           </div>
           <div className="content-box">
+            {/* <div className='post-box'>
+              <div className="img-box">
+                <img src="./img/main/best-dsta-1.png" alt="" />
+                <div className="profile">
+                  <div className="profile-img-box">
+                    <img src="./img/main/best-dsta-profile.png" alt="" />
+                  </div>
+                  <div className="user-id">
+                    <span>김정남</span>
+                  </div>
+                </div>
+              </div>
+              <div className="caption-box">
+                <div className="caption-title">
+                  <h2>산책갔다왔어요~</h2>
+                </div>
+                <div className="cnt-box">
+                  <p className='view-cnt'>296</p>
+                  <p className='like-cnt'>2</p>
+                  <p className='comment-cnt'>0</p>
+                </div>
+              </div>
+            </div> */}
             {
               bestDsta && bestDsta.map((item, idx) => {
                 return (

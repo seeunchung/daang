@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 export default function DmunityDetail() {
@@ -28,11 +29,11 @@ export default function DmunityDetail() {
   }
 
   //조건에 따라 수정,삭제 버튼 렌더링
-  const manager = null;
+  const manager = true;
 
   //댓글 목록
   const [comment, setComment] = useState([]);
-  
+
   //댓글 작성 버튼 제출시 작동하는 함수(데이터 전송X 프론트엔드에서만 가능)
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,7 +55,7 @@ export default function DmunityDetail() {
       < div id='container' >
         <div className='title'>
           <img src="./img/dmunity/dmunity.png" alt="" />
-          <h2>댕뮤니티</h2>
+          <Link to='/dmunity'><h2>댕뮤니티</h2></Link>
         </div>
         <div className="content">
           <div className='pots-title'>
@@ -68,7 +69,7 @@ export default function DmunityDetail() {
           <div className='info-box'>
             <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>112</p></span>
             <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>26</p></span>
-            <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{2+comment.length}</p></span>
+            <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{2 + comment.length}</p></span>
           </div>
           <div className="text-area">
             {/** 임시로 작성한 글, 데이터 받아와지면 삭제*/}
@@ -164,11 +165,11 @@ export default function DmunityDetail() {
           </form>
 
           <div className='button_box'>
-            <button className='list'>목록</button>
+            <Link to='/dmunity'><button className='list'>목록</button></Link>
             {manager && (
-              <div>
-                <button className='edit'>수정</button>
-                <button className='delete'>삭제</button>
+              <div className='edit-delete-btn'>
+                <Link to='/dmunity-edit'><button className='edit-btn'><span>수정</span></button></Link>
+                <button className='delete-btn'><span>삭제</span></button>
               </div>
             )}
 

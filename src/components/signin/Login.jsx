@@ -29,11 +29,11 @@ export default function Login() {
 
   const onSubmitLogin = (e) => {
     e.preventDefault();
-    if (credentials.id === 'kiik52' && credentials.pw === 'eoddbslqm2!@') {
+    if (credentials.id === 'admin' && credentials.pw === '1234') {
       login(); // 사용자 로그인 처리
     } else {
       logout(); // 사용자 로그아웃 처리
-      setErrMsg('아이디, 비밀번호를 다시 확인해 주세요');
+      setErrMsg('아이디, 비밀번호를 다시 확인해 주세요.');
     }
   };
 

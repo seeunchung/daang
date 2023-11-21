@@ -176,14 +176,17 @@
   cursor: pointer;
 }
 #DmunityDetail #container .button_box {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
+  padding-bottom: 30px;
 }
-#DmunityDetail #container .button_box button {
+#DmunityDetail #container .button_box > a {
+  display: flex;
+  padding-left: 50px;
+}
+#DmunityDetail #container .button_box > a button {
   width: 80px;
   height: 30px;
-  margin-bottom: 20px;
   border-radius: 15px;
   border: none;
   background-color: #AB8B61;
@@ -192,10 +195,26 @@
   font-weight: bold;
   cursor: pointer;
 }
-#DmunityDetail #container .button_box div {
-  margin-left: auto;
+#DmunityDetail #container .button_box .edit-delete-btn {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-right: 50px;
+}
+#DmunityDetail #container .button_box .edit-delete-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #AB8B61;
+  color: white;
+  font-family: "Noto Sans KR";
+  font-weight: bold;
   cursor: pointer;
 }
-#DmunityDetail #container .button_box div .delete {
-  margin-left: 4px;
+#DmunityDetail #container .button_box .edit-delete-btn button.edit-btn {
+  margin-right: 10px;
 }

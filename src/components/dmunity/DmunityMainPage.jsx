@@ -21,7 +21,15 @@ function getCategoryImage(category) {       //카테고리 별 아이콘 설정
 
 export default function DmunityMainPage() {
 
+  const [isEatToggle, setIsEatToggle] = useState(false);
+  const [isSickToggle, setIsSickToggle] = useState(false);
+  const [isPlayToggle, setIsPlayToggle] = useState(false);
+  const [isHowToggle, setIsHowToggle] = useState(false);
+  const [isEtcToggle, setIsEtcToggle] = useState(false);
+
   const [postList, setPostList] = useState([]);
+  const [inputValue, setInputValue] = useState(''); //입력 값 관리
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
   useEffect(() => {
     axios({
@@ -31,7 +39,6 @@ export default function DmunityMainPage() {
       // 성공
       .then((res) => {
         setPostList(res.data.dmunityMain)
-        console.log(res.data)
       })
       // 에러
       .catch((err) => {
@@ -39,7 +46,37 @@ export default function DmunityMainPage() {
       });
   }, []);
 
-  const [inputValue, setInputValue] = useState(''); //입력 값 관리
+  const onClickEatToggle = () => {
+    setIsEatToggle(!isEatToggle);
+  };
+
+  const onClickSickToggle = () => {
+    setIsSickToggle(!isSickToggle);
+  };
+
+  const onClickPlayToggle = () => {
+    setIsPlayToggle(!isPlayToggle);
+  };
+
+  const onClickHowToggle = () => {
+    setIsHowToggle(!isHowToggle);
+  };
+
+  const onClickEtcToggle = () => {
+    setIsEtcToggle(!isEtcToggle);
+  };
+
+  useEffect(() => {
+    const updatedFilteredPosts = postList.filter((post) => {
+      if (isEatToggle && post.category === '먹어요') return true;
+      if (isSickToggle && post.category === '아파요') return true;
+      if (isPlayToggle && post.category === '놀아요') return true;
+      if (isHowToggle && post.category === '어때요') return true;
+      if (isEtcToggle && post.category === '기타') return true;
+      return false;
+    });
+    setFilteredPosts(updatedFilteredPosts);
+  }, [postList, isEatToggle, isSickToggle, isPlayToggle, isHowToggle, isEtcToggle]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -52,7 +89,7 @@ export default function DmunityMainPage() {
     return str
   }
 
-  const [eatImg, setEatImg] = useState("../img/eat.png")
+  const [eatImg, setEatImg] = useState("./img/eat.png")
 
   // 페이징 시작
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
@@ -68,7 +105,7 @@ export default function DmunityMainPage() {
   // 현재 페이지에서 첫 번째 아이템의 인덱스
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   // 현재 페이지에 해당하는 아이템만 표시
-  const currentItems = postList.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredPosts.slice(indexOfFirstItem, indexOfLastItem);
 
   // 페이징 끝
 
@@ -80,11 +117,11 @@ export default function DmunityMainPage() {
           <img src='./img/dmunity/dmunity.png' alt='dmunity' /><h2>community</h2>
         </div>
         <div className='row2'>
-          <span><button type='buuton'><img src='./img/dmunity/eat.png' alt="" /></button><a href='#!'>먹어요</a></span>
-          <span><button type='buuton'><img src='./img/dmunity/sick.png' alt="" /></button><a href='#!'>아파요</a></span>
-          <span><button type='buuton'><img src='./img/dmunity/play.png' alt="" /></button><a href='#!'>놀아요</a></span>
-          <span><button type='buuton'><img src='./img/dmunity/how.png' alt="" /></button><a href='#!'>어때요</a></span>
-          <span><button type='buuton'><img src='./img/dmunity/etc.png' alt="" /></button><a href='#!'>기타</a></span>
+          <button type='buuton' onClick={onClickEatToggle}>{isEatToggle ? <img src='./img/dmunity/eat_onclick.png' alt="" /> : <img src='./img/dmunity/eat.png' alt="" />}<span>먹어요</span></button>
+          <button type='buuton' onClick={onClickSickToggle}>{isSickToggle ? <img src='./img/dmunity/sick_onclick.png' alt="" /> : <img src='./img/dmunity/sick.png' alt='' />}<span>아파요</span></button>
+          <button type='buuton' onClick={onClickPlayToggle}>{isPlayToggle ? <img src='./img/dmunity/play_onclick.png' alt="" /> : <img src='./img/dmunity/play.png' alt='' />}<span>놀아요</span></button>
+          <button type='buuton' onClick={onClickHowToggle}> {isHowToggle ? <img src='./img/dmunity/how_onclick.png' alt="" /> : <img src='./img/dmunity/how.png' alt='' />}<span>어때요</span></button>
+          <button type='buuton' onClick={onClickEtcToggle}> {isEtcToggle ? <img src='./img/dmunity/etc_onclick.png' alt="" /> : <img src='./img/dmunity/etc.png' alt='' />}<span>기타</span></button>
         </div>
       </div>
       <div id='postsboard'>
@@ -94,53 +131,76 @@ export default function DmunityMainPage() {
         </div>
         <div className='row2'>
           {
-            postList && currentItems.map((postList, idx) => {
-              return (
-                <div id="post">
+            // 선택한 카테고리에 따라 해당 카테고리인 게시글을 보여줌
+            (isEatToggle || isSickToggle || isPlayToggle || isHowToggle || isEtcToggle)
+              ? currentItems.map((post, idx) => (
+                <div key={idx} id="post">
                   <div className='postLeft'>
-                    <img className="category" src={getCategoryImage(postList.category)} alt={postList.category} />
+                    <img className="category" src={getCategoryImage(post.category)} alt={post.category} />
                   </div>
                   <div className='postMiddle'>
                     <Link to='/dmunity-detail'>
-                      <div className="title">{strCut(postList.title)}</div>
-                      <div className="contents">{strCut(postList.contents)}</div>
+                      <div className="title">{strCut(post.title)}</div>
+                      <div className="contents">{strCut(post.contents)}</div>
                       <div className="info">
-                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{postList.view}</p></span>
-                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{postList.likes}</p></span>
-                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{postList.comments}</p></span>
+                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{post.view}</p></span>
+                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{post.likes}</p></span>
+                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{post.comments}</p></span>
                       </div>
                     </Link>
                   </div>
                   <div className='postRight'>
-                    <div className="date">{postList.date}</div>
-                    <div className='userid'>{postList.userid}</div>
+                    <div className="date">{post.date}</div>
+                    <div className='userid'>{post.userid}</div>
                   </div>
                 </div>
-              );
-            })
+              ))
+              // 전체 게시글을 보여줌
+              : postList.slice(indexOfFirstItem, indexOfLastItem).map((post, idx) => (
+                <div key={idx} id="post">
+                  <div className='postLeft'>
+                    <img className="category" src={getCategoryImage(post.category)} alt={post.category} />
+                  </div>
+                  <div className='postMiddle'>
+                    <Link to='/dmunity-detail'>
+                      <div className="title">{strCut(post.title)}</div>
+                      <div className="contents">{strCut(post.contents)}</div>
+                      <div className="info">
+                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{post.view}</p></span>
+                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{post.likes}</p></span>
+                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{post.comments}</p></span>
+                      </div>
+                    </Link>
+                  </div>
+                  <div className='postRight'>
+                    <div className="date">{post.date}</div>
+                    <div className='userid'>{post.userid}</div>
+                  </div>
+                </div>
+              ))
           }
         </div>
         <div className='row3'>
           {/* 댕뮤니티 페이징 */}
-        <div className='dmunitymain_pagebox'>
-          {/* 이전페이지 버튼 */}
-          <button onClick={() => handleClickPage(currentPage - 1)} disabled={currentPage === 1}>
-            &lt;
-          </button>
-          {Array.from({ length: Math.ceil(postList.length / itemsPerPage) }, (_, index) => (
-            <button
-              key={index}
-              onClick={() => handleClickPage(index + 1)}
-              style={{ color: currentPage === index + 1 ? '#AB8B61' : '#EEE1D7' }}
-            >
-              {index + 1}
+          <div className='dmunitymain_pagebox'>
+            {/* 이전페이지 버튼 */}
+            <button onClick={() => handleClickPage(currentPage - 1)} disabled={currentPage === 1}>
+              &lt;
             </button>
-          ))}
-          {/* 다음페이지 버튼 */}
-          < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(postList.length / itemsPerPage)}>
-            &gt;
-          </button>
-        </div>
+            {Array.from({ length: Math.ceil(postList.length / itemsPerPage) }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => handleClickPage(index + 1)}
+                style={{ color: currentPage === index + 1 ? '#AB8B61' : '#EEE1D7' }}
+              >
+                {index + 1}
+              </button>
+            ))}
+            {/* 다음페이지 버튼 */}
+            < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(postList.length / itemsPerPage)}>
+              &gt;
+            </button>
+          </div>
           <div className='searchBox'>
             <input
               type="text"
