@@ -88,7 +88,11 @@
               }
             }
 
-            &:hover>.tooltip {
+            &:hover>.login-tooltip {
+              display: block;
+            }
+
+            &:hover>.not-login-tooltip {
               display: block;
             }
 
@@ -128,14 +132,15 @@
               filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(106%) contrast(101%);
             }
 
-            a {
+            span {
               margin-left: 4px;
               font-family: "NPSfontBold";
               color: #fff;
             }
           }
 
-          >ul.tooltip {
+          >ul.login-tooltip,
+          .not-login-tooltip {
             display: none;
             position: absolute;
             width: 240px;
