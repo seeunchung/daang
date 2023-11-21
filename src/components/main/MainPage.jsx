@@ -64,7 +64,7 @@ export default function MainPage() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="./img/main/main_sec1_slide_2.png" alt="" />
+              <img src="./img/main/main_sec1_slide_2.jpg" alt="" />
               <div className="slide-title">
                 <h2>
                   <span>귀여운 강아지의 일상을 공유하고,</span>
@@ -74,7 +74,7 @@ export default function MainPage() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <img src="./img/main/main_sec1_slide_3.png" alt="" />
+              <img src="./img/main/main_sec1_slide_3.jpg" alt="" />
               <div className="slide-title">
                 <h2>
                   <span>내 강아지에 대한 </span>
