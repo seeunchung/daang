@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { useUser } from '../signin/UserContent';
 
 export default function Header() {
   const location = useLocation();
   const { isLogin, logout } = useUser();
+
+  useEffect(() => {
+    // 페이지 이동 시 스크롤을 맨 위로 이동
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const handleLogout = () => {
     // 로그아웃 클릭 시
@@ -47,33 +52,64 @@ export default function Header() {
               <li><i>|</i></li>
               <li className='right-menu'>
                 <button type='button' className='write-btn'>
-                  <Link >글쓰기</Link>
+                  <span>글쓰기</span>
                   <img src="./img/header/arrow_down.svg" alt="" />
                 </button>
-                <ul className='tooltip'>
-                  <li>
-                    <Link to='/dsta-write'>
-                      <div className="img-box">
-                        <img src="./img/Instagram.png" alt="" />
-                      </div>
-                      <div className="caption-box">
-                        <h2>댕스타 글쓰기</h2>
-                        <span>자신의 반려견을 자랑해 보세요!</span>
-                      </div>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to='/dmunity-write'>
-                      <div className="img-box">
-                        <img src="./img/dmunity/dmunity.png" alt="" />
-                      </div>
-                      <div className="caption-box">
-                        <h2>댕뮤니티 글쓰기</h2>
-                        <span>궁금하거나 모르는걸 물어봐요!</span>
-                      </div>
-                    </Link>
-                  </li>
-                </ul>
+                {
+                  isLogin
+                    ? (
+                      <ul className='login-tooltip'>
+                        <li>
+                          <Link to='/dsta-write'>
+                            <div className="img-box">
+                              <img src="./img/Instagram.png" alt="" />
+                            </div>
+                            <div className="caption-box">
+                              <h2>댕스타 글쓰기</h2>
+                              <span>자신의 반려견을 자랑해 보세요!</span>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to='/dmunity-write'>
+                            <div className="img-box">
+                              <img src="./img/dmunity/dmunity.png" alt="" />
+                            </div>
+                            <div className="caption-box">
+                              <h2>댕뮤니티 글쓰기</h2>
+                              <span>궁금하거나 모르는걸 물어봐요!</span>
+                            </div>
+                          </Link>
+                        </li>
+                      </ul>
+                    )
+                    :
+                    <ul className='not-login-tooltip'>
+                      <li>
+                        <Link to='/login'>
+                          <div className="img-box">
+                            <img src="./img/Instagram.png" alt="" />
+                          </div>
+                          <div className="caption-box">
+                            <h2>댕스타 글쓰기</h2>
+                            <span>자신의 반려견을 자랑해 보세요!</span>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to='/login'>
+                          <div className="img-box">
+                            <img src="./img/dmunity/dmunity.png" alt="" />
+                          </div>
+                          <div className="caption-box">
+                            <h2>댕뮤니티 글쓰기</h2>
+                            <span>궁금하거나 모르는걸 물어봐요!</span>
+                          </div>
+                        </Link>
+                      </li>
+                    </ul>
+                }
+
               </li>
             </ul>
           </div>

@@ -71,7 +71,10 @@
   color: #74500a;
   transition: all 0.3s ease-in-out;
 }
-#header .container .right ul li.right-menu:hover > .tooltip {
+#header .container .right ul li.right-menu:hover > .login-tooltip {
+  display: block;
+}
+#header .container .right ul li.right-menu:hover > .not-login-tooltip {
   display: block;
 }
 #header .container .right ul li.right-menu.login, #header .container .right ul li.right-menu.signup, #header .container .right ul li.right-menu.logout, #header .container .right ul li.right-menu.mypage {
@@ -102,12 +105,13 @@
   transform: rotate(90deg);
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(106%) contrast(101%);
 }
-#header .container .right ul li .write-btn a {
+#header .container .right ul li .write-btn span {
   margin-left: 4px;
   font-family: "NPSfontBold";
   color: #fff;
 }
-#header .container .right ul li > ul.tooltip {
+#header .container .right ul li > ul.login-tooltip,
+#header .container .right ul li .not-login-tooltip {
   display: none;
   position: absolute;
   width: 240px;
@@ -120,7 +124,8 @@
   padding-top: 5px;
   flex-direction: column;
 }
-#header .container .right ul li > ul.tooltip::before {
+#header .container .right ul li > ul.login-tooltip::before,
+#header .container .right ul li .not-login-tooltip::before {
   content: "";
   position: absolute;
   top: -15px;
@@ -128,40 +133,48 @@
   width: 240px;
   height: 20px;
 }
-#header .container .right ul li > ul.tooltip > li {
+#header .container .right ul li > ul.login-tooltip > li,
+#header .container .right ul li .not-login-tooltip > li {
   margin-bottom: 10px;
   padding: 0 8px;
 }
-#header .container .right ul li > ul.tooltip > li > a {
+#header .container .right ul li > ul.login-tooltip > li > a,
+#header .container .right ul li .not-login-tooltip > li > a {
   display: flex;
   align-items: center;
   font-size: 12px;
   line-height: 140%;
   padding: 8px;
 }
-#header .container .right ul li > ul.tooltip > li > a:hover {
+#header .container .right ul li > ul.login-tooltip > li > a:hover,
+#header .container .right ul li .not-login-tooltip > li > a:hover {
   transition: all 0.3s ease-in-out;
   background: #f3eee5;
   border-radius: 5px;
 }
-#header .container .right ul li > ul.tooltip > li > a::after {
+#header .container .right ul li > ul.login-tooltip > li > a::after,
+#header .container .right ul li .not-login-tooltip > li > a::after {
   content: "";
   width: 1px;
   height: 10px;
 }
-#header .container .right ul li > ul.tooltip > li > a .img-box {
+#header .container .right ul li > ul.login-tooltip > li > a .img-box,
+#header .container .right ul li .not-login-tooltip > li > a .img-box {
   margin-right: 12px;
 }
-#header .container .right ul li > ul.tooltip > li > a .img-box img {
+#header .container .right ul li > ul.login-tooltip > li > a .img-box img,
+#header .container .right ul li .not-login-tooltip > li > a .img-box img {
   width: 30px;
   height: 30px;
 }
-#header .container .right ul li > ul.tooltip > li > a .caption-box h2 {
+#header .container .right ul li > ul.login-tooltip > li > a .caption-box h2,
+#header .container .right ul li .not-login-tooltip > li > a .caption-box h2 {
   font-size: 15px;
   font-weight: bold;
   color: #333;
 }
-#header .container .right ul li > ul.tooltip > li > a .caption-box span {
+#header .container .right ul li > ul.login-tooltip > li > a .caption-box span,
+#header .container .right ul li .not-login-tooltip > li > a .caption-box span {
   font-size: 12px;
   color: #828c94;
 }

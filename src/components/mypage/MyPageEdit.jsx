@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ export default function MypageEdit() {
   const navigate = useNavigate();
 
 
- //이미지 업로드 기능
+  //이미지 업로드 기능
   const upload = useRef();
   const imgUpload = () => {
     const file = upload.current.files[0];
@@ -30,10 +30,10 @@ export default function MypageEdit() {
     };
   }
 
- //추가된 이미지 삭제 기능
+  //추가된 이미지 삭제 기능
   const removeImage = () => {
     setDogimg(null);
-    }
+  }
 
   const handleCancel = () => {
     // 취소 버튼 클릭 시 뒤로가기
@@ -139,35 +139,35 @@ export default function MypageEdit() {
           </div>
           <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
           <div className='idcard_bodycontainer'>
-          {!dogimg ? 
-          <>
-          <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' /> 
-          <input
-                    id='dog_input'
-                    className='file_input'
-                    type='file'
-                    ref={upload}
-                    onChange={imgUpload}
-                    accept='image/*'
-                  />
-          <label className='change_file_input' htmlFor="dog_input" />
-          </>: 
-          <>
-          <img className='idcard_dog' src={dogimg ? String(dogimg) : ''} alt='강아지 사진' />
-          <input
-                    id='dog_input'
-                    className='file_input'
-                    type='file'
-                    ref={upload}
-                    onChange={imgUpload}
-                    accept='image/*'
-                  />
-          <label className='change_file_input' htmlFor="dog_input" />
-          <button className='img_delete_btn' onClick={removeImage}>
-            <img src="./img/dsta/photo_delete_btn.png" alt="" />
-          </button>
-          </>
-          }
+            {!dogimg ?
+              <>
+                <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' />
+                <input
+                  id='dog_input'
+                  className='file_input'
+                  type='file'
+                  ref={upload}
+                  onChange={imgUpload}
+                  accept='image/*'
+                />
+                <label className='change_file_input' htmlFor="dog_input" />
+              </> :
+              <>
+                <img className='idcard_dog' src={dogimg ? String(dogimg) : ''} alt='강아지 사진' />
+                <input
+                  id='dog_input'
+                  className='file_input'
+                  type='file'
+                  ref={upload}
+                  onChange={imgUpload}
+                  accept='image/*'
+                />
+                <label className='change_file_input' htmlFor="dog_input" />
+                <button className='img_delete_btn' onClick={removeImage}>
+                  <img src="./img/dsta/photo_delete_btn.png" alt="" />
+                </button>
+              </>
+            }
             <div className='idcard_info'>
               <div>
                 <h2 className='idcard_infotext'>이름 :</h2>
@@ -234,22 +234,23 @@ export default function MypageEdit() {
 
               {/* 아이디 */}
               <div className='infoedit_div'>
-                <h2 className='infoedit_text'>아이디 :</h2>
+                <h2 className='infoedit_text'>아이디</h2>
                 <div className='infoedit_textbox'>
                   <input
                     type='text'
-                    className='infoedit_input'
+                    className='id_input'
                     value={userid}
                     onChange={handleUseridChange}
                     placeholder='kkumi'
                     readOnly
+                    disabled={true}
                   />
                 </div>
               </div>
 
               {/* 비밀번호 */}
               <div className='infoedit_div'>
-                <h2 className='infoedit_text'>비밀번호 :</h2>
+                <h2 className='infoedit_text'>비밀번호</h2>
                 <div className='infoedit_textbox'>
                   <input
                     type='password'
@@ -263,7 +264,7 @@ export default function MypageEdit() {
 
               {/* 비밀번호 확인*/}
               <div className='infoedit_div'>
-                <h2 className='infoedit_text'>비밀번호 확인 :</h2>
+                <h2 className='infoedit_text'>비밀번호확인</h2>
                 <div className='infoedit_textbox'>
                   <input
                     type='password'
@@ -284,11 +285,11 @@ export default function MypageEdit() {
               )}
 
               {/* 중복 확인 버튼 */}
-              <button className='password_btn' onClick={handleSubmit}>중복 확인</button>
+              {/* <button className='password_btn' onClick={handleSubmit}>중복 확인</button> */}
 
               {/* 이름 */}
               <div className='infoedit_div'>
-                <h2 className='infoedit_text'>이름 :</h2>
+                <h2 className='infoedit_text'>이름</h2>
                 <div className='infoedit_textbox'>
                   <input
                     type='text'
@@ -300,16 +301,16 @@ export default function MypageEdit() {
                 </div>
               </div>
 
-              {/* 닉네임 */}
+              {/* 이메일 */}
               <div className='infoedit_div'>
-                <h2 className='infoedit_text'>닉네임 :</h2>
+                <h2 className='infoedit_text'>이메일</h2>
                 <div className='infoedit_textbox'>
                   <input
                     type='text'
                     className='infoedit_input'
                     value={nickname}
                     onChange={handleNicknameChange}
-                    placeholder='2 - 10자 이내 한글, 영문 작성'
+                    placeholder='예 DaaNG@naver.com'
                   />
                 </div>
               </div>
@@ -326,14 +327,14 @@ export default function MypageEdit() {
 
               {/* 전화번호 */}
               <div className='infoedit_div' style={{ marginBottom: 0 }}>
-                <h2 className='infoedit_text'>전화번호 :</h2>
+                <h2 className='infoedit_text'>휴대폰</h2>
                 <div className='infoedit_textbox'>
                   <input
                     type='text'
                     className='infoedit_input'
                     value={phone}
                     onChange={handlePhoneChange}
-                    placeholder='- 빼고 입력'
+                    placeholder='숫자만 입력해 주세요'
                   />
                 </div>
               </div>

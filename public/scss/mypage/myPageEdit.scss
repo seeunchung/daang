@@ -262,7 +262,7 @@
         width: 120px;
         height: 35px;
         margin-right: 10px;
-        border-radius: 30px;
+        border-radius: 5px;
         border: none;
         background-color: #74500A;
         font-size: 16px;
@@ -275,7 +275,7 @@
       .del_btn {
         width: 120px;
         height: 35px;
-        border-radius: 30px;
+        border-radius: 5px;
         border: none;
         background-color: #AB8B61;
         font-size: 16px;
@@ -371,7 +371,7 @@
           .nickname_btn {
             width: 80px;
             height: 35px;
-            border-radius: 30px;
+            border-radius: 3px;
             border: none;
             background-color: #AB8B61;
             font-size: 16px;
@@ -397,7 +397,7 @@
           .infoedit_text {
             width: 200px;
             height: 30px;
-            font-size: 20px;
+            font-size: 15px;
             font-weight: bold;
             display: inline-block;
             align-items: center;
@@ -421,6 +421,21 @@
             border-radius: 15px;
             // padding-left: 20px;
 
+            .id_input {
+              width: 100%;
+              height: 100%;
+              border: none;
+              font-size: 16px;
+              border-radius: 15px;
+              padding-left: 20px;
+              font-size: 16px;
+              font-weight: bold;
+
+              &::placeholder {
+                color: #000;
+              }
+            }
+
             // 정보 수정 데이터
             .infoedit_input {
               width: 100%;
@@ -428,9 +443,15 @@
               border: none;
               font-size: 16px;
               font-weight: bold;
-              color: gray;
+              color: #000;
               border-radius: 15px;
               padding-left: 20px;
+
+
+              &::placeholder {
+                color: #999;
+                font-size: 13px;
+              }
             }
           }
         }
@@ -449,7 +470,7 @@
         .unregister_btn {
           width: 85px;
           height: 35px;
-          border-radius: 30px;
+          border-radius: 5px;
           border: none;
           background-color: #D6CABA;
           font-size: 16px;
@@ -462,7 +483,7 @@
         .completion_btn {
           width: 70px;
           height: 35px;
-          border-radius: 30px;
+          border-radius: 5px;
           border: none;
           background-color: #74500A;
           font-size: 16px;
@@ -476,7 +497,7 @@
         .cancel_btn {
           width: 70px;
           height: 35px;
-          border-radius: 30px;
+          border-radius: 5px;
           border: none;
           background-color: #AB8B61;
           font-size: 16px;
