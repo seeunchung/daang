@@ -12,13 +12,28 @@ export default function MyPageMainPage() {
   const [myDmunity, setMyDmunity] = useState([]);
   const [myDsta, setMyDsta] = useState([]);
 
+//강아지정보 데이터(백엔드 연결)
+  useEffect(() => {
+    axios({
+      url: 'http://localhost:8080/mypage/doginfo',
+      method: 'GET'
+    })
+      .then((res) => {
+        setIdcardInfo(res.data);
+      })
+      .catch((err) => {
+        console.log(`AXIOS 실패! ${err}`);
+      });
+  }, []);
+
+
+//댕스타,댕뮤니티 데이터(json파일)
   useEffect(() => {
     axios({
       url: './data/mypageMain.json',
       method: 'GET'
     })
       .then((res) => {
-        setIdcardInfo(res.data.idcard);
         setMyDmunity(res.data.dmunity);
         setMyDsta(res.data.dsta);
       })
@@ -49,6 +64,7 @@ export default function MyPageMainPage() {
     return currentPosts.map((post, index) => ({
       ...post,
       number: indexOfFirstPost + index + 1,
+      key: index
     }));
   };
 
@@ -90,7 +106,7 @@ export default function MyPageMainPage() {
                   <h2 className='idcard_infotext'>이름 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].dogname}
+                      {idcardInfo.length > 0 && idcardInfo[0].doginfoName}
                     </div>
                   </div>
                 </div>
@@ -98,7 +114,7 @@ export default function MyPageMainPage() {
                   <h2 className='idcard_infotext'>학과 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].major}
+                      {idcardInfo.length > 0 && idcardInfo[0].doginfoType}
                     </div>
                   </div>
                 </div>
@@ -106,7 +122,7 @@ export default function MyPageMainPage() {
                   <h2 className='idcard_infotext'>학번 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].birth}
+                      {idcardInfo.length > 0 && idcardInfo[0].doginfoBirth}
                     </div>
                   </div>
                 </div>
@@ -114,7 +130,7 @@ export default function MyPageMainPage() {
                   <h2 className='idcard_infotext'>특징 :</h2>
                   <div className='idcard_infobox'>
                     <div className='info_textarea'>
-                      {idcardInfo.length > 0 && idcardInfo[0].features}
+                      {idcardInfo.length > 0 && idcardInfo[0].doginfoMemo}
                     </div>
                   </div>
                 </div>
@@ -161,7 +177,7 @@ export default function MyPageMainPage() {
                       </thead>
                       <tbody className='body_row'>
                         {getCurrentPagePosts(10, myDmunity).map((post) => (
-                          <tr key={post.postid} className="data_row">
+                          <tr key={post.key} className="data_row">
                             <td>{post.number}</td>
                             <td>{post.title}</td>
                             <td>{post.date}</td>
@@ -180,7 +196,7 @@ export default function MyPageMainPage() {
                 {selectedOption === 'dsta' && (
                   <div className='dsta_listbox'>
                     <ul className='dsta_lists'>
-                      {getCurrentPagePosts(8, myDsta).map((post) => (
+                      {getCurrentPagePosts(8, myDsta).map((post,index) => (
                         <li key={post.postid}>
                           <img className='dsta_list' src={post.imgSrc} alt='thumbnail_img' />
                         </li>
