@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 export default function MypageEdit() {
 
+  //강아지 정보 상태관리
   const [dogimg, setDogimg] = useState('');
   const [dogname, setDogname] = useState('');
   const [major, setMajor] = useState('');
   const [birth, setBirth] = useState('');
   const [features, setFeatures] = useState('');
+  //견주정보 상태 관리
   const [userid, setUserid] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
@@ -17,7 +19,55 @@ export default function MypageEdit() {
   const [name, setName] = useState('');
   const [nickname, setNickname] = useState('');
   const [phone, setPhone] = useState('');
+
   const navigate = useNavigate();
+
+
+
+  //강아지정보 데이터(백엔드 연결)
+  useEffect(() => {
+    axios({
+      url: 'http://localhost:8080/mypage/doginfo',
+      method: 'GET'
+    })
+      .then((res) => {
+        const dogInfo = res.data[0]
+        setDogname(dogInfo.doginfoName);
+        setMajor(dogInfo.doginfoType);
+        setBirth(dogInfo.doginfoBirth);
+        setFeatures(dogInfo.doginfoMemo);
+        setDogimg(dogInfo.dogImg);
+      })
+      .catch((err) => {
+        console.log(`AXIOS 실패! ${err}`);
+      });
+  }, []);
+
+
+  //견주정보(jsson 파일)
+  useEffect(() => {
+
+    //마이페이지 데이터
+    axios({
+      url: './data/mypage.json',
+      method: 'GET'
+    })
+      //성공
+      .then((res) => {
+        const mypageData = res.data.mypageData[0];
+        // 데이터를 상태에 설정
+        setUserid(mypageData.userid);
+        setPassword(mypageData.password);
+        setName(mypageData.name);
+        setNickname(mypageData.nickname);
+        setPhone(mypageData.phone);
+      })
+      // 에러
+      .catch((err) => {
+        console.log(`AXIOS 실패!${err}`);
+      });
+  }, []);
+
 
 
   //이미지 업로드 기능
@@ -35,40 +85,6 @@ export default function MypageEdit() {
     setDogimg(null);
   }
 
-  const handleCancel = () => {
-    // 취소 버튼 클릭 시 뒤로가기
-    navigate(-1);
-  };
-
-  useEffect(() => {
-
-    //마이페이지 데이터
-    axios({
-      url: './data/mypage.json',
-      method: 'GET'
-    })
-
-      //성공
-      .then((res) => {
-        const mypageData = res.data.mypageData[0];
-        // 데이터를 상태에 설정
-        setDogimg(mypageData.dogimg);
-        setDogname(mypageData.dogname);
-        setMajor(mypageData.major);
-        setBirth(mypageData.birth);
-        setFeatures(mypageData.features);
-        setUserid(mypageData.userid);
-        setPassword(mypageData.password);
-        setName(mypageData.name);
-        setNickname(mypageData.nickname);
-        setPhone(mypageData.phone);
-      })
-      // 에러
-      .catch((err) => {
-        console.log(`AXIOS 실패!${err}`);
-      });
-  }, []);
-
   const handleDognameChange = (e) => {
     setDogname(e.target.value);
   };
@@ -84,6 +100,33 @@ export default function MypageEdit() {
   const handleFeaturesChange = (e) => {
     setFeatures(e.target.value);
   };
+
+
+  const dogInfoUpdate = () => {
+    // 서버로 보낼 데이터 준비
+    const updatedInfo = {
+      "doginfoNo": 0,
+      "doginfoName": dogname,
+      "doginfoType": major,
+      "doginfoBirth": birth,
+      "doginfoMemo": features,
+      "dogImg": dogimg,
+    };
+  
+    // 강아지 정보를 업데이트하기 위한 HTTP PUT 요청
+    axios.put('http://localhost:8080/mypage/doginfo/update', updatedInfo)
+      .then(response => {
+        console.log('강아지 정보가 성공적으로 업데이트되었습니다', response.data);
+        // 성공적으로 업데이트된 경우 추가적인 작업 수행 가능
+        navigate('/mypage');
+      })
+      .catch(error => {
+        console.error('강아지 정보 업데이트 중 오류 발생', error);
+        // 오류 처리가 필요한 경우 처리
+      });
+  };
+
+
 
   const handleUseridChange = (e) => {
     setUserid(e.target.value);
@@ -120,6 +163,12 @@ export default function MypageEdit() {
       setPasswordError(false);
     }
   };
+
+  const handleCancel = () => {
+    // 취소 버튼 클릭 시 뒤로가기
+    navigate(-1);
+  };
+
 
   return (
     <main id='mypage' className='mypageedit'>
@@ -343,7 +392,7 @@ export default function MypageEdit() {
           <div className='btn_box2'>
             <button className='unregister_btn' type='submit'>회원 탈퇴</button>
             <div>
-              <button className='completion_btn' type='submit'>완료</button>
+              <button className='completion_btn' type='submit' onClick={dogInfoUpdate}>완료</button>
               <button className='cancel_btn' type='reset' onClick={handleCancel}>취소</button>
             </div>
           </div>

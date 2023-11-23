@@ -100,7 +100,7 @@ export default function MyPageMainPage() {
             </div>
             <img className='idcard_stamp' src='./img/mypage/idcard_stamp.png' alt="학생증 도장" />
             <div className='idcard_bodycontainer'>
-              {idcardInfo.length > 0 && !idcardInfo[0].dogimg ? <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' /> : <img className='idcard_dog' src={idcardInfo.length > 0 && idcardInfo[0].dogimg ? String(idcardInfo[0].dogimg) : ''} alt='강아지 사진' />}
+              {idcardInfo.length > 0 && !idcardInfo[0].dogImg ? <img className='idcard_dog' src='./img/mypage/profileicon.png' alt='기본프로필' /> : <img className='idcard_dog' src={idcardInfo.length > 0 && idcardInfo[0].dogImg ? String(idcardInfo[0].dogImg) : ''} alt='강아지 사진' />}
               <div className='idcard_info'>
                 <div>
                   <h2 className='idcard_infotext'>이름 :</h2>
