@@ -61,33 +61,36 @@ export default function DstaMainPage() {
       });
   }, []);
 
-//백엔드랑 연결 데이터 시작
+  //백엔드랑 연결 데이터 시작
 
-const [writeData, setWriteData] = useState([]);
+  const [writeData, setWriteData] = useState([]);
 
-//댕스타 작성 데이터(백엔드 연결)
-useEffect(() => {
-  axios({
-    url: '/dsta/dstaMainPage',
-    method: 'GET'
-  })
-    .then((res) => {
-      setWriteData(res.data);
+  //댕스타 작성 데이터(백엔드 연결)
+  useEffect(() => {
+    axios({
+      url: '/dsta/dstaMainPage',
+      method: 'GET'
     })
-    .catch((err) => {
-      console.log(`AXIOS 실패! ${err}`);
-    });
-}, []);
+      .then((res) => {
+        setWriteData(res.data);
+      })
+      .catch((err) => {
+        console.log(`AXIOS 실패! ${err}`);
+      });
+  }, []);
 
-console.log(writeData);
 
-// writeData를 dstaMain과 결합
+  // writeData를 dstaMain과 결합
 
-useEffect(() => {
-  setdstaMain((prevDstaMain) => [...writeData, ...prevDstaMain]);
-}, [writeData]);
+  useEffect(() => {
+    setdstaMain((prevDstaMain) => [...writeData, ...prevDstaMain]);
+  }, [writeData]);
 
-// 백엔드 연결 데이터 끝
+  // 백엔드 연결 데이터 끝
+
+
+  //선택된 댕스타 항목의 포스트번호 저장
+  const [selectedPostNumber, setSelectedPostNumber] = useState(null);
 
   // swiper
   const swiperOptions = {
@@ -101,7 +104,9 @@ useEffect(() => {
   // 모달
   const [isModalOpen, setModalOpen] = useState(false);
 
-  const openModal = () => {
+  //선택된 포스트의 번호를 설정하고 모달 열기, 해당 값은 prop으로 전달됨
+  const openModal = (postNumber) => {
+    setSelectedPostNumber(postNumber);
     setModalOpen(true);
     document.body.classList.add('modal-open');
   };
@@ -148,7 +153,7 @@ useEffect(() => {
               {dstaMain && dstaSwiperData.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <div className='weekly_photobox'>
-                  <img src={item.imgSrc} alt="댕스타 조회수 사진" />
+                    <img src={item.imgSrc} alt="댕스타 조회수 사진" />
                   </div>
                 </SwiperSlide>
               ))}
@@ -179,35 +184,35 @@ useEffect(() => {
             // a태그 href에 맞는 데이터값 설정
             <a href="#!" key={item.id}>
               <div className='dstamain_photobox'>
-              <div className='dstamain_imgbox'>
-                <img src={item.imgSrc || item.dstarThumbnail} onClick={openModal} alt="강아지 게시글 사진" />
+                <div className='dstamain_imgbox'>
+                  <img src={item.imgSrc || item.dstarThumbnail} onClick={() => openModal(item.dstarNo)} alt="강아지 게시글 사진" />
                 </div>
                 <div className='dstamain_profile'>
-                  <img src={item.profileImgSrc || "./img/dsta/best-dsta-profile.png" } alt="프로필 사진" />
-                  <span>{item.userId}</span>
+                  <img src={item.profileImgSrc || "./img/dsta/best-dsta-profile.png"} alt="프로필 사진" />
+                  <span>{item.userId || "막둥이" }</span>
                 </div>
                 <div className='dstamain_phototextbox'>
                   <span>{item.title || item.dstarText}</span>
                 </div>
                 <div className='dstamain_watchbox'>
                   <div className="cnt-box">
-                  <img src="./img/dsta/watch.png" alt="조회수 아이콘" />
-                  <span>{item.viewCount || item.dstarLike}</span>
-                  <img src="./img/dsta/heart.png" alt="좋아요 아이콘" />
-                  <span>{item.likeCount || item.dstarHit}</span>
-                  <img src="./img/dsta/coments.png" alt="댓글 아이콘" />
-                  <span>{item.commentCount || item.dstarComment}</span>
+                    <img src="./img/dsta/watch.png" alt="조회수 아이콘" />
+                    <span>{item.viewCount || item.dstarLike}</span>
+                    <img src="./img/dsta/heart.png" alt="좋아요 아이콘" />
+                    <span>{item.likeCount || item.dstarHit}</span>
+                    <img src="./img/dsta/coments.png" alt="댓글 아이콘" />
+                    <span>{item.commentCount || item.dstarComment}</span>
                   </div>
                   <div className="time-box">
-                  <img src="./img/dsta/timer.png" alt="시간 아이콘" />
-                  <span>{item.timerCount}</span>
+                    <img src="./img/dsta/timer.png" alt="시간 아이콘" />
+                    <span>{item.timerCount}</span>
                   </div>
 
 
-                  
+
                 </div>
               </div>
-              {isModalOpen && <DstaMainModal closeModal={closeModal} />}
+              {isModalOpen && <DstaMainModal closeModal={closeModal} selectedPostNumber={selectedPostNumber} />}
             </a>))}
         </div>
         {/* 댕스타 페이징 */}
