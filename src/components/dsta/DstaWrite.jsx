@@ -1,8 +1,13 @@
 import React from 'react';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function DstaWrite() {
+  const navigate = useNavigate();
+
   //썸네일 업로드, 이미지 미리보기 기능
   const [thumbnailFile, setThumbnailFile] = useState(null);
   const upload = useRef();
@@ -14,19 +19,19 @@ export default function DstaWrite() {
     };
   }
 
- //텍스트 데이터
+  //텍스트 데이터
   const [textData, setTextData] = useState('');
   const handleTextData = (e) => {
-      const data = e.target.value;
-      setTextData(data);
-    }
-  
- //해시태그 데이터
+    const data = e.target.value;
+    setTextData(data);
+  }
+
+  //해시태그 데이터
   const [hashTag, setHashTag] = useState('');
   const handleHashTag = (e) => {
-      const data = e.target.value;
-      setHashTag(data);
-    }
+    const data = e.target.value;
+    setHashTag(data);
+  }
 
   //사진추가 업로드, 이미지 미리보기 기능
   const [addFiles, setAddFiles] = useState([]);
@@ -47,12 +52,36 @@ export default function DstaWrite() {
     setAddFiles(updatedFiles);
   }
 
-  //폼 제출
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(textData, hashTag, thumbnailFile, addFiles);
-    //제출할때 필요한 코드 추후 작성
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // JSON 데이터 생성
+    const data = {
+      "userid": 'admin',
+      "dstarText": textData,
+      "dstarTag": hashTag,
+      "dstarThumbnail": thumbnailFile,
+    };
+
+    // 추가된 파일이 있다면 json데이터에 추가
+    for (let index = 0; index < addFiles.length; index++) {
+      data[`dstarImg${index + 1}`] = addFiles[index];
+    }
+
+    // Axios를 사용하여 POST 요청
+    try {
+      const response = await axios.post('/dsta/dstaWrite', data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log('Dsta inserted successfully:', response.data);
+      navigate('/dsta');
+    } catch (error) {
+      console.error('Error inserting Dsta:', error);
+      // 에러 처리 로직 추가
+    }
+  };
 
   return (
 
@@ -99,7 +128,7 @@ export default function DstaWrite() {
           <div className='rightbox'>
             <div className='input_contentsbox'>
               <textarea className='textcontent' placeholder='내용을 입력하세요.' onChange={handleTextData} />
-              <input className='tagcontent' type='text' placeholder='#해시태그입력' onChange={handleHashTag}/>
+              <input className='tagcontent' type='text' placeholder='#해시태그입력' onChange={handleHashTag} />
               <div className='addphoto_box'>
                 {addFiles.map((file, index) => {
                   return (
