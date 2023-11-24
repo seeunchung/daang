@@ -61,6 +61,34 @@ export default function DstaMainPage() {
       });
   }, []);
 
+//백엔드랑 연결 데이터 시작
+
+const [writeData, setWriteData] = useState([]);
+
+//댕스타 작성 데이터(백엔드 연결)
+useEffect(() => {
+  axios({
+    url: '/dsta/dstaMainPage',
+    method: 'GET'
+  })
+    .then((res) => {
+      setWriteData(res.data);
+    })
+    .catch((err) => {
+      console.log(`AXIOS 실패! ${err}`);
+    });
+}, []);
+
+console.log(writeData);
+
+// writeData를 dstaMain과 결합
+
+useEffect(() => {
+  setdstaMain((prevDstaMain) => [...writeData, ...prevDstaMain]);
+}, [writeData]);
+
+// 백엔드 연결 데이터 끝
+
   // swiper
   const swiperOptions = {
     loop: true,
@@ -152,23 +180,23 @@ export default function DstaMainPage() {
             <a href="#!" key={item.id}>
               <div className='dstamain_photobox'>
               <div className='dstamain_imgbox'>
-                <img src={item.imgSrc} onClick={openModal} alt="강아지 게시글 사진" />
+                <img src={item.imgSrc || item.dstarThumbnail} onClick={openModal} alt="강아지 게시글 사진" />
                 </div>
                 <div className='dstamain_profile'>
-                  <img src={item.profileImgSrc} alt="프로필 사진" />
+                  <img src={item.profileImgSrc || "./img/dsta/best-dsta-profile.png" } alt="프로필 사진" />
                   <span>{item.userId}</span>
                 </div>
                 <div className='dstamain_phototextbox'>
-                  <span>{item.title}</span>
+                  <span>{item.title || item.dstarText}</span>
                 </div>
                 <div className='dstamain_watchbox'>
                   <div className="cnt-box">
                   <img src="./img/dsta/watch.png" alt="조회수 아이콘" />
-                  <span>{item.viewCount}</span>
+                  <span>{item.viewCount || item.dstarLike}</span>
                   <img src="./img/dsta/heart.png" alt="좋아요 아이콘" />
-                  <span>{item.likeCount}</span>
+                  <span>{item.likeCount || item.dstarHit}</span>
                   <img src="./img/dsta/coments.png" alt="댓글 아이콘" />
-                  <span>{item.commentCount}</span>
+                  <span>{item.commentCount || item.dstarComment}</span>
                   </div>
                   <div className="time-box">
                   <img src="./img/dsta/timer.png" alt="시간 아이콘" />
