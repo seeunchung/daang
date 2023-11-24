@@ -15,9 +15,9 @@ export default function DstaMainModal({ closeModal, selectedPostNumber }) {
   const [comment, setComment] = useState('');
   const [isCommentEntered, setIsCommentEntered] = useState(false);
   const [like, setLike] = useState(false);
-  const [commentLike, setCommentLike] = useState(false);
   const [dstaModal, setDstaModal] = useState([]);
   const [commentLikes, setCommentLikes] = useState(Array(dstaModal.length).fill(false));
+  const [loading, setLoading] = useState(false); // 새로운 로딩 상태 변수 추가
 
 
   //댕스타 모달 백엔드 연결
@@ -26,12 +26,16 @@ export default function DstaMainModal({ closeModal, selectedPostNumber }) {
   useEffect(() => {
     // selectedPostNumber를 사용하여 해당 번호의 데이터를 조회
     if (selectedPostNumber) {
+      setLoading(true); // 로딩 시작
       axios.get(`/dsta/getDstaByDstarNo/${selectedPostNumber}`)
         .then((res) => {
           setPostData(res.data);
         })
         .catch((err) => {
           console.error(`데이터 조회 실패: ${err}`);
+        })
+        .finally(() => {
+          setLoading(false); // 로딩 종료
         });
     }
   }, [selectedPostNumber]);
@@ -105,7 +109,9 @@ export default function DstaMainModal({ closeModal, selectedPostNumber }) {
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
-      {postData ? (
+      {loading ? (
+        <p>Loading...</p> // 로딩 중일 때의 UI
+      ) : postData ? (
         <DstaDetail postData={postData} closeModal={closeModal} />
       ) : (
         dstaModal && dstaModal.map((item, index) => (
