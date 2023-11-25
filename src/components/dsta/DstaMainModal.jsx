@@ -9,7 +9,7 @@ import DstaDetail from './DstaDetail';
 
 SwiperCore.use([Navigation, Pagination]);
 
-export default function DstaMainModal({ closeModal, selectedPostNumber }) {
+export default function DstaMainModal({ closeModal, selectedPostNumber, setWriteData }) {
 
   const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
   const [comment, setComment] = useState('');
@@ -22,7 +22,6 @@ export default function DstaMainModal({ closeModal, selectedPostNumber }) {
 
   //댕스타 모달 백엔드 연결
   const [postData, setPostData] = useState(null);
-  console.log(selectedPostNumber);
   useEffect(() => {
     // selectedPostNumber를 사용하여 해당 번호의 데이터를 조회
     if (selectedPostNumber) {
@@ -112,7 +111,7 @@ export default function DstaMainModal({ closeModal, selectedPostNumber }) {
       {loading ? (
         <p>Loading...</p> // 로딩 중일 때의 UI
       ) : postData ? (
-        <DstaDetail postData={postData} closeModal={closeModal} />
+        <DstaDetail postData={postData} closeModal={closeModal} setWriteData={setWriteData}/>
       ) : (
         dstaModal && dstaModal.map((item, index) => (
           <a className='axios' href="#!" key={item.id}>
@@ -206,7 +205,7 @@ export default function DstaMainModal({ closeModal, selectedPostNumber }) {
             </div>
             {
               isSettingsModalOpen && (
-                <DstaPostMenuModal closeModal={handleCloseSettingsModal} />
+                <DstaPostMenuModal closeModal={handleCloseSettingsModal} setWriteData={setWriteData}/>
               )
             }
           </a>

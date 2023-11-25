@@ -9,10 +9,13 @@ SwiperCore.use([Navigation, Pagination])
 
 export default function DstaMainPage() {
 
+
   //이미지 데이터를 저장할 상태
   const [dstaMain, setdstaMain] = useState([]);
+  const [writeData, setWriteData] = useState([]);
   const [dstaSwiperData, setDstaSwiperData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
+
 
   // 페이징 시작
   const itemsPerPage = 16; // 한 페이지당 보여질 아이템 수
@@ -62,9 +65,6 @@ export default function DstaMainPage() {
   }, []);
 
   //백엔드랑 연결 데이터 시작
-
-  const [writeData, setWriteData] = useState([]);
-
   //댕스타 작성 데이터(백엔드 연결)
   useEffect(() => {
     axios({
@@ -81,8 +81,8 @@ export default function DstaMainPage() {
 
 
   // writeData를 dstaMain과 결합
-
   useEffect(() => {
+    console.log(writeData);
     setdstaMain((prevDstaMain) => [...writeData, ...prevDstaMain]);
   }, [writeData]);
 
@@ -112,6 +112,7 @@ export default function DstaMainPage() {
   };
 
   const closeModal = () => {
+    console.log("모달 닫기");
     setModalOpen(false);
     document.body.classList.remove('modal-open');
   };
@@ -181,15 +182,14 @@ export default function DstaMainPage() {
         {/* 댕스타 메인 데이터 */}
         <div className='dstamain_pagecontainer'>
           {currentItems.map((item, index) => (
-            // a태그 href에 맞는 데이터값 설정
-            <a href="#!" key={item.id}>
+            <div key={index}>
               <div className='dstamain_photobox'>
                 <div className='dstamain_imgbox'>
                   <img src={item.imgSrc || item.dstarThumbnail} onClick={() => openModal(item.dstarNo)} alt="강아지 게시글 사진" />
                 </div>
                 <div className='dstamain_profile'>
                   <img src={item.profileImgSrc || "./img/dsta/best-dsta-profile.png"} alt="프로필 사진" />
-                  <span>{item.userId || "막둥이" }</span>
+                  <span>{item.userId || "막둥이"}</span>
                 </div>
                 <div className='dstamain_phototextbox'>
                   <span>{item.title || item.dstarText}</span>
@@ -207,13 +207,10 @@ export default function DstaMainPage() {
                     <img src="./img/dsta/timer.png" alt="시간 아이콘" />
                     <span>{item.timerCount}</span>
                   </div>
-
-
-
                 </div>
               </div>
-              {isModalOpen && <DstaMainModal closeModal={closeModal} selectedPostNumber={selectedPostNumber} />}
-            </a>))}
+              {isModalOpen && <DstaMainModal closeModal={closeModal} selectedPostNumber={selectedPostNumber} setWriteData={setWriteData} />}
+            </div>))}
         </div>
         {/* 댕스타 페이징 */}
         <div className='dstamain_pagebox'>

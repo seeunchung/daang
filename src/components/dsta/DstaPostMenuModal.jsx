@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function DstaDeleteConfirmation({ onConfirm, onCancel }) {
   return (
@@ -22,10 +23,23 @@ export default function DstaPostMenModal({ closeModal, dstarNo }) {
     setDeleteConfirmationOpen(true);
   };
 
-  const handleConfirmDelete = () => {
-    // 여기에서 삭제 로직을 추가하세요.
-    setDeleteConfirmationOpen(false);
-    closeModal();
+  const handleConfirmDelete = async () => {
+    try {
+      const deleteUrl = `/dsta/deleteDsta/${dstarNo}`;
+      // Axios를 사용하여 DELETE 요청 보내기
+      await axios.delete(deleteUrl, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      // 요청이 성공적으로 처리되었을 때의 로직
+      closeModal();
+      // 데이터 삭제 후 페이지 새로고침
+      window.location.reload();
+    } catch (error) {
+      // 요청이 실패했을 때의 오류 처리
+      console.error('삭제 요청 중 오류 발생:', error);
+    }
   };
 
   const handleCancelDelete = () => {

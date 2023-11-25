@@ -6,12 +6,11 @@ import DstaPostMenuModal from './DstaPostMenuModal';
 
 SwiperCore.use([Navigation, Pagination]);
 
-export default function DstaDetail({ postData, closeModal }) {
+export default function DstaDetail({ postData, closeModal,setWriteData}) {
   const [isSettingsModalOpen, setSettingsModalOpen] = useState(false);
   const [comment, setComment] = useState('');
   const [isCommentEntered, setIsCommentEntered] = useState(false);
   const [like, setLike] = useState(false);
-  const [commentLike, setCommentLike] = useState(false);
   const [dstaModal, setDstaModal] = useState([]);
   const [commentLikes, setCommentLikes] = useState(Array(dstaModal.length).fill(false));
 
@@ -31,12 +30,6 @@ export default function DstaDetail({ postData, closeModal }) {
 
   const handleOpenSettingsModal = () => {
     setSettingsModalOpen(true);
-  };
-
-  const handleCloseSettingsModal = (e) => {
-    e.stopPropagation();
-
-    setSettingsModalOpen(false);
   };
 
   const handleCommentChange = (e) => {
@@ -65,7 +58,7 @@ export default function DstaDetail({ postData, closeModal }) {
     slidesPerView: 1
   };
   return (
-    <a className='axios' href="#!" key={postData.dstarNo}>
+    <div className='axios' href="#!" key={postData.dstarNo}>
       <button onClick={closeModal} className="close-button">X</button>
       <div className="modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-content">
@@ -138,9 +131,9 @@ export default function DstaDetail({ postData, closeModal }) {
       </div>
       {
         isSettingsModalOpen && (
-          <DstaPostMenuModal closeModal={handleCloseSettingsModal} dstarNo = {dstarNo}/>
+          <DstaPostMenuModal closeModal={closeModal} setWriteData={setWriteData} dstarNo = {dstarNo}/>
         )
       }
-    </a>
+    </div>
   );
 };
