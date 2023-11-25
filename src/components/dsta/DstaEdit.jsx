@@ -1,26 +1,41 @@
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export default function DstaEdit() {
+
+  //폼 제출 후 페이지 이동
+  const navigate = useNavigate();
+
+  //쿼리스티링에서 dstarNo 값 가져오기
+  const location = useLocation();
+  const dstarNo = new URLSearchParams(location.search).get('dstarNo');
+
+
   //데이터받아오기
   useEffect(() => {
     axios({
-      url: './data/dstaEdit.json',
+      url: `/dsta/getDstaByDstarNo/${dstarNo}`,
       method: 'GET'
     })
       .then((res) => {
-        const data = res.data.dstaDetail;
-        setThumbnailFile(data.thumbnail);
-        setTextData(data.text);
-        setHashTag(data.hashtag);
-        setAddFiles(data.photo);
+        const data = res.data;
+        setThumbnailFile(data.dstarThumbnail);
+        setTextData(data.dstarText);
+        setHashTag(data.dstarTag);
+        const img1 = data.dstarImg1;
+        const img2 = data.dstarImg2;
+        const img3 = data.dstarImg3;
+        const img4 = data.dstarImg4;
+        // data.dstarImg1부터 data.dstarImg4까지 모두 null 또는 빈 문자열인 경우 빈 배열로 설정
+        const imagesArray = [img1, img2, img3, img4].filter(img => img !== null && img !== '');
+        setAddFiles(imagesArray);
       })
       .catch((err) => {
         console.log(`AXIOS 실패! ${err}`);
       });
-  }, []);
+  }, [dstarNo]);
 
 
   //썸네일 업로드, 이미지 미리보기 기능
@@ -67,12 +82,37 @@ export default function DstaEdit() {
     setAddFiles(updatedFiles);
   }
 
-  //폼 제출
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("제출")
-    //제출할때 필요한 코드 추후 작성
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // JSON 데이터 생성
+    const data = {
+      "dstarNo": dstarNo,
+      "userid" : "admin",
+      "dstarText": textData,
+      "dstarTag": hashTag,
+      "dstarThumbnail": thumbnailFile,
+    };
+
+    // 추가된 파일이 있다면 json데이터에 추가
+    for (let index = 0; index < addFiles.length; index++) {
+      data[`dstarImg${index + 1}`] = addFiles[index];
+    }
+
+    // Axios를 사용하여 POST 요청
+    try {
+      const response = await axios.put('/dsta/dstarEdit', data, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log('Dsta inserted successfully:', response.data);
+      navigate('/dsta');
+    } catch (error) {
+      console.error('Error inserting Dsta:', error);
+      // 에러 처리 로직 추가
+    }
+  };
 
   return (
 

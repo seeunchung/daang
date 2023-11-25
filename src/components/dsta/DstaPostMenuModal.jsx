@@ -15,7 +15,7 @@ function DstaDeleteConfirmation({ onConfirm, onCancel }) {
   );
 }
 
-export default function DstaPostMenModal({ closeModal }) {
+export default function DstaPostMenModal({ closeModal, dstarNo }) {
   const [isDeleteConfirmationOpen, setDeleteConfirmationOpen] = useState(false);
 
   const handleDeleteClick = () => {
@@ -43,7 +43,7 @@ export default function DstaPostMenModal({ closeModal }) {
         ) : (
           <>
             <button className='deleteContent' onClick={handleDeleteClick}>삭제</button>
-            <Link to='/dsta-edit'><button className='editContent'>수정</button></Link>
+            <Link to={`/dsta-edit?dstarNo=${dstarNo}`}><button className='editContent'>수정</button></Link>
             <button className='shareContent'>URL 복사하기</button>
             <button className='undoBtn' onClick={closeModal}>취소</button>
           </>

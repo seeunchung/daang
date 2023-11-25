@@ -15,6 +15,7 @@ export default function DstaDetail({ postData, closeModal }) {
   const [dstaModal, setDstaModal] = useState([]);
   const [commentLikes, setCommentLikes] = useState(Array(dstaModal.length).fill(false));
 
+  const dstarNo = postData.dstarNo;
   const dstaImgs = [postData.dstarThumbnail,postData.dstarImg1, postData.dstarImg2, postData.dstarImg3, postData.dstarImg4];
 
   const handleLikeClick = () => {
@@ -137,7 +138,7 @@ export default function DstaDetail({ postData, closeModal }) {
       </div>
       {
         isSettingsModalOpen && (
-          <DstaPostMenuModal closeModal={handleCloseSettingsModal} />
+          <DstaPostMenuModal closeModal={handleCloseSettingsModal} dstarNo = {dstarNo}/>
         )
       }
     </a>
