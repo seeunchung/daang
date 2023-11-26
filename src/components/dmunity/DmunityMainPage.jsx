@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Notification from './Notification';
 
 function getCategoryImage(category) {       //카테고리 별 아이콘 설정
   switch (category) {
@@ -28,6 +29,7 @@ export default function DmunityMainPage() {
   const [isEtcToggle, setIsEtcToggle] = useState(false);
 
   const [postList, setPostList] = useState([]);
+  const [pinnedPost, setPinnedPost] = useState(null); // 고정 글 상태 추가
   const [inputValue, setInputValue] = useState(''); //입력 값 관리
   const [filteredPosts, setFilteredPosts] = useState([]);
 
@@ -39,6 +41,9 @@ export default function DmunityMainPage() {
       // 성공
       .then((res) => {
         setPostList(res.data);
+        // 서버에서 데이터를 받아온 후 pinnedPost를 찾기
+        const foundPinnedPost = res.data.find((post) => post.dmunityNo === 1);
+        setPinnedPost(foundPinnedPost);
       })
       // 에러
       .catch((err) => {
@@ -93,8 +98,6 @@ export default function DmunityMainPage() {
 
     return str;
   }
-
-
 
   //날짜 포맷 변환 함수
   function getFormattedDate(dateString) {
@@ -162,6 +165,31 @@ export default function DmunityMainPage() {
           <div className='sorting'>최신순</div>
         </div>
         <div className='row2'>
+          {/**postbox 상단에 고정 하는 공지사항 게시글 */}
+          {pinnedPost && (
+            <div id="post">
+              <div className='postLeft'>
+                <img className="category" src={getCategoryImage(pinnedPost.dmunityCategory)} alt={pinnedPost.dmunityCategory} />
+              </div>
+              <div className='postMiddle'>
+                <Link to={`/dmunity-notification`}>
+                  <div className="title">{strCut(pinnedPost.dmunityTitle)}</div>
+                  <div className="contents">
+                    {removeHtmlTagsAndCut(pinnedPost.dmunityText)}
+                  </div>
+                  <div className="info">
+                    <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{pinnedPost.dmunityHit}</p></span>
+                    <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{pinnedPost.dmunityLike}</p></span>
+                    <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{pinnedPost.dmunityComments}</p></span>
+                  </div>
+                </Link>
+              </div>
+              <div className='postRight'>
+                <div className="date">{getFormattedDate(pinnedPost.dmunityDate)}</div>
+                <div className='userid'>{pinnedPost.userid}</div>
+              </div>
+            </div>
+          )}
           {
             // 선택한 카테고리에 따라 해당 카테고리인 게시글을 보여줌
             (isEatToggle || isSickToggle || isPlayToggle || isHowToggle || isEtcToggle)
