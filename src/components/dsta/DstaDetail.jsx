@@ -94,7 +94,7 @@ export default function DstaDetail({ postData, closeModal,setWriteData}) {
           </div>
           <div className='words'>
             <div className='profile'>
-              <img src="./img/dsta/best-dsta-profile.png" alt="프로필 사진" />
+              <img src="./img/dsta/dogprofile.png" alt="프로필 사진" />
               <div className='profileName'>막둥이</div>
               <div className='settings'>
                 <button className='settingsBtn' onClick={handleOpenSettingsModal}>

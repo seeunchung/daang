@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function DstaDeleteConfirmation({ onConfirm, onCancel }) {
@@ -17,6 +17,7 @@ function DstaDeleteConfirmation({ onConfirm, onCancel }) {
 }
 
 export default function DstaPostMenModal({ closeModal, dstarNo }) {
+  const navigate = useNavigate();
   const [isDeleteConfirmationOpen, setDeleteConfirmationOpen] = useState(false);
 
   const handleDeleteClick = () => {
@@ -46,6 +47,14 @@ export default function DstaPostMenModal({ closeModal, dstarNo }) {
     setDeleteConfirmationOpen(false);
   };
 
+  const handleEditClick = () => {
+    closeModal(); // 모달 닫기
+    /** 수정 페이지로 이동시 스크롤 사라지는 것 방지 */
+    document.body.style.overflow = 'auto'; // 또는 'visible'
+    document.documentElement.style.overflow = 'auto'; // 추가
+    navigate(`/dsta-edit?dstarNo=${dstarNo}`); // 페이지 이동
+  };
+
   return (
     <div className="settings-modal-container" onClick={closeModal}>
       <div className="settings-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -57,7 +66,7 @@ export default function DstaPostMenModal({ closeModal, dstarNo }) {
         ) : (
           <>
             <button className='deleteContent' onClick={handleDeleteClick}>삭제</button>
-            <Link to={`/dsta-edit?dstarNo=${dstarNo}`}><button className='editContent'>수정</button></Link>
+            <button className='editContent' onClick={handleEditClick}>수정</button>
             <button className='shareContent'>URL 복사하기</button>
             <button className='undoBtn' onClick={closeModal}>취소</button>
           </>

@@ -75,8 +75,10 @@ export default function DstaMainModal({ closeModal, selectedPostNumber, setWrite
   };
 
   const handleCloseSettingsModal = (e) => {
-    e.stopPropagation();
-
+    if (e) {
+      e.stopPropagation();
+    }
+  
     setSettingsModalOpen(false);
   };
 
