@@ -1,13 +1,42 @@
 import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import axios from 'axios';
 
 export default function DmunityEdit() {
-  const [inputValue, setInputValue] = useState('강아지 영양제 뭐 먹이시나요'); //제목 입력값 관리
-  const [editorData, setEditorData] = useState('<p>강아지 나이랑 영양제 좀 알려주세요</p>'); // 에디터 입력값 관리
-  const [selectedCategory, setSelectedCategory] = useState('eat'); // 카테고리 입력값 관리
+  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState(''); //제목 입력값 관리
+  const [editorData, setEditorData] = useState(''); // 에디터 입력값 관리
+  const [selectedCategory, setSelectedCategory] = useState(''); // 카테고리 입력값 관리
+
+  //쿼리스티링에서 dmunityNo 값 가져오기
+  const location = useLocation();
+  const dmunityNo = new URLSearchParams(location.search).get('dmunityNo');
+
+
+  const [post, setPost] = useState([]); // dmunityNo으로 가지고 온 데이터
+
+  useEffect(() => {
+    axios({
+      url: `/dmunity/dmunityDetail/${dmunityNo}`,
+      method: 'GET'
+    })
+      // 성공
+      .then((res) => {
+        setSelectedCategory(res.data.dmunityCategory);
+        setInputValue(res.data.dmunityTitle);
+        setEditorData(res.data.dmunityText);
+        console.log(res.data)
+      })
+      // 에러
+      .catch((err) => {
+        console.log(`AXIOS 실패!${err}`);
+      });
+  }, []);
+
+
 
 
   //제목 값 변경 시 작동
@@ -27,12 +56,23 @@ export default function DmunityEdit() {
   };
 
   //폼 전송 기능
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('제목:', inputValue);
-    console.log('내용:', editorData);
-    console.log('카테고리:', selectedCategory);
-    // 데이터를 서버로 보내는 로직 추가
+
+    try {
+      // 서버로 데이터 전송
+      const response = await axios.put(`/dmunity/dmunityEdit/${dmunityNo}`, {
+        dmunityCategory: selectedCategory,
+        dmunityTitle: inputValue,
+        dmunityText: editorData,
+      });
+
+      // 성공 시 처리
+      navigate(`/dmunity-detail?dmunityNo=${dmunityNo}`)
+    } catch (error) {
+      // 실패 시 처리
+      console.error('에러 발생:', error);
+    }
   };
 
 
@@ -42,11 +82,11 @@ export default function DmunityEdit() {
         <option key="category" value="category">
           카테고리
         </option>
-        <option key="eat" value="eat">먹어요</option>
-        <option key="sick" value="sick">아파요</option>
-        <option key="play" value="play">놀아요</option>
-        <option key="how" value="how">어때요</option>
-        <option key="etc" value="etc">기타</option>
+        <option key="eat" value={1}>먹어요</option>
+        <option key="sick" value={2}>아파요</option>
+        <option key="play" value={3}>놀아요</option>
+        <option key="how" value={4}>어때요</option>
+        <option key="etc" value={5}>기타</option>
       </select>
     );
   };
@@ -56,7 +96,7 @@ export default function DmunityEdit() {
     <main id="main" className='dmunitywrite_write'>
       <div className='dmunitywrite_container'>
         <h2 className='dmunitywrite_title'>
-        <img src='./img/dmunity/writing.png' alt='수정아이콘' />
+          <img src='./img/dmunity/writing.png' alt='수정아이콘' />
           댕뮤니티 수정하기
         </h2>
         <form className='dmunitywrite_form' onSubmit={handleSubmit}>

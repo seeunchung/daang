@@ -1,11 +1,13 @@
 import React from 'react';
-import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import Button from "./Button";
+import axios from 'axios';
+
 
 export default function DmunityWrite() {
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState(''); //제목 입력값 관리
   const [editorData, setEditorData] = useState(''); // 에디터 입력값 관리
   const [selectedCategory, setSelectedCategory] = useState(''); // 카테고리 입력값 관리
@@ -28,12 +30,24 @@ export default function DmunityWrite() {
   };
 
   //폼 전송 기능
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('제목:', inputValue);
-    console.log('내용:', editorData);
-    console.log('카테고리:', selectedCategory);
-    // 데이터를 서버로 보내는 로직 추가
+
+    try {
+      // 서버로 데이터 전송
+      const response = await axios.post('/dmunity/dmunityWrite', {
+        userid: '김땡땡',
+        dmunityCategory: selectedCategory,
+        dmunityTitle: inputValue,
+        dmunityText: editorData,
+      });
+
+      // 성공 시 처리
+      navigate('/dmunity')
+    } catch (error) {
+      // 실패 시 처리
+      console.error('에러 발생:', error);
+    }
   };
 
 
@@ -43,15 +57,14 @@ export default function DmunityWrite() {
         <option key="category" value="category">
           카테고리
         </option>
-        <option key="eat" value="eat">먹어요</option>
-        <option key="sick" value="sick">아파요</option>
-        <option key="play" value="play">놀아요</option>
-        <option key="how" value="how">어때요</option>
-        <option key="etc" value="etc">기타</option>
+        <option key="eat" value= {1}>먹어요</option>
+        <option key="sick" value= {2}>아파요</option>
+        <option key="play" value={3}>놀아요</option>
+        <option key="how" value={4}>어때요</option>
+        <option key="etc" value={5}>기타</option>
       </select>
     );
   };
-
   return (
 
     <main id="main" className='dmunitywrite_write'>

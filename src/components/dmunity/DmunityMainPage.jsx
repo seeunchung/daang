@@ -4,15 +4,15 @@ import axios from 'axios';
 
 function getCategoryImage(category) {       //카테고리 별 아이콘 설정
   switch (category) {
-    case '먹어요':
+    case 1:
       return '../img/dmunity/eat.png';
-    case '아파요':
+    case 2:
       return '../img/dmunity/sick.png';
-    case '놀아요':
+    case 3:
       return '../img/dmunity/play.png';
-    case '어때요':
+    case 4:
       return '../img/dmunity/how.png';
-    case '기타':
+    case 5:
       return '../img/dmunity/etc.png';
     default:
       return '../img/dmunity/notification.png';
@@ -33,12 +33,12 @@ export default function DmunityMainPage() {
 
   useEffect(() => {
     axios({
-      url: './data/dmunity.json',
+      url: 'http://localhost:8080/dmunity/dmunityMainPage',
       method: 'GET'
     })
       // 성공
       .then((res) => {
-        setPostList(res.data.dmunityMain)
+        setPostList(res.data);
       })
       // 에러
       .catch((err) => {
@@ -68,11 +68,11 @@ export default function DmunityMainPage() {
 
   useEffect(() => {
     const updatedFilteredPosts = postList.filter((post) => {
-      if (isEatToggle && post.category === '먹어요') return true;
-      if (isSickToggle && post.category === '아파요') return true;
-      if (isPlayToggle && post.category === '놀아요') return true;
-      if (isHowToggle && post.category === '어때요') return true;
-      if (isEtcToggle && post.category === '기타') return true;
+      if (isEatToggle && post.dmunityCategory === 1) return true;
+      if (isSickToggle && post.dmunityCategory === 2) return true;
+      if (isPlayToggle && post.dmunityCategory === 3) return true;
+      if (isHowToggle && post.dmunityCategory === 4) return true;
+      if (isEtcToggle && post.dmunityCategory === 5) return true;
       return false;
     });
     setFilteredPosts(updatedFilteredPosts);
@@ -83,13 +83,45 @@ export default function DmunityMainPage() {
   }
 
   function strCut(str) {
-    if (str.length > 45) {
-      return str.substr(0, 45) + '...'
+    if (!str || str.length === 0) {
+      return ''; // 또는 다른 기본값을 반환할 수 있음
     }
-    return str
+
+    if (str.length > 45) {
+      return str.substr(0, 45) + '...';
+    }
+
+    return str;
   }
 
-  const [eatImg, setEatImg] = useState("./img/eat.png")
+
+
+  //날짜 포맷 변환 함수
+  function getFormattedDate(dateString) {
+    const dateObject = new Date(dateString);
+    const year = dateObject.getFullYear();
+    const month = (dateObject.getMonth() + 1).toString().padStart(2, '0');
+    const day = dateObject.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  //Html 태그 제거 함수
+  const removeHtmlTagsAndCut = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const textContent = doc.body.textContent || "";
+
+    // 적용된 strCut 함수를 이용하여 글자 수 제한
+    const maxLength = 45;
+    const trimmedText = textContent.substring(0, maxLength);
+
+    if (textContent.length > maxLength) {
+      return trimmedText + '...';
+    }
+
+    return trimmedText;
+  };
+
+
 
   // 페이징 시작
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
@@ -136,21 +168,24 @@ export default function DmunityMainPage() {
               ? currentItems.map((post, idx) => (
                 <div key={idx} id="post">
                   <div className='postLeft'>
-                    <img className="category" src={getCategoryImage(post.category)} alt={post.category} />
+                    <img className="category" src={getCategoryImage(post.dmunityCategory)} alt={post.dmunityCategory} />
                   </div>
                   <div className='postMiddle'>
-                    <Link to='/dmunity-detail'>
-                      <div className="title">{strCut(post.title)}</div>
-                      <div className="contents">{strCut(post.contents)}</div>
+                    <Link to={`/dmunity-detail?dmunityNo=${post.dmunityNo}`}>
+                      <div className="title">{strCut(post.dmunityTitle)}</div>
+                      <div className="contents">
+                        {/* ckeditor에서 생성된 HTML 태그를 제거하고 글자 수 제한 */}
+                        {removeHtmlTagsAndCut(post.dmunityText)}
+                      </div>
                       <div className="info">
-                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{post.view}</p></span>
-                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{post.likes}</p></span>
-                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{post.comments}</p></span>
+                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{post.dmunityHit}</p></span>
+                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{post.dmunityLike}</p></span>
+                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{post.dmunityComments}</p></span>
                       </div>
                     </Link>
                   </div>
                   <div className='postRight'>
-                    <div className="date">{post.date}</div>
+                    <div className="date">{getFormattedDate(post.dmunityDate)}</div>
                     <div className='userid'>{post.userid}</div>
                   </div>
                 </div>
@@ -159,21 +194,24 @@ export default function DmunityMainPage() {
               : postList.slice(indexOfFirstItem, indexOfLastItem).map((post, idx) => (
                 <div key={idx} id="post">
                   <div className='postLeft'>
-                    <img className="category" src={getCategoryImage(post.category)} alt={post.category} />
+                    <img className="category" src={getCategoryImage(post.dmunityCategory)} alt={post.dmunityCategory} />
                   </div>
                   <div className='postMiddle'>
-                    <Link to='/dmunity-detail'>
-                      <div className="title">{strCut(post.title)}</div>
-                      <div className="contents">{strCut(post.contents)}</div>
+                    <Link to={`/dmunity-detail?dmunityNo=${post.dmunityNo}`}>
+                      <div className="title">{strCut(post.dmunityTitle)}</div>
+                      <div className="contents">
+                        {/* ckeditor에서 생성된 HTML 태그를 제거하고 글자 수 제한 */}
+                        {removeHtmlTagsAndCut(post.dmunityText)}
+                      </div>
                       <div className="info">
-                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{post.view}</p></span>
-                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{post.likes}</p></span>
-                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{post.comments}</p></span>
+                        <span className="view"><img src='../img/dmunity/watch.png' alt='view' /> <p>{post.dmunityHit}</p></span>
+                        <span className="likes"><img src='../img/dmunity/heart.png' alt='likes' /> <p>{post.dmunityLike}</p></span>
+                        <span className='comments'><img src='../img/dmunity/comments.png' alt='comments' /> <p>{post.dmunityComments}</p></span>
                       </div>
                     </Link>
                   </div>
                   <div className='postRight'>
-                    <div className="date">{post.date}</div>
+                    <div className="date">{getFormattedDate(post.dmunityDate)}</div>
                     <div className='userid'>{post.userid}</div>
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #DmunityDetail {
   padding-top: 90PX;
   padding-bottom: 40px;
@@ -76,17 +77,50 @@
   font-size: 14px;
   font-family: "Noto Sans KR";
 }
-#DmunityDetail #container .content .text-area h2 {
-  margin: 20px 0;
-  font-weight: bold;
-}
-#DmunityDetail #container .content .text-area h3 {
-  margin: 20px 0;
-  font-weight: bold;
-  color: #74500A;
-}
 #DmunityDetail #container .content .text-area div {
   margin: 20px 0;
+  /* ck에디터 툴바 적용이랑 reset.css파일 스타일 충돌나서 임시 작성*/
+}
+#DmunityDetail #container .content .text-area div strong,
+#DmunityDetail #container .content .text-area div b {
+  font-weight: bold;
+}
+#DmunityDetail #container .content .text-area div i {
+  font-style: italic;
+}
+#DmunityDetail #container .content .text-area div p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+#DmunityDetail #container .content .text-area div h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+#DmunityDetail #container .content .text-area div h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+#DmunityDetail #container .content .text-area div h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  /*해결되면 지우기*/
 }
 #DmunityDetail #container .like_comment_count {
   width: 90%;

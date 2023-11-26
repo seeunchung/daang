@@ -87,19 +87,57 @@
         font-size: 14px;
         font-family: 'Noto Sans KR';
 
-        h2 {
-          margin: 20px 0;
-          font-weight: bold;
-        }
-
-        h3 {
-          margin: 20px 0;
-          font-weight: bold;
-          color: #74500A;
-        }
-
         div {
           margin: 20px 0;
+
+          /* ck에디터 툴바 적용이랑 reset.css파일 스타일 충돌나서 임시 작성*/
+          strong,
+          b {
+            font-weight: bold;
+          }
+        
+          i {
+            font-style: italic;
+          }
+        
+          p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+          }
+        
+          h2 {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+          }
+        
+          h3 {
+            display: block;
+            font-size: 1.17em;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+          }
+        
+          h4 {
+            display: block;
+            margin-block-start: 1.33em;
+            margin-block-end: 1.33em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+            /*해결되면 지우기*/
+          }
+  
         }
       }
     }
