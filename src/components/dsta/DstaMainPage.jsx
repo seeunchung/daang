@@ -83,7 +83,7 @@ export default function DstaMainPage() {
   // writeData를 dstaMain과 결합
   useEffect(() => {
     console.log(writeData);
-    setdstaMain((prevDstaMain) => [...writeData, ...prevDstaMain]);
+    setdstaMain((prevDstaMain) => [...writeData.reverse(), ...prevDstaMain]);
   }, [writeData]);
 
   // 백엔드 연결 데이터 끝
