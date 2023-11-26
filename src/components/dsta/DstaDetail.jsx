@@ -95,7 +95,7 @@ export default function DstaDetail({ postData, closeModal,setWriteData}) {
           <div className='words'>
             <div className='profile'>
               <img src="./img/dsta/dogprofile.png" alt="프로필 사진" />
-              <div className='profileName'>막둥이</div>
+              <div className='profileName'>김땡땡</div>
               <div className='settings'>
                 <button className='settingsBtn' onClick={handleOpenSettingsModal}>
                   <img src="./img/settings.png" />
@@ -107,7 +107,7 @@ export default function DstaDetail({ postData, closeModal,setWriteData}) {
               <div className='tagsBox'><span className='tags'>{postData.dstarTag}</span></div>
               <div className='contentLikesBox'>
                 <span className='contentLikes' onClick={handleLikeClick}>
-                  <img src={like ? "./img/heart3.png" : "./img/heart2.png"} alt="Heart Icon" />
+                  <img src={like ? "./img/heart2.png" : "./img/heart3.png"} alt="Heart Icon" />
                   좋아요 {postData.dstarLike}개</span></div>
               <div className='contentTime'>{postData.dstarDate}</div>
             </div>
