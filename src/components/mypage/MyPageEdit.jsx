@@ -12,13 +12,13 @@ export default function MypageEdit() {
   const [features, setFeatures] = useState('');
   //견주정보 상태 관리
   const [userid, setUserid] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [password, setPassword] = useState('12341234');
+  const [passwordConfirm, setPasswordConfirm] = useState('12341234');
   const [passwordMatch, setPasswordMatch] = useState(null);
   const [passwordError, setPasswordError] = useState(null);
-  const [name, setName] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState('김땡땡');
+  const [nickname, setNickname] = useState('abcd@test.com');
+  const [phone, setPhone] = useState('01012341234');
 
   const navigate = useNavigate();
 

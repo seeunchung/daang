@@ -40,8 +40,8 @@ export default function DmunityDetail() {
     setComment((current) => {
       const newList = [...current]
       newList.push({
-        img: '../img/dsta/dstaMainData3.jpg',
-        userid: "모카",
+        img: '../img/dsta/dogprofile.png',
+        userid: "김땡땡",
         text: inputValue,
         date: "11.20"
       });
@@ -62,7 +62,7 @@ export default function DmunityDetail() {
             <img src='./img/dmunity/notification.png' alt='' />
             <h2>글 작성 시 유의사항</h2>
             <div className="profile-box">
-              <img src="./img/dmunity/프로필사진-작성자.png" alt="" />
+              <img src="./img/dmunity/best-dsta-profile.png" alt="" />
               <span>총장</span>
             </div>
           </div>
