@@ -219,6 +219,7 @@
   color: #ffffff;
   border: none;
   border-radius: 50px;
+  cursor: pointer;
 }
 #main.dsta_write .dstawrite_container .innerbox .rightbox .input_contentsbox .btn_box .cancel_btn {
   width: 80px;
@@ -228,4 +229,5 @@
   color: #ffffff;
   border: none;
   border-radius: 50px;
+  cursor: pointer;
 }

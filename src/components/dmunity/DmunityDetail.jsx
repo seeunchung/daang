@@ -72,7 +72,19 @@ export default function DmunityDetail() {
     setInputValue("");
   }
 
-  //삭제버튼 기능
+  // 댓글 삭제 버튼(프론트만...)
+
+  const handleCommentDelete = (index) => {
+    setComment((current) => {
+      const newList = [...current];
+      newList.splice(index, 1);
+      return newList;
+    });
+
+  }
+
+
+  //게시물 삭제버튼 기능
 
   const handleDelete = () => {
     // 확인 창 띄우기
@@ -146,7 +158,7 @@ export default function DmunityDetail() {
                         <div>{item.text}</div>
                         <div className='date'>{item.date}</div>
                       </div>
-                      <div className='reply'>답글달기  삭제</div>
+                      <div className='reply' onClick={() => handleCommentDelete(index)}>답글달기  삭제</div>
                     </div>
                   </li>
                 )

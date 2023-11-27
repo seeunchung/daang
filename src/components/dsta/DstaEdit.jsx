@@ -76,10 +76,13 @@ export default function DstaEdit() {
   }
 
   //추가된 사진 삭제 기능
-  const removeImage = (index) => {
+  const removeImage = (index, e) => {
+    e.preventDefault();
+    e.stopPropagation(); // 이벤트 전파 중지
     const updatedFiles = [...addFiles];
     updatedFiles.splice(index, 1);
     setAddFiles(updatedFiles);
+    console.log(addFiles);
   }
 
   const handleSubmit = async (e) => {
@@ -164,7 +167,7 @@ export default function DstaEdit() {
                   return (
                     <li className='add_photo' key={index}>
                       <img className='added_img' src={file} alt="Uploaded" />
-                      <button className='img_delete_btn' onClick={() => removeImage(index)}>
+                      <button className='img_delete_btn' onClick={(e) => removeImage(index, e)}>
                         <img src="./img/dsta/photo_delete_btn.png" alt="" />
                       </button>
                       <div className='numbering'>{index + 1}/4</div>
