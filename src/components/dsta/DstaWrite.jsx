@@ -87,7 +87,11 @@ export default function DstaWrite() {
 
     <main id="main" className='dsta_write'>
       <div className='dstawrite_container'>
-        <h2 className='dstawrite_title'>✨댕스타 작성하기✨</h2>
+        <h2 className='dstawrite_title'>
+          <img src='./img/dsta/bling.png' alt='수정아이콘' />
+          <span> 댕스타 작성하기 </span>
+          <img src='./img/dsta/bling.png' alt='수정아이콘' />
+        </h2>
         <div className='spring_img'></div>
         <form className='innerbox' onSubmit={handleSubmit}>
           <div className='leftbox'>

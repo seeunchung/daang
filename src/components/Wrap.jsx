@@ -17,7 +17,6 @@ import DmunityMainPage from './dmunity/DmunityMainPage';
 import DmunityDetail from './dmunity/DmunityDetail';
 import DmunityWrite from './dmunity/DmunityWrite';
 import DmunityEdit from './dmunity/DmunityEdit';
-import DmunityNotification from './dmunity/Notification.jsx';
 import Dmap from './dmap/DmapMainPage';
 import MyPage from './mypage/MyPageMainPage';
 import MyPageEdit from './mypage/MyPageEdit';
@@ -47,7 +46,6 @@ export default function Wrap() {
                 <Route path='dsta-edit' element={<DstaEdit />} />
                 <Route path='dmunity' element={<DmunityMainPage />} />
                 <Route path='dmunity-detail' element={<DmunityDetail />} />
-                <Route path='dmunity-notification' element={<DmunityNotification/>} />
                 <Route path='dmunity-write' element={<DmunityWrite />} />
                 <Route path='dmunity-edit' element={<DmunityEdit />} />
                 <Route path='dmap' element={<Dmap />} />

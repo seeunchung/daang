@@ -57,8 +57,8 @@ export default function DmunityWrite() {
         <option key="category" value="category">
           카테고리
         </option>
-        <option key="eat" value= {1}>먹어요</option>
-        <option key="sick" value= {2}>아파요</option>
+        <option key="eat" value={1}>먹어요</option>
+        <option key="sick" value={2}>아파요</option>
         <option key="play" value={3}>놀아요</option>
         <option key="how" value={4}>어때요</option>
         <option key="etc" value={5}>기타</option>
@@ -69,7 +69,11 @@ export default function DmunityWrite() {
 
     <main id="main" className='dmunitywrite_write'>
       <div className='dmunitywrite_container'>
-        <h2 className='dmunitywrite_title'>✨댕뮤니티 작성하기✨</h2>
+        <h2 className='dmunitywrite_title'>
+          <img src='./img/dsta/bling.png' alt='수정아이콘' />
+          <span>댕뮤니티 작성하기 </span>
+          <img src='./img/dsta/bling.png' alt='수정아이콘' />
+        </h2>
         <form className='dmunitywrite_form' onSubmit={handleSubmit}>
           <div className='searchBox'>
             <SelectBox ></SelectBox>

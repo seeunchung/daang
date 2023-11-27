@@ -109,7 +109,7 @@ export default function DstaDetail({ postData, closeModal,setWriteData}) {
                 <span className='contentLikes' onClick={handleLikeClick}>
                   <img src={like ? "./img/heart2.png" : "./img/heart3.png"} alt="Heart Icon" />
                   좋아요 {postData.dstarLike}개</span></div>
-              <div className='contentTime'>{postData.dstarDate}</div>
+              <div className='contentTime'>방금 전</div>
             </div>
             <div className='commentBox'>
             </div>

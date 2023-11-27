@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Notification from './Notification';
 
 function getCategoryImage(category) {       //카테고리 별 아이콘 설정
   switch (category) {
@@ -40,10 +39,10 @@ export default function DmunityMainPage() {
     })
       // 성공
       .then((res) => {
-        setPostList(res.data);
-        // 서버에서 데이터를 받아온 후 pinnedPost를 찾기
+        const posts = res.data.filter((post) => post.dmunityNo !== 1);
+        setPostList(posts); // 일반 게시글
         const foundPinnedPost = res.data.find((post) => post.dmunityNo === 1);
-        setPinnedPost(foundPinnedPost);
+        setPinnedPost(foundPinnedPost); //고정 게시글
       })
       // 에러
       .catch((err) => {
@@ -72,6 +71,7 @@ export default function DmunityMainPage() {
   };
 
   useEffect(() => {
+    setCurrentPage(1); // 카테고리 변경 시 현재 페이지 초기화
     const updatedFilteredPosts = postList.filter((post) => {
       if (isEatToggle && post.dmunityCategory === 1) return true;
       if (isSickToggle && post.dmunityCategory === 2) return true;
@@ -128,7 +128,7 @@ export default function DmunityMainPage() {
 
   // 페이징 시작
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
-  const itemsPerPage = 10; // 한 페이지당 보여질 아이템 수
+  const itemsPerPage = 9; // 한 페이지당 보여질 아이템 수
 
   // 클릭한 페이지 번호를 받아 currentPage 상태를 업데이트
   const handleClickPage = (page) => {
@@ -141,6 +141,9 @@ export default function DmunityMainPage() {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   // 현재 페이지에 해당하는 아이템만 표시
   const currentItems = filteredPosts.slice(indexOfFirstItem, indexOfLastItem);
+
+  // 총 페이지 수 계산
+  const totalPageCount = Math.ceil((filteredPosts.length > 0 ? filteredPosts.length : postList.length) / itemsPerPage);
 
   // 페이징 끝
 
@@ -172,7 +175,7 @@ export default function DmunityMainPage() {
                 <img className="category" src={getCategoryImage(pinnedPost.dmunityCategory)} alt={pinnedPost.dmunityCategory} />
               </div>
               <div className='postMiddle'>
-                <Link to={`/dmunity-notification`}>
+                <Link to={`/dmunity-detail?dmunityNo=${pinnedPost.dmunityNo}`}>
                   <div className="title">{strCut(pinnedPost.dmunityTitle)}</div>
                   <div className="contents">
                     {removeHtmlTagsAndCut(pinnedPost.dmunityText)}
@@ -253,7 +256,7 @@ export default function DmunityMainPage() {
             <button onClick={() => handleClickPage(currentPage - 1)} disabled={currentPage === 1}>
               &lt;
             </button>
-            {Array.from({ length: Math.ceil(postList.length / itemsPerPage) }, (_, index) => (
+            {Array.from({ length: totalPageCount }, (_, index) => (
               <button
                 key={index}
                 onClick={() => handleClickPage(index + 1)}
