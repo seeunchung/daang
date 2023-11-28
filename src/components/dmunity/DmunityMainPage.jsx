@@ -21,13 +21,8 @@ function getCategoryImage(category) {       //카테고리 별 아이콘 설정
 
 export default function DmunityMainPage() {
 
-  const [isEatToggle, setIsEatToggle] = useState(false);
-  const [isSickToggle, setIsSickToggle] = useState(false);
-  const [isPlayToggle, setIsPlayToggle] = useState(false);
-  const [isHowToggle, setIsHowToggle] = useState(false);
-  const [isEtcToggle, setIsEtcToggle] = useState(false);
-
   const [postList, setPostList] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null); // 선택된 카테고리
   const [pinnedPost, setPinnedPost] = useState(null); // 고정 글 상태 추가
   const [inputValue, setInputValue] = useState(''); //입력 값 관리
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -50,38 +45,20 @@ export default function DmunityMainPage() {
       });
   }, []);
 
-  const onClickEatToggle = () => {
-    setIsEatToggle(!isEatToggle);
-  };
 
-  const onClickSickToggle = () => {
-    setIsSickToggle(!isSickToggle);
-  };
-
-  const onClickPlayToggle = () => {
-    setIsPlayToggle(!isPlayToggle);
-  };
-
-  const onClickHowToggle = () => {
-    setIsHowToggle(!isHowToggle);
-  };
-
-  const onClickEtcToggle = () => {
-    setIsEtcToggle(!isEtcToggle);
+  // 각각의 카테고리 선택 시 실행되는 함수
+  const handleCategoryToggle = (category) => {
+    setSelectedCategory(category === selectedCategory ? null : category);
   };
 
   useEffect(() => {
-    setCurrentPage(1); // 카테고리 변경 시 현재 페이지 초기화
+    setCurrentPage(1);
     const updatedFilteredPosts = postList.filter((post) => {
-      if (isEatToggle && post.dmunityCategory === 1) return true;
-      if (isSickToggle && post.dmunityCategory === 2) return true;
-      if (isPlayToggle && post.dmunityCategory === 3) return true;
-      if (isHowToggle && post.dmunityCategory === 4) return true;
-      if (isEtcToggle && post.dmunityCategory === 5) return true;
-      return false;
+      // 선택한 카테고리가 있을 때 해당 카테고리와 일치하는 게시글만 필터링
+      return selectedCategory ? post.dmunityCategory === selectedCategory : true;
     });
     setFilteredPosts(updatedFilteredPosts);
-  }, [postList, isEatToggle, isSickToggle, isPlayToggle, isHowToggle, isEtcToggle]);
+  }, [postList, selectedCategory]);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -124,8 +101,6 @@ export default function DmunityMainPage() {
     return trimmedText;
   };
 
-
-
   // 페이징 시작
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
   const itemsPerPage = 9; // 한 페이지당 보여질 아이템 수
@@ -155,11 +130,26 @@ export default function DmunityMainPage() {
           <img src='./img/dmunity/dmunity.png' alt='dmunity' /><h2>community</h2>
         </div>
         <div className='row2'>
-          <button type='buuton' onClick={onClickEatToggle}>{isEatToggle ? <img src='./img/dmunity/eat_onclick.png' alt="" /> : <img src='./img/dmunity/eat.png' alt="" />}<span>먹어요</span></button>
-          <button type='buuton' onClick={onClickSickToggle}>{isSickToggle ? <img src='./img/dmunity/sick_onclick.png' alt="" /> : <img src='./img/dmunity/sick.png' alt='' />}<span>아파요</span></button>
-          <button type='buuton' onClick={onClickPlayToggle}>{isPlayToggle ? <img src='./img/dmunity/play_onclick.png' alt="" /> : <img src='./img/dmunity/play.png' alt='' />}<span>놀아요</span></button>
-          <button type='buuton' onClick={onClickHowToggle}> {isHowToggle ? <img src='./img/dmunity/how_onclick.png' alt="" /> : <img src='./img/dmunity/how.png' alt='' />}<span>어때요</span></button>
-          <button type='buuton' onClick={onClickEtcToggle}> {isEtcToggle ? <img src='./img/dmunity/etc_onclick.png' alt="" /> : <img src='./img/dmunity/etc.png' alt='' />}<span>기타</span></button>
+          <button type='button' onClick={() => handleCategoryToggle(1)}>
+            {selectedCategory === 1 ? <img src='./img/dmunity/eat_onclick.png' alt="" /> : <img src='./img/dmunity/eat.png' alt="" />}
+            <span>먹어요</span>
+          </button>
+          <button type='button' onClick={() => handleCategoryToggle(2)}>
+            {selectedCategory === 2 ? <img src='./img/dmunity/sick_onclick.png' alt="" /> : <img src='./img/dmunity/sick.png' alt='' />}
+            <span>아파요</span>
+          </button>
+          <button type='button' onClick={() => handleCategoryToggle(3)}>
+            {selectedCategory === 3 ? <img src='./img/dmunity/play_onclick.png' alt="" /> : <img src='./img/dmunity/play.png' alt='' />}
+            <span>놀아요</span>
+          </button>
+          <button type='button' onClick={() => handleCategoryToggle(4)}>
+            {selectedCategory === 4 ? <img src='./img/dmunity/how_onclick.png' alt="" /> : <img src='./img/dmunity/how.png' alt='' />}
+            <span>어때요</span>
+          </button>
+          <button type='button' onClick={() => handleCategoryToggle(5)}>
+            {selectedCategory === 5 ? <img src='./img/dmunity/etc_onclick.png' alt="" /> : <img src='./img/dmunity/etc.png' alt='' />}
+            <span>기타</span>
+          </button>
         </div>
       </div>
       <div id='postsboard'>
@@ -195,7 +185,7 @@ export default function DmunityMainPage() {
           )}
           {
             // 선택한 카테고리에 따라 해당 카테고리인 게시글을 보여줌
-            (isEatToggle || isSickToggle || isPlayToggle || isHowToggle || isEtcToggle)
+            (selectedCategory)
               ? currentItems.map((post, idx) => (
                 <div key={idx} id="post">
                   <div className='postLeft'>
