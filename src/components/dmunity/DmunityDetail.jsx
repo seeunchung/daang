@@ -138,7 +138,7 @@ export default function DmunityDetail() {
             <div dangerouslySetInnerHTML={{ __html: post.dmunityText }} />
           </div>
           <div className='like_comment_count'>
-            <img src='./img/dmunity/heart_click.png' alt='' />
+            <img src='./img/heart3.png' alt='' />
             <p>좋아요 {post.dmunityLike} 개</p>
             <p>댓글 {post.dmunityComments + comment.length}개</p>
           </div>

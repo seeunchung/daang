@@ -205,7 +205,7 @@ export default function DstaMainPage() {
                   </div>
                   <div className="time-box">
                     <img src="./img/dsta/timer.png" alt="시간 아이콘" />
-                    <span>{item.timerCount}</span>
+                    <span>{item.timerCount || "방금 전"}</span>
                   </div>
                 </div>
               </div>

@@ -36,7 +36,7 @@ export default function Header() {
           </div>
           <div className="right">
             <ul>
-              {isLogin ? (
+              {!isLogin ? (
                 <>
                   <li className='right-menu mypage'><Link to='/mypage'>마이페이지</Link></li>
                   <li><i>|</i></li>
@@ -56,7 +56,7 @@ export default function Header() {
                   <img src="./img/header/arrow_down.svg" alt="" />
                 </button>
                 {
-                  isLogin
+                  !isLogin
                     ? (
                       <ul className='login-tooltip'>
                         <li>

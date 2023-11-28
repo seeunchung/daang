@@ -53,28 +53,29 @@ export default function DmunityEdit() {
   //카테고리 변경 시 작동
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
+  
   };
 
-  //폼 전송 기능
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+// 폼 전송 기능
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      // 서버로 데이터 전송
-      const response = await axios.put(`/dmunity/dmunityEdit/${dmunityNo}`, {
-        dmunityCategory: selectedCategory,
-        dmunityTitle: inputValue,
-        dmunityText: editorData,
-      });
+  try {
+    // 서버로 데이터 전송
+    console.log(selectedCategory);
+    await axios.put(`/dmunity/dmunityEdit/${dmunityNo}`, {
+      dmunityCategory: selectedCategory,
+      dmunityTitle: inputValue,
+      dmunityText: editorData,
+    });
 
-      // 성공 시 처리
-      navigate(`/dmunity-detail?dmunityNo=${dmunityNo}`)
-    } catch (error) {
-      // 실패 시 처리
-      console.error('에러 발생:', error);
-    }
-  };
-
+    // 성공 시 처리
+    navigate(`/dmunity-detail?dmunityNo=${dmunityNo}`);
+  } catch (error) {
+    // 실패 시 처리
+    console.error('에러 발생:', error);
+  }
+};
 
   const SelectBox = () => {
     return (

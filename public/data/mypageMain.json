@@ -103,17 +103,17 @@
   "dsta": [
     {
       "id": 1,
-      "imgSrc": "./img/dsta/dstaMainData1.jpg",
+      "imgSrc": "./img/dsta/dstaMainData12.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "복실하이",
       "title": "침대를 좋아하는 우리집 막내",
-      "viewCount": 0,
-      "likeCount": 0,
-      "commentCount": 0
+      "viewCount": 4,
+      "likeCount": 10,
+      "commentCount": 2
     },
     {
       "id": 2,
-      "imgSrc": "./img/dsta/dstaMainData2.jpg",
+      "imgSrc": "./img/dsta/dstaMainData17.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "선샤인",
       "title": "넷플릭스 뭐 볼까??",
@@ -123,7 +123,7 @@
     },
     {
       "id": 3,
-      "imgSrc": "./img/dsta/dstaMainData3.jpg",
+      "imgSrc": "./img/dsta/dstaMainData18.jpg",
       "profileImgSrc": "./img/dsta/best-dsta-profile.png",
       "userId": "poter",
       "title": "벌써 가족이 된지 한 달이 넘어가네요",

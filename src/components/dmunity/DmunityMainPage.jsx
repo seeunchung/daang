@@ -266,7 +266,7 @@ export default function DmunityMainPage() {
               </button>
             ))}
             {/* 다음페이지 버튼 */}
-            < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(postList.length / itemsPerPage)}>
+            < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil((filteredPosts.length > 0 ? filteredPosts.length : postList.length) / itemsPerPage)}>
               &gt;
             </button>
           </div>
