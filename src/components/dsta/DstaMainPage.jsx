@@ -185,7 +185,7 @@ export default function DstaMainPage() {
             <div key={index}>
               <div className='dstamain_photobox'>
                 <div className='dstamain_imgbox'>
-                  <img src={item.imgSrc || item.dstarThumbnail} onClick={() => openModal(item.dstarNo)} alt="강아지 게시글 사진" />
+                  <img src={item.imgSrc ||`http://localhost:8080/dsta/images/${item.dstarThumbnail}`} onClick={() => openModal(item.dstarNo)} alt="강아지 게시글 사진" />
                 </div>
                 <div className='dstamain_profile'>
                   <img src={item.profileImgSrc || "./img/dsta/dogprofile.png"} alt="프로필 사진" />

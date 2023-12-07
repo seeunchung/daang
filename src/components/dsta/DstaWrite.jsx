@@ -12,12 +12,16 @@ export default function DstaWrite() {
   const [thumbnailFile, setThumbnailFile] = useState(null);
   const upload = useRef();
   const imgUpload = () => {
-    const file = upload.current.files[0];
-    if (file) {
+    if (upload.current && upload.current.files.length > 0) {
+      const file = upload.current.files[0];
       const fileUrl = URL.createObjectURL(file);
-      setThumbnailFile(fileUrl)
-    };
-  }
+      setThumbnailFile({
+        file,
+        fileUrl
+      });
+    }
+  };
+
 
   //텍스트 데이터
   const [textData, setTextData] = useState('');
@@ -57,26 +61,31 @@ export default function DstaWrite() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // JSON 데이터 생성
-    const data = {
-      "userid": 'admin',
-      "dstarText": textData,
-      "dstarTag": hashTag,
-      "dstarThumbnail": thumbnailFile,
-    };
-
-    // 추가된 파일이 있다면 json데이터에 추가
-    for (let index = 0; index < addFiles.length; index++) {
-      data[`dstarImg${index + 1}`] = addFiles[index];
+    // FormData 객체 생성
+    const formData = new FormData();
+  
+    if (thumbnailFile) {
+      formData.append('thumbnailFile', thumbnailFile.file);
     }
-
+  
+    // 기존 JSON 데이터 추가
+    formData.append('userid', 'admin');
+    formData.append('dstarText', textData);
+    formData.append('dstarTag', hashTag);
+  
+    // 추가된 파일이 있다면 FormData에 추가
+    for (let index = 0; index < addFiles.length; index++) {
+      formData.append(`dstarImg${index + 1}`, addFiles[index]);
+    }
+  
     // Axios를 사용하여 POST 요청
     try {
-      const response = await axios.post('/dsta/dstaWrite', data, {
+      const response = await axios.post('/dsta/dstaWrite', formData, {
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'multipart/form-data', // 변경된 Content-Type
+        },
       });
+  
       console.log('Dsta inserted successfully:', response.data);
       navigate('/dsta');
     } catch (error) {
@@ -115,7 +124,7 @@ export default function DstaWrite() {
                 </>
               ) : (
                 <>
-                  <img className='thumbnail_img' src={thumbnailFile} alt="Uploaded" />
+                  <img className='thumbnail_img' src={thumbnailFile.fileUrl} alt="Uploaded" />
                   <input
                     id='thumbnail_input'
                     className='file_input'

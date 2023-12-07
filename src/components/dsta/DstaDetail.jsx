@@ -15,7 +15,8 @@ export default function DstaDetail({ postData, closeModal,setWriteData}) {
   const [commentLikes, setCommentLikes] = useState(Array(dstaModal.length).fill(false));
 
   const dstarNo = postData.dstarNo;
-  const dstaImgs = [postData.dstarThumbnail,postData.dstarImg1, postData.dstarImg2, postData.dstarImg3, postData.dstarImg4];
+  const dstaImgs = [`http://localhost:8080/dsta/images/${postData.dstarThumbnail}`,postData.dstarImg1, postData.dstarImg2, postData.dstarImg3, postData.dstarImg4];
+  
 
   const handleLikeClick = () => {
     setLike(!like); // Toggle the like state
