@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
-import DstaMainModal from './DstaMainModal'
+import DstaDetail from './DstaDetail'
 
 SwiperCore.use([Navigation, Pagination])
 
@@ -11,7 +11,6 @@ export default function DstaMainPage() {
 
 
   //이미지 데이터를 저장할 상태
-  const [dstaMain, setdstaMain] = useState([]);
   const [writeData, setWriteData] = useState([]);
   const [dstaSwiperData, setDstaSwiperData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // 현재 페이지 상태
@@ -30,27 +29,11 @@ export default function DstaMainPage() {
   // 현재 페이지에서 첫 번째 아이템의 인덱스
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   // 현재 페이지에 해당하는 아이템만 표시
-  const currentItems = dstaMain.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = writeData.slice(indexOfFirstItem, indexOfLastItem);
 
   // 페이징 끝
 
   useEffect(() => {
-    // 댕스타 전체 데이터
-    axios({
-      url: './data/dstaMain.json',
-      method: 'GET'
-    })
-
-      //성공
-      .then((res) => {
-        setdstaMain(res.data.dstaMainData)
-        console.log(res.data)
-      })
-      // 에러
-      .catch((err) => {
-        console.log(`AXIOS 실패!${err}`);
-      });
-
     // swiper 조회수 순 이미지 데이터
     axios({
       url: './data/dstaMain.json', // 조회수가 많은 이미지를 반환하는 API 엔드포인트로 업데이트 필요
@@ -79,12 +62,6 @@ export default function DstaMainPage() {
       });
   }, []);
 
-
-  // writeData를 dstaMain과 결합
-  useEffect(() => {
-    console.log(writeData);
-    setdstaMain((prevDstaMain) => [...writeData.reverse(), ...prevDstaMain]);
-  }, [writeData]);
 
   // 백엔드 연결 데이터 끝
 
@@ -151,7 +128,7 @@ export default function DstaMainPage() {
               }}
             >
               {/* 조회수 많은 데이터 이미지 */}
-              {dstaMain && dstaSwiperData.map((item, index) => (
+              {dstaSwiperData.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <div className='weekly_photobox'>
                     <img src={item.imgSrc} alt="댕스타 조회수 사진" />
@@ -170,7 +147,6 @@ export default function DstaMainPage() {
             <div className="dstamain_swiperpage"></div>
           </div>
           {/* 스와이퍼 끝 */}
-
         </div>
 
         {/* 댕스타 타이틀 */}
@@ -185,31 +161,31 @@ export default function DstaMainPage() {
             <div key={index}>
               <div className='dstamain_photobox'>
                 <div className='dstamain_imgbox'>
-                  <img src={item.imgSrc ||`http://localhost:8080/dsta/images/${item.dstarThumbnail}`} onClick={() => openModal(item.dstarNo)} alt="강아지 게시글 사진" />
+                  <img src={`http://localhost:8080/dsta/images/${item.dstarThumbnail}`} onClick={() => openModal(item.dstarNo)} alt="강아지 게시글 사진" />
                 </div>
                 <div className='dstamain_profile'>
-                  <img src={item.profileImgSrc || "./img/dsta/dogprofile.png"} alt="프로필 사진" />
-                  <span>{item.userId || "김땡땡"}</span>
+                  <img src={"./img/dsta/dogprofile.png"} alt="프로필 사진" />
+                  <span>{"김땡땡"}</span>
                 </div>
                 <div className='dstamain_phototextbox'>
-                  <span>{item.title || item.dstarText}</span>
+                  <span>{item.dstarText}</span>
                 </div>
                 <div className='dstamain_watchbox'>
                   <div className="cnt-box">
                     <img src="./img/dsta/watch.png" alt="조회수 아이콘" />
-                    <span>{item.viewCount || item.dstarLike}</span>
+                    <span>{item.dstarLike}</span>
                     <img src="./img/dsta/heart.png" alt="좋아요 아이콘" />
-                    <span>{item.likeCount || item.dstarHit}</span>
+                    <span>{item.dstarHit}</span>
                     <img src="./img/dsta/coments.png" alt="댓글 아이콘" />
-                    <span>{item.commentCount || item.dstarComment}</span>
+                    <span>{item.dstarComment}</span>
                   </div>
                   <div className="time-box">
                     <img src="./img/dsta/timer.png" alt="시간 아이콘" />
-                    <span>{item.timerCount || "방금 전"}</span>
+                    <span>{"방금 전"}</span>
                   </div>
                 </div>
               </div>
-              {isModalOpen && <DstaMainModal closeModal={closeModal} selectedPostNumber={selectedPostNumber} setWriteData={setWriteData} />}
+              {isModalOpen && <DstaDetail closeModal={closeModal} selectedPostNumber={selectedPostNumber} setWriteData={setWriteData} />}
             </div>))}
         </div>
         {/* 댕스타 페이징 */}
@@ -219,7 +195,7 @@ export default function DstaMainPage() {
             &lt;
           </button>
 
-          {Array.from({ length: Math.ceil(dstaMain.length / itemsPerPage) }, (_, index) => (
+          {Array.from({ length: Math.ceil(writeData.length / itemsPerPage) }, (_, index) => (
             <button
               key={index}
               onClick={() => handleClickPage(index + 1)}
@@ -229,7 +205,7 @@ export default function DstaMainPage() {
             </button>
           ))}
           {/* 다음페이지 버튼 */}
-          < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(dstaMain.length / itemsPerPage)}>
+          < button onClick={() => handleClickPage(currentPage + 1)} disabled={currentPage === Math.ceil(writeData.length / itemsPerPage)}>
             &gt;
           </button>
         </div>

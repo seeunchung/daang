@@ -21,7 +21,10 @@ export default function DstaEdit() {
     })
       .then((res) => {
         const data = res.data;
-        setThumbnailFile(data.dstarThumbnail);
+        setThumbnailFile({
+          file: data.dstarThumbnail,
+          fileUrl: null
+        });
         setTextData(data.dstarText);
         setHashTag(data.dstarTag);
         const img1 = data.dstarImg1;
@@ -42,12 +45,15 @@ export default function DstaEdit() {
   const [thumbnailFile, setThumbnailFile] = useState(null);
   const upload = useRef();
   const imgUpload = () => {
-    const file = upload.current.files[0];
-    if (file) {
+    if (upload.current && upload.current.files.length > 0) {
+      const file = upload.current.files[0];
       const fileUrl = URL.createObjectURL(file);
-      setThumbnailFile(fileUrl)
-    };
-  }
+      setThumbnailFile({
+        file,
+        fileUrl
+      });
+    }
+  };
 
   //텍스트 데이터
   const [textData, setTextData] = useState('');
@@ -88,27 +94,33 @@ export default function DstaEdit() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // JSON 데이터 생성
-    const data = {
-      "dstarNo": dstarNo,
-      "userid" : "admin",
-      "dstarText": textData,
-      "dstarTag": hashTag,
-      "dstarThumbnail": thumbnailFile,
-    };
+    // FormData 객체 생성
+    const formData = new FormData();
 
-    // 추가된 파일이 있다면 json데이터에 추가
-    for (let index = 0; index < addFiles.length; index++) {
-      data[`dstarImg${index + 1}`] = addFiles[index];
+    // 썸네일 파일이 변경되면 추가
+    if (thumbnailFile && thumbnailFile.file) {
+      formData.append('thumbnailFile', thumbnailFile.file);
     }
 
-    // Axios를 사용하여 POST 요청
+    // 기존 JSON 데이터 추가
+    formData.append('dstarNo', dstarNo);
+    formData.append('userid', 'admin');
+    formData.append('dstarText', textData);
+    formData.append('dstarTag', hashTag);
+
+    // 추가된 파일이 있다면 FormData에 추가
+    for (let index = 0; index < addFiles.length; index++) {
+      formData.append(`dstarImg${index + 1}`, addFiles[index]);
+    }
+
+    // Axios를 사용하여 PUT 요청
     try {
-      const response = await axios.put('/dsta/dstarEdit', data, {
+      const response = await axios.put('/dsta/dstarEdit', formData, {
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'multipart/form-data', // 변경된 Content-Type
+        },
       });
+
       console.log('Dsta inserted successfully:', response.data);
       navigate('/dsta');
     } catch (error) {
@@ -131,7 +143,7 @@ export default function DstaEdit() {
             <div className='thumbnail'>
               {thumbnailFile && (
                 <>
-                  <img className='thumbnail_img' src={thumbnailFile} alt="Uploaded" />
+                  <img className='thumbnail_img' src={!thumbnailFile.fileUrl ? (`http://localhost:8080/dsta/images/${thumbnailFile.file}`) : thumbnailFile.fileUrl} alt="Uploaded" />
                   <input
                     id='thumbnail_input'
                     className='file_input'
