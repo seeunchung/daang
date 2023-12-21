@@ -2,40 +2,54 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Header from '../main/Header';
 import { useUser } from './UserContent'; // 가상의 사용자 컨텍스트 훅으로 가정
+import axios from 'axios';
 
 export default function Login() {
   const { isLogin, login, logout } = useUser(); // 가상의 사용자 컨텍스트 훅으로 가정
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
-    id: '',
-    pw: '',
+    username: '',
+    password: '',
   });
   const [errMsg, setErrMsg] = useState('');
 
   const onChangeId = (e) => {
     setCredentials({
       ...credentials,
-      id: e.target.value,
+      username: e.target.value,
     });
   };
 
   const onChangePw = (e) => {
     setCredentials({
       ...credentials,
-      pw: e.target.value,
+      password: e.target.value,
     });
   };
 
-  const onSubmitLogin = (e) => {
+  const onSubmitLogin = async (e) => {
     e.preventDefault();
-    if (credentials.id === 'admin' && credentials.pw === '1234') {
-      login(); // 사용자 로그인 처리
-    } else {
-      logout(); // 사용자 로그아웃 처리
-      setErrMsg('아이디, 비밀번호를 다시 확인해 주세요.');
+    
+    try {
+      // 프론트엔드에서 로그인 요청을 백엔드로 보내기
+      const response = await axios.post( '/login/user', credentials);
+  
+      // 로그인 성공 시
+      if (response.data === 'Login successful!') {
+        login(); // 사용자 로그인 처리
+        navigate('/');
+      } else {
+        // 로그인 실패 시 에러 메시지 표시
+        logout(); // 사용자 로그아웃 처리
+        setErrMsg('아이디, 비밀번호를 다시 확인해 주세요.');
+      }
+    } catch (error) {
+      console.log(credentials)
+      console.error('로그인 요청 실패:', error);
     }
   };
+
 
   useEffect(() => {
     // 페이지가 이동될 때마다 isLogin 상태 업데이트
