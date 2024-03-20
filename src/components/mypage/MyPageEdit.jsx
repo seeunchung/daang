@@ -27,7 +27,7 @@ export default function MypageEdit() {
   //강아지정보 데이터(백엔드 연결)
   useEffect(() => {
     axios({
-      url: 'http://localhost:8080/mypage/doginfo',
+      url: '/mypage/doginfo',
       method: 'GET'
     })
       .then((res) => {
@@ -42,32 +42,6 @@ export default function MypageEdit() {
         console.log(`AXIOS 실패! ${err}`);
       });
   }, []);
-
-
-  //견주정보(jsson 파일)
-  useEffect(() => {
-
-    //마이페이지 데이터
-    axios({
-      url: './data/mypage.json',
-      method: 'GET'
-    })
-      //성공
-      .then((res) => {
-        const mypageData = res.data.mypageData[0];
-        // 데이터를 상태에 설정
-        setUserid(mypageData.userid);
-        setPassword(mypageData.password);
-        setName(mypageData.name);
-        setNickname(mypageData.nickname);
-        setPhone(mypageData.phone);
-      })
-      // 에러
-      .catch((err) => {
-        console.log(`AXIOS 실패!${err}`);
-      });
-  }, []);
-
 
 
   //이미지 업로드 기능
@@ -114,7 +88,7 @@ export default function MypageEdit() {
     };
   
     // 강아지 정보를 업데이트하기 위한 HTTP PUT 요청
-    axios.put('http://localhost:8080/mypage/doginfo/update', updatedInfo)
+    axios.put('/mypage/doginfo/update', updatedInfo)
       .then(response => {
         console.log('강아지 정보가 성공적으로 업데이트되었습니다', response.data);
         // 성공적으로 업데이트된 경우 추가적인 작업 수행 가능
@@ -372,7 +346,7 @@ export default function MypageEdit() {
               )} */}
 
               {/* 중복 확인 버튼 */}
-              <button className='nickname_btn' onClick={''}>중복 확인</button>
+              <button className='nickname_btn' >중복 확인</button>
 
               {/* 전화번호 */}
               <div className='infoedit_div' style={{ marginBottom: 0 }}>

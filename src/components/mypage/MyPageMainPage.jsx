@@ -15,7 +15,7 @@ export default function MyPageMainPage() {
 //강아지정보 데이터(백엔드 연결)
   useEffect(() => {
     axios({
-      url: 'http://localhost:8080/mypage/doginfo',
+      url: '/mypage/doginfo',
       method: 'GET'
     })
       .then((res) => {
