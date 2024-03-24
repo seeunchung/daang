@@ -95,7 +95,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
     }
     else {
       axios({
-        url: 'https://kiik52.com/daaang/member_select.php',
+        url: '/',
         method: 'GET'
       })
         .then((res => {
@@ -286,7 +286,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
     }
     else {
       axios({
-        url: 'https://kiik52.com/daaang/member_select.php',
+        url: '/',
         method: 'GET'
       })
         .then((res) => {
@@ -679,7 +679,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
   }
 
   // 가입하기 버튼 클릭 이벤트
-  const onSubmitJoin = (e) => {
+  const onSubmitJoin = async (e) => {
     e.preventDefault();
 
     let count = 0;
@@ -719,37 +719,35 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
     //   isConfirmModalOpenFn('이용약관동의 필수 항목을 체크해 주세요');
     // }
     // else {
-    const regExp = /^(\d{3})(\d{3,4})(\d{4})$/g;
+   
 
-    const newFormData = new FormData();
+    //const newFormData = new FormData();
+    // newFormData.append('dog_Name', state.dogName);
+    // newFormData.append('dog_Birth', `${state.dogBirthYear}-${state.dogBirthMonth}-${state.dogBirthDate}`);
+    // newFormData.append('dog_Breed', state.dogBreed);
+    // newFormData.append('dog_Info', state.dogInfo);
+    // newFormData.append('service', state.AgreetoTermsofUse);
 
-    newFormData.append('id', state.id);
-    newFormData.append('pw', state.pw);
-    newFormData.append('irum', state.name);
-    newFormData.append('email', state.email);
-    newFormData.append('hp', state.hp.replace(regExp, '$1-$2-$3'));
-    newFormData.append('dog_Name', state.dogName);
-    newFormData.append('dog_Birth', `${state.dogBirthYear}-${state.dogBirthMonth}-${state.dogBirthDate}`);
-    newFormData.append('dog_Breed', state.dogBreed);
-    newFormData.append('dog_Info', state.dogInfo);
-    newFormData.append('service', state.AgreetoTermsofUse);
-    newFormData.append('join_date', `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`);
+    // Axios를 사용하여 POST 요청
 
-    axios({
-      url: 'https://kiik52.com/daaang/member_insert.php',
-      method: 'POST',
-      data: newFormData
-    })
-      .then((res) => {
-        if (res.data.indexOf('성공')) {
-          navigate("/signup-complete");
-        }
-      })
-      .catch((err) => {
-        console.log('AXOIS 실패', err);
-      })
-    // }
-  }
+    console.log(state.id, state.pw, state.name, state.hp);
+
+    try {
+      const response = await axios.post('/join/write', {
+        userid :state.id,
+        userpwd :state.pw,
+        username : state.name,
+        email : state.email,
+        tel : state.hp,
+      });
+      
+      console.log('Data inserted successfully:', response.data);
+      navigate("/signup-complete");
+    } catch (error) {
+      console.error('Error inserting Member:', error);
+      // 에러 처리 로직 추가
+    }
+  };
 
   return (
     <main id='signup' className="signup_main">
@@ -757,7 +755,7 @@ export default function SignUp({ 견주, 강아지, isConfirmModalOpenFn, isAgre
         <div className="signup-container">
           <div className="title">
             <div className="main-title">
-              <img src="./img/signup/입학신청서 제목.png" alt="" />
+              <img src="./img/signup/signup-title.png" alt="" />
             </div>
           </div>
           <div className="content master">
